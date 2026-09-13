@@ -60,3 +60,64 @@ class FakeLottoApi:
             raise AssertionError(f"unexpected params {params}")
         rows = [self.overrides.get(r) or lotto_raw(r) for r in range(hi, lo - 1, -1)]
         return _payload("list", rows)
+
+
+PENSION_PRIZES_RAW = {1: 1680000000, 2: 120000000, 3: 1000000, 4: 100000, 5: 50000, 6: 5000, 7: 1000, 21: 120000000}
+
+
+def pension_list_raw(round_no):
+    return {
+        "psltEpsd": round_no,
+        "psltRflYmd": _ymd(date(2020, 5, 7), round_no),
+        "wnBndNo": str(round_no % 5 + 1),
+        "wnRnkVl": f"{round_no * 123457 % 1_000_000:06d}",
+        "bnsRnkVl": f"{round_no * 654321 % 1_000_000:06d}",
+    }
+
+
+def pension_detail_rows(round_no):
+    base = pension_list_raw(round_no)
+    rows = []
+    for sq, amount in PENSION_PRIZES_RAW.items():
+        if sq == 21:
+            value = base["bnsRnkVl"]
+        else:
+            value = base["wnRnkVl"][max(sq - 2, 0):]  # 실제 응답처럼 등수가 낮을수록 끝자리만
+        rows.append({
+            "wnSqNo": sq,
+            "wnAmt": amount,
+            "wnBndNo": base["wnBndNo"] if sq == 1 else None,
+            "wnRnkVl": value,
+            "psltRflYmd": base["psltRflYmd"],
+            "psltEpsd": round_no,
+            "wnStoreCnt": sq,
+            "wnInternetCnt": 2 * sq,
+            "wnTotalCnt": 3 * sq,
+        })
+    return rows
+
+
+class FakePensionApi:
+    LIST_PATH = "/pt720/selectPstPt720WnList.do"
+    DETAIL_PATH = "/pt720/selectPstPt720Info.do"
+
+    def __init__(self, latest, fail_on_call=None):
+        self.latest = latest
+        self.fail_on_call = fail_on_call
+        self.calls = []
+        self.list_overrides = {}
+
+    def __call__(self, path, params, referer):
+        assert referer == "/pt720/result"
+        self.calls.append((path, dict(params)))
+        if self.fail_on_call == len(self.calls):
+            raise NetworkError("fake timeout")
+        if path == self.LIST_PATH:
+            rows = [self.list_overrides.get(r) or pension_list_raw(r) for r in range(self.latest, 0, -1)]
+        elif path == self.DETAIL_PATH:
+            n = params["srchPsltEpsd"]
+            hi, lo = min(self.latest, n + 5), max(1, n - 5)
+            rows = [row for r in range(hi, lo - 1, -1) for row in pension_detail_rows(r)]
+        else:
+            raise AssertionError(f"unexpected path {path}")
+        return _payload("result", rows)
