@@ -51,3 +51,18 @@ def test_single_game_option(tmp_path):
     assert code == 0
     assert lotto.calls == []
     assert not (tmp_path / "lotto645.json").exists()
+
+
+def test_corrupt_data_file_fails_that_game_only(tmp_path, capsys):
+    (tmp_path / "lotto645.json").write_text(
+        '{"schema": 1, "game": "pension720", "draws": []}\n', encoding="utf-8"
+    )
+    get = dispatch(FakeLottoApi(latest=12), FakePensionApi(latest=13))
+    code = main(["collect", "--data-dir", str(tmp_path)], get=get, now=NOW)
+
+    assert code == 1
+    captured = capsys.readouterr()
+    assert "lotto645: 실패" in captured.err
+    assert "pension720: 신규 13회" in captured.out
+    assert "meta.json 갱신 실패" in captured.err
+    assert not (tmp_path / "meta.json").exists()

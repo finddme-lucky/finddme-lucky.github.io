@@ -31,12 +31,16 @@ def main(argv=None, *, get=None, now=None):
         try:
             added = collect(game, args.data_dir, get, full=args.full)
             print(f"{game}: 신규 {added}회")
-        except (SourceError, NetworkError, ValidationError) as e:
+        except (SourceError, NetworkError, ValidationError, ValueError, OSError) as e:
             failed.append(game)
             print(f"{game}: 실패 — {e}", file=sys.stderr)
 
-    if store.save_meta(args.data_dir, now or datetime.now(KST)):
-        print("meta.json 갱신")
+    try:
+        if store.save_meta(args.data_dir, now or datetime.now(KST)):
+            print("meta.json 갱신")
+    except (ValueError, OSError) as e:
+        failed.append("meta")
+        print(f"meta.json 갱신 실패 — {e}", file=sys.stderr)
     return 1 if failed else 0
 
 
