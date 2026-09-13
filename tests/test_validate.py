@@ -41,6 +41,13 @@ def test_lotto_date_must_increase():
         validate_lotto(lotto_records(1, 2), new)
 
 
+def test_lotto_calendar_invalid_date_is_rejected():
+    new = lotto_records(1, 1)
+    new[0]["date"] = "2024-02-30"
+    with pytest.raises(ValidationError, match="추첨일 형식 이상"):
+        validate_lotto([], new)
+
+
 @pytest.mark.parametrize(
     "numbers",
     [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5, 46], [1, 1, 2, 3, 4, 5], [2, 1, 3, 4, 5, 6], [0, 2, 3, 4, 5, 6]],

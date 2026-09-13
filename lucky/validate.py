@@ -1,6 +1,7 @@
 """수집 레코드 검증 — 통과하지 못하면 저장하지 않는다 (spec §3.4)."""
 
 import re
+from datetime import date
 
 from lucky.errors import ValidationError
 
@@ -38,8 +39,12 @@ def _check_sequence(game, existing, new):
         expected = prev["round"] + 1 if prev else 1
         if draw["round"] != expected:
             raise ValidationError(f"{game}: 회차 불연속 — {expected}회 기대, {draw['round']}회 받음")
-        if not (isinstance(draw["date"], str) and DATE_RE.match(draw["date"])):
-            raise ValidationError(f"{game} {draw['round']}회: 추첨일 형식 이상 {draw['date']!r}")
+        try:
+            if not (isinstance(draw["date"], str) and DATE_RE.match(draw["date"])):
+                raise ValueError()
+            date.fromisoformat(draw["date"])
+        except ValueError as e:
+            raise ValidationError(f"{game} {draw['round']}회: 추첨일 형식 이상 {draw['date']!r}") from e
         if prev and draw["date"] <= prev["date"]:
             raise ValidationError(
                 f"{game} {draw['round']}회: 추첨일 {draw['date']}이 이전 회차({prev['date']})보다 늦지 않음"
