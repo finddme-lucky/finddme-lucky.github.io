@@ -47,3 +47,51 @@ def lotto_scores(draws, strategy, *, window=LOTTO_HOT_WINDOW):
         return scores
 
     raise ValueError(f"lotto645: 알 수 없는 전략 {strategy!r}")
+
+
+PENSION_HOT_WINDOW = 50
+PENSION_POSITIONS = 6
+DIGITS = range(10)
+
+
+def pension_scores(draws, strategy, *, window=PENSION_HOT_WINDOW):
+    total = len(draws)
+    positions = range(PENSION_POSITIONS)
+    if strategy == "random":
+        return [{digit: 1.0 for digit in DIGITS} for _ in positions]
+
+    if strategy == "hot":
+        recent_draws = draws[-window:]
+        return [
+            {
+                digit: float(
+                    sum(1 for draw in recent_draws if int(draw["first"][position]) == digit)
+                )
+                for digit in DIGITS
+            }
+            for position in positions
+        ]
+
+    if strategy == "cold":
+        scores = []
+        for position in positions:
+            last_seen = {}
+            for index, draw in enumerate(draws):
+                last_seen[int(draw["first"][position])] = index
+            scores.append(
+                {
+                    digit: float(total - 1 - last_seen[digit]) if digit in last_seen else float(total)
+                    for digit in DIGITS
+                }
+            )
+        return scores
+
+    if strategy == "recent":
+        scores = [{digit: 0.0 for digit in DIGITS} for _ in positions]
+        for index, draw in enumerate(draws):
+            weight = _decay(total, index)
+            for position in positions:
+                scores[position][int(draw["first"][position])] += weight
+        return scores
+
+    raise ValueError(f"pension720: 알 수 없는 전략 {strategy!r}")
