@@ -3,6 +3,9 @@
 import json
 import os
 import tempfile
+from datetime import timedelta, timezone
+
+KST = timezone(timedelta(hours=9))
 
 SCHEMA = 1
 GAMES = ("lotto645", "pension720")
@@ -64,3 +67,8 @@ def save_meta(data_dir, now):
     doc = {"schema": SCHEMA, "updatedAt": now.isoformat(timespec="seconds"), "games": games}
     _write_atomic(path, json.dumps(doc, ensure_ascii=False, indent=2) + "\n")
     return True
+
+
+def save_document(data_dir, relative_path, doc):
+    """data_dir 아래 상대 경로에 JSON 문서를 원자적으로 저장한다."""
+    _write_atomic(data_dir / relative_path, json.dumps(doc, ensure_ascii=False, indent=1) + "\n")
