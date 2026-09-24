@@ -42,27 +42,28 @@ def merge_small(rows, min_expected=MIN_EXPECTED):
 
 def goodness_of_fit(test_id, label, observed, weights):
     """카이제곱 적합도. weights는 상대 가중치이며 관측 총합에 맞춰 정규화한다."""
-    categories = sorted(set(observed) | set(weights), key=str)
+    categories = sorted(set(observed) | set(weights))
     total = sum(observed.get(category, 0) for category in categories)
     weight_total = sum(weights.get(category, 0) for category in categories)
     base = {"id": test_id, "label": label, "n": total}
     if total == 0 or weight_total == 0:
         return {**base, "categories": 0, "stat": None, "dof": 0, "p": None,
-                "note": "자료가 없어 검정 생략"}
+                "note": "자료가 없어 검정 생략", "buckets": []}
 
     rows = [
         (str(category), observed.get(category, 0), weights.get(category, 0) * total / weight_total)
         for category in categories
     ]
     merged = merge_small(rows)
+    labels = [label for label, _count, _expected in merged]
     if len(merged) < 2:
         return {**base, "categories": len(merged), "stat": None, "dof": 0, "p": None,
-                "note": f"기대빈도 {MIN_EXPECTED} 이상 구간이 2개 미만이라 검정 생략"}
+                "note": f"기대빈도 {MIN_EXPECTED} 이상 구간이 2개 미만이라 검정 생략", "buckets": labels}
 
     statistic = sum((count - expected) ** 2 / expected for _, count, expected in merged)
     dof = len(merged) - 1
     return {**base, "categories": len(merged), "stat": statistic, "dof": dof,
-            "p": float(chi2.sf(statistic, dof))}
+            "p": float(chi2.sf(statistic, dof)), "buckets": labels}
 
 
 def holm(pvalues):

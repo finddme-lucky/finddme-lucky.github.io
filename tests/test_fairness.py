@@ -79,6 +79,13 @@ def test_goodness_of_fit_normalizes_relative_weights():
     assert scaled["stat"] == result["stat"]
 
 
+def test_goodness_of_fit_merges_numerically_adjacent_categories():
+    observed = {1: 10, 2: 1, 10: 1, 11: 10}
+    result = fairness.goodness_of_fit("t", "라벨", observed, dict(observed))
+    # 숫자 순서(1, 2, 10, 11)로 인접한 구간끼리 합쳐야 한다 — 사전순(1, 10, 11, 2)이면 안 된다
+    assert result["buckets"] == ["1", "2~10~11"]
+
+
 def test_goodness_of_fit_flags_a_lopsided_observation():
     result = fairness.goodness_of_fit("t", "라벨", {0: 90, 1: 10}, {0: 1, 1: 1})
     assert result["stat"] == 64.0
