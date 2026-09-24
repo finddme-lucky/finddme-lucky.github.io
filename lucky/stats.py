@@ -80,3 +80,37 @@ def lotto_stats(draws, *, recent=LOTTO_RECENT):
             for draw in draws
         ],
     }
+
+
+PENSION_RECENT = 50
+DIGITS = range(10)
+GROUPS = range(1, 6)
+POSITIONS = 6
+
+
+def _digit_counts(draws, key):
+    per_position = [Counter() for _ in range(POSITIONS)]
+    for draw in draws:
+        for position, digit in enumerate(draw[key]):
+            per_position[position][int(digit)] += 1
+    return [_fill(counter, DIGITS) for counter in per_position]
+
+
+def pension_stats(draws, *, recent=PENSION_RECENT):
+    recent_draws = draws[-recent:] if recent else []
+    return {
+        "draws": len(draws),
+        "recentWindow": len(recent_draws),
+        "groups": _fill(Counter(draw["group"] for draw in draws), GROUPS),
+        "recentGroups": _fill(Counter(draw["group"] for draw in recent_draws), GROUPS),
+        "firstDigits": _digit_counts(draws, "first"),
+        "bonusDigits": _digit_counts(draws, "bonus"),
+        "series": [
+            {
+                "round": draw["round"],
+                "date": draw["date"],
+                "rankTotals": {str(rank["rank"]): rank["total"] for rank in draw["ranks"]},
+            }
+            for draw in draws
+        ],
+    }

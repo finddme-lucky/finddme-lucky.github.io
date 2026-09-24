@@ -74,3 +74,49 @@ def test_empty_draws_produce_empty_but_complete_shape():
     assert set(stats["counts"]) == set(range(1, 46))
     assert all(value == 0 for value in stats["counts"].values())
     assert all(value is None for value in stats["gaps"].values())
+
+
+from lucky.stats import pension_stats
+
+PENSION_DRAWS = [
+    {"round": 1, "date": "2020-05-07", "group": 4, "first": "011391", "bonus": "060727",
+     "ranks": [{"rank": 1, "prize": 1680000000, "store": 0, "online": 1, "total": 1},
+               {"rank": "bonus", "prize": 120000000, "store": 2, "online": 5, "total": 7}]},
+    {"round": 2, "date": "2020-05-14", "group": 1, "first": "123456", "bonus": "060727",
+     "ranks": [{"rank": 1, "prize": 1680000000, "store": 1, "online": 1, "total": 2},
+               {"rank": "bonus", "prize": 120000000, "store": 3, "online": 3, "total": 6}]},
+]
+
+
+def test_pension_group_counts_cover_all_five():
+    stats = pension_stats(PENSION_DRAWS)
+    assert stats["groups"] == {1: 1, 2: 0, 3: 0, 4: 1, 5: 0}
+
+
+def test_pension_recent_groups_use_only_the_last_n_draws():
+    stats = pension_stats(PENSION_DRAWS, recent=1)
+    assert stats["recentWindow"] == 1
+    assert stats["recentGroups"] == {1: 1, 2: 0, 3: 0, 4: 0, 5: 0}
+
+
+def test_pension_digits_are_counted_per_position_including_leading_zero():
+    stats = pension_stats(PENSION_DRAWS)
+    assert len(stats["firstDigits"]) == 6
+    assert set(stats["firstDigits"][0]) == set(range(10))
+    # 첫 자리: "0"(1회차) 과 "1"(2회차)
+    assert stats["firstDigits"][0][0] == 1
+    assert stats["firstDigits"][0][1] == 1
+    # 마지막 자리: "1"(1회차) 과 "6"(2회차)
+    assert stats["firstDigits"][5][1] == 1
+    assert stats["firstDigits"][5][6] == 1
+    # 보너스는 두 회차 모두 "060727"
+    assert stats["bonusDigits"][0][0] == 2
+    assert stats["bonusDigits"][1][6] == 2
+
+
+def test_pension_series_carries_rank_ticket_totals():
+    stats = pension_stats(PENSION_DRAWS)
+    assert stats["draws"] == 2
+    assert stats["series"][0] == {
+        "round": 1, "date": "2020-05-07", "rankTotals": {"1": 1, "bonus": 7},
+    }
