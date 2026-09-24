@@ -5,7 +5,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from lucky import store
+from lucky import predictions, store
+from lucky import rules as rules_module
 from lucky.analyze import analyze, format_fairness, load_report
 from lucky.collect import collect
 from lucky.errors import NetworkError, SourceError, ValidationError
@@ -32,12 +33,20 @@ def main(argv=None, *, get=None, now=None):
     fairness_cmd.add_argument("--game", choices=[*store.GAMES, "all"], default="all")
     fairness_cmd.add_argument("--data-dir", type=Path, default=Path("data"))
 
+    sets_cmd = commands.add_parser("sets", help="다음 회차 번호 세트를 만들어 data/predictions.json에 저장")
+    sets_cmd.add_argument("--game", choices=[*store.GAMES, "all"], default="all")
+    sets_cmd.add_argument("--data-dir", type=Path, default=Path("data"))
+    sets_cmd.add_argument("--round", type=int, help="점검용: 이 회차 기준으로 계산하고 저장하지 않는다")
+    sets_cmd.add_argument("--strategy", help="한 전략만 (생략하면 전부)")
+
     args = parser.parse_args(argv)
     games = store.GAMES if args.game == "all" else (args.game,)
     if args.command == "collect":
         return _collect(args, games, get, now)
     if args.command == "analyze":
         return _analyze(args, games, now)
+    if args.command == "sets":
+        return _sets(args, games, now)
     return _fairness(args, games, now)
 
 
@@ -83,6 +92,36 @@ def _fairness(args, games, now):
             failed.append(game)
             print(f"{game}: 실패 — {e}", file=sys.stderr)
     return 1 if failed else 0
+
+
+def _sets(args, games, now):
+    try:
+        document = predictions.build_predictions(
+            args.data_dir,
+            now=now or datetime.now(KST),
+            rules=rules_module.load_rules(),
+            games=games,
+            strategy=args.strategy,
+            round_no=args.round,
+        )
+    except (ValueError, OSError) as e:
+        print(f"sets: 실패 — {e}", file=sys.stderr)
+        return 1
+
+    for game in games:
+        section = document[game]
+        print(f"== {game} {section['round']}회 ==")
+        for entry in section["sets"]:
+            if "games" in entry:
+                for numbers in entry["games"]:
+                    print(f"  {entry['strategy']:7} {numbers}")
+            else:
+                print(f"  {entry['strategy']:7} {entry['number']} (1~5조 전부)")
+
+    if args.round is None:
+        written = predictions.save_predictions(args.data_dir, document)
+        print("predictions.json 저장" if written else "predictions.json 변경 없음")
+    return 0
 
 
 if __name__ == "__main__":

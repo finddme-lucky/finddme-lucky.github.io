@@ -1,6 +1,5 @@
 """통계와 공정성 검정을 묶어 data/stats/<game>.json에 저장한다 (spec §5.1, §5.2)."""
 
-import json
 from datetime import datetime
 
 from lucky import fairness, store
@@ -35,20 +34,11 @@ def load_report(game, data_dir, now=None):
     return draws, build_report(game, draws, now or datetime.now(store.KST))
 
 
-def _comparable(document):
-    """JSON으로 변환한 모습에서 generatedAt만 뺀 것 — 내용이 같은지 비교할 때 쓴다."""
-    normalized = json.loads(json.dumps(document, ensure_ascii=False))
-    normalized.pop("generatedAt", None)
-    return normalized
-
-
 def analyze(game, data_dir, *, now=None, log=print):
     draws, report = load_report(game, data_dir, now)
-    path = data_dir / "stats" / f"{game}.json"
-    if path.exists() and _comparable(json.loads(path.read_text(encoding="utf-8"))) == _comparable(report):
+    if not store.save_document_if_changed(data_dir, f"stats/{game}.json", report):
         log(f"{game}: {len(draws)}회 분석 — 변경 없음")
         return report
-    store.save_document(data_dir, f"stats/{game}.json", report)
     flagged = [
         result["id"]
         for period in ("all", "recent")

@@ -72,3 +72,24 @@ def save_meta(data_dir, now):
 def save_document(data_dir, relative_path, doc):
     """data_dir 아래 상대 경로에 JSON 문서를 원자적으로 저장한다."""
     _write_atomic(data_dir / relative_path, json.dumps(doc, ensure_ascii=False, indent=1) + "\n")
+
+
+def _comparable(document, ignore):
+    normalized = json.loads(json.dumps(document, ensure_ascii=False))
+    for key in ignore:
+        normalized.pop(key, None)
+    return normalized
+
+
+def save_document_if_changed(data_dir, relative_path, doc, *, ignore=("generatedAt",)):
+    """무시할 키를 뺀 내용이 파일과 같으면 쓰지 않는다. 썼으면 True."""
+    path = data_dir / relative_path
+    if path.exists():
+        try:
+            previous = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            previous = None
+        if previous is not None and _comparable(previous, ignore) == _comparable(doc, ignore):
+            return False
+    save_document(data_dir, relative_path, doc)
+    return True
