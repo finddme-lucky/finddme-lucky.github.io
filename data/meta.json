@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "updatedAt": "2026-09-24T14:59:17+09:00",
+  "games": {
+    "lotto645": {
+      "latestRound": 1242,
+      "latestDate": "2026-09-19"
+    },
+    "pension720": {
+      "latestRound": 333,
+      "latestDate": "2026-09-17"
+    }
+  }
+}
