@@ -17,6 +17,8 @@ def load_draws(data_dir, game):
     if not path.exists():
         return []
     doc = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(doc, dict) or not isinstance(doc.get("draws"), list):
+        raise ValueError(f"{path}: draws 목록이 없음")
     if doc.get("schema") != SCHEMA or doc.get("game") != game:
         raise ValueError(f"{path}: schema/game 불일치 ({doc.get('schema')!r}, {doc.get('game')!r})")
     return doc["draws"]

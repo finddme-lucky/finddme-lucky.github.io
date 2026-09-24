@@ -47,6 +47,13 @@ def test_load_rejects_wrong_game(tmp_path):
         store.load_draws(tmp_path, "pension720")
 
 
+@pytest.mark.parametrize("text", ['{"schema": 1, "game": "lotto645"}', "[]", '"nope"'])
+def test_load_rejects_malformed_document(tmp_path, text):
+    (tmp_path / "lotto645.json").write_text(text, encoding="utf-8")
+    with pytest.raises(ValueError, match="draws 목록이 없음"):
+        store.load_draws(tmp_path, "lotto645")
+
+
 def test_failed_write_keeps_old_file_and_no_temp(tmp_path, monkeypatch):
     store.save_draws(tmp_path, "lotto645", lotto_records(1, 2))
     before = (tmp_path / "lotto645.json").read_text(encoding="utf-8")
