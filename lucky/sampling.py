@@ -32,6 +32,8 @@ def probabilities(scores, floor=FLOOR):
 
 def weighted_sample(rng, scores, count, *, floor=FLOOR):
     """가중 비복원 추출. 뽑힌 순서대로 돌려준다."""
+    if count > len(scores):
+        raise ValueError(f"뽑을 개수 {count}가 후보 {len(scores)}개보다 많다")
     remaining = probabilities(scores, floor)
     picked = []
     for _ in range(count):

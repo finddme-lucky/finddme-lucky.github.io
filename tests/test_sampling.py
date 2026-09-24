@@ -58,3 +58,8 @@ def test_weighted_sample_favours_high_scores():
 def test_weighted_sample_can_exhaust_the_pool():
     picked = sampling.weighted_sample(random.Random(7), {1: 1.0, 2: 2.0, 3: 3.0}, 3)
     assert sorted(picked) == [1, 2, 3]
+
+
+def test_weighted_sample_refuses_to_draw_more_than_the_pool():
+    with pytest.raises(ValueError, match="후보"):
+        sampling.weighted_sample(random.Random(1), {1: 1.0, 2: 2.0, 3: 3.0}, 5)
