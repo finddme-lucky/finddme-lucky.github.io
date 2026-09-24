@@ -1,5 +1,7 @@
 """다음 회차 번호 세트 (spec §5.3) → data/predictions.json."""
 
+import json
+
 from lucky import sets, store
 
 DISCLAIMER = "어떤 전략도 당첨 확률을 바꾸지 않는다. 과거 성적은 백테스트 결과와 함께 볼 것."
@@ -60,4 +62,17 @@ def build_predictions(data_dir, *, now, rules, games=store.GAMES, strategy=None,
 
 
 def save_predictions(data_dir, document):
+    """다른 게임 구간을 덮어쓰지 않도록, 이번에 만들지 않은 게임은 기존 파일에서 가져온다."""
+    path = data_dir / "predictions.json"
+    if path.exists():
+        try:
+            previous = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            previous = {}
+        carried = {
+            game: previous[game]
+            for game in store.GAMES
+            if game in previous and game not in document
+        }
+        document = {**document, **carried}
     return store.save_document_if_changed(data_dir, "predictions.json", document)

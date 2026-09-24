@@ -117,3 +117,18 @@ def test_cli_sets_reports_failure(tmp_path, capsys):
 
     assert code == 1
     assert "sets: 실패" in capsys.readouterr().err
+
+
+def test_save_predictions_keeps_the_other_games_section(tmp_path):
+    seed_data(tmp_path)
+    full = predictions.build_predictions(tmp_path, now=NOW, rules=CONFIG, strategy="hot")
+    predictions.save_predictions(tmp_path, full)
+
+    only_lotto = predictions.build_predictions(
+        tmp_path, now=NOW, rules=CONFIG, games=("lotto645",), strategy="cold"
+    )
+    predictions.save_predictions(tmp_path, only_lotto)
+
+    saved = json.loads((tmp_path / "predictions.json").read_text(encoding="utf-8"))
+    assert saved["lotto645"]["sets"][0]["strategy"] == "cold"
+    assert saved["pension720"]["sets"][0]["strategy"] == "hot"
