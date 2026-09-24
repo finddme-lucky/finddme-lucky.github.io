@@ -28,6 +28,17 @@ stderr 메시지로 대응이 갈린다.
 - `고정 당첨금과 다름` — 연금복권 당첨금 제도가 바뀐 것이다. `lucky/validate.py`의 `PENSION_PRIZES`를 갱신하기 전까지 새 회차가 저장되지 않는다.
 - 그 밖의 `이상` / `불연속` — 받은 값이 검증 규칙을 위반했다. 저장하지 않았으니 메시지에 나온 회차를 직접 확인한다.
 
+## 통계 · 추첨 공정성 검정
+
+```bash
+docker exec finddme-lucky python -m lucky analyze      # 통계·검정 계산 → data/stats/
+docker exec finddme-lucky python -m lucky fairness     # 검정 결과만 출력 (저장 안 함)
+```
+
+- 산출물: `data/stats/lotto645.json`, `data/stats/pension720.json`
+- 검정은 관측 분포를 이론 분포(정확한 조합 계산)와 카이제곱으로 비교하고, 여러 검정을 한꺼번에 하므로 Holm 보정을 적용한다.
+- "편향 증거 없음"이 정상적인 결과다. 과거 분포일 뿐 다음 회차 확률과는 무관하다.
+
 ## 테스트
 
 ```bash

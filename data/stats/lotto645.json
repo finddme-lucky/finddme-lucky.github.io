@@ -1,0 +1,9668 @@
+{
+ "schema": 1,
+ "game": "lotto645",
+ "generatedAt": "2026-09-24T18:35:15+09:00",
+ "latestRound": 1242,
+ "latestDate": "2026-09-19",
+ "disclaimer": "과거 분포이며 다음 회차 확률과 무관하다.",
+ "stats": {
+  "draws": 1242,
+  "recentWindow": 100,
+  "counts": {
+   "1": 170,
+   "2": 157,
+   "3": 172,
+   "4": 163,
+   "5": 153,
+   "6": 166,
+   "7": 171,
+   "8": 158,
+   "9": 136,
+   "10": 163,
+   "11": 168,
+   "12": 180,
+   "13": 183,
+   "14": 172,
+   "15": 170,
+   "16": 170,
+   "17": 171,
+   "18": 178,
+   "19": 171,
+   "20": 172,
+   "21": 167,
+   "22": 146,
+   "23": 149,
+   "24": 167,
+   "25": 153,
+   "26": 165,
+   "27": 181,
+   "28": 157,
+   "29": 156,
+   "30": 158,
+   "31": 171,
+   "32": 146,
+   "33": 175,
+   "34": 186,
+   "35": 163,
+   "36": 165,
+   "37": 174,
+   "38": 172,
+   "39": 168,
+   "40": 174,
+   "41": 151,
+   "42": 158,
+   "43": 166,
+   "44": 165,
+   "45": 175
+  },
+  "countsWithBonus": {
+   "1": 203,
+   "2": 193,
+   "3": 204,
+   "4": 198,
+   "5": 178,
+   "6": 200,
+   "7": 203,
+   "8": 183,
+   "9": 164,
+   "10": 192,
+   "11": 194,
+   "12": 207,
+   "13": 211,
+   "14": 195,
+   "15": 196,
+   "16": 200,
+   "17": 204,
+   "18": 197,
+   "19": 193,
+   "20": 202,
+   "21": 192,
+   "22": 167,
+   "23": 170,
+   "24": 200,
+   "25": 176,
+   "26": 197,
+   "27": 214,
+   "28": 183,
+   "29": 174,
+   "30": 190,
+   "31": 203,
+   "32": 180,
+   "33": 207,
+   "34": 210,
+   "35": 193,
+   "36": 190,
+   "37": 200,
+   "38": 202,
+   "39": 193,
+   "40": 196,
+   "41": 170,
+   "42": 183,
+   "43": 201,
+   "44": 189,
+   "45": 197
+  },
+  "recentCounts": {
+   "1": 12,
+   "2": 12,
+   "3": 17,
+   "4": 12,
+   "5": 9,
+   "6": 14,
+   "7": 15,
+   "8": 14,
+   "9": 15,
+   "10": 11,
+   "11": 13,
+   "12": 13,
+   "13": 18,
+   "14": 7,
+   "15": 18,
+   "16": 18,
+   "17": 12,
+   "18": 13,
+   "19": 14,
+   "20": 13,
+   "21": 10,
+   "22": 11,
+   "23": 13,
+   "24": 15,
+   "25": 13,
+   "26": 12,
+   "27": 21,
+   "28": 16,
+   "29": 13,
+   "30": 12,
+   "31": 17,
+   "32": 13,
+   "33": 11,
+   "34": 10,
+   "35": 13,
+   "36": 14,
+   "37": 16,
+   "38": 17,
+   "39": 15,
+   "40": 12,
+   "41": 11,
+   "42": 13,
+   "43": 9,
+   "44": 12,
+   "45": 11
+  },
+  "gaps": {
+   "1": 8,
+   "2": 0,
+   "3": 12,
+   "4": 0,
+   "5": 29,
+   "6": 7,
+   "7": 1,
+   "8": 12,
+   "9": 12,
+   "10": 0,
+   "11": 2,
+   "12": 6,
+   "13": 1,
+   "14": 11,
+   "15": 7,
+   "16": 0,
+   "17": 16,
+   "18": 4,
+   "19": 2,
+   "20": 2,
+   "21": 6,
+   "22": 3,
+   "23": 1,
+   "24": 1,
+   "25": 9,
+   "26": 16,
+   "27": 18,
+   "28": 12,
+   "29": 6,
+   "30": 14,
+   "31": 0,
+   "32": 3,
+   "33": 3,
+   "34": 5,
+   "35": 8,
+   "36": 3,
+   "37": 5,
+   "38": 4,
+   "39": 7,
+   "40": 5,
+   "41": 0,
+   "42": 4,
+   "43": 1,
+   "44": 2,
+   "45": 18
+  },
+  "oddEven": {
+   "0": 17,
+   "1": 83,
+   "2": 280,
+   "3": 414,
+   "4": 330,
+   "5": 99,
+   "6": 19
+  },
+  "lowHigh": {
+   "0": 17,
+   "1": 113,
+   "2": 310,
+   "3": 410,
+   "4": 282,
+   "5": 94,
+   "6": 16
+  },
+  "sums": {
+   "48": 1,
+   "50": 1,
+   "56": 2,
+   "58": 1,
+   "63": 1,
+   "64": 1,
+   "66": 1,
+   "67": 2,
+   "68": 2,
+   "69": 1,
+   "70": 1,
+   "71": 1,
+   "72": 1,
+   "73": 4,
+   "75": 6,
+   "76": 2,
+   "77": 1,
+   "78": 2,
+   "79": 6,
+   "81": 1,
+   "82": 1,
+   "83": 5,
+   "84": 3,
+   "85": 4,
+   "86": 3,
+   "87": 5,
+   "88": 4,
+   "89": 9,
+   "90": 6,
+   "91": 8,
+   "92": 1,
+   "93": 7,
+   "94": 3,
+   "95": 7,
+   "96": 9,
+   "97": 3,
+   "98": 12,
+   "99": 10,
+   "100": 8,
+   "101": 6,
+   "102": 9,
+   "103": 4,
+   "104": 10,
+   "105": 12,
+   "106": 2,
+   "107": 4,
+   "108": 9,
+   "109": 16,
+   "110": 10,
+   "111": 11,
+   "112": 8,
+   "113": 11,
+   "114": 16,
+   "115": 14,
+   "116": 21,
+   "117": 11,
+   "118": 13,
+   "119": 7,
+   "120": 10,
+   "121": 13,
+   "122": 15,
+   "123": 11,
+   "124": 17,
+   "125": 15,
+   "126": 13,
+   "127": 18,
+   "128": 24,
+   "129": 7,
+   "130": 20,
+   "131": 19,
+   "132": 18,
+   "133": 17,
+   "134": 20,
+   "135": 14,
+   "136": 17,
+   "137": 11,
+   "138": 17,
+   "139": 15,
+   "140": 15,
+   "141": 12,
+   "142": 18,
+   "143": 12,
+   "144": 25,
+   "145": 13,
+   "146": 11,
+   "147": 15,
+   "148": 19,
+   "149": 9,
+   "150": 13,
+   "151": 11,
+   "152": 17,
+   "153": 8,
+   "154": 14,
+   "155": 14,
+   "156": 10,
+   "157": 14,
+   "158": 10,
+   "159": 8,
+   "160": 14,
+   "161": 7,
+   "162": 11,
+   "163": 14,
+   "164": 18,
+   "165": 18,
+   "166": 11,
+   "167": 10,
+   "168": 6,
+   "169": 15,
+   "170": 8,
+   "171": 6,
+   "172": 12,
+   "173": 7,
+   "174": 9,
+   "175": 17,
+   "176": 10,
+   "177": 8,
+   "178": 7,
+   "179": 5,
+   "180": 4,
+   "181": 4,
+   "182": 8,
+   "183": 7,
+   "184": 6,
+   "185": 4,
+   "186": 3,
+   "187": 4,
+   "188": 5,
+   "189": 5,
+   "190": 4,
+   "191": 3,
+   "192": 5,
+   "193": 5,
+   "194": 4,
+   "195": 1,
+   "196": 5,
+   "197": 3,
+   "198": 2,
+   "199": 2,
+   "200": 1,
+   "201": 4,
+   "202": 2,
+   "203": 3,
+   "205": 1,
+   "207": 2,
+   "208": 1,
+   "209": 2,
+   "210": 1,
+   "211": 1,
+   "212": 1,
+   "213": 1,
+   "217": 1,
+   "219": 1,
+   "220": 1,
+   "223": 1,
+   "229": 1,
+   "238": 1
+  },
+  "decades": {
+   "1-10": 1609,
+   "11-20": 1735,
+   "21-30": 1599,
+   "31-40": 1694,
+   "41-45": 815
+  },
+  "adjacentPairs": {
+   "0": 600,
+   "1": 487,
+   "2": 134,
+   "3": 19,
+   "4": 2,
+   "5": 0
+  },
+  "overlapWithPrevious": {
+   "0": 479,
+   "1": 526,
+   "2": 210,
+   "3": 24,
+   "4": 2,
+   "5": 0,
+   "6": 0
+  },
+  "series": [
+   {
+    "round": 1,
+    "date": "2002-12-07",
+    "sales": 3681782000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 2,
+    "date": "2002-12-14",
+    "sales": 4904274000,
+    "firstWinners": 1,
+    "firstPrize": 2002006800
+   },
+   {
+    "round": 3,
+    "date": "2002-12-21",
+    "sales": 4729342000,
+    "firstWinners": 1,
+    "firstPrize": 2000000000
+   },
+   {
+    "round": 4,
+    "date": "2002-12-28",
+    "sales": 5271464000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 5,
+    "date": "2003-01-04",
+    "sales": 6277102000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 6,
+    "date": "2003-01-11",
+    "sales": 15305356000,
+    "firstWinners": 1,
+    "firstPrize": 6574451700
+   },
+   {
+    "round": 7,
+    "date": "2003-01-18",
+    "sales": 12794890000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 8,
+    "date": "2003-01-25",
+    "sales": 20751450000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 9,
+    "date": "2003-02-01",
+    "sales": 73624020000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 10,
+    "date": "2003-02-08",
+    "sales": 260856392000,
+    "firstWinners": 13,
+    "firstPrize": 6430437900
+   },
+   {
+    "round": 11,
+    "date": "2003-02-15",
+    "sales": 91925306000,
+    "firstWinners": 5,
+    "firstPrize": 4780152300
+   },
+   {
+    "round": 12,
+    "date": "2003-02-22",
+    "sales": 76255508000,
+    "firstWinners": 12,
+    "firstPrize": 1348845700
+   },
+   {
+    "round": 13,
+    "date": "2003-03-01",
+    "sales": 66532136000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 14,
+    "date": "2003-03-08",
+    "sales": 99838648000,
+    "firstWinners": 4,
+    "firstPrize": 9375048300
+   },
+   {
+    "round": 15,
+    "date": "2003-03-15",
+    "sales": 73264910000,
+    "firstWinners": 1,
+    "firstPrize": 17014245000
+   },
+   {
+    "round": 16,
+    "date": "2003-03-22",
+    "sales": 75777348000,
+    "firstWinners": 4,
+    "firstPrize": 4377146100
+   },
+   {
+    "round": 17,
+    "date": "2003-03-29",
+    "sales": 72718152000,
+    "firstWinners": 3,
+    "firstPrize": 5349491200
+   },
+   {
+    "round": 18,
+    "date": "2003-04-05",
+    "sales": 66371660000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 19,
+    "date": "2003-04-12",
+    "sales": 105957818000,
+    "firstWinners": 1,
+    "firstPrize": 40722959400
+   },
+   {
+    "round": 20,
+    "date": "2003-04-19",
+    "sales": 81056776000,
+    "firstWinners": 1,
+    "firstPrize": 19352212800
+   },
+   {
+    "round": 21,
+    "date": "2003-04-26",
+    "sales": 84247142000,
+    "firstWinners": 23,
+    "firstPrize": 797475400
+   },
+   {
+    "round": 22,
+    "date": "2003-05-03",
+    "sales": 79455152000,
+    "firstWinners": 4,
+    "firstPrize": 4552194900
+   },
+   {
+    "round": 23,
+    "date": "2003-05-10",
+    "sales": 77374256000,
+    "firstWinners": 4,
+    "firstPrize": 4317947700
+   },
+   {
+    "round": 24,
+    "date": "2003-05-17",
+    "sales": 78486634000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 25,
+    "date": "2003-05-24",
+    "sales": 120073768000,
+    "firstWinners": 2,
+    "firstPrize": 24227745300
+   },
+   {
+    "round": 26,
+    "date": "2003-05-31",
+    "sales": 80193026000,
+    "firstWinners": 5,
+    "firstPrize": 3495069900
+   },
+   {
+    "round": 27,
+    "date": "2003-06-07",
+    "sales": 76145050000,
+    "firstWinners": 2,
+    "firstPrize": 9543982500
+   },
+   {
+    "round": 28,
+    "date": "2003-06-14",
+    "sales": 75448366000,
+    "firstWinners": 10,
+    "firstPrize": 1700361100
+   },
+   {
+    "round": 29,
+    "date": "2003-06-21",
+    "sales": 74523120000,
+    "firstWinners": 5,
+    "firstPrize": 3552594000
+   },
+   {
+    "round": 30,
+    "date": "2003-06-28",
+    "sales": 72399690000,
+    "firstWinners": 2,
+    "firstPrize": 8728555500
+   },
+   {
+    "round": 31,
+    "date": "2003-07-05",
+    "sales": 71317306000,
+    "firstWinners": 2,
+    "firstPrize": 8106672900
+   },
+   {
+    "round": 32,
+    "date": "2003-07-12",
+    "sales": 71179198000,
+    "firstWinners": 10,
+    "firstPrize": 1634528300
+   },
+   {
+    "round": 33,
+    "date": "2003-07-19",
+    "sales": 67457252000,
+    "firstWinners": 1,
+    "firstPrize": 14903517600
+   },
+   {
+    "round": 34,
+    "date": "2003-07-26",
+    "sales": 69389894000,
+    "firstWinners": 5,
+    "firstPrize": 3056918000
+   },
+   {
+    "round": 35,
+    "date": "2003-08-02",
+    "sales": 66143062000,
+    "firstWinners": 3,
+    "firstPrize": 5054598200
+   },
+   {
+    "round": 36,
+    "date": "2003-08-09",
+    "sales": 66856686000,
+    "firstWinners": 1,
+    "firstPrize": 16014475800
+   },
+   {
+    "round": 37,
+    "date": "2003-08-16",
+    "sales": 65509794000,
+    "firstWinners": 3,
+    "firstPrize": 4985999400
+   },
+   {
+    "round": 38,
+    "date": "2003-08-23",
+    "sales": 67369284000,
+    "firstWinners": 3,
+    "firstPrize": 5374866400
+   },
+   {
+    "round": 39,
+    "date": "2003-08-30",
+    "sales": 66094476000,
+    "firstWinners": 6,
+    "firstPrize": 2623748800
+   },
+   {
+    "round": 40,
+    "date": "2003-09-06",
+    "sales": 65699086000,
+    "firstWinners": 13,
+    "firstPrize": 1147652400
+   },
+   {
+    "round": 41,
+    "date": "2003-09-13",
+    "sales": 57624562000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 42,
+    "date": "2003-09-20",
+    "sales": 119909740000,
+    "firstWinners": 6,
+    "firstPrize": 6899280100
+   },
+   {
+    "round": 43,
+    "date": "2003-09-27",
+    "sales": 74686296000,
+    "firstWinners": 1,
+    "firstPrize": 17749630800
+   },
+   {
+    "round": 44,
+    "date": "2003-10-04",
+    "sales": 69956950000,
+    "firstWinners": 5,
+    "firstPrize": 3362155800
+   },
+   {
+    "round": 45,
+    "date": "2003-10-11",
+    "sales": 71216232000,
+    "firstWinners": 2,
+    "firstPrize": 8356417800
+   },
+   {
+    "round": 46,
+    "date": "2003-10-18",
+    "sales": 68181568000,
+    "firstWinners": 3,
+    "firstPrize": 5327758800
+   },
+   {
+    "round": 47,
+    "date": "2003-10-25",
+    "sales": 67756694000,
+    "firstWinners": 5,
+    "firstPrize": 3250042400
+   },
+   {
+    "round": 48,
+    "date": "2003-11-01",
+    "sales": 65806832000,
+    "firstWinners": 6,
+    "firstPrize": 2415673600
+   },
+   {
+    "round": 49,
+    "date": "2003-11-08",
+    "sales": 64501142000,
+    "firstWinners": 7,
+    "firstPrize": 1967504600
+   },
+   {
+    "round": 50,
+    "date": "2003-11-15",
+    "sales": 65563234000,
+    "firstWinners": 3,
+    "firstPrize": 5227061400
+   },
+   {
+    "round": 51,
+    "date": "2003-11-22",
+    "sales": 62553680000,
+    "firstWinners": 6,
+    "firstPrize": 2421117000
+   },
+   {
+    "round": 52,
+    "date": "2003-11-29",
+    "sales": 64393446000,
+    "firstWinners": 4,
+    "firstPrize": 3900844900
+   },
+   {
+    "round": 53,
+    "date": "2003-12-06",
+    "sales": 64996010000,
+    "firstWinners": 3,
+    "firstPrize": 5014371000
+   },
+   {
+    "round": 54,
+    "date": "2003-12-13",
+    "sales": 63833006000,
+    "firstWinners": 3,
+    "firstPrize": 5148626600
+   },
+   {
+    "round": 55,
+    "date": "2003-12-20",
+    "sales": 62195764000,
+    "firstWinners": 2,
+    "firstPrize": 7088799600
+   },
+   {
+    "round": 56,
+    "date": "2003-12-27",
+    "sales": 65258932000,
+    "firstWinners": 4,
+    "firstPrize": 3777570900
+   },
+   {
+    "round": 57,
+    "date": "2004-01-03",
+    "sales": 70132666000,
+    "firstWinners": 4,
+    "firstPrize": 4114411900
+   },
+   {
+    "round": 58,
+    "date": "2004-01-10",
+    "sales": 66638136000,
+    "firstWinners": 4,
+    "firstPrize": 3676429200
+   },
+   {
+    "round": 59,
+    "date": "2004-01-17",
+    "sales": 67563698000,
+    "firstWinners": 4,
+    "firstPrize": 4127587300
+   },
+   {
+    "round": 60,
+    "date": "2004-01-24",
+    "sales": 65405936000,
+    "firstWinners": 7,
+    "firstPrize": 2172504600
+   },
+   {
+    "round": 61,
+    "date": "2004-01-31",
+    "sales": 73312994000,
+    "firstWinners": 5,
+    "firstPrize": 3541038800
+   },
+   {
+    "round": 62,
+    "date": "2004-02-07",
+    "sales": 66740368000,
+    "firstWinners": 1,
+    "firstPrize": 15817286400
+   },
+   {
+    "round": 63,
+    "date": "2004-02-14",
+    "sales": 67074050000,
+    "firstWinners": 2,
+    "firstPrize": 7922245500
+   },
+   {
+    "round": 64,
+    "date": "2004-02-21",
+    "sales": 65085154000,
+    "firstWinners": 4,
+    "firstPrize": 3899818000
+   },
+   {
+    "round": 65,
+    "date": "2004-02-28",
+    "sales": 66685144000,
+    "firstWinners": 4,
+    "firstPrize": 3727945800
+   },
+   {
+    "round": 66,
+    "date": "2004-03-06",
+    "sales": 63378796000,
+    "firstWinners": 4,
+    "firstPrize": 3685138200
+   },
+   {
+    "round": 67,
+    "date": "2004-03-13",
+    "sales": 64314872000,
+    "firstWinners": 7,
+    "firstPrize": 2114436500
+   },
+   {
+    "round": 68,
+    "date": "2004-03-20",
+    "sales": 63813236000,
+    "firstWinners": 5,
+    "firstPrize": 2945882100
+   },
+   {
+    "round": 69,
+    "date": "2004-03-27",
+    "sales": 63711302000,
+    "firstWinners": 3,
+    "firstPrize": 4962712200
+   },
+   {
+    "round": 70,
+    "date": "2004-04-03",
+    "sales": 63232578000,
+    "firstWinners": 3,
+    "firstPrize": 5031277800
+   },
+   {
+    "round": 71,
+    "date": "2004-04-10",
+    "sales": 62889986000,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 72,
+    "date": "2004-04-17",
+    "sales": 125651214000,
+    "firstWinners": 13,
+    "firstPrize": 3260524600
+   },
+   {
+    "round": 73,
+    "date": "2004-04-24",
+    "sales": 72635862000,
+    "firstWinners": 6,
+    "firstPrize": 2766662100
+   },
+   {
+    "round": 74,
+    "date": "2004-05-01",
+    "sales": 68902158000,
+    "firstWinners": 3,
+    "firstPrize": 5284949800
+   },
+   {
+    "round": 75,
+    "date": "2004-05-08",
+    "sales": 66138372000,
+    "firstWinners": 4,
+    "firstPrize": 3914616900
+   },
+   {
+    "round": 76,
+    "date": "2004-05-15",
+    "sales": 65083924000,
+    "firstWinners": 2,
+    "firstPrize": 7451022600
+   },
+   {
+    "round": 77,
+    "date": "2004-05-22",
+    "sales": 64420666000,
+    "firstWinners": 3,
+    "firstPrize": 5155758600
+   },
+   {
+    "round": 78,
+    "date": "2004-05-29",
+    "sales": 61257794000,
+    "firstWinners": 4,
+    "firstPrize": 3519850000
+   },
+   {
+    "round": 79,
+    "date": "2004-06-05",
+    "sales": 60390004000,
+    "firstWinners": 4,
+    "firstPrize": 3416443800
+   },
+   {
+    "round": 80,
+    "date": "2004-06-12",
+    "sales": 60160440000,
+    "firstWinners": 1,
+    "firstPrize": 13809540000
+   },
+   {
+    "round": 81,
+    "date": "2004-06-19",
+    "sales": 60983308000,
+    "firstWinners": 5,
+    "firstPrize": 2714288880
+   },
+   {
+    "round": 82,
+    "date": "2004-06-26",
+    "sales": 61302808000,
+    "firstWinners": 1,
+    "firstPrize": 14562494400
+   },
+   {
+    "round": 83,
+    "date": "2004-07-03",
+    "sales": 62512062000,
+    "firstWinners": 2,
+    "firstPrize": 7086948300
+   },
+   {
+    "round": 84,
+    "date": "2004-07-10",
+    "sales": 62780760000,
+    "firstWinners": 2,
+    "firstPrize": 7669779000
+   },
+   {
+    "round": 85,
+    "date": "2004-07-17",
+    "sales": 59451304000,
+    "firstWinners": 4,
+    "firstPrize": 3462109800
+   },
+   {
+    "round": 86,
+    "date": "2004-07-24",
+    "sales": 59835968000,
+    "firstWinners": 1,
+    "firstPrize": 14252186400
+   },
+   {
+    "round": 87,
+    "date": "2004-07-31",
+    "sales": 83793642000,
+    "firstWinners": 11,
+    "firstPrize": 1799358055
+   },
+   {
+    "round": 88,
+    "date": "2004-08-07",
+    "sales": 51910612000,
+    "firstWinners": 4,
+    "firstPrize": 3069709650
+   },
+   {
+    "round": 89,
+    "date": "2004-08-14",
+    "sales": 55102179000,
+    "firstWinners": 3,
+    "firstPrize": 4248321900
+   },
+   {
+    "round": 90,
+    "date": "2004-08-21",
+    "sales": 55493544000,
+    "firstWinners": 4,
+    "firstPrize": 3291435300
+   },
+   {
+    "round": 91,
+    "date": "2004-08-28",
+    "sales": 59061052000,
+    "firstWinners": 4,
+    "firstPrize": 3582902400
+   },
+   {
+    "round": 92,
+    "date": "2004-09-04",
+    "sales": 58296001000,
+    "firstWinners": 11,
+    "firstPrize": 1233270846
+   },
+   {
+    "round": 93,
+    "date": "2004-09-11",
+    "sales": 57236313000,
+    "firstWinners": 6,
+    "firstPrize": 2269178150
+   },
+   {
+    "round": 94,
+    "date": "2004-09-18",
+    "sales": 57144729000,
+    "firstWinners": 6,
+    "firstPrize": 2245339950
+   },
+   {
+    "round": 95,
+    "date": "2004-09-25",
+    "sales": 60077493000,
+    "firstWinners": 8,
+    "firstPrize": 1747741238
+   },
+   {
+    "round": 96,
+    "date": "2004-10-02",
+    "sales": 54217572000,
+    "firstWinners": 7,
+    "firstPrize": 1847133515
+   },
+   {
+    "round": 97,
+    "date": "2004-10-09",
+    "sales": 57713200000,
+    "firstWinners": 9,
+    "firstPrize": 1496214000
+   },
+   {
+    "round": 98,
+    "date": "2004-10-16",
+    "sales": 56231084000,
+    "firstWinners": 4,
+    "firstPrize": 3177972300
+   },
+   {
+    "round": 99,
+    "date": "2004-10-23",
+    "sales": 56207491000,
+    "firstWinners": 6,
+    "firstPrize": 2169219050
+   },
+   {
+    "round": 100,
+    "date": "2004-10-30",
+    "sales": 56561977000,
+    "firstWinners": 4,
+    "firstPrize": 3315315525
+   },
+   {
+    "round": 101,
+    "date": "2004-11-06",
+    "sales": 57585065000,
+    "firstWinners": 5,
+    "firstPrize": 2707297500
+   },
+   {
+    "round": 102,
+    "date": "2004-11-13",
+    "sales": 56937962000,
+    "firstWinners": 9,
+    "firstPrize": 1457153067
+   },
+   {
+    "round": 103,
+    "date": "2004-11-20",
+    "sales": 57420615000,
+    "firstWinners": 8,
+    "firstPrize": 1691589563
+   },
+   {
+    "round": 104,
+    "date": "2004-11-27",
+    "sales": 56533705000,
+    "firstWinners": 2,
+    "firstPrize": 6610743750
+   },
+   {
+    "round": 105,
+    "date": "2004-12-04",
+    "sales": 57479716000,
+    "firstWinners": 4,
+    "firstPrize": 3416781450
+   },
+   {
+    "round": 106,
+    "date": "2004-12-11",
+    "sales": 57384485000,
+    "firstWinners": 16,
+    "firstPrize": 810461157
+   },
+   {
+    "round": 107,
+    "date": "2004-12-18",
+    "sales": 57545202000,
+    "firstWinners": 2,
+    "firstPrize": 6679927800
+   },
+   {
+    "round": 108,
+    "date": "2004-12-25",
+    "sales": 58875228000,
+    "firstWinners": 7,
+    "firstPrize": 1998900772
+   },
+   {
+    "round": 109,
+    "date": "2005-01-01",
+    "sales": 62584098000,
+    "firstWinners": 12,
+    "firstPrize": 1246838200
+   },
+   {
+    "round": 110,
+    "date": "2005-01-08",
+    "sales": 57625490000,
+    "firstWinners": 3,
+    "firstPrize": 4566262000
+   },
+   {
+    "round": 111,
+    "date": "2005-01-15",
+    "sales": 57876999000,
+    "firstWinners": 6,
+    "firstPrize": 2199047450
+   },
+   {
+    "round": 112,
+    "date": "2005-01-22",
+    "sales": 59292005000,
+    "firstWinners": 9,
+    "firstPrize": 1567271167
+   },
+   {
+    "round": 113,
+    "date": "2005-01-29",
+    "sales": 59258248000,
+    "firstWinners": 9,
+    "firstPrize": 1561528934
+   },
+   {
+    "round": 114,
+    "date": "2005-02-05",
+    "sales": 60079401000,
+    "firstWinners": 6,
+    "firstPrize": 2362345050
+   },
+   {
+    "round": 115,
+    "date": "2005-02-12",
+    "sales": 59130557000,
+    "firstWinners": 9,
+    "firstPrize": 1488589567
+   },
+   {
+    "round": 116,
+    "date": "2005-02-19",
+    "sales": 61606084000,
+    "firstWinners": 7,
+    "firstPrize": 1997747315
+   },
+   {
+    "round": 117,
+    "date": "2005-02-26",
+    "sales": 59429610000,
+    "firstWinners": 9,
+    "firstPrize": 1558378334
+   },
+   {
+    "round": 118,
+    "date": "2005-03-05",
+    "sales": 57171934000,
+    "firstWinners": 10,
+    "firstPrize": 1297989720
+   },
+   {
+    "round": 119,
+    "date": "2005-03-12",
+    "sales": 57800632000,
+    "firstWinners": 9,
+    "firstPrize": 1474899400
+   },
+   {
+    "round": 120,
+    "date": "2005-03-19",
+    "sales": 57418983000,
+    "firstWinners": 3,
+    "firstPrize": 4364530300
+   },
+   {
+    "round": 121,
+    "date": "2005-03-26",
+    "sales": 57134544000,
+    "firstWinners": 2,
+    "firstPrize": 6839648100
+   },
+   {
+    "round": 122,
+    "date": "2005-04-02",
+    "sales": 56171704000,
+    "firstWinners": 9,
+    "firstPrize": 1450073800
+   },
+   {
+    "round": 123,
+    "date": "2005-04-09",
+    "sales": 54097448000,
+    "firstWinners": 5,
+    "firstPrize": 2532982680
+   },
+   {
+    "round": 124,
+    "date": "2005-04-16",
+    "sales": 54180838000,
+    "firstWinners": 9,
+    "firstPrize": 1395936267
+   },
+   {
+    "round": 125,
+    "date": "2005-04-23",
+    "sales": 53149705000,
+    "firstWinners": 7,
+    "firstPrize": 1754870786
+   },
+   {
+    "round": 126,
+    "date": "2005-04-30",
+    "sales": 52748965000,
+    "firstWinners": 9,
+    "firstPrize": 1369301500
+   },
+   {
+    "round": 127,
+    "date": "2005-05-07",
+    "sales": 50752603000,
+    "firstWinners": 6,
+    "firstPrize": 1965939150
+   },
+   {
+    "round": 128,
+    "date": "2005-05-14",
+    "sales": 52310392000,
+    "firstWinners": 6,
+    "firstPrize": 2064043100
+   },
+   {
+    "round": 129,
+    "date": "2005-05-21",
+    "sales": 51555754000,
+    "firstWinners": 11,
+    "firstPrize": 1093629655
+   },
+   {
+    "round": 130,
+    "date": "2005-05-28",
+    "sales": 51359012000,
+    "firstWinners": 4,
+    "firstPrize": 3036496650
+   },
+   {
+    "round": 131,
+    "date": "2005-06-04",
+    "sales": 50231773000,
+    "firstWinners": 8,
+    "firstPrize": 1451214488
+   },
+   {
+    "round": 132,
+    "date": "2005-06-11",
+    "sales": 49921897000,
+    "firstWinners": 4,
+    "firstPrize": 2920473525
+   },
+   {
+    "round": 133,
+    "date": "2005-06-18",
+    "sales": 50889926000,
+    "firstWinners": 8,
+    "firstPrize": 1450242600
+   },
+   {
+    "round": 134,
+    "date": "2005-06-25",
+    "sales": 50445575000,
+    "firstWinners": 5,
+    "firstPrize": 2349155100
+   },
+   {
+    "round": 135,
+    "date": "2005-07-02",
+    "sales": 51062672000,
+    "firstWinners": 7,
+    "firstPrize": 1717293515
+   },
+   {
+    "round": 136,
+    "date": "2005-07-09",
+    "sales": 51144633000,
+    "firstWinners": 6,
+    "firstPrize": 1997694150
+   },
+   {
+    "round": 137,
+    "date": "2005-07-16",
+    "sales": 49978654000,
+    "firstWinners": 9,
+    "firstPrize": 1270403467
+   },
+   {
+    "round": 138,
+    "date": "2005-07-23",
+    "sales": 47688450000,
+    "firstWinners": 5,
+    "firstPrize": 2227152000
+   },
+   {
+    "round": 139,
+    "date": "2005-07-30",
+    "sales": 48371085000,
+    "firstWinners": 7,
+    "firstPrize": 1650210215
+   },
+   {
+    "round": 140,
+    "date": "2005-08-06",
+    "sales": 45983464000,
+    "firstWinners": 5,
+    "firstPrize": 2109462840
+   },
+   {
+    "round": 141,
+    "date": "2005-08-13",
+    "sales": 48016958000,
+    "firstWinners": 6,
+    "firstPrize": 1900552400
+   },
+   {
+    "round": 142,
+    "date": "2005-08-20",
+    "sales": 48012844000,
+    "firstWinners": 11,
+    "firstPrize": 1018265564
+   },
+   {
+    "round": 143,
+    "date": "2005-08-27",
+    "sales": 49415357000,
+    "firstWinners": 3,
+    "firstPrize": 3954584700
+   },
+   {
+    "round": 144,
+    "date": "2005-09-03",
+    "sales": 49202521000,
+    "firstWinners": 8,
+    "firstPrize": 1402440413
+   },
+   {
+    "round": 145,
+    "date": "2005-09-10",
+    "sales": 48913832000,
+    "firstWinners": 3,
+    "firstPrize": 3797838200
+   },
+   {
+    "round": 146,
+    "date": "2005-09-17",
+    "sales": 50677555000,
+    "firstWinners": 2,
+    "firstPrize": 6043415250
+   },
+   {
+    "round": 147,
+    "date": "2005-09-24",
+    "sales": 50345605000,
+    "firstWinners": 7,
+    "firstPrize": 1700040215
+   },
+   {
+    "round": 148,
+    "date": "2005-10-01",
+    "sales": 49523247000,
+    "firstWinners": 5,
+    "firstPrize": 2323596420
+   },
+   {
+    "round": 149,
+    "date": "2005-10-08",
+    "sales": 48406950000,
+    "firstWinners": 7,
+    "firstPrize": 1639052143
+   },
+   {
+    "round": 150,
+    "date": "2005-10-15",
+    "sales": 48763778000,
+    "firstWinners": 4,
+    "firstPrize": 2831645850
+   },
+   {
+    "round": 151,
+    "date": "2005-10-22",
+    "sales": 47357067000,
+    "firstWinners": 4,
+    "firstPrize": 2716634025
+   },
+   {
+    "round": 152,
+    "date": "2005-10-29",
+    "sales": 48180334000,
+    "firstWinners": 5,
+    "firstPrize": 2278131840
+   },
+   {
+    "round": 153,
+    "date": "2005-11-05",
+    "sales": 47777735000,
+    "firstWinners": 4,
+    "firstPrize": 2730526125
+   },
+   {
+    "round": 154,
+    "date": "2005-11-12",
+    "sales": 48022386000,
+    "firstWinners": 4,
+    "firstPrize": 2836628700
+   },
+   {
+    "round": 155,
+    "date": "2005-11-19",
+    "sales": 46140202000,
+    "firstWinners": 9,
+    "firstPrize": 1193005734
+   },
+   {
+    "round": 156,
+    "date": "2005-11-26",
+    "sales": 47344584000,
+    "firstWinners": 8,
+    "firstPrize": 1401099900
+   },
+   {
+    "round": 157,
+    "date": "2005-12-03",
+    "sales": 46853365000,
+    "firstWinners": 2,
+    "firstPrize": 5484903750
+   },
+   {
+    "round": 158,
+    "date": "2005-12-10",
+    "sales": 46368888000,
+    "firstWinners": 10,
+    "firstPrize": 1069544340
+   },
+   {
+    "round": 159,
+    "date": "2005-12-17",
+    "sales": 44311926000,
+    "firstWinners": 6,
+    "firstPrize": 1755407300
+   },
+   {
+    "round": 160,
+    "date": "2005-12-24",
+    "sales": 46833239000,
+    "firstWinners": 2,
+    "firstPrize": 5490805350
+   },
+   {
+    "round": 161,
+    "date": "2005-12-31",
+    "sales": 53096453000,
+    "firstWinners": 7,
+    "firstPrize": 1996876272
+   },
+   {
+    "round": 162,
+    "date": "2006-01-07",
+    "sales": 49050086000,
+    "firstWinners": 5,
+    "firstPrize": 2308265760
+   },
+   {
+    "round": 163,
+    "date": "2006-01-14",
+    "sales": 49018952000,
+    "firstWinners": 7,
+    "firstPrize": 1629726515
+   },
+   {
+    "round": 164,
+    "date": "2006-01-21",
+    "sales": 53052119000,
+    "firstWinners": 3,
+    "firstPrize": 4054937900
+   },
+   {
+    "round": 165,
+    "date": "2006-01-28",
+    "sales": 58088118000,
+    "firstWinners": 2,
+    "firstPrize": 6767426700
+   },
+   {
+    "round": 166,
+    "date": "2006-02-04",
+    "sales": 52157466000,
+    "firstWinners": 11,
+    "firstPrize": 1111299982
+   },
+   {
+    "round": 167,
+    "date": "2006-02-11",
+    "sales": 52744392000,
+    "firstWinners": 5,
+    "firstPrize": 2491222920
+   },
+   {
+    "round": 168,
+    "date": "2006-02-18",
+    "sales": 51496212000,
+    "firstWinners": 5,
+    "firstPrize": 2349946920
+   },
+   {
+    "round": 169,
+    "date": "2006-02-25",
+    "sales": 52076183000,
+    "firstWinners": 5,
+    "firstPrize": 2482888380
+   },
+   {
+    "round": 170,
+    "date": "2006-03-04",
+    "sales": 49718245000,
+    "firstWinners": 6,
+    "firstPrize": 1923108250
+   },
+   {
+    "round": 171,
+    "date": "2006-03-11",
+    "sales": 50357474000,
+    "firstWinners": 6,
+    "firstPrize": 1961339700
+   },
+   {
+    "round": 172,
+    "date": "2006-03-18",
+    "sales": 50758266000,
+    "firstWinners": 11,
+    "firstPrize": 1081154073
+   },
+   {
+    "round": 173,
+    "date": "2006-03-25",
+    "sales": 52286521000,
+    "firstWinners": 8,
+    "firstPrize": 1487736788
+   },
+   {
+    "round": 174,
+    "date": "2006-04-01",
+    "sales": 52340568000,
+    "firstWinners": 7,
+    "firstPrize": 1771103058
+   },
+   {
+    "round": 175,
+    "date": "2006-04-08",
+    "sales": 50895147000,
+    "firstWinners": 5,
+    "firstPrize": 2371132620
+   },
+   {
+    "round": 176,
+    "date": "2006-04-15",
+    "sales": 50488528000,
+    "firstWinners": 5,
+    "firstPrize": 2314663080
+   },
+   {
+    "round": 177,
+    "date": "2006-04-22",
+    "sales": 50480325000,
+    "firstWinners": 7,
+    "firstPrize": 1693285500
+   },
+   {
+    "round": 178,
+    "date": "2006-04-29",
+    "sales": 49582758000,
+    "firstWinners": 5,
+    "firstPrize": 2254621080
+   },
+   {
+    "round": 179,
+    "date": "2006-05-06",
+    "sales": 47291694000,
+    "firstWinners": 10,
+    "firstPrize": 1081093920
+   },
+   {
+    "round": 180,
+    "date": "2006-05-13",
+    "sales": 48895477000,
+    "firstWinners": 2,
+    "firstPrize": 5763371550
+   },
+   {
+    "round": 181,
+    "date": "2006-05-20",
+    "sales": 49124446000,
+    "firstWinners": 6,
+    "firstPrize": 1941763300
+   },
+   {
+    "round": 182,
+    "date": "2006-05-27",
+    "sales": 47222594000,
+    "firstWinners": 3,
+    "firstPrize": 3721439400
+   },
+   {
+    "round": 183,
+    "date": "2006-06-03",
+    "sales": 45938460000,
+    "firstWinners": 6,
+    "firstPrize": 1777221500
+   },
+   {
+    "round": 184,
+    "date": "2006-06-10",
+    "sales": 45503351000,
+    "firstWinners": 6,
+    "firstPrize": 1747753050
+   },
+   {
+    "round": 185,
+    "date": "2006-06-17",
+    "sales": 45783088000,
+    "firstWinners": 3,
+    "firstPrize": 3522485800
+   },
+   {
+    "round": 186,
+    "date": "2006-06-24",
+    "sales": 45484428000,
+    "firstWinners": 9,
+    "firstPrize": 1187882600
+   },
+   {
+    "round": 187,
+    "date": "2006-07-01",
+    "sales": 45855961000,
+    "firstWinners": 7,
+    "firstPrize": 1544733900
+   },
+   {
+    "round": 188,
+    "date": "2006-07-08",
+    "sales": 45176242000,
+    "firstWinners": 3,
+    "firstPrize": 3501405200
+   },
+   {
+    "round": 189,
+    "date": "2006-07-15",
+    "sales": 43650551000,
+    "firstWinners": 3,
+    "firstPrize": 3461775100
+   },
+   {
+    "round": 190,
+    "date": "2006-07-22",
+    "sales": 44864459000,
+    "firstWinners": 6,
+    "firstPrize": 1784159450
+   },
+   {
+    "round": 191,
+    "date": "2006-07-29",
+    "sales": 44534869000,
+    "firstWinners": 4,
+    "firstPrize": 2577114675
+   },
+   {
+    "round": 192,
+    "date": "2006-08-05",
+    "sales": 42035065000,
+    "firstWinners": 4,
+    "firstPrize": 2445348375
+   },
+   {
+    "round": 193,
+    "date": "2006-08-12",
+    "sales": 43788477000,
+    "firstWinners": 3,
+    "firstPrize": 3404449700
+   },
+   {
+    "round": 194,
+    "date": "2006-08-19",
+    "sales": 44511515000,
+    "firstWinners": 4,
+    "firstPrize": 2650567875
+   },
+   {
+    "round": 195,
+    "date": "2006-08-26",
+    "sales": 44374725000,
+    "firstWinners": 11,
+    "firstPrize": 918992591
+   },
+   {
+    "round": 196,
+    "date": "2006-09-02",
+    "sales": 45773496000,
+    "firstWinners": 15,
+    "firstPrize": 727876520
+   },
+   {
+    "round": 197,
+    "date": "2006-09-09",
+    "sales": 45993306000,
+    "firstWinners": 6,
+    "firstPrize": 1803018300
+   },
+   {
+    "round": 198,
+    "date": "2006-09-16",
+    "sales": 45614021000,
+    "firstWinners": 6,
+    "firstPrize": 1797855050
+   },
+   {
+    "round": 199,
+    "date": "2006-09-23",
+    "sales": 45021068000,
+    "firstWinners": 2,
+    "firstPrize": 5344252200
+   },
+   {
+    "round": 200,
+    "date": "2006-09-30",
+    "sales": 46640423000,
+    "firstWinners": 8,
+    "firstPrize": 1344616613
+   },
+   {
+    "round": 201,
+    "date": "2006-10-07",
+    "sales": 42254768000,
+    "firstWinners": 1,
+    "firstPrize": 9719465400
+   },
+   {
+    "round": 202,
+    "date": "2006-10-14",
+    "sales": 48304034000,
+    "firstWinners": 6,
+    "firstPrize": 1893391700
+   },
+   {
+    "round": 203,
+    "date": "2006-10-21",
+    "sales": 47033359000,
+    "firstWinners": 5,
+    "firstPrize": 2164564740
+   },
+   {
+    "round": 204,
+    "date": "2006-10-28",
+    "sales": 46077750000,
+    "firstWinners": 8,
+    "firstPrize": 1358347125
+   },
+   {
+    "round": 205,
+    "date": "2006-11-04",
+    "sales": 46330516000,
+    "firstWinners": 6,
+    "firstPrize": 1835221800
+   },
+   {
+    "round": 206,
+    "date": "2006-11-11",
+    "sales": 44326979000,
+    "firstWinners": 5,
+    "firstPrize": 2032859340
+   },
+   {
+    "round": 207,
+    "date": "2006-11-18",
+    "sales": 45282336000,
+    "firstWinners": 5,
+    "firstPrize": 2104673760
+   },
+   {
+    "round": 208,
+    "date": "2006-11-25",
+    "sales": 45516378000,
+    "firstWinners": 6,
+    "firstPrize": 1760767400
+   },
+   {
+    "round": 209,
+    "date": "2006-12-02",
+    "sales": 43753377000,
+    "firstWinners": 6,
+    "firstPrize": 1660896350
+   },
+   {
+    "round": 210,
+    "date": "2006-12-09",
+    "sales": 44757963000,
+    "firstWinners": 2,
+    "firstPrize": 5139085950
+   },
+   {
+    "round": 211,
+    "date": "2006-12-16",
+    "sales": 45332675000,
+    "firstWinners": 10,
+    "firstPrize": 1035800250
+   },
+   {
+    "round": 212,
+    "date": "2006-12-23",
+    "sales": 46139120000,
+    "firstWinners": 4,
+    "firstPrize": 2660747250
+   },
+   {
+    "round": 213,
+    "date": "2006-12-30",
+    "sales": 48745094000,
+    "firstWinners": 8,
+    "firstPrize": 1376678025
+   },
+   {
+    "round": 214,
+    "date": "2007-01-06",
+    "sales": 49195740000,
+    "firstWinners": 8,
+    "firstPrize": 1406980875
+   },
+   {
+    "round": 215,
+    "date": "2007-01-13",
+    "sales": 47675761000,
+    "firstWinners": 7,
+    "firstPrize": 1587689615
+   },
+   {
+    "round": 216,
+    "date": "2007-01-20",
+    "sales": 48342018000,
+    "firstWinners": 13,
+    "firstPrize": 848506108
+   },
+   {
+    "round": 217,
+    "date": "2007-01-27",
+    "sales": 48260644000,
+    "firstWinners": 7,
+    "firstPrize": 1611246172
+   },
+   {
+    "round": 218,
+    "date": "2007-02-03",
+    "sales": 47018314000,
+    "firstWinners": 4,
+    "firstPrize": 2779075800
+   },
+   {
+    "round": 219,
+    "date": "2007-02-10",
+    "sales": 46903745000,
+    "firstWinners": 9,
+    "firstPrize": 1208409167
+   },
+   {
+    "round": 220,
+    "date": "2007-02-17",
+    "sales": 50383399000,
+    "firstWinners": 6,
+    "firstPrize": 1958094950
+   },
+   {
+    "round": 221,
+    "date": "2007-02-24",
+    "sales": 47674135000,
+    "firstWinners": 6,
+    "firstPrize": 1800104250
+   },
+   {
+    "round": 222,
+    "date": "2007-03-03",
+    "sales": 47735197000,
+    "firstWinners": 5,
+    "firstPrize": 2275193820
+   },
+   {
+    "round": 223,
+    "date": "2007-03-10",
+    "sales": 46036874000,
+    "firstWinners": 7,
+    "firstPrize": 1498170600
+   },
+   {
+    "round": 224,
+    "date": "2007-03-17",
+    "sales": 46435109000,
+    "firstWinners": 6,
+    "firstPrize": 1808969950
+   },
+   {
+    "round": 225,
+    "date": "2007-03-24",
+    "sales": 46352016000,
+    "firstWinners": 6,
+    "firstPrize": 1777201800
+   },
+   {
+    "round": 226,
+    "date": "2007-03-31",
+    "sales": 45145643000,
+    "firstWinners": 6,
+    "firstPrize": 1744100150
+   },
+   {
+    "round": 227,
+    "date": "2007-04-07",
+    "sales": 44444776000,
+    "firstWinners": 2,
+    "firstPrize": 5253542400
+   },
+   {
+    "round": 228,
+    "date": "2007-04-14",
+    "sales": 44764100000,
+    "firstWinners": 9,
+    "firstPrize": 1146700334
+   },
+   {
+    "round": 229,
+    "date": "2007-04-21",
+    "sales": 44762989000,
+    "firstWinners": 7,
+    "firstPrize": 1451441100
+   },
+   {
+    "round": 230,
+    "date": "2007-04-28",
+    "sales": 44191351000,
+    "firstWinners": 8,
+    "firstPrize": 1292929163
+   },
+   {
+    "round": 231,
+    "date": "2007-05-05",
+    "sales": 42355627000,
+    "firstWinners": 9,
+    "firstPrize": 1088365900
+   },
+   {
+    "round": 232,
+    "date": "2007-05-12",
+    "sales": 43564632000,
+    "firstWinners": 9,
+    "firstPrize": 1110918400
+   },
+   {
+    "round": 233,
+    "date": "2007-05-19",
+    "sales": 43516805000,
+    "firstWinners": 10,
+    "firstPrize": 999153750
+   },
+   {
+    "round": 234,
+    "date": "2007-05-26",
+    "sales": 42814085000,
+    "firstWinners": 4,
+    "firstPrize": 2519743875
+   },
+   {
+    "round": 235,
+    "date": "2007-06-02",
+    "sales": 43347391000,
+    "firstWinners": 3,
+    "firstPrize": 3433330100
+   },
+   {
+    "round": 236,
+    "date": "2007-06-09",
+    "sales": 42941871000,
+    "firstWinners": 2,
+    "firstPrize": 5030040150
+   },
+   {
+    "round": 237,
+    "date": "2007-06-16",
+    "sales": 43358287000,
+    "firstWinners": 7,
+    "firstPrize": 1440630729
+   },
+   {
+    "round": 238,
+    "date": "2007-06-23",
+    "sales": 42952477000,
+    "firstWinners": 9,
+    "firstPrize": 1121660567
+   },
+   {
+    "round": 239,
+    "date": "2007-06-30",
+    "sales": 43296565000,
+    "firstWinners": 9,
+    "firstPrize": 1134140167
+   },
+   {
+    "round": 240,
+    "date": "2007-07-07",
+    "sales": 43603443000,
+    "firstWinners": 2,
+    "firstPrize": 5098251450
+   },
+   {
+    "round": 241,
+    "date": "2007-07-14",
+    "sales": 43246894000,
+    "firstWinners": 4,
+    "firstPrize": 2552016300
+   },
+   {
+    "round": 242,
+    "date": "2007-07-21",
+    "sales": 42679760000,
+    "firstWinners": 8,
+    "firstPrize": 1234542375
+   },
+   {
+    "round": 243,
+    "date": "2007-07-28",
+    "sales": 41304830000,
+    "firstWinners": 4,
+    "firstPrize": 2408850000
+   },
+   {
+    "round": 244,
+    "date": "2007-08-04",
+    "sales": 39411047000,
+    "firstWinners": 1,
+    "firstPrize": 9121583100
+   },
+   {
+    "round": 245,
+    "date": "2007-08-11",
+    "sales": 41854623000,
+    "firstWinners": 7,
+    "firstPrize": 1382583129
+   },
+   {
+    "round": 246,
+    "date": "2007-08-18",
+    "sales": 41453154000,
+    "firstWinners": 5,
+    "firstPrize": 1911774240
+   },
+   {
+    "round": 247,
+    "date": "2007-08-25",
+    "sales": 42231698000,
+    "firstWinners": 6,
+    "firstPrize": 1669313900
+   },
+   {
+    "round": 248,
+    "date": "2007-09-01",
+    "sales": 42348403000,
+    "firstWinners": 8,
+    "firstPrize": 1227479363
+   },
+   {
+    "round": 249,
+    "date": "2007-09-08",
+    "sales": 42539134000,
+    "firstWinners": 6,
+    "firstPrize": 1663568700
+   },
+   {
+    "round": 250,
+    "date": "2007-09-15",
+    "sales": 42122808000,
+    "firstWinners": 5,
+    "firstPrize": 1994726280
+   },
+   {
+    "round": 251,
+    "date": "2007-09-22",
+    "sales": 44493014000,
+    "firstWinners": 8,
+    "firstPrize": 1282616400
+   },
+   {
+    "round": 252,
+    "date": "2007-09-29",
+    "sales": 41207920000,
+    "firstWinners": 7,
+    "firstPrize": 1391089715
+   },
+   {
+    "round": 253,
+    "date": "2007-10-06",
+    "sales": 42309347000,
+    "firstWinners": 4,
+    "firstPrize": 2466189525
+   },
+   {
+    "round": 254,
+    "date": "2007-10-13",
+    "sales": 42259113000,
+    "firstWinners": 1,
+    "firstPrize": 9741015900
+   },
+   {
+    "round": 255,
+    "date": "2007-10-20",
+    "sales": 41425341000,
+    "firstWinners": 6,
+    "firstPrize": 1598618550
+   },
+   {
+    "round": 256,
+    "date": "2007-10-27",
+    "sales": 41996580000,
+    "firstWinners": 2,
+    "firstPrize": 4891017000
+   },
+   {
+    "round": 257,
+    "date": "2007-11-03",
+    "sales": 41433637000,
+    "firstWinners": 4,
+    "firstPrize": 2391377025
+   },
+   {
+    "round": 258,
+    "date": "2007-11-10",
+    "sales": 41364428000,
+    "firstWinners": 4,
+    "firstPrize": 2426434350
+   },
+   {
+    "round": 259,
+    "date": "2007-11-17",
+    "sales": 40905570000,
+    "firstWinners": 2,
+    "firstPrize": 4838533500
+   },
+   {
+    "round": 260,
+    "date": "2007-11-24",
+    "sales": 40140211000,
+    "firstWinners": 4,
+    "firstPrize": 2310085575
+   },
+   {
+    "round": 261,
+    "date": "2007-12-01",
+    "sales": 20607538165,
+    "firstWinners": 3,
+    "firstPrize": 3192299100
+   },
+   {
+    "round": 262,
+    "date": "2007-12-08",
+    "sales": 19616145108,
+    "firstWinners": 2,
+    "firstPrize": 4518741600
+   },
+   {
+    "round": 263,
+    "date": "2007-12-15",
+    "sales": 19838573376,
+    "firstWinners": 6,
+    "firstPrize": 1551704900
+   },
+   {
+    "round": 264,
+    "date": "2007-12-22",
+    "sales": 19891628839,
+    "firstWinners": 7,
+    "firstPrize": 1344889200
+   },
+   {
+    "round": 265,
+    "date": "2007-12-29",
+    "sales": 20456996760,
+    "firstWinners": 8,
+    "firstPrize": 1200838575
+   },
+   {
+    "round": 266,
+    "date": "2008-01-05",
+    "sales": 20968541748,
+    "firstWinners": 3,
+    "firstPrize": 3207211700
+   },
+   {
+    "round": 267,
+    "date": "2008-01-12",
+    "sales": 20917945142,
+    "firstWinners": 3,
+    "firstPrize": 3257663300
+   },
+   {
+    "round": 268,
+    "date": "2008-01-19",
+    "sales": 20606907527,
+    "firstWinners": 7,
+    "firstPrize": 1350954515
+   },
+   {
+    "round": 269,
+    "date": "2008-01-26",
+    "sales": 20678823238,
+    "firstWinners": 5,
+    "firstPrize": 1961399940
+   },
+   {
+    "round": 270,
+    "date": "2008-02-02",
+    "sales": 20922697382,
+    "firstWinners": 5,
+    "firstPrize": 1927830060
+   },
+   {
+    "round": 271,
+    "date": "2008-02-09",
+    "sales": 20439844690,
+    "firstWinners": 6,
+    "firstPrize": 1565918150
+   },
+   {
+    "round": 272,
+    "date": "2008-02-16",
+    "sales": 21655346728,
+    "firstWinners": 9,
+    "firstPrize": 1104622800
+   },
+   {
+    "round": 273,
+    "date": "2008-02-23",
+    "sales": 21408110043,
+    "firstWinners": 3,
+    "firstPrize": 3339543100
+   },
+   {
+    "round": 274,
+    "date": "2008-03-01",
+    "sales": 21315887777,
+    "firstWinners": 4,
+    "firstPrize": 2505085575
+   },
+   {
+    "round": 275,
+    "date": "2008-03-08",
+    "sales": 21164930256,
+    "firstWinners": 1,
+    "firstPrize": 10044066900
+   },
+   {
+    "round": 276,
+    "date": "2008-03-15",
+    "sales": 21283853797,
+    "firstWinners": 3,
+    "firstPrize": 3312569000
+   },
+   {
+    "round": 277,
+    "date": "2008-03-22",
+    "sales": 20934378077,
+    "firstWinners": 3,
+    "firstPrize": 3272627800
+   },
+   {
+    "round": 278,
+    "date": "2008-03-29",
+    "sales": 20544124135,
+    "firstWinners": 3,
+    "firstPrize": 3186530000
+   },
+   {
+    "round": 279,
+    "date": "2008-04-05",
+    "sales": 20565294210,
+    "firstWinners": 5,
+    "firstPrize": 1914205320
+   },
+   {
+    "round": 280,
+    "date": "2008-04-12",
+    "sales": 20337006236,
+    "firstWinners": 7,
+    "firstPrize": 1355258529
+   },
+   {
+    "round": 281,
+    "date": "2008-04-19",
+    "sales": 20400303156,
+    "firstWinners": 6,
+    "firstPrize": 1554683200
+   },
+   {
+    "round": 282,
+    "date": "2008-04-26",
+    "sales": 20525598068,
+    "firstWinners": 7,
+    "firstPrize": 1322052643
+   },
+   {
+    "round": 283,
+    "date": "2008-05-03",
+    "sales": 20066701007,
+    "firstWinners": 3,
+    "firstPrize": 3137224600
+   },
+   {
+    "round": 284,
+    "date": "2008-05-10",
+    "sales": 19886739840,
+    "firstWinners": 3,
+    "firstPrize": 3117640300
+   },
+   {
+    "round": 285,
+    "date": "2008-05-17",
+    "sales": 20182483433,
+    "firstWinners": 3,
+    "firstPrize": 3164370100
+   },
+   {
+    "round": 286,
+    "date": "2008-05-24",
+    "sales": 20472256211,
+    "firstWinners": 3,
+    "firstPrize": 3236566300
+   },
+   {
+    "round": 287,
+    "date": "2008-05-31",
+    "sales": 20311748165,
+    "firstWinners": 7,
+    "firstPrize": 1328657100
+   },
+   {
+    "round": 288,
+    "date": "2008-06-07",
+    "sales": 19985090526,
+    "firstWinners": 4,
+    "firstPrize": 2357261550
+   },
+   {
+    "round": 289,
+    "date": "2008-06-14",
+    "sales": 19703321500,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 290,
+    "date": "2008-06-21",
+    "sales": 49362920581,
+    "firstWinners": 13,
+    "firstPrize": 2149214424
+   },
+   {
+    "round": 291,
+    "date": "2008-06-28",
+    "sales": 22071714263,
+    "firstWinners": 7,
+    "firstPrize": 1450585200
+   },
+   {
+    "round": 292,
+    "date": "2008-07-05",
+    "sales": 21697345728,
+    "firstWinners": 14,
+    "firstPrize": 720373950
+   },
+   {
+    "round": 293,
+    "date": "2008-07-12",
+    "sales": 21199876103,
+    "firstWinners": 6,
+    "firstPrize": 1656764400
+   },
+   {
+    "round": 294,
+    "date": "2008-07-19",
+    "sales": 20781906500,
+    "firstWinners": 4,
+    "firstPrize": 2406504975
+   },
+   {
+    "round": 295,
+    "date": "2008-07-26",
+    "sales": 21124067500,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 296,
+    "date": "2008-08-02",
+    "sales": 31688949500,
+    "firstWinners": 8,
+    "firstPrize": 3066088275
+   },
+   {
+    "round": 297,
+    "date": "2008-08-09",
+    "sales": 21820737500,
+    "firstWinners": 2,
+    "firstPrize": 5056668750
+   },
+   {
+    "round": 298,
+    "date": "2008-08-16",
+    "sales": 21575837500,
+    "firstWinners": 1,
+    "firstPrize": 9909778500
+   },
+   {
+    "round": 299,
+    "date": "2008-08-23",
+    "sales": 22231954500,
+    "firstWinners": 7,
+    "firstPrize": 1483772529
+   },
+   {
+    "round": 300,
+    "date": "2008-08-30",
+    "sales": 22232523500,
+    "firstWinners": 12,
+    "firstPrize": 836092425
+   },
+   {
+    "round": 301,
+    "date": "2008-09-06",
+    "sales": 22188588500,
+    "firstWinners": 7,
+    "firstPrize": 1447385015
+   },
+   {
+    "round": 302,
+    "date": "2008-09-13",
+    "sales": 23191302500,
+    "firstWinners": 2,
+    "firstPrize": 5472167250
+   },
+   {
+    "round": 303,
+    "date": "2008-09-20",
+    "sales": 21420880000,
+    "firstWinners": 6,
+    "firstPrize": 1672749000
+   },
+   {
+    "round": 304,
+    "date": "2008-09-27",
+    "sales": 21579326500,
+    "firstWinners": 6,
+    "firstPrize": 1661646150
+   },
+   {
+    "round": 305,
+    "date": "2008-10-04",
+    "sales": 21980329500,
+    "firstWinners": 5,
+    "firstPrize": 2008210140
+   },
+   {
+    "round": 306,
+    "date": "2008-10-11",
+    "sales": 22210731000,
+    "firstWinners": 5,
+    "firstPrize": 2102669520
+   },
+   {
+    "round": 307,
+    "date": "2008-10-18",
+    "sales": 21940495000,
+    "firstWinners": 4,
+    "firstPrize": 2587643250
+   },
+   {
+    "round": 308,
+    "date": "2008-10-25",
+    "sales": 21669708000,
+    "firstWinners": 1,
+    "firstPrize": 10232872800
+   },
+   {
+    "round": 309,
+    "date": "2008-11-01",
+    "sales": 22078764000,
+    "firstWinners": 11,
+    "firstPrize": 901622946
+   },
+   {
+    "round": 310,
+    "date": "2008-11-08",
+    "sales": 21859041000,
+    "firstWinners": 8,
+    "firstPrize": 1296713325
+   },
+   {
+    "round": 311,
+    "date": "2008-11-15",
+    "sales": 21604607500,
+    "firstWinners": 8,
+    "firstPrize": 1237691063
+   },
+   {
+    "round": 312,
+    "date": "2008-11-22",
+    "sales": 21127695500,
+    "firstWinners": 15,
+    "firstPrize": 629017820
+   },
+   {
+    "round": 313,
+    "date": "2008-11-29",
+    "sales": 21836048000,
+    "firstWinners": 6,
+    "firstPrize": 1715422800
+   },
+   {
+    "round": 314,
+    "date": "2008-12-06",
+    "sales": 21164047000,
+    "firstWinners": 6,
+    "firstPrize": 1660512200
+   },
+   {
+    "round": 315,
+    "date": "2008-12-13",
+    "sales": 22169590000,
+    "firstWinners": 8,
+    "firstPrize": 1308728625
+   },
+   {
+    "round": 316,
+    "date": "2008-12-20",
+    "sales": 22036884000,
+    "firstWinners": 6,
+    "firstPrize": 1673586400
+   },
+   {
+    "round": 317,
+    "date": "2008-12-27",
+    "sales": 22067557000,
+    "firstWinners": 4,
+    "firstPrize": 2576258550
+   },
+   {
+    "round": 318,
+    "date": "2009-01-03",
+    "sales": 23331864000,
+    "firstWinners": 9,
+    "firstPrize": 1207436600
+   },
+   {
+    "round": 319,
+    "date": "2009-01-10",
+    "sales": 22717591500,
+    "firstWinners": 5,
+    "firstPrize": 2135659380
+   },
+   {
+    "round": 320,
+    "date": "2009-01-17",
+    "sales": 23329943000,
+    "firstWinners": 2,
+    "firstPrize": 5513067900
+   },
+   {
+    "round": 321,
+    "date": "2009-01-24",
+    "sales": 25308991000,
+    "firstWinners": 6,
+    "firstPrize": 1959136100
+   },
+   {
+    "round": 322,
+    "date": "2009-01-31",
+    "sales": 24474147000,
+    "firstWinners": 6,
+    "firstPrize": 1904544700
+   },
+   {
+    "round": 323,
+    "date": "2009-02-07",
+    "sales": 24604738500,
+    "firstWinners": 8,
+    "firstPrize": 1461025388
+   },
+   {
+    "round": 324,
+    "date": "2009-02-14",
+    "sales": 23994158500,
+    "firstWinners": 6,
+    "firstPrize": 1865130350
+   },
+   {
+    "round": 325,
+    "date": "2009-02-21",
+    "sales": 23318489500,
+    "firstWinners": 6,
+    "firstPrize": 1806122450
+   },
+   {
+    "round": 326,
+    "date": "2009-02-28",
+    "sales": 23612275500,
+    "firstWinners": 6,
+    "firstPrize": 1832134550
+   },
+   {
+    "round": 327,
+    "date": "2009-03-07",
+    "sales": 22895780000,
+    "firstWinners": 12,
+    "firstPrize": 882674750
+   },
+   {
+    "round": 328,
+    "date": "2009-03-14",
+    "sales": 23658494000,
+    "firstWinners": 6,
+    "firstPrize": 1819795900
+   },
+   {
+    "round": 329,
+    "date": "2009-03-21",
+    "sales": 23599252000,
+    "firstWinners": 6,
+    "firstPrize": 1830391200
+   },
+   {
+    "round": 330,
+    "date": "2009-03-28",
+    "sales": 22929748000,
+    "firstWinners": 9,
+    "firstPrize": 1162280200
+   },
+   {
+    "round": 331,
+    "date": "2009-04-04",
+    "sales": 23320733500,
+    "firstWinners": 5,
+    "firstPrize": 2165902620
+   },
+   {
+    "round": 332,
+    "date": "2009-04-11",
+    "sales": 23021278500,
+    "firstWinners": 8,
+    "firstPrize": 1359448388
+   },
+   {
+    "round": 333,
+    "date": "2009-04-18",
+    "sales": 23009535000,
+    "firstWinners": 7,
+    "firstPrize": 1550987143
+   },
+   {
+    "round": 334,
+    "date": "2009-04-25",
+    "sales": 22219828000,
+    "firstWinners": 7,
+    "firstPrize": 1523002972
+   },
+   {
+    "round": 335,
+    "date": "2009-05-02",
+    "sales": 21988739000,
+    "firstWinners": 5,
+    "firstPrize": 2037492480
+   },
+   {
+    "round": 336,
+    "date": "2009-05-09",
+    "sales": 21534666500,
+    "firstWinners": 6,
+    "firstPrize": 1685632650
+   },
+   {
+    "round": 337,
+    "date": "2009-05-16",
+    "sales": 21716233500,
+    "firstWinners": 8,
+    "firstPrize": 1257500513
+   },
+   {
+    "round": 338,
+    "date": "2009-05-23",
+    "sales": 21568010000,
+    "firstWinners": 3,
+    "firstPrize": 3383431000
+   },
+   {
+    "round": 339,
+    "date": "2009-05-30",
+    "sales": 21017820000,
+    "firstWinners": 9,
+    "firstPrize": 1096778334
+   },
+   {
+    "round": 340,
+    "date": "2009-06-06",
+    "sales": 21446060500,
+    "firstWinners": 7,
+    "firstPrize": 1439393186
+   },
+   {
+    "round": 341,
+    "date": "2009-06-13",
+    "sales": 22361224000,
+    "firstWinners": 7,
+    "firstPrize": 1497207772
+   },
+   {
+    "round": 342,
+    "date": "2009-06-20",
+    "sales": 21891094000,
+    "firstWinners": 3,
+    "firstPrize": 3454095800
+   },
+   {
+    "round": 343,
+    "date": "2009-06-27",
+    "sales": 21828230000,
+    "firstWinners": 6,
+    "firstPrize": 1717153000
+   },
+   {
+    "round": 344,
+    "date": "2009-07-04",
+    "sales": 21919443000,
+    "firstWinners": 7,
+    "firstPrize": 1467106543
+   },
+   {
+    "round": 345,
+    "date": "2009-07-11",
+    "sales": 21765468500,
+    "firstWinners": 2,
+    "firstPrize": 5203577550
+   },
+   {
+    "round": 346,
+    "date": "2009-07-18",
+    "sales": 21431194500,
+    "firstWinners": 5,
+    "firstPrize": 2017727340
+   },
+   {
+    "round": 347,
+    "date": "2009-07-25",
+    "sales": 22109870000,
+    "firstWinners": 7,
+    "firstPrize": 1456624286
+   },
+   {
+    "round": 348,
+    "date": "2009-08-01",
+    "sales": 21393155000,
+    "firstWinners": 3,
+    "firstPrize": 3299994000
+   },
+   {
+    "round": 349,
+    "date": "2009-08-08",
+    "sales": 21716935000,
+    "firstWinners": 3,
+    "firstPrize": 3353209000
+   },
+   {
+    "round": 350,
+    "date": "2009-08-15",
+    "sales": 21340547000,
+    "firstWinners": 9,
+    "firstPrize": 1101052467
+   },
+   {
+    "round": 351,
+    "date": "2009-08-22",
+    "sales": 21973746000,
+    "firstWinners": 4,
+    "firstPrize": 2583357150
+   },
+   {
+    "round": 352,
+    "date": "2009-08-29",
+    "sales": 22359772500,
+    "firstWinners": 6,
+    "firstPrize": 1732858250
+   },
+   {
+    "round": 353,
+    "date": "2009-09-05",
+    "sales": 22276462500,
+    "firstWinners": 2,
+    "firstPrize": 5290838250
+   },
+   {
+    "round": 354,
+    "date": "2009-09-12",
+    "sales": 22354844500,
+    "firstWinners": 5,
+    "firstPrize": 2124464340
+   },
+   {
+    "round": 355,
+    "date": "2009-09-19",
+    "sales": 22508525000,
+    "firstWinners": 5,
+    "firstPrize": 2145424800
+   },
+   {
+    "round": 356,
+    "date": "2009-09-26",
+    "sales": 22342479000,
+    "firstWinners": 9,
+    "firstPrize": 1157185267
+   },
+   {
+    "round": 357,
+    "date": "2009-10-03",
+    "sales": 22616204500,
+    "firstWinners": 2,
+    "firstPrize": 5313394350
+   },
+   {
+    "round": 358,
+    "date": "2009-10-10",
+    "sales": 22825914500,
+    "firstWinners": 3,
+    "firstPrize": 3472654900
+   },
+   {
+    "round": 359,
+    "date": "2009-10-17",
+    "sales": 22644128000,
+    "firstWinners": 8,
+    "firstPrize": 1286712600
+   },
+   {
+    "round": 360,
+    "date": "2009-10-24",
+    "sales": 22859516000,
+    "firstWinners": 3,
+    "firstPrize": 3566716200
+   },
+   {
+    "round": 361,
+    "date": "2009-10-31",
+    "sales": 22531338000,
+    "firstWinners": 7,
+    "firstPrize": 1473115115
+   },
+   {
+    "round": 362,
+    "date": "2009-11-07",
+    "sales": 22168181500,
+    "firstWinners": 6,
+    "firstPrize": 1729424650
+   },
+   {
+    "round": 363,
+    "date": "2009-11-14",
+    "sales": 22431974000,
+    "firstWinners": 4,
+    "firstPrize": 2615910600
+   },
+   {
+    "round": 364,
+    "date": "2009-11-21",
+    "sales": 22096002000,
+    "firstWinners": 4,
+    "firstPrize": 2531914800
+   },
+   {
+    "round": 365,
+    "date": "2009-11-28",
+    "sales": 22903033000,
+    "firstWinners": 1,
+    "firstPrize": 10697716800
+   },
+   {
+    "round": 366,
+    "date": "2009-12-05",
+    "sales": 22981083000,
+    "firstWinners": 2,
+    "firstPrize": 5351553900
+   },
+   {
+    "round": 367,
+    "date": "2009-12-12",
+    "sales": 23229653500,
+    "firstWinners": 7,
+    "firstPrize": 1581736586
+   },
+   {
+    "round": 368,
+    "date": "2009-12-19",
+    "sales": 21873023000,
+    "firstWinners": 7,
+    "firstPrize": 1465825115
+   },
+   {
+    "round": 369,
+    "date": "2009-12-26",
+    "sales": 23358137500,
+    "firstWinners": 6,
+    "firstPrize": 1842177750
+   },
+   {
+    "round": 370,
+    "date": "2010-01-02",
+    "sales": 24881326000,
+    "firstWinners": 7,
+    "firstPrize": 1678941943
+   },
+   {
+    "round": 371,
+    "date": "2010-01-09",
+    "sales": 22921583000,
+    "firstWinners": 7,
+    "firstPrize": 1524130543
+   },
+   {
+    "round": 372,
+    "date": "2010-01-16",
+    "sales": 23083533000,
+    "firstWinners": 9,
+    "firstPrize": 1192593200
+   },
+   {
+    "round": 373,
+    "date": "2010-01-23",
+    "sales": 23547532500,
+    "firstWinners": 4,
+    "firstPrize": 2791801125
+   },
+   {
+    "round": 374,
+    "date": "2010-01-30",
+    "sales": 24040659500,
+    "firstWinners": 2,
+    "firstPrize": 5528717850
+   },
+   {
+    "round": 375,
+    "date": "2010-02-06",
+    "sales": 23932469000,
+    "firstWinners": 7,
+    "firstPrize": 1581284058
+   },
+   {
+    "round": 376,
+    "date": "2010-02-13",
+    "sales": 25328548000,
+    "firstWinners": 6,
+    "firstPrize": 1956915800
+   },
+   {
+    "round": 377,
+    "date": "2010-02-20",
+    "sales": 24609217000,
+    "firstWinners": 3,
+    "firstPrize": 3912085400
+   },
+   {
+    "round": 378,
+    "date": "2010-02-27",
+    "sales": 24433482000,
+    "firstWinners": 5,
+    "firstPrize": 2317698240
+   },
+   {
+    "round": 379,
+    "date": "2010-03-06",
+    "sales": 23768842500,
+    "firstWinners": 7,
+    "firstPrize": 1598999786
+   },
+   {
+    "round": 380,
+    "date": "2010-03-13",
+    "sales": 23582185500,
+    "firstWinners": 4,
+    "firstPrize": 2684274825
+   },
+   {
+    "round": 381,
+    "date": "2010-03-20",
+    "sales": 23971556500,
+    "firstWinners": 19,
+    "firstPrize": 565738895
+   },
+   {
+    "round": 382,
+    "date": "2010-03-27",
+    "sales": 23700644000,
+    "firstWinners": 6,
+    "firstPrize": 1846674900
+   },
+   {
+    "round": 383,
+    "date": "2010-04-03",
+    "sales": 23033525500,
+    "firstWinners": 3,
+    "firstPrize": 3596522100
+   },
+   {
+    "round": 384,
+    "date": "2010-04-10",
+    "sales": 23444471000,
+    "firstWinners": 3,
+    "firstPrize": 3658734200
+   },
+   {
+    "round": 385,
+    "date": "2010-04-17",
+    "sales": 23121741500,
+    "firstWinners": 7,
+    "firstPrize": 1542032700
+   },
+   {
+    "round": 386,
+    "date": "2010-04-24",
+    "sales": 22953665500,
+    "firstWinners": 10,
+    "firstPrize": 1042953330
+   },
+   {
+    "round": 387,
+    "date": "2010-05-01",
+    "sales": 22729980000,
+    "firstWinners": 4,
+    "firstPrize": 2675533500
+   },
+   {
+    "round": 388,
+    "date": "2010-05-08",
+    "sales": 22154352500,
+    "firstWinners": 4,
+    "firstPrize": 2545543875
+   },
+   {
+    "round": 389,
+    "date": "2010-05-15",
+    "sales": 22767013500,
+    "firstWinners": 5,
+    "firstPrize": 2119027020
+   },
+   {
+    "round": 390,
+    "date": "2010-05-22",
+    "sales": 22094836500,
+    "firstWinners": 1,
+    "firstPrize": 10373997900
+   },
+   {
+    "round": 391,
+    "date": "2010-05-29",
+    "sales": 22580758000,
+    "firstWinners": 1,
+    "firstPrize": 10508749800
+   },
+   {
+    "round": 392,
+    "date": "2010-06-05",
+    "sales": 22764342000,
+    "firstWinners": 6,
+    "firstPrize": 1713528700
+   },
+   {
+    "round": 393,
+    "date": "2010-06-12",
+    "sales": 22994558000,
+    "firstWinners": 8,
+    "firstPrize": 1362003975
+   },
+   {
+    "round": 394,
+    "date": "2010-06-19",
+    "sales": 22596168500,
+    "firstWinners": 1,
+    "firstPrize": 10654349100
+   },
+   {
+    "round": 395,
+    "date": "2010-06-26",
+    "sales": 23096290000,
+    "firstWinners": 7,
+    "firstPrize": 1534635000
+   },
+   {
+    "round": 396,
+    "date": "2010-07-03",
+    "sales": 22731868000,
+    "firstWinners": 2,
+    "firstPrize": 5296622400
+   },
+   {
+    "round": 397,
+    "date": "2010-07-10",
+    "sales": 22945003500,
+    "firstWinners": 3,
+    "firstPrize": 3499519700
+   },
+   {
+    "round": 398,
+    "date": "2010-07-17",
+    "sales": 22713652000,
+    "firstWinners": 4,
+    "firstPrize": 2680625550
+   },
+   {
+    "round": 399,
+    "date": "2010-07-24",
+    "sales": 22775893000,
+    "firstWinners": 8,
+    "firstPrize": 1276854975
+   },
+   {
+    "round": 400,
+    "date": "2010-07-31",
+    "sales": 22689865500,
+    "firstWinners": 4,
+    "firstPrize": 2669834325
+   },
+   {
+    "round": 401,
+    "date": "2010-08-07",
+    "sales": 21745982500,
+    "firstWinners": 9,
+    "firstPrize": 1168214792
+   },
+   {
+    "round": 402,
+    "date": "2010-08-14",
+    "sales": 22501473000,
+    "firstWinners": 4,
+    "firstPrize": 2662206188
+   },
+   {
+    "round": 403,
+    "date": "2010-08-21",
+    "sales": 22455667500,
+    "firstWinners": 5,
+    "firstPrize": 2122396875
+   },
+   {
+    "round": 404,
+    "date": "2010-08-28",
+    "sales": 22694912500,
+    "firstWinners": 3,
+    "firstPrize": 3566659375
+   },
+   {
+    "round": 405,
+    "date": "2010-09-04",
+    "sales": 22610452000,
+    "firstWinners": 3,
+    "firstPrize": 3543878000
+   },
+   {
+    "round": 406,
+    "date": "2010-09-11",
+    "sales": 23031103000,
+    "firstWinners": 5,
+    "firstPrize": 2156142450
+   },
+   {
+    "round": 407,
+    "date": "2010-09-18",
+    "sales": 24214793000,
+    "firstWinners": 7,
+    "firstPrize": 1649707286
+   },
+   {
+    "round": 408,
+    "date": "2010-09-25",
+    "sales": 23203355500,
+    "firstWinners": 5,
+    "firstPrize": 2235375825
+   },
+   {
+    "round": 409,
+    "date": "2010-10-02",
+    "sales": 23962292000,
+    "firstWinners": 4,
+    "firstPrize": 2896989750
+   },
+   {
+    "round": 410,
+    "date": "2010-10-09",
+    "sales": 23733908500,
+    "firstWinners": 9,
+    "firstPrize": 1249335709
+   },
+   {
+    "round": 411,
+    "date": "2010-10-16",
+    "sales": 23629561000,
+    "firstWinners": 12,
+    "firstPrize": 953227563
+   },
+   {
+    "round": 412,
+    "date": "2010-10-23",
+    "sales": 23533090000,
+    "firstWinners": 7,
+    "firstPrize": 1656199822
+   },
+   {
+    "round": 413,
+    "date": "2010-10-30",
+    "sales": 23462862000,
+    "firstWinners": 4,
+    "firstPrize": 2814673500
+   },
+   {
+    "round": 414,
+    "date": "2010-11-06",
+    "sales": 23455495000,
+    "firstWinners": 1,
+    "firstPrize": 11703832500
+   },
+   {
+    "round": 415,
+    "date": "2010-11-13",
+    "sales": 23373024000,
+    "firstWinners": 8,
+    "firstPrize": 1334182407
+   },
+   {
+    "round": 416,
+    "date": "2010-11-20",
+    "sales": 23427403000,
+    "firstWinners": 10,
+    "firstPrize": 1072037100
+   },
+   {
+    "round": 417,
+    "date": "2010-11-27",
+    "sales": 22984128000,
+    "firstWinners": 4,
+    "firstPrize": 2818329938
+   },
+   {
+    "round": 418,
+    "date": "2010-12-04",
+    "sales": 23529027500,
+    "firstWinners": 8,
+    "firstPrize": 1435649766
+   },
+   {
+    "round": 419,
+    "date": "2010-12-11",
+    "sales": 23254148000,
+    "firstWinners": 3,
+    "firstPrize": 3796490750
+   },
+   {
+    "round": 420,
+    "date": "2010-12-18",
+    "sales": 23672738000,
+    "firstWinners": 8,
+    "firstPrize": 1424856375
+   },
+   {
+    "round": 421,
+    "date": "2010-12-25",
+    "sales": 23876010500,
+    "firstWinners": 5,
+    "firstPrize": 2321144325
+   },
+   {
+    "round": 422,
+    "date": "2011-01-01",
+    "sales": 26365301000,
+    "firstWinners": 6,
+    "firstPrize": 2205251375
+   },
+   {
+    "round": 423,
+    "date": "2011-01-08",
+    "sales": 24834155500,
+    "firstWinners": 3,
+    "firstPrize": 3896153875
+   },
+   {
+    "round": 424,
+    "date": "2011-01-15",
+    "sales": 24364222500,
+    "firstWinners": 10,
+    "firstPrize": 1109480813
+   },
+   {
+    "round": 425,
+    "date": "2011-01-22",
+    "sales": 25229847000,
+    "firstWinners": 8,
+    "firstPrize": 1534833000
+   },
+   {
+    "round": 426,
+    "date": "2011-01-29",
+    "sales": 25733296000,
+    "firstWinners": 4,
+    "firstPrize": 3057233625
+   },
+   {
+    "round": 427,
+    "date": "2011-02-05",
+    "sales": 26255527500,
+    "firstWinners": 1,
+    "firstPrize": 12571445625
+   },
+   {
+    "round": 428,
+    "date": "2011-02-12",
+    "sales": 27342503500,
+    "firstWinners": 9,
+    "firstPrize": 1437683209
+   },
+   {
+    "round": 429,
+    "date": "2011-02-19",
+    "sales": 26996916500,
+    "firstWinners": 9,
+    "firstPrize": 1485904709
+   },
+   {
+    "round": 430,
+    "date": "2011-02-26",
+    "sales": 26597436000,
+    "firstWinners": 8,
+    "firstPrize": 1611763219
+   },
+   {
+    "round": 431,
+    "date": "2011-03-05",
+    "sales": 25830973500,
+    "firstWinners": 10,
+    "firstPrize": 1268434013
+   },
+   {
+    "round": 432,
+    "date": "2011-03-12",
+    "sales": 26174287000,
+    "firstWinners": 5,
+    "firstPrize": 2299427550
+   },
+   {
+    "round": 433,
+    "date": "2011-03-19",
+    "sales": 26198303000,
+    "firstWinners": 11,
+    "firstPrize": 1182294410
+   },
+   {
+    "round": 434,
+    "date": "2011-03-26",
+    "sales": 25789719500,
+    "firstWinners": 8,
+    "firstPrize": 1480060266
+   },
+   {
+    "round": 435,
+    "date": "2011-04-02",
+    "sales": 26170633500,
+    "firstWinners": 10,
+    "firstPrize": 1287550013
+   },
+   {
+    "round": 436,
+    "date": "2011-04-09",
+    "sales": 25434508500,
+    "firstWinners": 8,
+    "firstPrize": 1512266579
+   },
+   {
+    "round": 437,
+    "date": "2011-04-16",
+    "sales": 25399208500,
+    "firstWinners": 6,
+    "firstPrize": 2096245438
+   },
+   {
+    "round": 438,
+    "date": "2011-04-23",
+    "sales": 25185021000,
+    "firstWinners": 9,
+    "firstPrize": 1377142167
+   },
+   {
+    "round": 439,
+    "date": "2011-04-30",
+    "sales": 24840354000,
+    "firstWinners": 6,
+    "firstPrize": 1900077375
+   },
+   {
+    "round": 440,
+    "date": "2011-05-07",
+    "sales": 24905389000,
+    "firstWinners": 6,
+    "firstPrize": 1995873000
+   },
+   {
+    "round": 441,
+    "date": "2011-05-14",
+    "sales": 25136061000,
+    "firstWinners": 4,
+    "firstPrize": 3170417063
+   },
+   {
+    "round": 442,
+    "date": "2011-05-21",
+    "sales": 25609971500,
+    "firstWinners": 9,
+    "firstPrize": 1413413042
+   },
+   {
+    "round": 443,
+    "date": "2011-05-28",
+    "sales": 25618036000,
+    "firstWinners": 9,
+    "firstPrize": 1327597584
+   },
+   {
+    "round": 444,
+    "date": "2011-06-04",
+    "sales": 25336764500,
+    "firstWinners": 3,
+    "firstPrize": 4154188625
+   },
+   {
+    "round": 445,
+    "date": "2011-06-11",
+    "sales": 25026540000,
+    "firstWinners": 7,
+    "firstPrize": 1791683036
+   },
+   {
+    "round": 446,
+    "date": "2011-06-18",
+    "sales": 25297620500,
+    "firstWinners": 3,
+    "firstPrize": 4051247625
+   },
+   {
+    "round": 447,
+    "date": "2011-06-25",
+    "sales": 24777521000,
+    "firstWinners": 4,
+    "firstPrize": 2657941125
+   },
+   {
+    "round": 448,
+    "date": "2011-07-02",
+    "sales": 25670631000,
+    "firstWinners": 3,
+    "firstPrize": 4026212750
+   },
+   {
+    "round": 449,
+    "date": "2011-07-09",
+    "sales": 25107136000,
+    "firstWinners": 3,
+    "firstPrize": 4059715250
+   },
+   {
+    "round": 450,
+    "date": "2011-07-16",
+    "sales": 24866018000,
+    "firstWinners": 6,
+    "firstPrize": 1990391625
+   },
+   {
+    "round": 451,
+    "date": "2011-07-23",
+    "sales": 24930583500,
+    "firstWinners": 13,
+    "firstPrize": 882138952
+   },
+   {
+    "round": 452,
+    "date": "2011-07-30",
+    "sales": 24228379000,
+    "firstWinners": 9,
+    "firstPrize": 1276902000
+   },
+   {
+    "round": 453,
+    "date": "2011-08-06",
+    "sales": 24027562500,
+    "firstWinners": 5,
+    "firstPrize": 2262732375
+   },
+   {
+    "round": 454,
+    "date": "2011-08-13",
+    "sales": 24194605500,
+    "firstWinners": 7,
+    "firstPrize": 1609125590
+   },
+   {
+    "round": 455,
+    "date": "2011-08-20",
+    "sales": 24384925500,
+    "firstWinners": 7,
+    "firstPrize": 1635711483
+   },
+   {
+    "round": 456,
+    "date": "2011-08-27",
+    "sales": 24710340500,
+    "firstWinners": 7,
+    "firstPrize": 1598505054
+   },
+   {
+    "round": 457,
+    "date": "2011-09-03",
+    "sales": 24839526000,
+    "firstWinners": 10,
+    "firstPrize": 1159902825
+   },
+   {
+    "round": 458,
+    "date": "2011-09-10",
+    "sales": 26889128000,
+    "firstWinners": 8,
+    "firstPrize": 1608812625
+   },
+   {
+    "round": 459,
+    "date": "2011-09-17",
+    "sales": 24945047500,
+    "firstWinners": 7,
+    "firstPrize": 1655842233
+   },
+   {
+    "round": 460,
+    "date": "2011-09-24",
+    "sales": 25958817500,
+    "firstWinners": 4,
+    "firstPrize": 3180895782
+   },
+   {
+    "round": 461,
+    "date": "2011-10-01",
+    "sales": 25312294000,
+    "firstWinners": 6,
+    "firstPrize": 1948674875
+   },
+   {
+    "round": 462,
+    "date": "2011-10-08",
+    "sales": 24662777500,
+    "firstWinners": 8,
+    "firstPrize": 1483559297
+   },
+   {
+    "round": 463,
+    "date": "2011-10-15",
+    "sales": 24602575500,
+    "firstWinners": 0,
+    "firstPrize": 0
+   },
+   {
+    "round": 464,
+    "date": "2011-10-22",
+    "sales": 63386137000,
+    "firstWinners": 13,
+    "firstPrize": 3355721106
+   },
+   {
+    "round": 465,
+    "date": "2011-10-29",
+    "sales": 28896647000,
+    "firstWinners": 7,
+    "firstPrize": 1923662893
+   },
+   {
+    "round": 466,
+    "date": "2011-11-05",
+    "sales": 29157376500,
+    "firstWinners": 9,
+    "firstPrize": 1530313459
+   },
+   {
+    "round": 467,
+    "date": "2011-11-12",
+    "sales": 28691953000,
+    "firstWinners": 9,
+    "firstPrize": 1435441084
+   },
+   {
+    "round": 468,
+    "date": "2011-11-19",
+    "sales": 27799276000,
+    "firstWinners": 9,
+    "firstPrize": 1527197167
+   },
+   {
+    "round": 469,
+    "date": "2011-11-26",
+    "sales": 26682470000,
+    "firstWinners": 4,
+    "firstPrize": 3330131250
+   },
+   {
+    "round": 470,
+    "date": "2011-12-03",
+    "sales": 26956482500,
+    "firstWinners": 3,
+    "firstPrize": 4333330625
+   },
+   {
+    "round": 471,
+    "date": "2011-12-10",
+    "sales": 26746170000,
+    "firstWinners": 7,
+    "firstPrize": 1939332858
+   },
+   {
+    "round": 472,
+    "date": "2011-12-17",
+    "sales": 25964603500,
+    "firstWinners": 7,
+    "firstPrize": 1809656090
+   },
+   {
+    "round": 473,
+    "date": "2011-12-24",
+    "sales": 26433618000,
+    "firstWinners": 4,
+    "firstPrize": 3250418063
+   },
+   {
+    "round": 474,
+    "date": "2011-12-31",
+    "sales": 29489241000,
+    "firstWinners": 15,
+    "firstPrize": 936690800
+   },
+   {
+    "round": 475,
+    "date": "2012-01-07",
+    "sales": 28021637500,
+    "firstWinners": 8,
+    "firstPrize": 1693923047
+   },
+   {
+    "round": 476,
+    "date": "2012-01-14",
+    "sales": 27795909500,
+    "firstWinners": 4,
+    "firstPrize": 3439851469
+   },
+   {
+    "round": 477,
+    "date": "2012-01-21",
+    "sales": 30400704500,
+    "firstWinners": 8,
+    "firstPrize": 1919011829
+   },
+   {
+    "round": 478,
+    "date": "2012-01-28",
+    "sales": 27487950500,
+    "firstWinners": 14,
+    "firstPrize": 987224759
+   },
+   {
+    "round": 479,
+    "date": "2012-02-04",
+    "sales": 27424417000,
+    "firstWinners": 6,
+    "firstPrize": 2233046500
+   },
+   {
+    "round": 480,
+    "date": "2012-02-11",
+    "sales": 27707840500,
+    "firstWinners": 4,
+    "firstPrize": 2996742282
+   },
+   {
+    "round": 481,
+    "date": "2012-02-18",
+    "sales": 27821308000,
+    "firstWinners": 3,
+    "firstPrize": 4639355750
+   },
+   {
+    "round": 482,
+    "date": "2012-02-25",
+    "sales": 28100726000,
+    "firstWinners": 7,
+    "firstPrize": 1897921179
+   },
+   {
+    "round": 483,
+    "date": "2012-03-03",
+    "sales": 27791329500,
+    "firstWinners": 5,
+    "firstPrize": 2567196675
+   },
+   {
+    "round": 484,
+    "date": "2012-03-10",
+    "sales": 27942989500,
+    "firstWinners": 6,
+    "firstPrize": 2305303063
+   },
+   {
+    "round": 485,
+    "date": "2012-03-17",
+    "sales": 27846439000,
+    "firstWinners": 9,
+    "firstPrize": 1501474917
+   },
+   {
+    "round": 486,
+    "date": "2012-03-24",
+    "sales": 27270411500,
+    "firstWinners": 13,
+    "firstPrize": 1008634125
+   },
+   {
+    "round": 487,
+    "date": "2012-03-31",
+    "sales": 27638251500,
+    "firstWinners": 8,
+    "firstPrize": 1638830766
+   },
+   {
+    "round": 488,
+    "date": "2012-04-07",
+    "sales": 27106546000,
+    "firstWinners": 10,
+    "firstPrize": 1330393575
+   },
+   {
+    "round": 489,
+    "date": "2012-04-14",
+    "sales": 26779245000,
+    "firstWinners": 6,
+    "firstPrize": 2106360625
+   },
+   {
+    "round": 490,
+    "date": "2012-04-21",
+    "sales": 26295060500,
+    "firstWinners": 7,
+    "firstPrize": 1860234161
+   },
+   {
+    "round": 491,
+    "date": "2012-04-28",
+    "sales": 26706937000,
+    "firstWinners": 4,
+    "firstPrize": 3304634438
+   },
+   {
+    "round": 492,
+    "date": "2012-05-05",
+    "sales": 25846727000,
+    "firstWinners": 5,
+    "firstPrize": 2493013800
+   },
+   {
+    "round": 493,
+    "date": "2012-05-12",
+    "sales": 26615919000,
+    "firstWinners": 9,
+    "firstPrize": 1451120334
+   },
+   {
+    "round": 494,
+    "date": "2012-05-19",
+    "sales": 26660794500,
+    "firstWinners": 12,
+    "firstPrize": 1054588407
+   },
+   {
+    "round": 495,
+    "date": "2012-05-26",
+    "sales": 26822980000,
+    "firstWinners": 6,
+    "firstPrize": 2111645000
+   },
+   {
+    "round": 496,
+    "date": "2012-06-02",
+    "sales": 26457902000,
+    "firstWinners": 4,
+    "firstPrize": 3285932250
+   },
+   {
+    "round": 497,
+    "date": "2012-06-09",
+    "sales": 26205792500,
+    "firstWinners": 6,
+    "firstPrize": 2222817813
+   },
+   {
+    "round": 498,
+    "date": "2012-06-16",
+    "sales": 26425626500,
+    "firstWinners": 4,
+    "firstPrize": 3244503094
+   },
+   {
+    "round": 499,
+    "date": "2012-06-23",
+    "sales": 26383816000,
+    "firstWinners": 3,
+    "firstPrize": 4070480250
+   },
+   {
+    "round": 500,
+    "date": "2012-06-30",
+    "sales": 27006133500,
+    "firstWinners": 9,
+    "firstPrize": 1351072375
+   },
+   {
+    "round": 501,
+    "date": "2012-07-07",
+    "sales": 26358855500,
+    "firstWinners": 4,
+    "firstPrize": 3025200094
+   },
+   {
+    "round": 502,
+    "date": "2012-07-14",
+    "sales": 27000320000,
+    "firstWinners": 6,
+    "firstPrize": 2201458125
+   },
+   {
+    "round": 503,
+    "date": "2012-07-21",
+    "sales": 26786102500,
+    "firstWinners": 7,
+    "firstPrize": 1853634911
+   },
+   {
+    "round": 504,
+    "date": "2012-07-28",
+    "sales": 25893518500,
+    "firstWinners": 9,
+    "firstPrize": 1443236959
+   },
+   {
+    "round": 505,
+    "date": "2012-08-04",
+    "sales": 24551611500,
+    "firstWinners": 6,
+    "firstPrize": 1917955188
+   },
+   {
+    "round": 506,
+    "date": "2012-08-11",
+    "sales": 26181655500,
+    "firstWinners": 3,
+    "firstPrize": 4073333875
+   },
+   {
+    "round": 507,
+    "date": "2012-08-18",
+    "sales": 26819386500,
+    "firstWinners": 9,
+    "firstPrize": 1416438875
+   },
+   {
+    "round": 508,
+    "date": "2012-08-25",
+    "sales": 27005195500,
+    "firstWinners": 8,
+    "firstPrize": 1599557860
+   },
+   {
+    "round": 509,
+    "date": "2012-09-01",
+    "sales": 26695179000,
+    "firstWinners": 5,
+    "firstPrize": 2689076100
+   },
+   {
+    "round": 510,
+    "date": "2012-09-08",
+    "sales": 26982496000,
+    "firstWinners": 5,
+    "firstPrize": 2644158150
+   },
+   {
+    "round": 511,
+    "date": "2012-09-15",
+    "sales": 26985154000,
+    "firstWinners": 6,
+    "firstPrize": 2165579250
+   },
+   {
+    "round": 512,
+    "date": "2012-09-22",
+    "sales": 27008900500,
+    "firstWinners": 13,
+    "firstPrize": 940094452
+   },
+   {
+    "round": 513,
+    "date": "2012-09-29",
+    "sales": 29158774000,
+    "firstWinners": 3,
+    "firstPrize": 4589624750
+   },
+   {
+    "round": 514,
+    "date": "2012-10-06",
+    "sales": 27226202000,
+    "firstWinners": 3,
+    "firstPrize": 4451055500
+   },
+   {
+    "round": 515,
+    "date": "2012-10-13",
+    "sales": 27629467500,
+    "firstWinners": 1,
+    "firstPrize": 13200466875
+   },
+   {
+    "round": 516,
+    "date": "2012-10-20",
+    "sales": 28192881000,
+    "firstWinners": 11,
+    "firstPrize": 1294190182
+   },
+   {
+    "round": 517,
+    "date": "2012-10-27",
+    "sales": 27234111500,
+    "firstWinners": 5,
+    "firstPrize": 2659057725
+   },
+   {
+    "round": 518,
+    "date": "2012-11-03",
+    "sales": 27660783000,
+    "firstWinners": 6,
+    "firstPrize": 2263804125
+   },
+   {
+    "round": 519,
+    "date": "2012-11-10",
+    "sales": 27807103000,
+    "firstWinners": 7,
+    "firstPrize": 1950601393
+   },
+   {
+    "round": 520,
+    "date": "2012-11-17",
+    "sales": 27501898500,
+    "firstWinners": 6,
+    "firstPrize": 2167205438
+   },
+   {
+    "round": 521,
+    "date": "2012-11-24",
+    "sales": 28092686500,
+    "firstWinners": 8,
+    "firstPrize": 1693420922
+   },
+   {
+    "round": 522,
+    "date": "2012-12-01",
+    "sales": 28526689000,
+    "firstWinners": 6,
+    "firstPrize": 2281623000
+   },
+   {
+    "round": 523,
+    "date": "2012-12-08",
+    "sales": 26839224500,
+    "firstWinners": 7,
+    "firstPrize": 1780355840
+   },
+   {
+    "round": 524,
+    "date": "2012-12-15",
+    "sales": 27831051500,
+    "firstWinners": 4,
+    "firstPrize": 3491695594
+   },
+   {
+    "round": 525,
+    "date": "2012-12-22",
+    "sales": 27783003500,
+    "firstWinners": 9,
+    "firstPrize": 1501132375
+   },
+   {
+    "round": 526,
+    "date": "2012-12-29",
+    "sales": 28263903500,
+    "firstWinners": 9,
+    "firstPrize": 1491031959
+   },
+   {
+    "round": 527,
+    "date": "2013-01-05",
+    "sales": 28492817000,
+    "firstWinners": 13,
+    "firstPrize": 1032386366
+   },
+   {
+    "round": 528,
+    "date": "2013-01-12",
+    "sales": 28774270500,
+    "firstWinners": 11,
+    "firstPrize": 1197889125
+   },
+   {
+    "round": 529,
+    "date": "2013-01-19",
+    "sales": 28822889500,
+    "firstWinners": 8,
+    "firstPrize": 1749114797
+   },
+   {
+    "round": 530,
+    "date": "2013-01-26",
+    "sales": 28120541500,
+    "firstWinners": 11,
+    "firstPrize": 1231656239
+   },
+   {
+    "round": 531,
+    "date": "2013-02-02",
+    "sales": 28783532000,
+    "firstWinners": 9,
+    "firstPrize": 1521519750
+   },
+   {
+    "round": 532,
+    "date": "2013-02-09",
+    "sales": 30843692000,
+    "firstWinners": 7,
+    "firstPrize": 2216896286
+   },
+   {
+    "round": 533,
+    "date": "2013-02-16",
+    "sales": 29637678500,
+    "firstWinners": 8,
+    "firstPrize": 1785671579
+   },
+   {
+    "round": 534,
+    "date": "2013-02-23",
+    "sales": 29613731000,
+    "firstWinners": 1,
+    "firstPrize": 14215763250
+   },
+   {
+    "round": 535,
+    "date": "2013-03-02",
+    "sales": 30261942000,
+    "firstWinners": 3,
+    "firstPrize": 4935603000
+   },
+   {
+    "round": 536,
+    "date": "2013-03-09",
+    "sales": 29881734500,
+    "firstWinners": 11,
+    "firstPrize": 1308523603
+   },
+   {
+    "round": 537,
+    "date": "2013-03-16",
+    "sales": 29726661500,
+    "firstWinners": 7,
+    "firstPrize": 2104038911
+   },
+   {
+    "round": 538,
+    "date": "2013-03-23",
+    "sales": 29616686500,
+    "firstWinners": 3,
+    "firstPrize": 4688021625
+   },
+   {
+    "round": 539,
+    "date": "2013-03-30",
+    "sales": 29584435000,
+    "firstWinners": 9,
+    "firstPrize": 1621036667
+   },
+   {
+    "round": 540,
+    "date": "2013-04-06",
+    "sales": 28369829000,
+    "firstWinners": 7,
+    "firstPrize": 1989365250
+   },
+   {
+    "round": 541,
+    "date": "2013-04-13",
+    "sales": 28543523500,
+    "firstWinners": 11,
+    "firstPrize": 1269327171
+   },
+   {
+    "round": 542,
+    "date": "2013-04-20",
+    "sales": 28474580500,
+    "firstWinners": 6,
+    "firstPrize": 2335152563
+   },
+   {
+    "round": 543,
+    "date": "2013-04-27",
+    "sales": 28285122500,
+    "firstWinners": 12,
+    "firstPrize": 1112934844
+   },
+   {
+    "round": 544,
+    "date": "2013-05-04",
+    "sales": 28028094500,
+    "firstWinners": 13,
+    "firstPrize": 1046388433
+   },
+   {
+    "round": 545,
+    "date": "2013-05-11",
+    "sales": 27983585500,
+    "firstWinners": 11,
+    "firstPrize": 1198994353
+   },
+   {
+    "round": 546,
+    "date": "2013-05-18",
+    "sales": 28356583000,
+    "firstWinners": 30,
+    "firstPrize": 405939950
+   },
+   {
+    "round": 547,
+    "date": "2013-05-25",
+    "sales": 28984233000,
+    "firstWinners": 5,
+    "firstPrize": 2838444450
+   },
+   {
+    "round": 548,
+    "date": "2013-06-01",
+    "sales": 28885913500,
+    "firstWinners": 8,
+    "firstPrize": 1736871891
+   },
+   {
+    "round": 549,
+    "date": "2013-06-08",
+    "sales": 28432305500,
+    "firstWinners": 8,
+    "firstPrize": 1760805047
+   },
+   {
+    "round": 550,
+    "date": "2013-06-15",
+    "sales": 28220885000,
+    "firstWinners": 11,
+    "firstPrize": 1118679205
+   },
+   {
+    "round": 551,
+    "date": "2013-06-22",
+    "sales": 28494685000,
+    "firstWinners": 1,
+    "firstPrize": 13526973750
+   },
+   {
+    "round": 552,
+    "date": "2013-06-29",
+    "sales": 28801193000,
+    "firstWinners": 10,
+    "firstPrize": 1330824225
+   },
+   {
+    "round": 553,
+    "date": "2013-07-06",
+    "sales": 28243741500,
+    "firstWinners": 6,
+    "firstPrize": 2249631438
+   },
+   {
+    "round": 554,
+    "date": "2013-07-13",
+    "sales": 28062233000,
+    "firstWinners": 2,
+    "firstPrize": 6813893625
+   },
+   {
+    "round": 555,
+    "date": "2013-07-20",
+    "sales": 28636908500,
+    "firstWinners": 8,
+    "firstPrize": 1711027360
+   },
+   {
+    "round": 556,
+    "date": "2013-07-27",
+    "sales": 28687395500,
+    "firstWinners": 7,
+    "firstPrize": 2005209161
+   },
+   {
+    "round": 557,
+    "date": "2013-08-03",
+    "sales": 27543280000,
+    "firstWinners": 7,
+    "firstPrize": 1888069286
+   },
+   {
+    "round": 558,
+    "date": "2013-08-10",
+    "sales": 27469500500,
+    "firstWinners": 10,
+    "firstPrize": 1315913663
+   },
+   {
+    "round": 559,
+    "date": "2013-08-17",
+    "sales": 27866709000,
+    "firstWinners": 7,
+    "firstPrize": 1926145608
+   },
+   {
+    "round": 560,
+    "date": "2013-08-24",
+    "sales": 28282649000,
+    "firstWinners": 7,
+    "firstPrize": 1976697215
+   },
+   {
+    "round": 561,
+    "date": "2013-08-31",
+    "sales": 28319191500,
+    "firstWinners": 5,
+    "firstPrize": 2753712225
+   },
+   {
+    "round": 562,
+    "date": "2013-09-07",
+    "sales": 28144106000,
+    "firstWinners": 11,
+    "firstPrize": 1166694614
+   },
+   {
+    "round": 563,
+    "date": "2013-09-14",
+    "sales": 28660066000,
+    "firstWinners": 7,
+    "firstPrize": 1932735643
+   },
+   {
+    "round": 564,
+    "date": "2013-09-21",
+    "sales": 29006234000,
+    "firstWinners": 7,
+    "firstPrize": 1934801143
+   },
+   {
+    "round": 565,
+    "date": "2013-09-28",
+    "sales": 29778311000,
+    "firstWinners": 8,
+    "firstPrize": 1742064469
+   },
+   {
+    "round": 566,
+    "date": "2013-10-05",
+    "sales": 28833305500,
+    "firstWinners": 4,
+    "firstPrize": 3508951032
+   },
+   {
+    "round": 567,
+    "date": "2013-10-12",
+    "sales": 28719735500,
+    "firstWinners": 6,
+    "firstPrize": 2318659438
+   },
+   {
+    "round": 568,
+    "date": "2013-10-19",
+    "sales": 28840814000,
+    "firstWinners": 10,
+    "firstPrize": 1305167550
+   },
+   {
+    "round": 569,
+    "date": "2013-10-26",
+    "sales": 29220951000,
+    "firstWinners": 4,
+    "firstPrize": 3467925188
+   },
+   {
+    "round": 570,
+    "date": "2013-11-02",
+    "sales": 28827139500,
+    "firstWinners": 9,
+    "firstPrize": 1527791625
+   },
+   {
+    "round": 571,
+    "date": "2013-11-09",
+    "sales": 28246764000,
+    "firstWinners": 7,
+    "firstPrize": 1966538465
+   },
+   {
+    "round": 572,
+    "date": "2013-11-16",
+    "sales": 28236801000,
+    "firstWinners": 8,
+    "firstPrize": 1668216188
+   },
+   {
+    "round": 573,
+    "date": "2013-11-23",
+    "sales": 28046360500,
+    "firstWinners": 8,
+    "firstPrize": 1645691766
+   },
+   {
+    "round": 574,
+    "date": "2013-11-30",
+    "sales": 27941466500,
+    "firstWinners": 2,
+    "firstPrize": 6965184938
+   },
+   {
+    "round": 575,
+    "date": "2013-12-07",
+    "sales": 28165369000,
+    "firstWinners": 8,
+    "firstPrize": 1699267875
+   },
+   {
+    "round": 576,
+    "date": "2013-12-14",
+    "sales": 27345574000,
+    "firstWinners": 3,
+    "firstPrize": 4321966000
+   },
+   {
+    "round": 577,
+    "date": "2013-12-21",
+    "sales": 28505413500,
+    "firstWinners": 3,
+    "firstPrize": 4484438375
+   },
+   {
+    "round": 578,
+    "date": "2013-12-28",
+    "sales": 29292370500,
+    "firstWinners": 5,
+    "firstPrize": 2796466575
+   },
+   {
+    "round": 579,
+    "date": "2014-01-04",
+    "sales": 31766435500,
+    "firstWinners": 11,
+    "firstPrize": 1396068444
+   },
+   {
+    "round": 580,
+    "date": "2014-01-11",
+    "sales": 30257108000,
+    "firstWinners": 7,
+    "firstPrize": 2028610500
+   },
+   {
+    "round": 581,
+    "date": "2014-01-18",
+    "sales": 30128728500,
+    "firstWinners": 8,
+    "firstPrize": 1844554547
+   },
+   {
+    "round": 582,
+    "date": "2014-01-25",
+    "sales": 29653476500,
+    "firstWinners": 4,
+    "firstPrize": 3560558719
+   },
+   {
+    "round": 583,
+    "date": "2014-02-01",
+    "sales": 31337647500,
+    "firstWinners": 11,
+    "firstPrize": 1341848353
+   },
+   {
+    "round": 584,
+    "date": "2014-02-08",
+    "sales": 30671928000,
+    "firstWinners": 3,
+    "firstPrize": 5033183250
+   },
+   {
+    "round": 585,
+    "date": "2014-02-15",
+    "sales": 30126501000,
+    "firstWinners": 9,
+    "firstPrize": 1620546334
+   },
+   {
+    "round": 586,
+    "date": "2014-02-22",
+    "sales": 29751048000,
+    "firstWinners": 8,
+    "firstPrize": 1778354344
+   },
+   {
+    "round": 587,
+    "date": "2014-03-01",
+    "sales": 29857749500,
+    "firstWinners": 3,
+    "firstPrize": 4974577375
+   },
+   {
+    "round": 588,
+    "date": "2014-03-08",
+    "sales": 29766550500,
+    "firstWinners": 5,
+    "firstPrize": 2889342075
+   },
+   {
+    "round": 589,
+    "date": "2014-03-15",
+    "sales": 30321864500,
+    "firstWinners": 7,
+    "firstPrize": 2136877983
+   },
+   {
+    "round": 590,
+    "date": "2014-03-22",
+    "sales": 30001565500,
+    "firstWinners": 7,
+    "firstPrize": 2185183983
+   },
+   {
+    "round": 591,
+    "date": "2014-03-29",
+    "sales": 29686973000,
+    "firstWinners": 5,
+    "firstPrize": 2964676200
+   },
+   {
+    "round": 592,
+    "date": "2014-04-05",
+    "sales": 29048738500,
+    "firstWinners": 6,
+    "firstPrize": 2356381688
+   },
+   {
+    "round": 593,
+    "date": "2014-04-12",
+    "sales": 29684102000,
+    "firstWinners": 9,
+    "firstPrize": 1532833500
+   },
+   {
+    "round": 594,
+    "date": "2014-04-19",
+    "sales": 28882221000,
+    "firstWinners": 11,
+    "firstPrize": 1255592796
+   },
+   {
+    "round": 595,
+    "date": "2014-04-26",
+    "sales": 28898644000,
+    "firstWinners": 8,
+    "firstPrize": 1744525219
+   },
+   {
+    "round": 596,
+    "date": "2014-05-03",
+    "sales": 28280535500,
+    "firstWinners": 10,
+    "firstPrize": 1328267663
+   },
+   {
+    "round": 597,
+    "date": "2014-05-10",
+    "sales": 28416180500,
+    "firstWinners": 13,
+    "firstPrize": 1057920606
+   },
+   {
+    "round": 598,
+    "date": "2014-05-17",
+    "sales": 28759275000,
+    "firstWinners": 16,
+    "firstPrize": 833998594
+   },
+   {
+    "round": 599,
+    "date": "2014-05-24",
+    "sales": 28690895500,
+    "firstWinners": 8,
+    "firstPrize": 1710918329
+   },
+   {
+    "round": 600,
+    "date": "2014-05-31",
+    "sales": 28186259500,
+    "firstWinners": 15,
+    "firstPrize": 901798725
+   },
+   {
+    "round": 601,
+    "date": "2014-06-07",
+    "sales": 27934227500,
+    "firstWinners": 9,
+    "firstPrize": 1524565209
+   },
+   {
+    "round": 602,
+    "date": "2014-06-14",
+    "sales": 28131427500,
+    "firstWinners": 8,
+    "firstPrize": 1689530860
+   },
+   {
+    "round": 603,
+    "date": "2014-06-21",
+    "sales": 28138325000,
+    "firstWinners": 4,
+    "firstPrize": 3452136563
+   },
+   {
+    "round": 604,
+    "date": "2014-06-28",
+    "sales": 28133199500,
+    "firstWinners": 11,
+    "firstPrize": 1229141557
+   },
+   {
+    "round": 605,
+    "date": "2014-07-05",
+    "sales": 28311462000,
+    "firstWinners": 9,
+    "firstPrize": 1394232250
+   },
+   {
+    "round": 606,
+    "date": "2014-07-12",
+    "sales": 28464448000,
+    "firstWinners": 10,
+    "firstPrize": 1311566850
+   },
+   {
+    "round": 607,
+    "date": "2014-07-19",
+    "sales": 28403106500,
+    "firstWinners": 4,
+    "firstPrize": 3494480907
+   },
+   {
+    "round": 608,
+    "date": "2014-07-26",
+    "sales": 28073058500,
+    "firstWinners": 7,
+    "firstPrize": 1943530018
+   },
+   {
+    "round": 609,
+    "date": "2014-08-02",
+    "sales": 27429100500,
+    "firstWinners": 2,
+    "firstPrize": 6339311438
+   },
+   {
+    "round": 610,
+    "date": "2014-08-09",
+    "sales": 28431378000,
+    "firstWinners": 4,
+    "firstPrize": 3516018375
+   },
+   {
+    "round": 611,
+    "date": "2014-08-16",
+    "sales": 28705539500,
+    "firstWinners": 4,
+    "firstPrize": 3502706157
+   },
+   {
+    "round": 612,
+    "date": "2014-08-23",
+    "sales": 28465657000,
+    "firstWinners": 11,
+    "firstPrize": 1181705250
+   },
+   {
+    "round": 613,
+    "date": "2014-08-30",
+    "sales": 28993124500,
+    "firstWinners": 9,
+    "firstPrize": 1549831209
+   },
+   {
+    "round": 614,
+    "date": "2014-09-06",
+    "sales": 31150988500,
+    "firstWinners": 6,
+    "firstPrize": 2540975438
+   },
+   {
+    "round": 615,
+    "date": "2014-09-13",
+    "sales": 29536189000,
+    "firstWinners": 9,
+    "firstPrize": 1535062417
+   },
+   {
+    "round": 616,
+    "date": "2014-09-20",
+    "sales": 30151680000,
+    "firstWinners": 9,
+    "firstPrize": 1611811250
+   },
+   {
+    "round": 617,
+    "date": "2014-09-27",
+    "sales": 29479061500,
+    "firstWinners": 8,
+    "firstPrize": 1629701860
+   },
+   {
+    "round": 618,
+    "date": "2014-10-04",
+    "sales": 29275401500,
+    "firstWinners": 5,
+    "firstPrize": 2881326225
+   },
+   {
+    "round": 619,
+    "date": "2014-10-11",
+    "sales": 29411462500,
+    "firstWinners": 3,
+    "firstPrize": 4612479375
+   },
+   {
+    "round": 620,
+    "date": "2014-10-18",
+    "sales": 29171388500,
+    "firstWinners": 7,
+    "firstPrize": 2028283233
+   },
+   {
+    "round": 621,
+    "date": "2014-10-25",
+    "sales": 29703608000,
+    "firstWinners": 6,
+    "firstPrize": 2359723500
+   },
+   {
+    "round": 622,
+    "date": "2014-11-01",
+    "sales": 29800664500,
+    "firstWinners": 9,
+    "firstPrize": 1630598292
+   },
+   {
+    "round": 623,
+    "date": "2014-11-08",
+    "sales": 29252071000,
+    "firstWinners": 8,
+    "firstPrize": 1813702594
+   },
+   {
+    "round": 624,
+    "date": "2014-11-15",
+    "sales": 28916363000,
+    "firstWinners": 5,
+    "firstPrize": 2763729450
+   },
+   {
+    "round": 625,
+    "date": "2014-11-22",
+    "sales": 29307489500,
+    "firstWinners": 5,
+    "firstPrize": 2765184675
+   },
+   {
+    "round": 626,
+    "date": "2014-11-29",
+    "sales": 29493093500,
+    "firstWinners": 8,
+    "firstPrize": 1717871110
+   },
+   {
+    "round": 627,
+    "date": "2014-12-06",
+    "sales": 27990667000,
+    "firstWinners": 10,
+    "firstPrize": 1352230650
+   },
+   {
+    "round": 628,
+    "date": "2014-12-13",
+    "sales": 28626554500,
+    "firstWinners": 9,
+    "firstPrize": 1499942875
+   },
+   {
+    "round": 629,
+    "date": "2014-12-20",
+    "sales": 28809350500,
+    "firstWinners": 5,
+    "firstPrize": 2919433575
+   },
+   {
+    "round": 630,
+    "date": "2014-12-27",
+    "sales": 30667947000,
+    "firstWinners": 3,
+    "firstPrize": 4836305500
+   },
+   {
+    "round": 631,
+    "date": "2015-01-03",
+    "sales": 32650310500,
+    "firstWinners": 4,
+    "firstPrize": 3919853532
+   },
+   {
+    "round": 632,
+    "date": "2015-01-10",
+    "sales": 31533301500,
+    "firstWinners": 11,
+    "firstPrize": 1432587716
+   },
+   {
+    "round": 633,
+    "date": "2015-01-17",
+    "sales": 31007898500,
+    "firstWinners": 12,
+    "firstPrize": 1217257094
+   },
+   {
+    "round": 634,
+    "date": "2015-01-24",
+    "sales": 31574783500,
+    "firstWinners": 13,
+    "firstPrize": 1077935106
+   },
+   {
+    "round": 635,
+    "date": "2015-01-31",
+    "sales": 31214810500,
+    "firstWinners": 8,
+    "firstPrize": 1855587235
+   },
+   {
+    "round": 636,
+    "date": "2015-02-07",
+    "sales": 31393197000,
+    "firstWinners": 8,
+    "firstPrize": 1832362219
+   },
+   {
+    "round": 637,
+    "date": "2015-02-14",
+    "sales": 31752432500,
+    "firstWinners": 4,
+    "firstPrize": 3899241094
+   },
+   {
+    "round": 638,
+    "date": "2015-02-21",
+    "sales": 32159793000,
+    "firstWinners": 7,
+    "firstPrize": 2229403179
+   },
+   {
+    "round": 639,
+    "date": "2015-02-28",
+    "sales": 33101299500,
+    "firstWinners": 4,
+    "firstPrize": 4061185219
+   },
+   {
+    "round": 640,
+    "date": "2015-03-07",
+    "sales": 32040251000,
+    "firstWinners": 9,
+    "firstPrize": 1728768834
+   },
+   {
+    "round": 641,
+    "date": "2015-03-14",
+    "sales": 31886567000,
+    "firstWinners": 8,
+    "firstPrize": 1990074563
+   },
+   {
+    "round": 642,
+    "date": "2015-03-21",
+    "sales": 31772112000,
+    "firstWinners": 12,
+    "firstPrize": 1251460438
+   },
+   {
+    "round": 643,
+    "date": "2015-03-28",
+    "sales": 31555034000,
+    "firstWinners": 6,
+    "firstPrize": 2535763625
+   },
+   {
+    "round": 644,
+    "date": "2015-04-04",
+    "sales": 30923299500,
+    "firstWinners": 8,
+    "firstPrize": 1831451204
+   },
+   {
+    "round": 645,
+    "date": "2015-04-11",
+    "sales": 31330878000,
+    "firstWinners": 4,
+    "firstPrize": 3696297750
+   },
+   {
+    "round": 646,
+    "date": "2015-04-18",
+    "sales": 31154045000,
+    "firstWinners": 7,
+    "firstPrize": 2215498393
+   },
+   {
+    "round": 647,
+    "date": "2015-04-25",
+    "sales": 31157169000,
+    "firstWinners": 7,
+    "firstPrize": 2189725608
+   },
+   {
+    "round": 648,
+    "date": "2015-05-02",
+    "sales": 30437202500,
+    "firstWinners": 7,
+    "firstPrize": 2120987947
+   },
+   {
+    "round": 649,
+    "date": "2015-05-09",
+    "sales": 30236589000,
+    "firstWinners": 5,
+    "firstPrize": 2948042100
+   },
+   {
+    "round": 650,
+    "date": "2015-05-16",
+    "sales": 30495541000,
+    "firstWinners": 5,
+    "firstPrize": 2849298900
+   },
+   {
+    "round": 651,
+    "date": "2015-05-23",
+    "sales": 30747445500,
+    "firstWinners": 8,
+    "firstPrize": 1855306454
+   },
+   {
+    "round": 652,
+    "date": "2015-05-30",
+    "sales": 30213488500,
+    "firstWinners": 5,
+    "firstPrize": 3003483525
+   },
+   {
+    "round": 653,
+    "date": "2015-06-06",
+    "sales": 29858018500,
+    "firstWinners": 14,
+    "firstPrize": 980958670
+   },
+   {
+    "round": 654,
+    "date": "2015-06-13",
+    "sales": 30348906500,
+    "firstWinners": 8,
+    "firstPrize": 1879301391
+   },
+   {
+    "round": 655,
+    "date": "2015-06-20",
+    "sales": 30217400500,
+    "firstWinners": 9,
+    "firstPrize": 1661439625
+   },
+   {
+    "round": 656,
+    "date": "2015-06-27",
+    "sales": 30664059000,
+    "firstWinners": 2,
+    "firstPrize": 7330002750
+   },
+   {
+    "round": 657,
+    "date": "2015-07-04",
+    "sales": 30884918500,
+    "firstWinners": 9,
+    "firstPrize": 1694762792
+   },
+   {
+    "round": 658,
+    "date": "2015-07-11",
+    "sales": 30565621500,
+    "firstWinners": 9,
+    "firstPrize": 1634031375
+   },
+   {
+    "round": 659,
+    "date": "2015-07-18",
+    "sales": 30838873500,
+    "firstWinners": 11,
+    "firstPrize": 1336604216
+   },
+   {
+    "round": 660,
+    "date": "2015-07-25",
+    "sales": 30406661000,
+    "firstWinners": 10,
+    "firstPrize": 1421272575
+   },
+   {
+    "round": 661,
+    "date": "2015-08-01",
+    "sales": 29798687500,
+    "firstWinners": 8,
+    "firstPrize": 1713025547
+   },
+   {
+    "round": 662,
+    "date": "2015-08-08",
+    "sales": 29582271000,
+    "firstWinners": 8,
+    "firstPrize": 1689733688
+   },
+   {
+    "round": 663,
+    "date": "2015-08-15",
+    "sales": 30550352000,
+    "firstWinners": 7,
+    "firstPrize": 2080244143
+   },
+   {
+    "round": 664,
+    "date": "2015-08-22",
+    "sales": 30960844500,
+    "firstWinners": 10,
+    "firstPrize": 1536801338
+   },
+   {
+    "round": 665,
+    "date": "2015-08-29",
+    "sales": 30942937000,
+    "firstWinners": 4,
+    "firstPrize": 3643230375
+   },
+   {
+    "round": 666,
+    "date": "2015-09-05",
+    "sales": 31326458500,
+    "firstWinners": 6,
+    "firstPrize": 2396901063
+   },
+   {
+    "round": 667,
+    "date": "2015-09-12",
+    "sales": 31710816000,
+    "firstWinners": 7,
+    "firstPrize": 2228764393
+   },
+   {
+    "round": 668,
+    "date": "2015-09-19",
+    "sales": 31673202500,
+    "firstWinners": 5,
+    "firstPrize": 2991158625
+   },
+   {
+    "round": 669,
+    "date": "2015-09-26",
+    "sales": 33976105500,
+    "firstWinners": 6,
+    "firstPrize": 2708173188
+   },
+   {
+    "round": 670,
+    "date": "2015-10-03",
+    "sales": 31121343500,
+    "firstWinners": 12,
+    "firstPrize": 1191725219
+   },
+   {
+    "round": 671,
+    "date": "2015-10-10",
+    "sales": 31970403500,
+    "firstWinners": 4,
+    "firstPrize": 3722322844
+   },
+   {
+    "round": 672,
+    "date": "2015-10-17",
+    "sales": 31771165000,
+    "firstWinners": 9,
+    "firstPrize": 1754745000
+   },
+   {
+    "round": 673,
+    "date": "2015-10-24",
+    "sales": 31581789000,
+    "firstWinners": 10,
+    "firstPrize": 1491453300
+   },
+   {
+    "round": 674,
+    "date": "2015-10-31",
+    "sales": 30693487000,
+    "firstWinners": 8,
+    "firstPrize": 1770565500
+   },
+   {
+    "round": 675,
+    "date": "2015-11-07",
+    "sales": 30229311500,
+    "firstWinners": 4,
+    "firstPrize": 3514549032
+   },
+   {
+    "round": 676,
+    "date": "2015-11-14",
+    "sales": 31073821000,
+    "firstWinners": 8,
+    "firstPrize": 1879726500
+   },
+   {
+    "round": 677,
+    "date": "2015-11-21",
+    "sales": 31133812000,
+    "firstWinners": 8,
+    "firstPrize": 1921114407
+   },
+   {
+    "round": 678,
+    "date": "2015-11-28",
+    "sales": 30443646500,
+    "firstWinners": 6,
+    "firstPrize": 2288490188
+   },
+   {
+    "round": 679,
+    "date": "2015-12-05",
+    "sales": 31110459000,
+    "firstWinners": 5,
+    "firstPrize": 2863005600
+   },
+   {
+    "round": 680,
+    "date": "2015-12-12",
+    "sales": 32122600500,
+    "firstWinners": 14,
+    "firstPrize": 1110570563
+   },
+   {
+    "round": 681,
+    "date": "2015-12-19",
+    "sales": 31634126500,
+    "firstWinners": 6,
+    "firstPrize": 2696328938
+   },
+   {
+    "round": 682,
+    "date": "2015-12-26",
+    "sales": 33378929000,
+    "firstWinners": 4,
+    "firstPrize": 4063713563
+   },
+   {
+    "round": 683,
+    "date": "2016-01-02",
+    "sales": 35970045500,
+    "firstWinners": 16,
+    "firstPrize": 1010930883
+   },
+   {
+    "round": 684,
+    "date": "2016-01-09",
+    "sales": 33311943500,
+    "firstWinners": 9,
+    "firstPrize": 1688815709
+   },
+   {
+    "round": 685,
+    "date": "2016-01-16",
+    "sales": 34563337500,
+    "firstWinners": 11,
+    "firstPrize": 1494367671
+   },
+   {
+    "round": 686,
+    "date": "2016-01-23",
+    "sales": 32637005000,
+    "firstWinners": 8,
+    "firstPrize": 1937531719
+   },
+   {
+    "round": 687,
+    "date": "2016-01-30",
+    "sales": 34022334500,
+    "firstWinners": 6,
+    "firstPrize": 2720029313
+   },
+   {
+    "round": 688,
+    "date": "2016-02-06",
+    "sales": 36547806000,
+    "firstWinners": 9,
+    "firstPrize": 1967536750
+   },
+   {
+    "round": 689,
+    "date": "2016-02-13",
+    "sales": 33730073500,
+    "firstWinners": 7,
+    "firstPrize": 2321775911
+   },
+   {
+    "round": 690,
+    "date": "2016-02-20",
+    "sales": 34571012500,
+    "firstWinners": 15,
+    "firstPrize": 1126507625
+   },
+   {
+    "round": 691,
+    "date": "2016-02-27",
+    "sales": 34295164000,
+    "firstWinners": 6,
+    "firstPrize": 2839296750
+   },
+   {
+    "round": 692,
+    "date": "2016-03-05",
+    "sales": 33195249500,
+    "firstWinners": 7,
+    "firstPrize": 2301273697
+   },
+   {
+    "round": 693,
+    "date": "2016-03-12",
+    "sales": 33676467500,
+    "firstWinners": 10,
+    "firstPrize": 1642763813
+   },
+   {
+    "round": 694,
+    "date": "2016-03-19",
+    "sales": 33766628500,
+    "firstWinners": 10,
+    "firstPrize": 1555036388
+   },
+   {
+    "round": 695,
+    "date": "2016-03-26",
+    "sales": 33836042500,
+    "firstWinners": 11,
+    "firstPrize": 1450214830
+   },
+   {
+    "round": 696,
+    "date": "2016-04-02",
+    "sales": 33771485500,
+    "firstWinners": 10,
+    "firstPrize": 1632054413
+   },
+   {
+    "round": 697,
+    "date": "2016-04-09",
+    "sales": 33483070500,
+    "firstWinners": 10,
+    "firstPrize": 1531443038
+   },
+   {
+    "round": 698,
+    "date": "2016-04-16",
+    "sales": 33141634000,
+    "firstWinners": 8,
+    "firstPrize": 1921084125
+   },
+   {
+    "round": 699,
+    "date": "2016-04-23",
+    "sales": 33371573000,
+    "firstWinners": 8,
+    "firstPrize": 1995411375
+   },
+   {
+    "round": 700,
+    "date": "2016-04-30",
+    "sales": 33423138000,
+    "firstWinners": 8,
+    "firstPrize": 2082099188
+   },
+   {
+    "round": 701,
+    "date": "2016-05-07",
+    "sales": 32227069000,
+    "firstWinners": 10,
+    "firstPrize": 1583183175
+   },
+   {
+    "round": 702,
+    "date": "2016-05-14",
+    "sales": 33109927000,
+    "firstWinners": 11,
+    "firstPrize": 1465091387
+   },
+   {
+    "round": 703,
+    "date": "2016-05-21",
+    "sales": 32864494000,
+    "firstWinners": 5,
+    "firstPrize": 3235784100
+   },
+   {
+    "round": 704,
+    "date": "2016-05-28",
+    "sales": 32965058500,
+    "firstWinners": 4,
+    "firstPrize": 3865190344
+   },
+   {
+    "round": 705,
+    "date": "2016-06-04",
+    "sales": 32929921500,
+    "firstWinners": 4,
+    "firstPrize": 3987206532
+   },
+   {
+    "round": 706,
+    "date": "2016-06-11",
+    "sales": 32861744000,
+    "firstWinners": 4,
+    "firstPrize": 3831746063
+   },
+   {
+    "round": 707,
+    "date": "2016-06-18",
+    "sales": 33406962000,
+    "firstWinners": 12,
+    "firstPrize": 1322167313
+   },
+   {
+    "round": 708,
+    "date": "2016-06-25",
+    "sales": 33403153500,
+    "firstWinners": 4,
+    "firstPrize": 4099552219
+   },
+   {
+    "round": 709,
+    "date": "2016-07-02",
+    "sales": 32796252000,
+    "firstWinners": 14,
+    "firstPrize": 1165271625
+   },
+   {
+    "round": 710,
+    "date": "2016-07-09",
+    "sales": 32541986000,
+    "firstWinners": 5,
+    "firstPrize": 2895441150
+   },
+   {
+    "round": 711,
+    "date": "2016-07-16",
+    "sales": 33076373000,
+    "firstWinners": 7,
+    "firstPrize": 2277413358
+   },
+   {
+    "round": 712,
+    "date": "2016-07-23",
+    "sales": 33068159000,
+    "firstWinners": 4,
+    "firstPrize": 4034485125
+   },
+   {
+    "round": 713,
+    "date": "2016-07-30",
+    "sales": 32323276000,
+    "firstWinners": 9,
+    "firstPrize": 1714720917
+   },
+   {
+    "round": 714,
+    "date": "2016-08-06",
+    "sales": 32049994500,
+    "firstWinners": 7,
+    "firstPrize": 2085131733
+   },
+   {
+    "round": 715,
+    "date": "2016-08-13",
+    "sales": 32897303500,
+    "firstWinners": 6,
+    "firstPrize": 2605510438
+   },
+   {
+    "round": 716,
+    "date": "2016-08-20",
+    "sales": 33520084500,
+    "firstWinners": 12,
+    "firstPrize": 1358752157
+   },
+   {
+    "round": 717,
+    "date": "2016-08-27",
+    "sales": 34298919500,
+    "firstWinners": 6,
+    "firstPrize": 2702433688
+   },
+   {
+    "round": 718,
+    "date": "2016-09-03",
+    "sales": 34700381500,
+    "firstWinners": 17,
+    "firstPrize": 926166464
+   },
+   {
+    "round": 719,
+    "date": "2016-09-10",
+    "sales": 35689196000,
+    "firstWinners": 9,
+    "firstPrize": 1879581334
+   },
+   {
+    "round": 720,
+    "date": "2016-09-17",
+    "sales": 34969545000,
+    "firstWinners": 14,
+    "firstPrize": 1233770358
+   },
+   {
+    "round": 721,
+    "date": "2016-09-24",
+    "sales": 35813783500,
+    "firstWinners": 8,
+    "firstPrize": 2273767360
+   },
+   {
+    "round": 722,
+    "date": "2016-10-01",
+    "sales": 34723244500,
+    "firstWinners": 4,
+    "firstPrize": 4365422719
+   },
+   {
+    "round": 723,
+    "date": "2016-10-08",
+    "sales": 33875115500,
+    "firstWinners": 8,
+    "firstPrize": 2114365360
+   },
+   {
+    "round": 724,
+    "date": "2016-10-15",
+    "sales": 34993637000,
+    "firstWinners": 12,
+    "firstPrize": 1427789813
+   },
+   {
+    "round": 725,
+    "date": "2016-10-22",
+    "sales": 35104338000,
+    "firstWinners": 11,
+    "firstPrize": 1579217250
+   },
+   {
+    "round": 726,
+    "date": "2016-10-29",
+    "sales": 34399647500,
+    "firstWinners": 14,
+    "firstPrize": 1166872634
+   },
+   {
+    "round": 727,
+    "date": "2016-11-05",
+    "sales": 33779569500,
+    "firstWinners": 14,
+    "firstPrize": 1115107742
+   },
+   {
+    "round": 728,
+    "date": "2016-11-12",
+    "sales": 34153056000,
+    "firstWinners": 5,
+    "firstPrize": 3243464400
+   },
+   {
+    "round": 729,
+    "date": "2016-11-19",
+    "sales": 34392080500,
+    "firstWinners": 4,
+    "firstPrize": 4198250719
+   },
+   {
+    "round": 730,
+    "date": "2016-11-26",
+    "sales": 33467052500,
+    "firstWinners": 8,
+    "firstPrize": 2017382110
+   },
+   {
+    "round": 731,
+    "date": "2016-12-03",
+    "sales": 34619836500,
+    "firstWinners": 7,
+    "firstPrize": 2340471054
+   },
+   {
+    "round": 732,
+    "date": "2016-12-10",
+    "sales": 34322974000,
+    "firstWinners": 7,
+    "firstPrize": 2203270608
+   },
+   {
+    "round": 733,
+    "date": "2016-12-17",
+    "sales": 34660744000,
+    "firstWinners": 4,
+    "firstPrize": 4016725125
+   },
+   {
+    "round": 734,
+    "date": "2016-12-24",
+    "sales": 35728791000,
+    "firstWinners": 9,
+    "firstPrize": 1949395500
+   },
+   {
+    "round": 735,
+    "date": "2016-12-31",
+    "sales": 38744104500,
+    "firstWinners": 10,
+    "firstPrize": 1847231588
+   },
+   {
+    "round": 736,
+    "date": "2017-01-07",
+    "sales": 36755101500,
+    "firstWinners": 5,
+    "firstPrize": 3397362225
+   },
+   {
+    "round": 737,
+    "date": "2017-01-14",
+    "sales": 35387972000,
+    "firstWinners": 4,
+    "firstPrize": 4283061000
+   },
+   {
+    "round": 738,
+    "date": "2017-01-21",
+    "sales": 35884061000,
+    "firstWinners": 11,
+    "firstPrize": 1634191091
+   },
+   {
+    "round": 739,
+    "date": "2017-01-28",
+    "sales": 38999830500,
+    "firstWinners": 4,
+    "firstPrize": 4744122282
+   },
+   {
+    "round": 740,
+    "date": "2017-02-04",
+    "sales": 37593260000,
+    "firstWinners": 18,
+    "firstPrize": 936929792
+   },
+   {
+    "round": 741,
+    "date": "2017-02-11",
+    "sales": 37196292500,
+    "firstWinners": 6,
+    "firstPrize": 3043595938
+   },
+   {
+    "round": 742,
+    "date": "2017-02-18",
+    "sales": 36928896000,
+    "firstWinners": 16,
+    "firstPrize": 1111814813
+   },
+   {
+    "round": 743,
+    "date": "2017-02-25",
+    "sales": 36718426000,
+    "firstWinners": 7,
+    "firstPrize": 2608641000
+   },
+   {
+    "round": 744,
+    "date": "2017-03-04",
+    "sales": 36753646500,
+    "firstWinners": 15,
+    "firstPrize": 1155411575
+   },
+   {
+    "round": 745,
+    "date": "2017-03-11",
+    "sales": 36787559500,
+    "firstWinners": 20,
+    "firstPrize": 746822982
+   },
+   {
+    "round": 746,
+    "date": "2017-03-18",
+    "sales": 37119789500,
+    "firstWinners": 9,
+    "firstPrize": 2038623709
+   },
+   {
+    "round": 747,
+    "date": "2017-03-25",
+    "sales": 36668940000,
+    "firstWinners": 9,
+    "firstPrize": 1903214584
+   },
+   {
+    "round": 748,
+    "date": "2017-04-01",
+    "sales": 36375138500,
+    "firstWinners": 9,
+    "firstPrize": 1928246542
+   },
+   {
+    "round": 749,
+    "date": "2017-04-08",
+    "sales": 36126444500,
+    "firstWinners": 13,
+    "firstPrize": 1350104395
+   },
+   {
+    "round": 750,
+    "date": "2017-04-15",
+    "sales": 36124050000,
+    "firstWinners": 7,
+    "firstPrize": 2522104286
+   },
+   {
+    "round": 751,
+    "date": "2017-04-22",
+    "sales": 35767116500,
+    "firstWinners": 8,
+    "firstPrize": 2097968110
+   },
+   {
+    "round": 752,
+    "date": "2017-04-29",
+    "sales": 35800411000,
+    "firstWinners": 9,
+    "firstPrize": 1870358834
+   },
+   {
+    "round": 753,
+    "date": "2017-05-06",
+    "sales": 34457500500,
+    "firstWinners": 6,
+    "firstPrize": 2711105063
+   },
+   {
+    "round": 754,
+    "date": "2017-05-13",
+    "sales": 35382925000,
+    "firstWinners": 5,
+    "firstPrize": 3427542000
+   },
+   {
+    "round": 755,
+    "date": "2017-05-20",
+    "sales": 35650317500,
+    "firstWinners": 8,
+    "firstPrize": 2214427266
+   },
+   {
+    "round": 756,
+    "date": "2017-05-27",
+    "sales": 35496473000,
+    "firstWinners": 5,
+    "firstPrize": 3414434700
+   },
+   {
+    "round": 757,
+    "date": "2017-06-03",
+    "sales": 35526501000,
+    "firstWinners": 21,
+    "firstPrize": 739839858
+   },
+   {
+    "round": 758,
+    "date": "2017-06-10",
+    "sales": 35882129500,
+    "firstWinners": 8,
+    "firstPrize": 2078969954
+   },
+   {
+    "round": 759,
+    "date": "2017-06-17",
+    "sales": 36316104000,
+    "firstWinners": 6,
+    "firstPrize": 3032670500
+   },
+   {
+    "round": 760,
+    "date": "2017-06-24",
+    "sales": 36100398500,
+    "firstWinners": 8,
+    "firstPrize": 2253299391
+   },
+   {
+    "round": 761,
+    "date": "2017-07-01",
+    "sales": 35707951500,
+    "firstWinners": 7,
+    "firstPrize": 2392730518
+   },
+   {
+    "round": 762,
+    "date": "2017-07-08",
+    "sales": 35279447500,
+    "firstWinners": 10,
+    "firstPrize": 1631432063
+   },
+   {
+    "round": 763,
+    "date": "2017-07-15",
+    "sales": 35326050000,
+    "firstWinners": 8,
+    "firstPrize": 2138130000
+   },
+   {
+    "round": 764,
+    "date": "2017-07-22",
+    "sales": 35159466000,
+    "firstWinners": 7,
+    "firstPrize": 2459975465
+   },
+   {
+    "round": 765,
+    "date": "2017-07-29",
+    "sales": 35486180000,
+    "firstWinners": 15,
+    "firstPrize": 1109214250
+   },
+   {
+    "round": 766,
+    "date": "2017-08-05",
+    "sales": 34750384500,
+    "firstWinners": 8,
+    "firstPrize": 2173637297
+   },
+   {
+    "round": 767,
+    "date": "2017-08-12",
+    "sales": 35642799500,
+    "firstWinners": 15,
+    "firstPrize": 1163768725
+   },
+   {
+    "round": 768,
+    "date": "2017-08-19",
+    "sales": 36153487500,
+    "firstWinners": 13,
+    "firstPrize": 1363572260
+   },
+   {
+    "round": 769,
+    "date": "2017-08-26",
+    "sales": 36436715500,
+    "firstWinners": 9,
+    "firstPrize": 1930760042
+   },
+   {
+    "round": 770,
+    "date": "2017-09-02",
+    "sales": 37083189500,
+    "firstWinners": 8,
+    "firstPrize": 2163099329
+   },
+   {
+    "round": 771,
+    "date": "2017-09-09",
+    "sales": 36772969500,
+    "firstWinners": 4,
+    "firstPrize": 4362644907
+   },
+   {
+    "round": 772,
+    "date": "2017-09-16",
+    "sales": 37187684500,
+    "firstWinners": 10,
+    "firstPrize": 1769608838
+   },
+   {
+    "round": 773,
+    "date": "2017-09-23",
+    "sales": 37280298500,
+    "firstWinners": 11,
+    "firstPrize": 1609403080
+   },
+   {
+    "round": 774,
+    "date": "2017-09-30",
+    "sales": 38673510500,
+    "firstWinners": 11,
+    "firstPrize": 1709721512
+   },
+   {
+    "round": 775,
+    "date": "2017-10-07",
+    "sales": 35397726000,
+    "firstWinners": 5,
+    "firstPrize": 3470437650
+   },
+   {
+    "round": 776,
+    "date": "2017-10-14",
+    "sales": 37413041000,
+    "firstWinners": 7,
+    "firstPrize": 2557579393
+   },
+   {
+    "round": 777,
+    "date": "2017-10-21",
+    "sales": 37767180000,
+    "firstWinners": 21,
+    "firstPrize": 833468036
+   },
+   {
+    "round": 778,
+    "date": "2017-10-28",
+    "sales": 37537803000,
+    "firstWinners": 3,
+    "firstPrize": 6264069500
+   },
+   {
+    "round": 779,
+    "date": "2017-11-04",
+    "sales": 36886838000,
+    "firstWinners": 11,
+    "firstPrize": 1527709296
+   },
+   {
+    "round": 780,
+    "date": "2017-11-11",
+    "sales": 37116042000,
+    "firstWinners": 11,
+    "firstPrize": 1667520137
+   },
+   {
+    "round": 781,
+    "date": "2017-11-18",
+    "sales": 36241578500,
+    "firstWinners": 9,
+    "firstPrize": 1882891542
+   },
+   {
+    "round": 782,
+    "date": "2017-11-25",
+    "sales": 36126986500,
+    "firstWinners": 9,
+    "firstPrize": 1946487625
+   },
+   {
+    "round": 783,
+    "date": "2017-12-02",
+    "sales": 36762628000,
+    "firstWinners": 4,
+    "firstPrize": 4603964625
+   },
+   {
+    "round": 784,
+    "date": "2017-12-09",
+    "sales": 37155691000,
+    "firstWinners": 9,
+    "firstPrize": 1908678000
+   },
+   {
+    "round": 785,
+    "date": "2017-12-16",
+    "sales": 36487281500,
+    "firstWinners": 6,
+    "firstPrize": 2886622688
+   },
+   {
+    "round": 786,
+    "date": "2017-12-23",
+    "sales": 37965078000,
+    "firstWinners": 4,
+    "firstPrize": 4551365250
+   },
+   {
+    "round": 787,
+    "date": "2017-12-30",
+    "sales": 39796961500,
+    "firstWinners": 6,
+    "firstPrize": 3092108313
+   },
+   {
+    "round": 788,
+    "date": "2018-01-06",
+    "sales": 39060941000,
+    "firstWinners": 13,
+    "firstPrize": 1401475154
+   },
+   {
+    "round": 789,
+    "date": "2018-01-13",
+    "sales": 38068301500,
+    "firstWinners": 15,
+    "firstPrize": 1140976825
+   },
+   {
+    "round": 790,
+    "date": "2018-01-20",
+    "sales": 39489440500,
+    "firstWinners": 16,
+    "firstPrize": 1160516274
+   },
+   {
+    "round": 791,
+    "date": "2018-01-27",
+    "sales": 37102922000,
+    "firstWinners": 14,
+    "firstPrize": 1253081893
+   },
+   {
+    "round": 792,
+    "date": "2018-02-03",
+    "sales": 38169501500,
+    "firstWinners": 7,
+    "firstPrize": 2655736768
+   },
+   {
+    "round": 793,
+    "date": "2018-02-10",
+    "sales": 38088738500,
+    "firstWinners": 5,
+    "firstPrize": 3750146775
+   },
+   {
+    "round": 794,
+    "date": "2018-02-17",
+    "sales": 39970789500,
+    "firstWinners": 7,
+    "firstPrize": 2650940304
+   },
+   {
+    "round": 795,
+    "date": "2018-02-24",
+    "sales": 39830671000,
+    "firstWinners": 11,
+    "firstPrize": 1714977000
+   },
+   {
+    "round": 796,
+    "date": "2018-03-03",
+    "sales": 38842971500,
+    "firstWinners": 7,
+    "firstPrize": 2763490340
+   },
+   {
+    "round": 797,
+    "date": "2018-03-10",
+    "sales": 38669970000,
+    "firstWinners": 8,
+    "firstPrize": 2397028125
+   },
+   {
+    "round": 798,
+    "date": "2018-03-17",
+    "sales": 38519379500,
+    "firstWinners": 7,
+    "firstPrize": 2710791911
+   },
+   {
+    "round": 799,
+    "date": "2018-03-24",
+    "sales": 38354493000,
+    "firstWinners": 10,
+    "firstPrize": 1826427225
+   },
+   {
+    "round": 800,
+    "date": "2018-03-31",
+    "sales": 38497031000,
+    "firstWinners": 11,
+    "firstPrize": 1632246205
+   },
+   {
+    "round": 801,
+    "date": "2018-04-07",
+    "sales": 37017396000,
+    "firstWinners": 8,
+    "firstPrize": 2256786657
+   },
+   {
+    "round": 802,
+    "date": "2018-04-14",
+    "sales": 37573390500,
+    "firstWinners": 16,
+    "firstPrize": 1082947993
+   },
+   {
+    "round": 803,
+    "date": "2018-04-21",
+    "sales": 37835396500,
+    "firstWinners": 5,
+    "firstPrize": 3663810225
+   },
+   {
+    "round": 804,
+    "date": "2018-04-28",
+    "sales": 37278514000,
+    "firstWinners": 11,
+    "firstPrize": 1631996523
+   },
+   {
+    "round": 805,
+    "date": "2018-05-05",
+    "sales": 36532990500,
+    "firstWinners": 4,
+    "firstPrize": 4266061969
+   },
+   {
+    "round": 806,
+    "date": "2018-05-12",
+    "sales": 37015291500,
+    "firstWinners": 7,
+    "firstPrize": 2640760875
+   },
+   {
+    "round": 807,
+    "date": "2018-05-19",
+    "sales": 36915790000,
+    "firstWinners": 7,
+    "firstPrize": 2437662322
+   },
+   {
+    "round": 808,
+    "date": "2018-05-26",
+    "sales": 37455719000,
+    "firstWinners": 6,
+    "firstPrize": 3087620500
+   },
+   {
+    "round": 809,
+    "date": "2018-06-02",
+    "sales": 37107052000,
+    "firstWinners": 6,
+    "firstPrize": 2921372750
+   },
+   {
+    "round": 810,
+    "date": "2018-06-09",
+    "sales": 37194177500,
+    "firstWinners": 8,
+    "firstPrize": 2231598047
+   },
+   {
+    "round": 811,
+    "date": "2018-06-16",
+    "sales": 37285406500,
+    "firstWinners": 7,
+    "firstPrize": 2524148197
+   },
+   {
+    "round": 812,
+    "date": "2018-06-23",
+    "sales": 37073908000,
+    "firstWinners": 6,
+    "firstPrize": 2947954750
+   },
+   {
+    "round": 813,
+    "date": "2018-06-30",
+    "sales": 36697473500,
+    "firstWinners": 4,
+    "firstPrize": 4591763157
+   },
+   {
+    "round": 814,
+    "date": "2018-07-07",
+    "sales": 37158271500,
+    "firstWinners": 6,
+    "firstPrize": 3067192063
+   },
+   {
+    "round": 815,
+    "date": "2018-07-14",
+    "sales": 36708200000,
+    "firstWinners": 7,
+    "firstPrize": 2579855358
+   },
+   {
+    "round": 816,
+    "date": "2018-07-21",
+    "sales": 36198913000,
+    "firstWinners": 8,
+    "firstPrize": 2128107938
+   },
+   {
+    "round": 817,
+    "date": "2018-07-28",
+    "sales": 36276383000,
+    "firstWinners": 9,
+    "firstPrize": 1868477334
+   },
+   {
+    "round": 818,
+    "date": "2018-08-04",
+    "sales": 35896676500,
+    "firstWinners": 13,
+    "firstPrize": 1380804318
+   },
+   {
+    "round": 819,
+    "date": "2018-08-11",
+    "sales": 37289453500,
+    "firstWinners": 7,
+    "firstPrize": 2594534840
+   },
+   {
+    "round": 820,
+    "date": "2018-08-18",
+    "sales": 37872285500,
+    "firstWinners": 4,
+    "firstPrize": 4627313532
+   },
+   {
+    "round": 821,
+    "date": "2018-08-25",
+    "sales": 38059119500,
+    "firstWinners": 14,
+    "firstPrize": 1316155956
+   },
+   {
+    "round": 822,
+    "date": "2018-09-01",
+    "sales": 37840869500,
+    "firstWinners": 3,
+    "firstPrize": 5930898625
+   },
+   {
+    "round": 823,
+    "date": "2018-09-08",
+    "sales": 38700062000,
+    "firstWinners": 9,
+    "firstPrize": 2009843917
+   },
+   {
+    "round": 824,
+    "date": "2018-09-15",
+    "sales": 39128711000,
+    "firstWinners": 15,
+    "firstPrize": 1256646550
+   },
+   {
+    "round": 825,
+    "date": "2018-09-22",
+    "sales": 41445289000,
+    "firstWinners": 12,
+    "firstPrize": 1658710563
+   },
+   {
+    "round": 826,
+    "date": "2018-09-29",
+    "sales": 39109370000,
+    "firstWinners": 9,
+    "firstPrize": 2075192084
+   },
+   {
+    "round": 827,
+    "date": "2018-10-06",
+    "sales": 38245062500,
+    "firstWinners": 15,
+    "firstPrize": 1206500375
+   },
+   {
+    "round": 828,
+    "date": "2018-10-13",
+    "sales": 38776413500,
+    "firstWinners": 13,
+    "firstPrize": 1455185972
+   },
+   {
+    "round": 829,
+    "date": "2018-10-20",
+    "sales": 38999403500,
+    "firstWinners": 8,
+    "firstPrize": 2444650641
+   },
+   {
+    "round": 830,
+    "date": "2018-10-27",
+    "sales": 38857000000,
+    "firstWinners": 9,
+    "firstPrize": 2060528750
+   },
+   {
+    "round": 831,
+    "date": "2018-11-03",
+    "sales": 38811376500,
+    "firstWinners": 16,
+    "firstPrize": 1110702258
+   },
+   {
+    "round": 832,
+    "date": "2018-11-10",
+    "sales": 38705950000,
+    "firstWinners": 9,
+    "firstPrize": 2088204584
+   },
+   {
+    "round": 833,
+    "date": "2018-11-17",
+    "sales": 38869201000,
+    "firstWinners": 8,
+    "firstPrize": 2356317282
+   },
+   {
+    "round": 834,
+    "date": "2018-11-24",
+    "sales": 37970895500,
+    "firstWinners": 11,
+    "firstPrize": 1690693671
+   },
+   {
+    "round": 835,
+    "date": "2018-12-01",
+    "sales": 38847217500,
+    "firstWinners": 15,
+    "firstPrize": 1233681125
+   },
+   {
+    "round": 836,
+    "date": "2018-12-08",
+    "sales": 37268348500,
+    "firstWinners": 14,
+    "firstPrize": 1257843670
+   },
+   {
+    "round": 837,
+    "date": "2018-12-15",
+    "sales": 38307088000,
+    "firstWinners": 6,
+    "firstPrize": 3144449125
+   },
+   {
+    "round": 838,
+    "date": "2018-12-22",
+    "sales": 39707242000,
+    "firstWinners": 5,
+    "firstPrize": 3813733050
+   },
+   {
+    "round": 839,
+    "date": "2018-12-29",
+    "sales": 39609855000,
+    "firstWinners": 13,
+    "firstPrize": 1359454904
+   },
+   {
+    "round": 840,
+    "date": "2019-01-05",
+    "sales": 42028885500,
+    "firstWinners": 10,
+    "firstPrize": 2042961788
+   },
+   {
+    "round": 841,
+    "date": "2019-01-12",
+    "sales": 40790394500,
+    "firstWinners": 17,
+    "firstPrize": 1116095714
+   },
+   {
+    "round": 842,
+    "date": "2019-01-19",
+    "sales": 40978722000,
+    "firstWinners": 10,
+    "firstPrize": 2035475025
+   },
+   {
+    "round": 843,
+    "date": "2019-01-26",
+    "sales": 40928749000,
+    "firstWinners": 5,
+    "firstPrize": 4012970100
+   },
+   {
+    "round": 844,
+    "date": "2019-02-02",
+    "sales": 43902805000,
+    "firstWinners": 18,
+    "firstPrize": 1162963542
+   },
+   {
+    "round": 845,
+    "date": "2019-02-09",
+    "sales": 41942017000,
+    "firstWinners": 11,
+    "firstPrize": 1891217182
+   },
+   {
+    "round": 846,
+    "date": "2019-02-16",
+    "sales": 41968419500,
+    "firstWinners": 13,
+    "firstPrize": 1596884395
+   },
+   {
+    "round": 847,
+    "date": "2019-02-23",
+    "sales": 41891256000,
+    "firstWinners": 8,
+    "firstPrize": 2520846657
+   },
+   {
+    "round": 848,
+    "date": "2019-03-02",
+    "sales": 42261633000,
+    "firstWinners": 7,
+    "firstPrize": 3011580858
+   },
+   {
+    "round": 849,
+    "date": "2019-03-09",
+    "sales": 41166837000,
+    "firstWinners": 17,
+    "firstPrize": 1158252883
+   },
+   {
+    "round": 850,
+    "date": "2019-03-16",
+    "sales": 40737088000,
+    "firstWinners": 6,
+    "firstPrize": 3377587875
+   },
+   {
+    "round": 851,
+    "date": "2019-03-23",
+    "sales": 40549558000,
+    "firstWinners": 8,
+    "firstPrize": 2483692313
+   },
+   {
+    "round": 852,
+    "date": "2019-03-30",
+    "sales": 40735396500,
+    "firstWinners": 4,
+    "firstPrize": 4801543407
+   },
+   {
+    "round": 853,
+    "date": "2019-04-06",
+    "sales": 41122185000,
+    "firstWinners": 7,
+    "firstPrize": 2885006786
+   },
+   {
+    "round": 854,
+    "date": "2019-04-13",
+    "sales": 40911669000,
+    "firstWinners": 6,
+    "firstPrize": 3421706750
+   },
+   {
+    "round": 855,
+    "date": "2019-04-20",
+    "sales": 41187366000,
+    "firstWinners": 9,
+    "firstPrize": 2269510500
+   },
+   {
+    "round": 856,
+    "date": "2019-04-27",
+    "sales": 40248212000,
+    "firstWinners": 5,
+    "firstPrize": 3977927550
+   },
+   {
+    "round": 857,
+    "date": "2019-05-04",
+    "sales": 40466558500,
+    "firstWinners": 15,
+    "firstPrize": 1284915425
+   },
+   {
+    "round": 858,
+    "date": "2019-05-11",
+    "sales": 40683444500,
+    "firstWinners": 9,
+    "firstPrize": 2202347459
+   },
+   {
+    "round": 859,
+    "date": "2019-05-18",
+    "sales": 40472111500,
+    "firstWinners": 11,
+    "firstPrize": 1853927489
+   },
+   {
+    "round": 860,
+    "date": "2019-05-25",
+    "sales": 40923336000,
+    "firstWinners": 10,
+    "firstPrize": 1879899825
+   },
+   {
+    "round": 861,
+    "date": "2019-06-01",
+    "sales": 40516275500,
+    "firstWinners": 4,
+    "firstPrize": 4872108844
+   },
+   {
+    "round": 862,
+    "date": "2019-06-08",
+    "sales": 40304502500,
+    "firstWinners": 9,
+    "firstPrize": 2190922709
+   },
+   {
+    "round": 863,
+    "date": "2019-06-15",
+    "sales": 40644270000,
+    "firstWinners": 7,
+    "firstPrize": 2853357322
+   },
+   {
+    "round": 864,
+    "date": "2019-06-22",
+    "sales": 41110145000,
+    "firstWinners": 11,
+    "firstPrize": 1716553637
+   },
+   {
+    "round": 865,
+    "date": "2019-06-29",
+    "sales": 40874108500,
+    "firstWinners": 13,
+    "firstPrize": 1551729145
+   },
+   {
+    "round": 866,
+    "date": "2019-07-06",
+    "sales": 40980943000,
+    "firstWinners": 9,
+    "firstPrize": 2240409000
+   },
+   {
+    "round": 867,
+    "date": "2019-07-13",
+    "sales": 40803595000,
+    "firstWinners": 5,
+    "firstPrize": 3933755250
+   },
+   {
+    "round": 868,
+    "date": "2019-07-20",
+    "sales": 40274539000,
+    "firstWinners": 6,
+    "firstPrize": 3233804250
+   },
+   {
+    "round": 869,
+    "date": "2019-07-27",
+    "sales": 40134194500,
+    "firstWinners": 10,
+    "firstPrize": 1922582588
+   },
+   {
+    "round": 870,
+    "date": "2019-08-03",
+    "sales": 39344331500,
+    "firstWinners": 10,
+    "firstPrize": 1928842988
+   },
+   {
+    "round": 871,
+    "date": "2019-08-10",
+    "sales": 39763751000,
+    "firstWinners": 7,
+    "firstPrize": 2718071358
+   },
+   {
+    "round": 872,
+    "date": "2019-08-17",
+    "sales": 40501259000,
+    "firstWinners": 16,
+    "firstPrize": 1262705579
+   },
+   {
+    "round": 873,
+    "date": "2019-08-24",
+    "sales": 41187793000,
+    "firstWinners": 10,
+    "firstPrize": 1874553225
+   },
+   {
+    "round": 874,
+    "date": "2019-08-31",
+    "sales": 41495069000,
+    "firstWinners": 18,
+    "firstPrize": 1117123917
+   },
+   {
+    "round": 875,
+    "date": "2019-09-07",
+    "sales": 40317640500,
+    "firstWinners": 14,
+    "firstPrize": 1415946724
+   },
+   {
+    "round": 876,
+    "date": "2019-09-14",
+    "sales": 42544184000,
+    "firstWinners": 19,
+    "firstPrize": 1090657856
+   },
+   {
+    "round": 877,
+    "date": "2019-09-21",
+    "sales": 42292365000,
+    "firstWinners": 12,
+    "firstPrize": 1716607188
+   },
+   {
+    "round": 878,
+    "date": "2019-09-28",
+    "sales": 42091838000,
+    "firstWinners": 6,
+    "firstPrize": 3207993500
+   },
+   {
+    "round": 879,
+    "date": "2019-10-05",
+    "sales": 41587125500,
+    "firstWinners": 6,
+    "firstPrize": 3206361313
+   },
+   {
+    "round": 880,
+    "date": "2019-10-12",
+    "sales": 41931251000,
+    "firstWinners": 7,
+    "firstPrize": 2837810465
+   },
+   {
+    "round": 881,
+    "date": "2019-10-19",
+    "sales": 42247776000,
+    "firstWinners": 8,
+    "firstPrize": 2503212282
+   },
+   {
+    "round": 882,
+    "date": "2019-10-26",
+    "sales": 42175801000,
+    "firstWinners": 5,
+    "firstPrize": 4127270400
+   },
+   {
+    "round": 883,
+    "date": "2019-11-02",
+    "sales": 42812085500,
+    "firstWinners": 15,
+    "firstPrize": 1360519525
+   },
+   {
+    "round": 884,
+    "date": "2019-11-09",
+    "sales": 43277306500,
+    "firstWinners": 12,
+    "firstPrize": 1799077282
+   },
+   {
+    "round": 885,
+    "date": "2019-11-16",
+    "sales": 41698159500,
+    "firstWinners": 13,
+    "firstPrize": 1543832568
+   },
+   {
+    "round": 886,
+    "date": "2019-11-23",
+    "sales": 42093047000,
+    "firstWinners": 7,
+    "firstPrize": 2974643786
+   },
+   {
+    "round": 887,
+    "date": "2019-11-30",
+    "sales": 42208436000,
+    "firstWinners": 8,
+    "firstPrize": 2535268688
+   },
+   {
+    "round": 888,
+    "date": "2019-12-07",
+    "sales": 41388656500,
+    "firstWinners": 8,
+    "firstPrize": 2370359204
+   },
+   {
+    "round": 889,
+    "date": "2019-12-14",
+    "sales": 43367111000,
+    "firstWinners": 10,
+    "firstPrize": 2108986950
+   },
+   {
+    "round": 890,
+    "date": "2019-12-21",
+    "sales": 43346749000,
+    "firstWinners": 9,
+    "firstPrize": 2335486167
+   },
+   {
+    "round": 891,
+    "date": "2019-12-28",
+    "sales": 44871338500,
+    "firstWinners": 7,
+    "firstPrize": 3082673947
+   },
+   {
+    "round": 892,
+    "date": "2020-01-04",
+    "sales": 46545557500,
+    "firstWinners": 17,
+    "firstPrize": 1282017464
+   },
+   {
+    "round": 893,
+    "date": "2020-01-11",
+    "sales": 43830783500,
+    "firstWinners": 9,
+    "firstPrize": 2377433625
+   },
+   {
+    "round": 894,
+    "date": "2020-01-18",
+    "sales": 44232591500,
+    "firstWinners": 9,
+    "firstPrize": 2377935959
+   },
+   {
+    "round": 895,
+    "date": "2020-01-25",
+    "sales": 48481127500,
+    "firstWinners": 12,
+    "firstPrize": 1928079219
+   },
+   {
+    "round": 896,
+    "date": "2020-02-01",
+    "sales": 45230999000,
+    "firstWinners": 7,
+    "firstPrize": 3053222036
+   },
+   {
+    "round": 897,
+    "date": "2020-02-08",
+    "sales": 44115737000,
+    "firstWinners": 13,
+    "firstPrize": 1619922520
+   },
+   {
+    "round": 898,
+    "date": "2020-02-15",
+    "sales": 45033919500,
+    "firstWinners": 8,
+    "firstPrize": 2639313235
+   },
+   {
+    "round": 899,
+    "date": "2020-02-22",
+    "sales": 42938673500,
+    "firstWinners": 6,
+    "firstPrize": 3359356063
+   },
+   {
+    "round": 900,
+    "date": "2020-02-29",
+    "sales": 41819686000,
+    "firstWinners": 6,
+    "firstPrize": 3349851375
+   },
+   {
+    "round": 901,
+    "date": "2020-03-07",
+    "sales": 42391981000,
+    "firstWinners": 9,
+    "firstPrize": 2267974667
+   },
+   {
+    "round": 902,
+    "date": "2020-03-14",
+    "sales": 43750990500,
+    "firstWinners": 13,
+    "firstPrize": 1619317529
+   },
+   {
+    "round": 903,
+    "date": "2020-03-21",
+    "sales": 44312580000,
+    "firstWinners": 13,
+    "firstPrize": 1684582212
+   },
+   {
+    "round": 904,
+    "date": "2020-03-28",
+    "sales": 44469110000,
+    "firstWinners": 8,
+    "firstPrize": 2718077813
+   },
+   {
+    "round": 905,
+    "date": "2020-04-04",
+    "sales": 45178817000,
+    "firstWinners": 7,
+    "firstPrize": 3017862536
+   },
+   {
+    "round": 906,
+    "date": "2020-04-11",
+    "sales": 45474137000,
+    "firstWinners": 9,
+    "firstPrize": 2472607250
+   },
+   {
+    "round": 907,
+    "date": "2020-04-18",
+    "sales": 44665641000,
+    "firstWinners": 7,
+    "firstPrize": 3165059036
+   },
+   {
+    "round": 908,
+    "date": "2020-04-25",
+    "sales": 44961800500,
+    "firstWinners": 8,
+    "firstPrize": 2834856141
+   },
+   {
+    "round": 909,
+    "date": "2020-05-02",
+    "sales": 44771630500,
+    "firstWinners": 11,
+    "firstPrize": 2021062875
+   },
+   {
+    "round": 910,
+    "date": "2020-05-09",
+    "sales": 43154428500,
+    "firstWinners": 21,
+    "firstPrize": 941316375
+   },
+   {
+    "round": 911,
+    "date": "2020-05-16",
+    "sales": 44666205000,
+    "firstWinners": 10,
+    "firstPrize": 2113538625
+   },
+   {
+    "round": 912,
+    "date": "2020-05-23",
+    "sales": 44299577500,
+    "firstWinners": 14,
+    "firstPrize": 1493500581
+   },
+   {
+    "round": 913,
+    "date": "2020-05-30",
+    "sales": 44668474500,
+    "firstWinners": 16,
+    "firstPrize": 1338755602
+   },
+   {
+    "round": 914,
+    "date": "2020-06-06",
+    "sales": 44779251500,
+    "firstWinners": 11,
+    "firstPrize": 1950005557
+   },
+   {
+    "round": 915,
+    "date": "2020-06-13",
+    "sales": 43931209000,
+    "firstWinners": 6,
+    "firstPrize": 3518640500
+   },
+   {
+    "round": 916,
+    "date": "2020-06-20",
+    "sales": 44566522000,
+    "firstWinners": 11,
+    "firstPrize": 2025384341
+   },
+   {
+    "round": 917,
+    "date": "2020-06-27",
+    "sales": 44475433500,
+    "firstWinners": 10,
+    "firstPrize": 2144799638
+   },
+   {
+    "round": 918,
+    "date": "2020-07-04",
+    "sales": 44600428500,
+    "firstWinners": 18,
+    "firstPrize": 1117622646
+   },
+   {
+    "round": 919,
+    "date": "2020-07-11",
+    "sales": 45109028000,
+    "firstWinners": 5,
+    "firstPrize": 4305150450
+   },
+   {
+    "round": 920,
+    "date": "2020-07-18",
+    "sales": 44902588500,
+    "firstWinners": 7,
+    "firstPrize": 3120260197
+   },
+   {
+    "round": 921,
+    "date": "2020-07-25",
+    "sales": 44944170500,
+    "firstWinners": 17,
+    "firstPrize": 1232573405
+   },
+   {
+    "round": 922,
+    "date": "2020-08-01",
+    "sales": 44633341000,
+    "firstWinners": 6,
+    "firstPrize": 3417904500
+   },
+   {
+    "round": 923,
+    "date": "2020-08-08",
+    "sales": 43933701000,
+    "firstWinners": 8,
+    "firstPrize": 2667554625
+   },
+   {
+    "round": 924,
+    "date": "2020-08-15",
+    "sales": 43854128000,
+    "firstWinners": 9,
+    "firstPrize": 2382430667
+   },
+   {
+    "round": 925,
+    "date": "2020-08-22",
+    "sales": 43950533500,
+    "firstWinners": 12,
+    "firstPrize": 1771080532
+   },
+   {
+    "round": 926,
+    "date": "2020-08-29",
+    "sales": 44186125500,
+    "firstWinners": 10,
+    "firstPrize": 2032490663
+   },
+   {
+    "round": 927,
+    "date": "2020-09-05",
+    "sales": 45533876000,
+    "firstWinners": 6,
+    "firstPrize": 3714203875
+   },
+   {
+    "round": 928,
+    "date": "2020-09-12",
+    "sales": 45409491000,
+    "firstWinners": 7,
+    "firstPrize": 3134591358
+   },
+   {
+    "round": 929,
+    "date": "2020-09-19",
+    "sales": 46172310000,
+    "firstWinners": 16,
+    "firstPrize": 1308035157
+   },
+   {
+    "round": 930,
+    "date": "2020-09-26",
+    "sales": 47259207500,
+    "firstWinners": 8,
+    "firstPrize": 2832418829
+   },
+   {
+    "round": 931,
+    "date": "2020-10-03",
+    "sales": 47847901000,
+    "firstWinners": 8,
+    "firstPrize": 2957108063
+   },
+   {
+    "round": 932,
+    "date": "2020-10-10",
+    "sales": 48024644500,
+    "firstWinners": 7,
+    "firstPrize": 3390022983
+   },
+   {
+    "round": 933,
+    "date": "2020-10-17",
+    "sales": 46742425500,
+    "firstWinners": 8,
+    "firstPrize": 2927797079
+   },
+   {
+    "round": 934,
+    "date": "2020-10-24",
+    "sales": 46514173500,
+    "firstWinners": 4,
+    "firstPrize": 5765772844
+   },
+   {
+    "round": 935,
+    "date": "2020-10-31",
+    "sales": 46967449000,
+    "firstWinners": 13,
+    "firstPrize": 1711055424
+   },
+   {
+    "round": 936,
+    "date": "2020-11-07",
+    "sales": 46123073000,
+    "firstWinners": 14,
+    "firstPrize": 1492069179
+   },
+   {
+    "round": 937,
+    "date": "2020-11-14",
+    "sales": 46860227000,
+    "firstWinners": 11,
+    "firstPrize": 2058420819
+   },
+   {
+    "round": 938,
+    "date": "2020-11-21",
+    "sales": 46726212500,
+    "firstWinners": 10,
+    "firstPrize": 2249466563
+   },
+   {
+    "round": 939,
+    "date": "2020-11-28",
+    "sales": 46670001000,
+    "firstWinners": 13,
+    "firstPrize": 1708363039
+   },
+   {
+    "round": 940,
+    "date": "2020-12-05",
+    "sales": 46960091500,
+    "firstWinners": 8,
+    "firstPrize": 2846071079
+   },
+   {
+    "round": 941,
+    "date": "2020-12-12",
+    "sales": 47433800000,
+    "firstWinners": 16,
+    "firstPrize": 1347297422
+   },
+   {
+    "round": 942,
+    "date": "2020-12-19",
+    "sales": 46365982500,
+    "firstWinners": 6,
+    "firstPrize": 3761680313
+   },
+   {
+    "round": 943,
+    "date": "2020-12-26",
+    "sales": 50040716000,
+    "firstWinners": 7,
+    "firstPrize": 3435045108
+   },
+   {
+    "round": 944,
+    "date": "2021-01-02",
+    "sales": 53590688500,
+    "firstWinners": 13,
+    "firstPrize": 1961836356
+   },
+   {
+    "round": 945,
+    "date": "2021-01-09",
+    "sales": 47418554500,
+    "firstWinners": 13,
+    "firstPrize": 1765554491
+   },
+   {
+    "round": 946,
+    "date": "2021-01-16",
+    "sales": 49690089000,
+    "firstWinners": 11,
+    "firstPrize": 2157656182
+   },
+   {
+    "round": 947,
+    "date": "2021-01-23",
+    "sales": 49724958000,
+    "firstWinners": 18,
+    "firstPrize": 1275855750
+   },
+   {
+    "round": 948,
+    "date": "2021-01-30",
+    "sales": 50259729500,
+    "firstWinners": 11,
+    "firstPrize": 2188548716
+   },
+   {
+    "round": 949,
+    "date": "2021-02-06",
+    "sales": 50259454500,
+    "firstWinners": 10,
+    "firstPrize": 2458569713
+   },
+   {
+    "round": 950,
+    "date": "2021-02-13",
+    "sales": 54435357000,
+    "firstWinners": 8,
+    "firstPrize": 3281920500
+   },
+   {
+    "round": 951,
+    "date": "2021-02-20",
+    "sales": 51468503000,
+    "firstWinners": 14,
+    "firstPrize": 1747552661
+   },
+   {
+    "round": 952,
+    "date": "2021-02-27",
+    "sales": 51177823000,
+    "firstWinners": 9,
+    "firstPrize": 2713699834
+   },
+   {
+    "round": 953,
+    "date": "2021-03-06",
+    "sales": 49590445500,
+    "firstWinners": 14,
+    "firstPrize": 1640636009
+   },
+   {
+    "round": 954,
+    "date": "2021-03-13",
+    "sales": 50727657000,
+    "firstWinners": 10,
+    "firstPrize": 2478795900
+   },
+   {
+    "round": 955,
+    "date": "2021-03-20",
+    "sales": 49892368000,
+    "firstWinners": 12,
+    "firstPrize": 2023170188
+   },
+   {
+    "round": 956,
+    "date": "2021-03-27",
+    "sales": 48532627500,
+    "firstWinners": 11,
+    "firstPrize": 2022982671
+   },
+   {
+    "round": 957,
+    "date": "2021-04-03",
+    "sales": 48327349000,
+    "firstWinners": 11,
+    "firstPrize": 2126634137
+   },
+   {
+    "round": 958,
+    "date": "2021-04-10",
+    "sales": 49317973500,
+    "firstWinners": 15,
+    "firstPrize": 1596119675
+   },
+   {
+    "round": 959,
+    "date": "2021-04-17",
+    "sales": 48717917500,
+    "firstWinners": 8,
+    "firstPrize": 3015312891
+   },
+   {
+    "round": 960,
+    "date": "2021-04-24",
+    "sales": 49392439500,
+    "firstWinners": 10,
+    "firstPrize": 2401133213
+   },
+   {
+    "round": 961,
+    "date": "2021-05-01",
+    "sales": 48576654500,
+    "firstWinners": 9,
+    "firstPrize": 2575231209
+   },
+   {
+    "round": 962,
+    "date": "2021-05-08",
+    "sales": 47978182500,
+    "firstWinners": 12,
+    "firstPrize": 1940906094
+   },
+   {
+    "round": 963,
+    "date": "2021-05-15",
+    "sales": 47726107500,
+    "firstWinners": 15,
+    "firstPrize": 1476478125
+   },
+   {
+    "round": 964,
+    "date": "2021-05-22",
+    "sales": 47774947500,
+    "firstWinners": 10,
+    "firstPrize": 2345861063
+   },
+   {
+    "round": 965,
+    "date": "2021-05-29",
+    "sales": 48087325000,
+    "firstWinners": 7,
+    "firstPrize": 3403348929
+   },
+   {
+    "round": 966,
+    "date": "2021-06-05",
+    "sales": 47820223500,
+    "firstWinners": 10,
+    "firstPrize": 2411303513
+   },
+   {
+    "round": 967,
+    "date": "2021-06-12",
+    "sales": 47257782500,
+    "firstWinners": 4,
+    "firstPrize": 5809776094
+   },
+   {
+    "round": 968,
+    "date": "2021-06-19",
+    "sales": 47962114500,
+    "firstWinners": 13,
+    "firstPrize": 1667729683
+   },
+   {
+    "round": 969,
+    "date": "2021-06-26",
+    "sales": 48364375500,
+    "firstWinners": 20,
+    "firstPrize": 1149427894
+   },
+   {
+    "round": 970,
+    "date": "2021-07-03",
+    "sales": 46634185500,
+    "firstWinners": 14,
+    "firstPrize": 1611544045
+   },
+   {
+    "round": 971,
+    "date": "2021-07-10",
+    "sales": 47235962000,
+    "firstWinners": 6,
+    "firstPrize": 3725880250
+   },
+   {
+    "round": 972,
+    "date": "2021-07-17",
+    "sales": 46958406500,
+    "firstWinners": 20,
+    "firstPrize": 1124886244
+   },
+   {
+    "round": 973,
+    "date": "2021-07-24",
+    "sales": 46976936000,
+    "firstWinners": 8,
+    "firstPrize": 2912742750
+   },
+   {
+    "round": 974,
+    "date": "2021-07-31",
+    "sales": 47073027500,
+    "firstWinners": 17,
+    "firstPrize": 1317034523
+   },
+   {
+    "round": 975,
+    "date": "2021-08-07",
+    "sales": 47126859500,
+    "firstWinners": 9,
+    "firstPrize": 2440410375
+   },
+   {
+    "round": 976,
+    "date": "2021-08-14",
+    "sales": 48746089000,
+    "firstWinners": 7,
+    "firstPrize": 3243867215
+   },
+   {
+    "round": 977,
+    "date": "2021-08-21",
+    "sales": 47947922000,
+    "firstWinners": 14,
+    "firstPrize": 1669905911
+   },
+   {
+    "round": 978,
+    "date": "2021-08-28",
+    "sales": 49427598500,
+    "firstWinners": 10,
+    "firstPrize": 2373391388
+   },
+   {
+    "round": 979,
+    "date": "2021-09-04",
+    "sales": 49753943000,
+    "firstWinners": 14,
+    "firstPrize": 1606400518
+   },
+   {
+    "round": 980,
+    "date": "2021-09-11",
+    "sales": 49796690000,
+    "firstWinners": 7,
+    "firstPrize": 3409443215
+   },
+   {
+    "round": 981,
+    "date": "2021-09-18",
+    "sales": 52822712000,
+    "firstWinners": 13,
+    "firstPrize": 1992863193
+   },
+   {
+    "round": 982,
+    "date": "2021-09-25",
+    "sales": 50672125500,
+    "firstWinners": 8,
+    "firstPrize": 3023630672
+   },
+   {
+    "round": 983,
+    "date": "2021-10-02",
+    "sales": 50949503000,
+    "firstWinners": 10,
+    "firstPrize": 2503422225
+   },
+   {
+    "round": 984,
+    "date": "2021-10-09",
+    "sales": 49381183500,
+    "firstWinners": 7,
+    "firstPrize": 3453006268
+   },
+   {
+    "round": 985,
+    "date": "2021-10-16",
+    "sales": 49405723000,
+    "firstWinners": 10,
+    "firstPrize": 2434752975
+   },
+   {
+    "round": 986,
+    "date": "2021-10-23",
+    "sales": 49520620000,
+    "firstWinners": 10,
+    "firstPrize": 2375275125
+   },
+   {
+    "round": 987,
+    "date": "2021-10-30",
+    "sales": 50134765000,
+    "firstWinners": 10,
+    "firstPrize": 2378711625
+   },
+   {
+    "round": 988,
+    "date": "2021-11-06",
+    "sales": 49303097500,
+    "firstWinners": 9,
+    "firstPrize": 2678489375
+   },
+   {
+    "round": 989,
+    "date": "2021-11-13",
+    "sales": 48262829000,
+    "firstWinners": 4,
+    "firstPrize": 5826768563
+   },
+   {
+    "round": 990,
+    "date": "2021-11-20",
+    "sales": 49783523500,
+    "firstWinners": 14,
+    "firstPrize": 1740095277
+   },
+   {
+    "round": 991,
+    "date": "2021-11-27",
+    "sales": 49013141000,
+    "firstWinners": 8,
+    "firstPrize": 2904166032
+   },
+   {
+    "round": 992,
+    "date": "2021-12-04",
+    "sales": 48533249000,
+    "firstWinners": 12,
+    "firstPrize": 1986955563
+   },
+   {
+    "round": 993,
+    "date": "2021-12-11",
+    "sales": 49661826500,
+    "firstWinners": 6,
+    "firstPrize": 3991197063
+   },
+   {
+    "round": 994,
+    "date": "2021-12-18",
+    "sales": 47765468000,
+    "firstWinners": 12,
+    "firstPrize": 1861582063
+   },
+   {
+    "round": 995,
+    "date": "2021-12-25",
+    "sales": 50439227500,
+    "firstWinners": 7,
+    "firstPrize": 3447271875
+   },
+   {
+    "round": 996,
+    "date": "2022-01-01",
+    "sales": 56312163500,
+    "firstWinners": 18,
+    "firstPrize": 1491185771
+   },
+   {
+    "round": 997,
+    "date": "2022-01-08",
+    "sales": 51215980500,
+    "firstWinners": 19,
+    "firstPrize": 1253749560
+   },
+   {
+    "round": 998,
+    "date": "2022-01-15",
+    "sales": 50840934500,
+    "firstWinners": 12,
+    "firstPrize": 2076499657
+   },
+   {
+    "round": 999,
+    "date": "2022-01-22",
+    "sales": 51290675500,
+    "firstWinners": 16,
+    "firstPrize": 1513274790
+   },
+   {
+    "round": 1000,
+    "date": "2022-01-29",
+    "sales": 59314405500,
+    "firstWinners": 22,
+    "firstPrize": 1246819620
+   },
+   {
+    "round": 1001,
+    "date": "2022-02-05",
+    "sales": 51983743500,
+    "firstWinners": 12,
+    "firstPrize": 2077279594
+   },
+   {
+    "round": 1002,
+    "date": "2022-02-12",
+    "sales": 52897742000,
+    "firstWinners": 8,
+    "firstPrize": 3088449563
+   },
+   {
+    "round": 1003,
+    "date": "2022-02-19",
+    "sales": 51739689000,
+    "firstWinners": 14,
+    "firstPrize": 1811116822
+   },
+   {
+    "round": 1004,
+    "date": "2022-02-26",
+    "sales": 53056235500,
+    "firstWinners": 10,
+    "firstPrize": 2576251913
+   },
+   {
+    "round": 1005,
+    "date": "2022-03-05",
+    "sales": 51877624500,
+    "firstWinners": 12,
+    "firstPrize": 2061199344
+   },
+   {
+    "round": 1006,
+    "date": "2022-03-12",
+    "sales": 52271215500,
+    "firstWinners": 9,
+    "firstPrize": 2855602125
+   },
+   {
+    "round": 1007,
+    "date": "2022-03-19",
+    "sales": 50765001500,
+    "firstWinners": 9,
+    "firstPrize": 2718786375
+   },
+   {
+    "round": 1008,
+    "date": "2022-03-26",
+    "sales": 51863521000,
+    "firstWinners": 11,
+    "firstPrize": 2267377910
+   },
+   {
+    "round": 1009,
+    "date": "2022-04-02",
+    "sales": 51885681500,
+    "firstWinners": 15,
+    "firstPrize": 1702462825
+   },
+   {
+    "round": 1010,
+    "date": "2022-04-09",
+    "sales": 51505752500,
+    "firstWinners": 8,
+    "firstPrize": 3119380079
+   },
+   {
+    "round": 1011,
+    "date": "2022-04-16",
+    "sales": 50899686500,
+    "firstWinners": 11,
+    "firstPrize": 2220348512
+   },
+   {
+    "round": 1012,
+    "date": "2022-04-23",
+    "sales": 50974161500,
+    "firstWinners": 13,
+    "firstPrize": 1861944318
+   },
+   {
+    "round": 1013,
+    "date": "2022-04-30",
+    "sales": 50873826500,
+    "firstWinners": 5,
+    "firstPrize": 5047570725
+   },
+   {
+    "round": 1014,
+    "date": "2022-05-07",
+    "sales": 51198184500,
+    "firstWinners": 10,
+    "firstPrize": 2410449338
+   },
+   {
+    "round": 1015,
+    "date": "2022-05-14",
+    "sales": 51281341500,
+    "firstWinners": 8,
+    "firstPrize": 3051105610
+   },
+   {
+    "round": 1016,
+    "date": "2022-05-21",
+    "sales": 50791576500,
+    "firstWinners": 11,
+    "firstPrize": 2260660671
+   },
+   {
+    "round": 1017,
+    "date": "2022-05-28",
+    "sales": 50691395000,
+    "firstWinners": 7,
+    "firstPrize": 3517684822
+   },
+   {
+    "round": 1018,
+    "date": "2022-06-04",
+    "sales": 50575902500,
+    "firstWinners": 2,
+    "firstPrize": 12361744688
+   },
+   {
+    "round": 1019,
+    "date": "2022-06-11",
+    "sales": 51402441000,
+    "firstWinners": 50,
+    "firstPrize": 438565140
+   },
+   {
+    "round": 1020,
+    "date": "2022-06-18",
+    "sales": 52498198000,
+    "firstWinners": 13,
+    "firstPrize": 1966431520
+   },
+   {
+    "round": 1021,
+    "date": "2022-06-25",
+    "sales": 50980081000,
+    "firstWinners": 12,
+    "firstPrize": 2108962250
+   },
+   {
+    "round": 1022,
+    "date": "2022-07-02",
+    "sales": 49616515500,
+    "firstWinners": 5,
+    "firstPrize": 4866468075
+   },
+   {
+    "round": 1023,
+    "date": "2022-07-09",
+    "sales": 50199829500,
+    "firstWinners": 9,
+    "firstPrize": 2745677875
+   },
+   {
+    "round": 1024,
+    "date": "2022-07-16",
+    "sales": 50040519000,
+    "firstWinners": 8,
+    "firstPrize": 3020323500
+   },
+   {
+    "round": 1025,
+    "date": "2022-07-23",
+    "sales": 50659264500,
+    "firstWinners": 4,
+    "firstPrize": 6118853344
+   },
+   {
+    "round": 1026,
+    "date": "2022-07-30",
+    "sales": 50778189500,
+    "firstWinners": 15,
+    "firstPrize": 1619118475
+   },
+   {
+    "round": 1027,
+    "date": "2022-08-06",
+    "sales": 50597579500,
+    "firstWinners": 10,
+    "firstPrize": 2460504338
+   },
+   {
+    "round": 1028,
+    "date": "2022-08-13",
+    "sales": 50306768500,
+    "firstWinners": 20,
+    "firstPrize": 1181235132
+   },
+   {
+    "round": 1029,
+    "date": "2022-08-20",
+    "sales": 50668156000,
+    "firstWinners": 10,
+    "firstPrize": 2527848450
+   },
+   {
+    "round": 1030,
+    "date": "2022-08-27",
+    "sales": 52449961500,
+    "firstWinners": 19,
+    "firstPrize": 1276406507
+   },
+   {
+    "round": 1031,
+    "date": "2022-09-03",
+    "sales": 52158039000,
+    "firstWinners": 8,
+    "firstPrize": 3213957563
+   },
+   {
+    "round": 1032,
+    "date": "2022-09-10",
+    "sales": 55453505500,
+    "firstWinners": 10,
+    "firstPrize": 2675257538
+   },
+   {
+    "round": 1033,
+    "date": "2022-09-17",
+    "sales": 52321129000,
+    "firstWinners": 13,
+    "firstPrize": 1913414943
+   },
+   {
+    "round": 1034,
+    "date": "2022-09-24",
+    "sales": 53575044500,
+    "firstWinners": 9,
+    "firstPrize": 2868856209
+   },
+   {
+    "round": 1035,
+    "date": "2022-10-01",
+    "sales": 53379761500,
+    "firstWinners": 8,
+    "firstPrize": 3231193735
+   },
+   {
+    "round": 1036,
+    "date": "2022-10-08",
+    "sales": 51876968000,
+    "firstWinners": 9,
+    "firstPrize": 2837323167
+   },
+   {
+    "round": 1037,
+    "date": "2022-10-15",
+    "sales": 52420086500,
+    "firstWinners": 15,
+    "firstPrize": 1708576825
+   },
+   {
+    "round": 1038,
+    "date": "2022-10-22",
+    "sales": 52466204500,
+    "firstWinners": 15,
+    "firstPrize": 1627457225
+   },
+   {
+    "round": 1039,
+    "date": "2022-10-29",
+    "sales": 52629533000,
+    "firstWinners": 16,
+    "firstPrize": 1585019672
+   },
+   {
+    "round": 1040,
+    "date": "2022-11-05",
+    "sales": 52003619500,
+    "firstWinners": 7,
+    "firstPrize": 3660482625
+   },
+   {
+    "round": 1041,
+    "date": "2022-11-12",
+    "sales": 52650800500,
+    "firstWinners": 25,
+    "firstPrize": 935091165
+   },
+   {
+    "round": 1042,
+    "date": "2022-11-19",
+    "sales": 53255129500,
+    "firstWinners": 20,
+    "firstPrize": 1240663669
+   },
+   {
+    "round": 1043,
+    "date": "2022-11-26",
+    "sales": 53522971000,
+    "firstWinners": 17,
+    "firstPrize": 1468646956
+   },
+   {
+    "round": 1044,
+    "date": "2022-12-03",
+    "sales": 51445986500,
+    "firstWinners": 8,
+    "firstPrize": 3136941235
+   },
+   {
+    "round": 1045,
+    "date": "2022-12-10",
+    "sales": 52690141000,
+    "firstWinners": 13,
+    "firstPrize": 1990060443
+   },
+   {
+    "round": 1046,
+    "date": "2022-12-17",
+    "sales": 50461996500,
+    "firstWinners": 12,
+    "firstPrize": 2011415719
+   },
+   {
+    "round": 1047,
+    "date": "2022-12-24",
+    "sales": 51529089500,
+    "firstWinners": 9,
+    "firstPrize": 2748797875
+   },
+   {
+    "round": 1048,
+    "date": "2022-12-31",
+    "sales": 58661950500,
+    "firstWinners": 17,
+    "firstPrize": 1612494508
+   },
+   {
+    "round": 1049,
+    "date": "2023-01-07",
+    "sales": 54222362000,
+    "firstWinners": 15,
+    "firstPrize": 1727810100
+   },
+   {
+    "round": 1050,
+    "date": "2023-01-14",
+    "sales": 54036301000,
+    "firstWinners": 17,
+    "firstPrize": 1535083280
+   },
+   {
+    "round": 1051,
+    "date": "2023-01-21",
+    "sales": 59621953500,
+    "firstWinners": 18,
+    "firstPrize": 1669558480
+   },
+   {
+    "round": 1052,
+    "date": "2023-01-28",
+    "sales": 53782730500,
+    "firstWinners": 11,
+    "firstPrize": 2341682762
+   },
+   {
+    "round": 1053,
+    "date": "2023-02-04",
+    "sales": 56860832500,
+    "firstWinners": 7,
+    "firstPrize": 4090367411
+   },
+   {
+    "round": 1054,
+    "date": "2023-02-11",
+    "sales": 56830283500,
+    "firstWinners": 9,
+    "firstPrize": 3147925709
+   },
+   {
+    "round": 1055,
+    "date": "2023-02-18",
+    "sales": 56244128000,
+    "firstWinners": 11,
+    "firstPrize": 2362815205
+   },
+   {
+    "round": 1056,
+    "date": "2023-02-25",
+    "sales": 56639807500,
+    "firstWinners": 14,
+    "firstPrize": 1969662456
+   },
+   {
+    "round": 1057,
+    "date": "2023-03-04",
+    "sales": 56261943500,
+    "firstWinners": 17,
+    "firstPrize": 1616069714
+   },
+   {
+    "round": 1058,
+    "date": "2023-03-11",
+    "sales": 56020691000,
+    "firstWinners": 13,
+    "firstPrize": 2058020250
+   },
+   {
+    "round": 1059,
+    "date": "2023-03-18",
+    "sales": 55423412000,
+    "firstWinners": 13,
+    "firstPrize": 2033168481
+   },
+   {
+    "round": 1060,
+    "date": "2023-03-25",
+    "sales": 55338592500,
+    "firstWinners": 28,
+    "firstPrize": 898238907
+   },
+   {
+    "round": 1061,
+    "date": "2023-04-01",
+    "sales": 54954672000,
+    "firstWinners": 11,
+    "firstPrize": 2422768773
+   },
+   {
+    "round": 1062,
+    "date": "2023-04-08",
+    "sales": 53554955500,
+    "firstWinners": 7,
+    "firstPrize": 3801933804
+   },
+   {
+    "round": 1063,
+    "date": "2023-04-15",
+    "sales": 54173567500,
+    "firstWinners": 7,
+    "firstPrize": 3770311875
+   },
+   {
+    "round": 1064,
+    "date": "2023-04-22",
+    "sales": 54713792000,
+    "firstWinners": 19,
+    "firstPrize": 1348168106
+   },
+   {
+    "round": 1065,
+    "date": "2023-04-29",
+    "sales": 54090863500,
+    "firstWinners": 14,
+    "firstPrize": 1852593938
+   },
+   {
+    "round": 1066,
+    "date": "2023-05-06",
+    "sales": 53220475000,
+    "firstWinners": 15,
+    "firstPrize": 1670947250
+   },
+   {
+    "round": 1067,
+    "date": "2023-05-13",
+    "sales": 55351649500,
+    "firstWinners": 13,
+    "firstPrize": 1981114010
+   },
+   {
+    "round": 1068,
+    "date": "2023-05-20",
+    "sales": 54494466000,
+    "firstWinners": 19,
+    "firstPrize": 1363929514
+   },
+   {
+    "round": 1069,
+    "date": "2023-05-27",
+    "sales": 54194446000,
+    "firstWinners": 14,
+    "firstPrize": 1863217554
+   },
+   {
+    "round": 1070,
+    "date": "2023-06-03",
+    "sales": 53611401000,
+    "firstWinners": 14,
+    "firstPrize": 1859116929
+   },
+   {
+    "round": 1071,
+    "date": "2023-06-10",
+    "sales": 53681315000,
+    "firstWinners": 5,
+    "firstPrize": 5183979750
+   },
+   {
+    "round": 1072,
+    "date": "2023-06-17",
+    "sales": 54078327000,
+    "firstWinners": 12,
+    "firstPrize": 2175006375
+   },
+   {
+    "round": 1073,
+    "date": "2023-06-24",
+    "sales": 53676061500,
+    "firstWinners": 11,
+    "firstPrize": 2345227603
+   },
+   {
+    "round": 1074,
+    "date": "2023-07-01",
+    "sales": 52872078500,
+    "firstWinners": 12,
+    "firstPrize": 2134763657
+   },
+   {
+    "round": 1075,
+    "date": "2023-07-08",
+    "sales": 52817616000,
+    "firstWinners": 9,
+    "firstPrize": 2896337167
+   },
+   {
+    "round": 1076,
+    "date": "2023-07-15",
+    "sales": 51584347000,
+    "firstWinners": 9,
+    "firstPrize": 2672689750
+   },
+   {
+    "round": 1077,
+    "date": "2023-07-22",
+    "sales": 52963744500,
+    "firstWinners": 7,
+    "firstPrize": 3570901018
+   },
+   {
+    "round": 1078,
+    "date": "2023-07-29",
+    "sales": 52703809000,
+    "firstWinners": 12,
+    "firstPrize": 2141604938
+   },
+   {
+    "round": 1079,
+    "date": "2023-08-05",
+    "sales": 51560103000,
+    "firstWinners": 9,
+    "firstPrize": 2712329417
+   },
+   {
+    "round": 1080,
+    "date": "2023-08-12",
+    "sales": 52055993000,
+    "firstWinners": 7,
+    "firstPrize": 3639444429
+   },
+   {
+    "round": 1081,
+    "date": "2023-08-19",
+    "sales": 53487161500,
+    "firstWinners": 11,
+    "firstPrize": 2343892944
+   },
+   {
+    "round": 1082,
+    "date": "2023-08-26",
+    "sales": 53783440000,
+    "firstWinners": 7,
+    "firstPrize": 3720489643
+   },
+   {
+    "round": 1083,
+    "date": "2023-09-02",
+    "sales": 54497570500,
+    "firstWinners": 15,
+    "firstPrize": 1713084525
+   },
+   {
+    "round": 1084,
+    "date": "2023-09-09",
+    "sales": 54909462000,
+    "firstWinners": 15,
+    "firstPrize": 1738764600
+   },
+   {
+    "round": 1085,
+    "date": "2023-09-16",
+    "sales": 53124987500,
+    "firstWinners": 23,
+    "firstPrize": 1073277473
+   },
+   {
+    "round": 1086,
+    "date": "2023-09-23",
+    "sales": 54625153000,
+    "firstWinners": 17,
+    "firstPrize": 1515913809
+   },
+   {
+    "round": 1087,
+    "date": "2023-09-30",
+    "sales": 56980448500,
+    "firstWinners": 16,
+    "firstPrize": 1732253602
+   },
+   {
+    "round": 1088,
+    "date": "2023-10-07",
+    "sales": 54544652500,
+    "firstWinners": 11,
+    "firstPrize": 2434697898
+   },
+   {
+    "round": 1089,
+    "date": "2023-10-14",
+    "sales": 54362966000,
+    "firstWinners": 9,
+    "firstPrize": 2978522167
+   },
+   {
+    "round": 1090,
+    "date": "2023-10-21",
+    "sales": 54182431000,
+    "firstWinners": 11,
+    "firstPrize": 2386494614
+   },
+   {
+    "round": 1091,
+    "date": "2023-10-28",
+    "sales": 54667790500,
+    "firstWinners": 9,
+    "firstPrize": 2898470459
+   },
+   {
+    "round": 1092,
+    "date": "2023-11-04",
+    "sales": 54485255000,
+    "firstWinners": 16,
+    "firstPrize": 1583289844
+   },
+   {
+    "round": 1093,
+    "date": "2023-11-11",
+    "sales": 52794518000,
+    "firstWinners": 13,
+    "firstPrize": 1967040750
+   },
+   {
+    "round": 1094,
+    "date": "2023-11-18",
+    "sales": 52039411500,
+    "firstWinners": 12,
+    "firstPrize": 2112854469
+   },
+   {
+    "round": 1095,
+    "date": "2023-11-25",
+    "sales": 53080286000,
+    "firstWinners": 10,
+    "firstPrize": 2617825575
+   },
+   {
+    "round": 1096,
+    "date": "2023-12-02",
+    "sales": 52876539000,
+    "firstWinners": 10,
+    "firstPrize": 2539391175
+   },
+   {
+    "round": 1097,
+    "date": "2023-12-09",
+    "sales": 54436550500,
+    "firstWinners": 7,
+    "firstPrize": 3864293090
+   },
+   {
+    "round": 1098,
+    "date": "2023-12-16",
+    "sales": 51925169500,
+    "firstWinners": 13,
+    "firstPrize": 1930461895
+   },
+   {
+    "round": 1099,
+    "date": "2023-12-23",
+    "sales": 53755364500,
+    "firstWinners": 9,
+    "firstPrize": 2959934125
+   },
+   {
+    "round": 1100,
+    "date": "2023-12-30",
+    "sales": 58093511500,
+    "firstWinners": 13,
+    "firstPrize": 2207575472
+   },
+   {
+    "round": 1101,
+    "date": "2024-01-06",
+    "sales": 57379438000,
+    "firstWinners": 13,
+    "firstPrize": 2100529500
+   },
+   {
+    "round": 1102,
+    "date": "2024-01-13",
+    "sales": 56589051000,
+    "firstWinners": 20,
+    "firstPrize": 1383591413
+   },
+   {
+    "round": 1103,
+    "date": "2024-01-20",
+    "sales": 55097535000,
+    "firstWinners": 17,
+    "firstPrize": 1574419633
+   },
+   {
+    "round": 1104,
+    "date": "2024-01-27",
+    "sales": 56224692000,
+    "firstWinners": 15,
+    "firstPrize": 1817193100
+   },
+   {
+    "round": 1105,
+    "date": "2024-02-03",
+    "sales": 56647646000,
+    "firstWinners": 15,
+    "firstPrize": 1834853800
+   },
+   {
+    "round": 1106,
+    "date": "2024-02-10",
+    "sales": 63308648000,
+    "firstWinners": 11,
+    "firstPrize": 2790462819
+   },
+   {
+    "round": 1107,
+    "date": "2024-02-17",
+    "sales": 58832481000,
+    "firstWinners": 14,
+    "firstPrize": 2025625233
+   },
+   {
+    "round": 1108,
+    "date": "2024-02-24",
+    "sales": 57289452500,
+    "firstWinners": 14,
+    "firstPrize": 1957990849
+   },
+   {
+    "round": 1109,
+    "date": "2024-03-02",
+    "sales": 58598163500,
+    "firstWinners": 17,
+    "firstPrize": 1584352875
+   },
+   {
+    "round": 1110,
+    "date": "2024-03-09",
+    "sales": 57541893000,
+    "firstWinners": 16,
+    "firstPrize": 1647392719
+   },
+   {
+    "round": 1111,
+    "date": "2024-03-16",
+    "sales": 58191417500,
+    "firstWinners": 16,
+    "firstPrize": 1714662540
+   },
+   {
+    "round": 1112,
+    "date": "2024-03-23",
+    "sales": 57108042000,
+    "firstWinners": 10,
+    "firstPrize": 2804455650
+   },
+   {
+    "round": 1113,
+    "date": "2024-03-30",
+    "sales": 56671159000,
+    "firstWinners": 14,
+    "firstPrize": 1987426822
+   },
+   {
+    "round": 1114,
+    "date": "2024-04-06",
+    "sales": 56798945000,
+    "firstWinners": 17,
+    "firstPrize": 1583813824
+   },
+   {
+    "round": 1115,
+    "date": "2024-04-13",
+    "sales": 56969607500,
+    "firstWinners": 12,
+    "firstPrize": 2257278282
+   },
+   {
+    "round": 1116,
+    "date": "2024-04-20",
+    "sales": 55431276500,
+    "firstWinners": 10,
+    "firstPrize": 2695000238
+   },
+   {
+    "round": 1117,
+    "date": "2024-04-27",
+    "sales": 56947666500,
+    "firstWinners": 9,
+    "firstPrize": 3028385542
+   },
+   {
+    "round": 1118,
+    "date": "2024-05-04",
+    "sales": 56863560000,
+    "firstWinners": 19,
+    "firstPrize": 1477445132
+   },
+   {
+    "round": 1119,
+    "date": "2024-05-11",
+    "sales": 55920357000,
+    "firstWinners": 19,
+    "firstPrize": 1396028764
+   },
+   {
+    "round": 1120,
+    "date": "2024-05-18",
+    "sales": 57402179500,
+    "firstWinners": 11,
+    "firstPrize": 2522163375
+   },
+   {
+    "round": 1121,
+    "date": "2024-05-25",
+    "sales": 56949259500,
+    "firstWinners": 11,
+    "firstPrize": 2524513262
+   },
+   {
+    "round": 1122,
+    "date": "2024-06-01",
+    "sales": 57770002000,
+    "firstWinners": 11,
+    "firstPrize": 2556266046
+   },
+   {
+    "round": 1123,
+    "date": "2024-06-08",
+    "sales": 56571478500,
+    "firstWinners": 16,
+    "firstPrize": 1731310711
+   },
+   {
+    "round": 1124,
+    "date": "2024-06-15",
+    "sales": 56007420500,
+    "firstWinners": 10,
+    "firstPrize": 2623327913
+   },
+   {
+    "round": 1125,
+    "date": "2024-06-22",
+    "sales": 54703647000,
+    "firstWinners": 12,
+    "firstPrize": 2195289188
+   },
+   {
+    "round": 1126,
+    "date": "2024-06-29",
+    "sales": 55999095500,
+    "firstWinners": 11,
+    "firstPrize": 2386382421
+   },
+   {
+    "round": 1127,
+    "date": "2024-07-06",
+    "sales": 55785686500,
+    "firstWinners": 12,
+    "firstPrize": 2267891969
+   },
+   {
+    "round": 1128,
+    "date": "2024-07-13",
+    "sales": 55682097000,
+    "firstWinners": 63,
+    "firstPrize": 419925560
+   },
+   {
+    "round": 1129,
+    "date": "2024-07-20",
+    "sales": 55181749000,
+    "firstWinners": 11,
+    "firstPrize": 2369567660
+   },
+   {
+    "round": 1130,
+    "date": "2024-07-27",
+    "sales": 54757544500,
+    "firstWinners": 12,
+    "firstPrize": 2263301219
+   },
+   {
+    "round": 1131,
+    "date": "2024-08-03",
+    "sales": 54560399000,
+    "firstWinners": 17,
+    "firstPrize": 1542367898
+   },
+   {
+    "round": 1132,
+    "date": "2024-08-10",
+    "sales": 55009061500,
+    "firstWinners": 11,
+    "firstPrize": 2404951807
+   },
+   {
+    "round": 1133,
+    "date": "2024-08-17",
+    "sales": 55605419500,
+    "firstWinners": 13,
+    "firstPrize": 2105079491
+   },
+   {
+    "round": 1134,
+    "date": "2024-08-24",
+    "sales": 55830043500,
+    "firstWinners": 14,
+    "firstPrize": 1755689384
+   },
+   {
+    "round": 1135,
+    "date": "2024-08-31",
+    "sales": 56908568500,
+    "firstWinners": 9,
+    "firstPrize": 2953726125
+   },
+   {
+    "round": 1136,
+    "date": "2024-09-07",
+    "sales": 56515955500,
+    "firstWinners": 12,
+    "firstPrize": 2314468157
+   },
+   {
+    "round": 1137,
+    "date": "2024-09-14",
+    "sales": 59625003500,
+    "firstWinners": 14,
+    "firstPrize": 2023447688
+   },
+   {
+    "round": 1138,
+    "date": "2024-09-21",
+    "sales": 54825755000,
+    "firstWinners": 14,
+    "firstPrize": 1902656786
+   },
+   {
+    "round": 1139,
+    "date": "2024-09-28",
+    "sales": 58957943500,
+    "firstWinners": 13,
+    "firstPrize": 2167490972
+   },
+   {
+    "round": 1140,
+    "date": "2024-10-05",
+    "sales": 57619278000,
+    "firstWinners": 12,
+    "firstPrize": 2279823938
+   },
+   {
+    "round": 1141,
+    "date": "2024-10-12",
+    "sales": 57901586500,
+    "firstWinners": 11,
+    "firstPrize": 2457758285
+   },
+   {
+    "round": 1142,
+    "date": "2024-10-19",
+    "sales": 57127177500,
+    "firstWinners": 9,
+    "firstPrize": 3117517709
+   },
+   {
+    "round": 1143,
+    "date": "2024-10-26",
+    "sales": 58216448000,
+    "firstWinners": 11,
+    "firstPrize": 2545657023
+   },
+   {
+    "round": 1144,
+    "date": "2024-11-02",
+    "sales": 58189257000,
+    "firstWinners": 18,
+    "firstPrize": 1489347375
+   },
+   {
+    "round": 1145,
+    "date": "2024-11-09",
+    "sales": 58057581000,
+    "firstWinners": 9,
+    "firstPrize": 3051630084
+   },
+   {
+    "round": 1146,
+    "date": "2024-11-16",
+    "sales": 58347371500,
+    "firstWinners": 11,
+    "firstPrize": 2526476353
+   },
+   {
+    "round": 1147,
+    "date": "2024-11-23",
+    "sales": 57853530500,
+    "firstWinners": 8,
+    "firstPrize": 3323422079
+   },
+   {
+    "round": 1148,
+    "date": "2024-11-30",
+    "sales": 56594320000,
+    "firstWinners": 13,
+    "firstPrize": 2073332308
+   },
+   {
+    "round": 1149,
+    "date": "2024-12-07",
+    "sales": 56073359000,
+    "firstWinners": 17,
+    "firstPrize": 1613380765
+   },
+   {
+    "round": 1150,
+    "date": "2024-12-14",
+    "sales": 57076017000,
+    "firstWinners": 17,
+    "firstPrize": 1570620309
+   },
+   {
+    "round": 1151,
+    "date": "2024-12-21",
+    "sales": 58059222000,
+    "firstWinners": 17,
+    "firstPrize": 1620503030
+   },
+   {
+    "round": 1152,
+    "date": "2024-12-28",
+    "sales": 60351504500,
+    "firstWinners": 35,
+    "firstPrize": 874349668
+   },
+   {
+    "round": 1153,
+    "date": "2025-01-04",
+    "sales": 63171683500,
+    "firstWinners": 15,
+    "firstPrize": 2027312925
+   },
+   {
+    "round": 1154,
+    "date": "2025-01-11",
+    "sales": 57634128500,
+    "firstWinners": 15,
+    "firstPrize": 1854965425
+   },
+   {
+    "round": 1155,
+    "date": "2025-01-18",
+    "sales": 59241365000,
+    "firstWinners": 7,
+    "firstPrize": 4066375179
+   },
+   {
+    "round": 1156,
+    "date": "2025-01-25",
+    "sales": 63821993500,
+    "firstWinners": 21,
+    "firstPrize": 1505207090
+   },
+   {
+    "round": 1157,
+    "date": "2025-02-01",
+    "sales": 61721719500,
+    "firstWinners": 12,
+    "firstPrize": 2257842157
+   },
+   {
+    "round": 1158,
+    "date": "2025-02-08",
+    "sales": 59853079500,
+    "firstWinners": 21,
+    "firstPrize": 1394358197
+   },
+   {
+    "round": 1159,
+    "date": "2025-02-15",
+    "sales": 62401152000,
+    "firstWinners": 23,
+    "firstPrize": 1284854250
+   },
+   {
+    "round": 1160,
+    "date": "2025-02-22",
+    "sales": 61588768000,
+    "firstWinners": 12,
+    "firstPrize": 2509359875
+   },
+   {
+    "round": 1161,
+    "date": "2025-03-01",
+    "sales": 61615295000,
+    "firstWinners": 16,
+    "firstPrize": 1792657969
+   },
+   {
+    "round": 1162,
+    "date": "2025-03-08",
+    "sales": 60289164000,
+    "firstWinners": 36,
+    "firstPrize": 823931021
+   },
+   {
+    "round": 1163,
+    "date": "2025-03-15",
+    "sales": 61123158000,
+    "firstWinners": 15,
+    "firstPrize": 1936891150
+   },
+   {
+    "round": 1164,
+    "date": "2025-03-22",
+    "sales": 60551322500,
+    "firstWinners": 13,
+    "firstPrize": 2193092164
+   },
+   {
+    "round": 1165,
+    "date": "2025-03-29",
+    "sales": 59056053000,
+    "firstWinners": 13,
+    "firstPrize": 2192485270
+   },
+   {
+    "round": 1166,
+    "date": "2025-04-05",
+    "sales": 58358830500,
+    "firstWinners": 14,
+    "firstPrize": 2072319938
+   },
+   {
+    "round": 1167,
+    "date": "2025-04-12",
+    "sales": 59381065500,
+    "firstWinners": 10,
+    "firstPrize": 2884087913
+   },
+   {
+    "round": 1168,
+    "date": "2025-04-19",
+    "sales": 58905897500,
+    "firstWinners": 13,
+    "firstPrize": 2136635914
+   },
+   {
+    "round": 1169,
+    "date": "2025-04-26",
+    "sales": 59401597500,
+    "firstWinners": 10,
+    "firstPrize": 2852735813
+   },
+   {
+    "round": 1170,
+    "date": "2025-05-03",
+    "sales": 58354997500,
+    "firstWinners": 20,
+    "firstPrize": 1386550969
+   },
+   {
+    "round": 1171,
+    "date": "2025-05-10",
+    "sales": 57642848000,
+    "firstWinners": 21,
+    "firstPrize": 1128345286
+   },
+   {
+    "round": 1172,
+    "date": "2025-05-17",
+    "sales": 58782620500,
+    "firstWinners": 13,
+    "firstPrize": 2203004452
+   },
+   {
+    "round": 1173,
+    "date": "2025-05-24",
+    "sales": 59391334000,
+    "firstWinners": 24,
+    "firstPrize": 1179946063
+   },
+   {
+    "round": 1174,
+    "date": "2025-05-31",
+    "sales": 59510233500,
+    "firstWinners": 15,
+    "firstPrize": 1910619425
+   },
+   {
+    "round": 1175,
+    "date": "2025-06-07",
+    "sales": 58744152500,
+    "firstWinners": 20,
+    "firstPrize": 1384026094
+   },
+   {
+    "round": 1176,
+    "date": "2025-06-14",
+    "sales": 57882725000,
+    "firstWinners": 13,
+    "firstPrize": 2052166154
+   },
+   {
+    "round": 1177,
+    "date": "2025-06-21",
+    "sales": 57705916000,
+    "firstWinners": 6,
+    "firstPrize": 4576672000
+   },
+   {
+    "round": 1178,
+    "date": "2025-06-28",
+    "sales": 59387139500,
+    "firstWinners": 12,
+    "firstPrize": 2391608407
+   },
+   {
+    "round": 1179,
+    "date": "2025-07-05",
+    "sales": 57512339000,
+    "firstWinners": 13,
+    "firstPrize": 2162821097
+   },
+   {
+    "round": 1180,
+    "date": "2025-07-12",
+    "sales": 57688982500,
+    "firstWinners": 11,
+    "firstPrize": 2535566421
+   },
+   {
+    "round": 1181,
+    "date": "2025-07-19",
+    "sales": 56901341000,
+    "firstWinners": 17,
+    "firstPrize": 1593643500
+   },
+   {
+    "round": 1182,
+    "date": "2025-07-26",
+    "sales": 57715654000,
+    "firstWinners": 13,
+    "firstPrize": 2124785424
+   },
+   {
+    "round": 1183,
+    "date": "2025-08-02",
+    "sales": 57802984000,
+    "firstWinners": 13,
+    "firstPrize": 2073966000
+   },
+   {
+    "round": 1184,
+    "date": "2025-08-09",
+    "sales": 58874462000,
+    "firstWinners": 15,
+    "firstPrize": 1910655600
+   },
+   {
+    "round": 1185,
+    "date": "2025-08-16",
+    "sales": 58740402000,
+    "firstWinners": 12,
+    "firstPrize": 2388695125
+   },
+   {
+    "round": 1186,
+    "date": "2025-08-23",
+    "sales": 58345369000,
+    "firstWinners": 14,
+    "firstPrize": 1985676911
+   },
+   {
+    "round": 1187,
+    "date": "2025-08-30",
+    "sales": 58825423500,
+    "firstWinners": 11,
+    "firstPrize": 2619380012
+   },
+   {
+    "round": 1188,
+    "date": "2025-09-06",
+    "sales": 58308985500,
+    "firstWinners": 24,
+    "firstPrize": 1074625172
+   },
+   {
+    "round": 1189,
+    "date": "2025-09-13",
+    "sales": 59742342500,
+    "firstWinners": 13,
+    "firstPrize": 2263651299
+   },
+   {
+    "round": 1190,
+    "date": "2025-09-20",
+    "sales": 59184430500,
+    "firstWinners": 6,
+    "firstPrize": 4622793813
+   },
+   {
+    "round": 1191,
+    "date": "2025-09-27",
+    "sales": 60636404500,
+    "firstWinners": 18,
+    "firstPrize": 1536334355
+   },
+   {
+    "round": 1192,
+    "date": "2025-10-04",
+    "sales": 64525098000,
+    "firstWinners": 29,
+    "firstPrize": 1079546587
+   },
+   {
+    "round": 1193,
+    "date": "2025-10-11",
+    "sales": 59338301500,
+    "firstWinners": 16,
+    "firstPrize": 1717013508
+   },
+   {
+    "round": 1194,
+    "date": "2025-10-18",
+    "sales": 60542853000,
+    "firstWinners": 28,
+    "firstPrize": 985155349
+   },
+   {
+    "round": 1195,
+    "date": "2025-10-25",
+    "sales": 61459006500,
+    "firstWinners": 10,
+    "firstPrize": 2939186738
+   },
+   {
+    "round": 1196,
+    "date": "2025-11-01",
+    "sales": 60822716000,
+    "firstWinners": 15,
+    "firstPrize": 2001627550
+   },
+   {
+    "round": 1197,
+    "date": "2025-11-08",
+    "sales": 60122217000,
+    "firstWinners": 13,
+    "firstPrize": 2205089827
+   },
+   {
+    "round": 1198,
+    "date": "2025-11-15",
+    "sales": 60103758500,
+    "firstWinners": 10,
+    "firstPrize": 2953686638
+   },
+   {
+    "round": 1199,
+    "date": "2025-11-22",
+    "sales": 59312398000,
+    "firstWinners": 17,
+    "firstPrize": 1695609839
+   },
+   {
+    "round": 1200,
+    "date": "2025-11-29",
+    "sales": 59169798000,
+    "firstWinners": 12,
+    "firstPrize": 2357299875
+   },
+   {
+    "round": 1201,
+    "date": "2025-12-06",
+    "sales": 57694796500,
+    "firstWinners": 19,
+    "firstPrize": 1414555718
+   },
+   {
+    "round": 1202,
+    "date": "2025-12-13",
+    "sales": 58477118500,
+    "firstWinners": 14,
+    "firstPrize": 1920410813
+   },
+   {
+    "round": 1203,
+    "date": "2025-12-20",
+    "sales": 60827815500,
+    "firstWinners": 21,
+    "firstPrize": 1368060733
+   },
+   {
+    "round": 1204,
+    "date": "2025-12-27",
+    "sales": 61879309500,
+    "firstWinners": 18,
+    "firstPrize": 1661007688
+   },
+   {
+    "round": 1205,
+    "date": "2026-01-03",
+    "sales": 66335375027,
+    "firstWinners": 10,
+    "firstPrize": 3226386263
+   },
+   {
+    "round": 1206,
+    "date": "2026-01-10",
+    "sales": 60506345998,
+    "firstWinners": 15,
+    "firstPrize": 1868807000
+   },
+   {
+    "round": 1207,
+    "date": "2026-01-17",
+    "sales": 61467144896,
+    "firstWinners": 17,
+    "firstPrize": 1733202949
+   },
+   {
+    "round": 1208,
+    "date": "2026-01-24",
+    "sales": 60204336826,
+    "firstWinners": 6,
+    "firstPrize": 5001713625
+   },
+   {
+    "round": 1209,
+    "date": "2026-01-31",
+    "sales": 62020198406,
+    "firstWinners": 22,
+    "firstPrize": 1371910466
+   },
+   {
+    "round": 1210,
+    "date": "2026-02-07",
+    "sales": 61555530677,
+    "firstWinners": 24,
+    "firstPrize": 1102298407
+   },
+   {
+    "round": 1211,
+    "date": "2026-02-14",
+    "sales": 67472903182,
+    "firstWinners": 14,
+    "firstPrize": 2370956036
+   },
+   {
+    "round": 1212,
+    "date": "2026-02-21",
+    "sales": 65863966662,
+    "firstWinners": 12,
+    "firstPrize": 2654089032
+   },
+   {
+    "round": 1213,
+    "date": "2026-02-28",
+    "sales": 65555539740,
+    "firstWinners": 18,
+    "firstPrize": 1740011646
+   },
+   {
+    "round": 1214,
+    "date": "2026-03-07",
+    "sales": 62407932092,
+    "firstWinners": 12,
+    "firstPrize": 2431577188
+   },
+   {
+    "round": 1215,
+    "date": "2026-03-14",
+    "sales": 63488551584,
+    "firstWinners": 16,
+    "firstPrize": 1998542133
+   },
+   {
+    "round": 1216,
+    "date": "2026-03-21",
+    "sales": 62778263417,
+    "firstWinners": 14,
+    "firstPrize": 2148654000
+   },
+   {
+    "round": 1217,
+    "date": "2026-03-28",
+    "sales": 62577629462,
+    "firstWinners": 14,
+    "firstPrize": 2179738018
+   },
+   {
+    "round": 1218,
+    "date": "2026-04-04",
+    "sales": 61667966400,
+    "firstWinners": 18,
+    "firstPrize": 1714482042
+   },
+   {
+    "round": 1219,
+    "date": "2026-04-11",
+    "sales": 60472901798,
+    "firstWinners": 12,
+    "firstPrize": 2508232844
+   },
+   {
+    "round": 1220,
+    "date": "2026-04-18",
+    "sales": 60979412665,
+    "firstWinners": 14,
+    "firstPrize": 2114514161
+   },
+   {
+    "round": 1221,
+    "date": "2026-04-25",
+    "sales": 61489811578,
+    "firstWinners": 16,
+    "firstPrize": 1830801165
+   },
+   {
+    "round": 1222,
+    "date": "2026-05-02",
+    "sales": 62121779581,
+    "firstWinners": 24,
+    "firstPrize": 1202986844
+   },
+   {
+    "round": 1223,
+    "date": "2026-05-09",
+    "sales": 61310584284,
+    "firstWinners": 16,
+    "firstPrize": 1857554133
+   },
+   {
+    "round": 1224,
+    "date": "2026-05-16",
+    "sales": 60555204552,
+    "firstWinners": 12,
+    "firstPrize": 2414855250
+   },
+   {
+    "round": 1225,
+    "date": "2026-05-23",
+    "sales": 60201445675,
+    "firstWinners": 13,
+    "firstPrize": 2228133087
+   },
+   {
+    "round": 1226,
+    "date": "2026-05-30",
+    "sales": 60129974308,
+    "firstWinners": 10,
+    "firstPrize": 2815230113
+   },
+   {
+    "round": 1227,
+    "date": "2026-06-06",
+    "sales": 59441280119,
+    "firstWinners": 11,
+    "firstPrize": 2674808455
+   },
+   {
+    "round": 1228,
+    "date": "2026-06-13",
+    "sales": 59526138366,
+    "firstWinners": 11,
+    "firstPrize": 2698334421
+   },
+   {
+    "round": 1229,
+    "date": "2026-06-20",
+    "sales": 58077767333,
+    "firstWinners": 8,
+    "firstPrize": 3519759000
+   },
+   {
+    "round": 1230,
+    "date": "2026-06-27",
+    "sales": 60088838564,
+    "firstWinners": 16,
+    "firstPrize": 1771357196
+   },
+   {
+    "round": 1231,
+    "date": "2026-07-04",
+    "sales": 59042291693,
+    "firstWinners": 17,
+    "firstPrize": 1652990074
+   },
+   {
+    "round": 1232,
+    "date": "2026-07-11",
+    "sales": 57318153053,
+    "firstWinners": 11,
+    "firstPrize": 2533260819
+   },
+   {
+    "round": 1233,
+    "date": "2026-07-18",
+    "sales": 58079891072,
+    "firstWinners": 31,
+    "firstPrize": 837965396
+   },
+   {
+    "round": 1234,
+    "date": "2026-07-25",
+    "sales": 57995216655,
+    "firstWinners": 18,
+    "firstPrize": 1595129563
+   },
+   {
+    "round": 1235,
+    "date": "2026-08-01",
+    "sales": 57722535226,
+    "firstWinners": 9,
+    "firstPrize": 3090961625
+   },
+   {
+    "round": 1236,
+    "date": "2026-08-08",
+    "sales": 57035418544,
+    "firstWinners": 11,
+    "firstPrize": 2441919375
+   },
+   {
+    "round": 1237,
+    "date": "2026-08-15",
+    "sales": 59181583190,
+    "firstWinners": 23,
+    "firstPrize": 1214932680
+   },
+   {
+    "round": 1238,
+    "date": "2026-08-22",
+    "sales": 57268901802,
+    "firstWinners": 23,
+    "firstPrize": 1197258718
+   },
+   {
+    "round": 1239,
+    "date": "2026-08-29",
+    "sales": 58883645203,
+    "firstWinners": 13,
+    "firstPrize": 2214789375
+   },
+   {
+    "round": 1240,
+    "date": "2026-09-05",
+    "sales": 59082661914,
+    "firstWinners": 16,
+    "firstPrize": 1791817758
+   },
+   {
+    "round": 1241,
+    "date": "2026-09-12",
+    "sales": 60959044746,
+    "firstWinners": 18,
+    "firstPrize": 1628391980
+   },
+   {
+    "round": 1242,
+    "date": "2026-09-19",
+    "sales": 61286928832,
+    "firstWinners": 9,
+    "firstPrize": 3281029250
+   }
+  ]
+ },
+ "fairness": {
+  "alpha": 0.05,
+  "recentWindow": 300,
+  "all": [
+   {
+    "id": "numbers",
+    "label": "번호별 출현 (본번호)",
+    "n": 7452,
+    "categories": 45,
+    "stat": 29.437198067632853,
+    "dof": 44,
+    "p": 0.9548321830667932,
+    "buckets": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29",
+     "30",
+     "31",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "37",
+     "38",
+     "39",
+     "40",
+     "41",
+     "42",
+     "43",
+     "44",
+     "45"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "numbersWithBonus",
+    "label": "번호별 출현 (보너스 포함)",
+    "n": 8694,
+    "categories": 45,
+    "stat": 33.43271221532091,
+    "dof": 44,
+    "p": 0.8768131218270353,
+    "buckets": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29",
+     "30",
+     "31",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "37",
+     "38",
+     "39",
+     "40",
+     "41",
+     "42",
+     "43",
+     "44",
+     "45"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "oddEven",
+    "label": "홀수 개수 분포",
+    "n": 1242,
+    "categories": 7,
+    "stat": 7.354032034826648,
+    "dof": 6,
+    "p": 0.28934331041472977,
+    "buckets": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "lowHigh",
+    "label": "저번호(1~22) 개수 분포",
+    "n": 1242,
+    "categories": 7,
+    "stat": 2.1702290345757675,
+    "dof": 6,
+    "p": 0.9033956607290985,
+    "buckets": [
+     "0",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "sum",
+    "label": "번호 합 분포",
+    "n": 1242,
+    "categories": 117,
+    "stat": 135.36580178414764,
+    "dof": 116,
+    "p": 0.1056384144287107,
+    "buckets": [
+     "21~22~23~24~25~26~27~28~29~30~31~32~33~34~35~36~37~38~39~40~41~42~43~44~45~46~47~48~49~50~51~52~53~54~55~56~57~58~59~60~61~62",
+     "63~64~65~66~67~68",
+     "69~70~71~72",
+     "73~74~75",
+     "76~77~78",
+     "79~80",
+     "81~82",
+     "83~84",
+     "85~86",
+     "87~88",
+     "89~90",
+     "91",
+     "92",
+     "93",
+     "94",
+     "95",
+     "96",
+     "97",
+     "98",
+     "99",
+     "100",
+     "101",
+     "102",
+     "103",
+     "104",
+     "105",
+     "106",
+     "107",
+     "108",
+     "109",
+     "110",
+     "111",
+     "112",
+     "113",
+     "114",
+     "115",
+     "116",
+     "117",
+     "118",
+     "119",
+     "120",
+     "121",
+     "122",
+     "123",
+     "124",
+     "125",
+     "126",
+     "127",
+     "128",
+     "129",
+     "130",
+     "131",
+     "132",
+     "133",
+     "134",
+     "135",
+     "136",
+     "137",
+     "138",
+     "139",
+     "140",
+     "141",
+     "142",
+     "143",
+     "144",
+     "145",
+     "146",
+     "147",
+     "148",
+     "149",
+     "150",
+     "151",
+     "152",
+     "153",
+     "154",
+     "155",
+     "156",
+     "157",
+     "158",
+     "159",
+     "160",
+     "161",
+     "162",
+     "163",
+     "164",
+     "165",
+     "166",
+     "167",
+     "168",
+     "169",
+     "170",
+     "171",
+     "172",
+     "173",
+     "174",
+     "175",
+     "176",
+     "177",
+     "178",
+     "179",
+     "180",
+     "181",
+     "182",
+     "183",
+     "184",
+     "185",
+     "186~187",
+     "188~189",
+     "190~191",
+     "192~193",
+     "194~195",
+     "196~197",
+     "198~199~200",
+     "201~202~203",
+     "204~205~206~207",
+     "208~209~210~211~212~213",
+     "214~215~216~217~218~219~220~221~222~223~224~225~226~227~228~229~230~231~232~233~234~235~236~237~238~239~240~241~242~243~244~245~246~247~248~249~250~251~252~253~254~255"
+    ],
+    "pAdj": 0.739468901000975,
+    "biased": false
+   },
+   {
+    "id": "adjacent",
+    "label": "연속번호 쌍 개수 분포",
+    "n": 1242,
+    "categories": 4,
+    "stat": 2.820834964680159,
+    "dof": 3,
+    "p": 0.4200815856189256,
+    "buckets": [
+     "0",
+     "1",
+     "2",
+     "3~4~5"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "overlap",
+    "label": "직전 회차와 겹치는 번호 개수",
+    "n": 1241,
+    "categories": 4,
+    "stat": 3.6717695563456783,
+    "dof": 3,
+    "p": 0.2991579264486447,
+    "buckets": [
+     "0",
+     "1",
+     "2",
+     "3~4~5~6"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   }
+  ],
+  "recent": [
+   {
+    "id": "numbers",
+    "label": "번호별 출현 (본번호)",
+    "n": 1800,
+    "categories": 45,
+    "stat": 36.15,
+    "dof": 44,
+    "p": 0.7939614650113476,
+    "buckets": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29",
+     "30",
+     "31",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "37",
+     "38",
+     "39",
+     "40",
+     "41",
+     "42",
+     "43",
+     "44",
+     "45"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "numbersWithBonus",
+    "label": "번호별 출현 (보너스 포함)",
+    "n": 2100,
+    "categories": 45,
+    "stat": 35.91428571428572,
+    "dof": 44,
+    "p": 0.8020446816485205,
+    "buckets": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29",
+     "30",
+     "31",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "37",
+     "38",
+     "39",
+     "40",
+     "41",
+     "42",
+     "43",
+     "44",
+     "45"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "oddEven",
+    "label": "홀수 개수 분포",
+    "n": 300,
+    "categories": 5,
+    "stat": 6.753369102342749,
+    "dof": 4,
+    "p": 0.14950984055563377,
+    "buckets": [
+     "0~1",
+     "2",
+     "3",
+     "4",
+     "5~6"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "lowHigh",
+    "label": "저번호(1~22) 개수 분포",
+    "n": 300,
+    "categories": 5,
+    "stat": 0.3354876883653738,
+    "dof": 4,
+    "p": 0.9874096349392276,
+    "buckets": [
+     "0~1",
+     "2",
+     "3",
+     "4",
+     "5~6"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "sum",
+    "label": "번호 합 분포",
+    "n": 300,
+    "categories": 46,
+    "stat": 48.25604446903437,
+    "dof": 45,
+    "p": 0.3426630843630148,
+    "buckets": [
+     "21~22~23~24~25~26~27~28~29~30~31~32~33~34~35~36~37~38~39~40~41~42~43~44~45~46~47~48~49~50~51~52~53~54~55~56~57~58~59~60~61~62~63~64~65~66~67~68~69~70~71~72~73~74~75",
+     "76~77~78~79~80~81~82~83",
+     "84~85~86~87~88~89",
+     "90~91~92~93",
+     "94~95~96~97",
+     "98~99~100",
+     "101~102~103",
+     "104~105~106",
+     "107~108~109",
+     "110~111",
+     "112~113",
+     "114~115",
+     "116~117",
+     "118~119",
+     "120~121",
+     "122~123",
+     "124~125",
+     "126~127",
+     "128~129",
+     "130~131",
+     "132~133",
+     "134~135",
+     "136~137",
+     "138~139",
+     "140~141",
+     "142~143",
+     "144~145",
+     "146~147",
+     "148~149",
+     "150~151",
+     "152~153",
+     "154~155",
+     "156~157",
+     "158~159",
+     "160~161",
+     "162~163",
+     "164~165",
+     "166~167",
+     "168~169~170",
+     "171~172~173",
+     "174~175~176",
+     "177~178~179",
+     "180~181~182~183",
+     "184~185~186~187~188",
+     "189~190~191~192~193~194",
+     "195~196~197~198~199~200~201~202~203~204~205~206~207~208~209~210~211~212~213~214~215~216~217~218~219~220~221~222~223~224~225~226~227~228~229~230~231~232~233~234~235~236~237~238~239~240~241~242~243~244~245~246~247~248~249~250~251~252~253~254~255"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "adjacent",
+    "label": "연속번호 쌍 개수 분포",
+    "n": 300,
+    "categories": 3,
+    "stat": 0.912050602000655,
+    "dof": 2,
+    "p": 0.6337978011773123,
+    "buckets": [
+     "0",
+     "1",
+     "2~3~4~5"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   },
+   {
+    "id": "overlap",
+    "label": "직전 회차와 겹치는 번호 개수",
+    "n": 299,
+    "categories": 4,
+    "stat": 0.41520364710796276,
+    "dof": 3,
+    "p": 0.9370841764131532,
+    "buckets": [
+     "0",
+     "1",
+     "2",
+     "3~4~5~6"
+    ],
+    "pAdj": 1.0,
+    "biased": false
+   }
+  ]
+ }
+}
