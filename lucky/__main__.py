@@ -1,4 +1,4 @@
-"""python -m lucky <collect|analyze|fairness> — 수집·분석 CLI."""
+"""python -m lucky <collect|analyze|fairness|sets> — 수집·분석·번호 세트 CLI."""
 
 import argparse
 import sys
@@ -119,7 +119,11 @@ def _sets(args, games, now):
                 print(f"  {entry['strategy']:7} {entry['number']} (1~5조 전부)")
 
     if args.round is None:
-        written = predictions.save_predictions(args.data_dir, document)
+        try:
+            written = predictions.save_predictions(args.data_dir, document)
+        except (ValueError, OSError) as e:
+            print(f"sets: 저장 실패 — {e}", file=sys.stderr)
+            return 1
         print("predictions.json 저장" if written else "predictions.json 변경 없음")
     return 0
 

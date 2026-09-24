@@ -44,6 +44,8 @@ def test_lotto_scores_cover_every_number_as_probabilities():
     scores = ml.lotto_scores(lotto_draws(200))
     assert set(scores) == set(range(1, 46))
     assert all(0.0 < value < 1.0 for value in scores.values())
+    # 누출이 있으면 이번 회차를 이미 본 셈이라 확률이 0/1 근처로 벌어진다
+    assert max(scores.values()) < 0.3
 
 
 def test_lotto_scores_are_deterministic():
@@ -67,6 +69,8 @@ def test_pension_scores_cover_positions_and_digits():
     assert len(scores) == 6
     assert all(set(position) == set(range(10)) for position in scores)
     assert all(0.0 < value < 1.0 for position in scores for value in position.values())
+    # 누출이 있으면 이번 회차를 이미 본 셈이라 확률이 0/1 근처로 벌어진다
+    assert max(value for position in scores for value in position.values()) < 0.3
 
 
 def test_pension_model_picks_up_a_planted_signal():

@@ -38,6 +38,8 @@ def test_an_ordinary_spread_combination_passes():
         ([1, 8, 15, 22, 29, 40], "gridColumn"),       # 용지 첫 칸에 5개
         ([7, 14, 21, 28, 33, 40], "multiplesOfSeven"),  # 7의 배수 4개 (등차수열도 아님)
         ([2, 9, 16, 23, 30, 37], "arithmetic"),       # 공차 7 등차수열
+        ([1, 9, 17, 25, 33, 40], "gridDiagonal"),     # 용지 대각선에 5개
+        ([1, 3, 5, 7, 9, 40], "sameDecade"),          # 1~10 구간에 5개
     ],
 )
 def test_each_popular_pattern_is_flagged(numbers, reason):

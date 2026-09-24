@@ -45,4 +45,8 @@ def weighted_sample(rng, scores, count, *, floor=FLOOR):
                 picked.append(key)
                 del remaining[key]
                 break
+        else:  # 부동소수 오차로 아무 구간도 못 넘긴 경우 — 짧은 세트를 내놓지 않는다
+            key = next(iter(remaining))
+            picked.append(key)
+            del remaining[key]
     return picked

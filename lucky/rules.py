@@ -27,8 +27,13 @@ def longest_run(numbers):
     return longest
 
 
+def _decade(number):
+    """번호대: 1~10, 11~20, 21~30, 31~40, 41~45."""
+    return min((number - 1) // 10, 4)
+
+
 def unpopular_reasons(numbers, rules, past_combinations=()):
-    """인기 패턴에 걸리는 이유 목록. 빈 목록이면 통과."""
+    """인기 패턴에 걸리는 이유 목록. 빈 목록이면 통과. numbers는 오름차순을 전제한다."""
     width = rules["gridWidth"]
     reasons = []
     if numbers[-1] <= rules["allLowMax"]:
@@ -41,6 +46,14 @@ def unpopular_reasons(numbers, rules, past_combinations=()):
         reasons.append("gridRow")
     if max(Counter((number - 1) % width for number in numbers).values()) > rules["maxSameGridColumn"]:
         reasons.append("gridColumn")
+    rows = [(number - 1) // width for number in numbers]
+    columns = [(number - 1) % width for number in numbers]
+    down = Counter(row - column for row, column in zip(rows, columns))
+    up = Counter(row + column for row, column in zip(rows, columns))
+    if max(max(down.values()), max(up.values())) > rules["maxSameGridDiagonal"]:
+        reasons.append("gridDiagonal")
+    if max(Counter(_decade(number) for number in numbers).values()) > rules["maxSameDecade"]:
+        reasons.append("sameDecade")
     if sum(1 for number in numbers if number % 7 == 0) > rules["maxMultiplesOfSeven"]:
         reasons.append("multiplesOfSeven")
     gaps = {high - low for low, high in zip(numbers, numbers[1:])}

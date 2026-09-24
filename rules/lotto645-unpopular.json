@@ -6,6 +6,8 @@
   "maxSameLastDigit": 3,
   "maxSameGridRow": 4,
   "maxSameGridColumn": 4,
+  "maxSameGridDiagonal": 4,
+  "maxSameDecade": 4,
   "maxMultiplesOfSeven": 3,
   "rejectArithmeticProgression": true,
   "rejectPastWinningCombination": true
