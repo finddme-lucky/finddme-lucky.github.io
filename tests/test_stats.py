@@ -30,7 +30,7 @@ def test_counts_cover_every_number_and_include_bonus_separately():
 
 def test_recent_counts_use_only_the_last_n_draws():
     stats = lotto_stats(DRAWS, recent=2)
-    assert stats["recentWindow"] == 2
+    assert stats["recentCountsWindow"] == 2
     assert stats["recentCounts"][1] == 0  # 1은 1회차에만 나왔다
     assert stats["recentCounts"][2] == 1
     assert stats["recentCounts"][5] == 1
@@ -95,7 +95,7 @@ def test_pension_group_counts_cover_all_five():
 
 def test_pension_recent_groups_use_only_the_last_n_draws():
     stats = pension_stats(PENSION_DRAWS, recent=1)
-    assert stats["recentWindow"] == 1
+    assert stats["recentCountsWindow"] == 1
     assert stats["recentGroups"] == {1: 1, 2: 0, 3: 0, 4: 0, 5: 0}
 
 

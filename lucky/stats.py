@@ -46,7 +46,7 @@ def lotto_stats(draws, *, recent=LOTTO_RECENT):
 
     return {
         "draws": len(draws),
-        "recentWindow": len(recent_draws),
+        "recentCountsWindow": len(recent_draws),
         "counts": _fill(main, numbers),
         "countsWithBonus": _fill(with_bonus, numbers),
         "recentCounts": _fill(recent_counts, numbers),
@@ -100,7 +100,7 @@ def pension_stats(draws, *, recent=PENSION_RECENT):
     recent_draws = draws[-recent:] if recent else []
     return {
         "draws": len(draws),
-        "recentWindow": len(recent_draws),
+        "recentCountsWindow": len(recent_draws),
         "groups": _fill(Counter(draw["group"] for draw in draws), GROUPS),
         "recentGroups": _fill(Counter(draw["group"] for draw in recent_draws), GROUPS),
         "firstDigits": _digit_counts(draws, "first"),

@@ -40,15 +40,21 @@ def merge_small(rows, min_expected=MIN_EXPECTED):
     return merged
 
 
-def goodness_of_fit(test_id, label, observed, weights):
-    """카이제곱 적합도. weights는 상대 가중치이며 관측 총합에 맞춰 정규화한다."""
+def goodness_of_fit(test_id, label, observed, weights, *, scale=1.0):
+    """카이제곱 적합도. weights는 상대 가중치이며 관측 총합에 맞춰 정규화한다.
+
+    scale: 통계량 보정 계수. 한 회차 안에서 번호를 비복원 추출하는 검정(번호별 출현)은
+    분산이 다항분포보다 작아 통계량 기대값이 자유도가 아니라 45-k가 된다. 44/(45-k)를
+    곱해 자유도에 맞춘다. 나머지 검정은 1.0 (보정 없음).
+    """
     categories = sorted(set(observed) | set(weights))
     total = sum(observed.get(category, 0) for category in categories)
     weight_total = sum(weights.get(category, 0) for category in categories)
     base = {"id": test_id, "label": label, "n": total}
     if total == 0 or weight_total == 0:
         return {**base, "categories": 0, "stat": None, "dof": 0, "p": None,
-                "note": "자료가 없어 검정 생략", "buckets": []}
+                "note": "자료가 없어 검정 생략", "buckets": [], "observed": [], "expected": [],
+                "scale": scale}
 
     rows = [
         (str(category), observed.get(category, 0), weights.get(category, 0) * total / weight_total)
@@ -56,14 +62,18 @@ def goodness_of_fit(test_id, label, observed, weights):
     ]
     merged = merge_small(rows)
     labels = [label for label, _count, _expected in merged]
+    counts = [count for _label, count, _expected in merged]
+    expectations = [expected for _label, _count, expected in merged]
     if len(merged) < 2:
         return {**base, "categories": len(merged), "stat": None, "dof": 0, "p": None,
-                "note": f"기대빈도 {MIN_EXPECTED} 이상 구간이 2개 미만이라 검정 생략", "buckets": labels}
+                "note": f"기대빈도 {MIN_EXPECTED} 이상 구간이 2개 미만이라 검정 생략", "buckets": labels,
+                "observed": counts, "expected": expectations, "scale": scale}
 
-    statistic = sum((count - expected) ** 2 / expected for _, count, expected in merged)
+    statistic = scale * sum((count - expected) ** 2 / expected for _, count, expected in merged)
     dof = len(merged) - 1
     return {**base, "categories": len(merged), "stat": statistic, "dof": dof,
-            "p": float(chi2.sf(statistic, dof)), "buckets": labels}
+            "p": float(chi2.sf(statistic, dof)), "buckets": labels,
+            "observed": counts, "expected": expectations, "scale": scale}
 
 
 def holm(pvalues):
@@ -88,12 +98,18 @@ def _finalize(results, alpha=ALPHA):
     return results
 
 
+# 한 회차에서 본번호 6개(보너스 포함 7개)를 비복원 추출하므로 분산이 다항분포보다 작다.
+# 통계량 기대값이 45-k가 되므로 자유도 44에 맞춰 보정한다.
+NUMBER_SCALE = 44 / 39
+NUMBER_WITH_BONUS_SCALE = 44 / 38
+
+
 def _lotto_tests(draws):
     stats = lotto_stats(draws)
     uniform = {number: 1 for number in range(1, 46)}
     return [
-        goodness_of_fit("numbers", "번호별 출현 (본번호)", stats["counts"], uniform),
-        goodness_of_fit("numbersWithBonus", "번호별 출현 (보너스 포함)", stats["countsWithBonus"], uniform),
+        goodness_of_fit("numbers", "번호별 출현 (본번호)", stats["counts"], uniform, scale=NUMBER_SCALE),
+        goodness_of_fit("numbersWithBonus", "번호별 출현 (보너스 포함)", stats["countsWithBonus"], uniform, scale=NUMBER_WITH_BONUS_SCALE),
         goodness_of_fit("oddEven", "홀수 개수 분포", stats["oddEven"], reference.hypergeometric(45, 23, 6)),
         goodness_of_fit("lowHigh", "저번호(1~22) 개수 분포", stats["lowHigh"], reference.hypergeometric(45, 22, 6)),
         goodness_of_fit("sum", "번호 합 분포", stats["sums"], reference.sum_distribution()),

@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import pytest
 
@@ -97,3 +97,25 @@ def test_cli_fairness_prints_without_writing(tmp_path, capsys):
     assert code == 0
     assert "lotto645" in capsys.readouterr().out
     assert not (tmp_path / "stats").exists()
+
+
+def test_analyze_skips_rewriting_when_only_the_timestamp_would_change(tmp_path):
+    seed_data(tmp_path)
+    analyze("lotto645", tmp_path, now=NOW, log=lambda _message: None)
+    path = tmp_path / "stats" / "lotto645.json"
+    first = path.read_text(encoding="utf-8")
+
+    analyze("lotto645", tmp_path, now=NOW + timedelta(hours=3), log=lambda _message: None)
+
+    assert path.read_text(encoding="utf-8") == first
+
+
+def test_analyze_rewrites_when_the_draws_changed(tmp_path):
+    seed_data(tmp_path)
+    analyze("lotto645", tmp_path, now=NOW, log=lambda _message: None)
+    store.save_draws(tmp_path, "lotto645", lotto_draws(41))
+
+    analyze("lotto645", tmp_path, now=NOW, log=lambda _message: None)
+
+    saved = json.loads((tmp_path / "stats" / "lotto645.json").read_text(encoding="utf-8"))
+    assert saved["latestRound"] == 41

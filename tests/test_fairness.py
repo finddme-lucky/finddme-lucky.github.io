@@ -1,7 +1,9 @@
 import random
 from datetime import date, timedelta
 
-from lucky import fairness
+import pytest
+
+from lucky import fairness, reference
 
 
 def fair_lotto_draws(count, *, seed=7, forced=None):
@@ -134,3 +136,40 @@ def test_too_few_draws_produce_skipped_tests_rather_than_errors():
     report = fairness.run_lotto(fair_lotto_draws(2), recent=2)
     assert all(result["biased"] is False for result in report["all"])
     assert any(result["p"] is None for result in report["all"])
+
+
+def test_goodness_of_fit_applies_the_variance_scale():
+    observed = {0: 60, 1: 40}
+    plain = fairness.goodness_of_fit("t", "라벨", observed, {0: 1, 1: 1})
+    scaled = fairness.goodness_of_fit("t", "라벨", observed, {0: 1, 1: 1}, scale=2.0)
+    assert scaled["stat"] == pytest.approx(2 * plain["stat"])
+    assert scaled["p"] < plain["p"]
+    assert plain["scale"] == 1.0 and scaled["scale"] == 2.0
+
+
+def test_number_frequency_tests_correct_for_sampling_without_replacement():
+    results = by_id(fairness.run_lotto(fair_lotto_draws(300), recent=300)["all"])
+    assert results["numbers"]["scale"] == pytest.approx(44 / 39)
+    assert results["numbersWithBonus"]["scale"] == pytest.approx(44 / 38)
+    assert results["oddEven"]["scale"] == 1.0
+
+
+def test_lotto_tests_are_wired_to_the_matching_reference_distribution():
+    draws = fair_lotto_draws(2000)
+    results = by_id(fairness.run_lotto(draws, recent=2000)["all"])
+    rounds = len(draws)
+
+    odd = results["oddEven"]
+    assert odd["buckets"] == ["0", "1", "2", "3", "4", "5", "6"]
+    assert odd["expected"][3] == pytest.approx(
+        reference.hypergeometric(45, 23, 6)[3] / reference.TOTAL * rounds
+    )
+    assert results["lowHigh"]["expected"][3] == pytest.approx(
+        reference.hypergeometric(45, 22, 6)[3] / reference.TOTAL * rounds
+    )
+    assert results["adjacent"]["expected"][0] == pytest.approx(
+        reference.adjacent_pair_distribution()[0] / reference.TOTAL * rounds
+    )
+    assert results["overlap"]["expected"][0] == pytest.approx(
+        reference.hypergeometric(45, 6, 6)[0] / reference.TOTAL * (rounds - 1)
+    )
