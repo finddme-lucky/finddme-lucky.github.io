@@ -39,6 +39,20 @@ docker exec finddme-lucky python -m lucky fairness     # 검정 결과만 출력
 - 검정은 관측 분포를 이론 분포(정확한 조합 계산)와 카이제곱으로 비교하고, 여러 검정을 한꺼번에 하므로 Holm 보정을 적용한다.
 - "편향 증거 없음"이 정상적인 결과다. 과거 분포일 뿐 다음 회차 확률과는 무관하다.
 
+## 번호 세트
+
+```bash
+docker exec finddme-lucky python -m lucky sets                       # 다음 회차 세트 → data/predictions.json
+docker exec finddme-lucky python -m lucky sets --strategy hot        # 한 전략만
+docker exec finddme-lucky python -m lucky sets --round 1200          # 점검용: 그 회차 기준으로 계산만 (저장 안 함)
+```
+
+- 산출물: `data/predictions.json`
+- 로또는 전략별로 5게임을 만들고, 게임끼리 번호가 겹치지 않으며, 사람들이 많이 고르는 패턴(`rules/lotto645-unpopular.json`)을 피한다.
+- 연금복권은 6자리 하나를 만든다. **1~5조를 전부 사는 것**을 전제한 번호다.
+- 같은 회차에는 언제 실행해도 같은 번호가 나온다. 다시 뽑기는 없다.
+- **어떤 전략도 당첨 확률을 바꾸지 않는다.** 비인기 조합은 1등이 됐을 때 나눠 갖는 인원을, 겹침 조절은 당첨 분포를 바꿀 뿐이다.
+
 ## 테스트
 
 ```bash
