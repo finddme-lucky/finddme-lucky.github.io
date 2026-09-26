@@ -4,6 +4,7 @@
 것이 아니라, 무작위 기준선·이론값과 구분되지 않는다는 사실을 수치로 남기는 것이다.
 """
 
+import json
 from collections import Counter
 from math import comb, sqrt
 
@@ -293,4 +294,19 @@ def build_document(data_dir, *, now, rules, games=store.GAMES, strategies=None, 
 
 
 def save_document(data_dir, document):
+    """이번에 계산하지 않은 게임 구간은 기존 파일에서 가져온다 (한 게임만 실행해도 지워지지 않게)."""
+    path = data_dir / "backtest.json"
+    if path.exists():
+        try:
+            previous = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            previous = {}
+        carried = {
+            game: previous[game]
+            for game in store.GAMES
+            if game in previous and game not in document
+        }
+        if "lotto645" not in document and "popularity" in previous:
+            carried["popularity"] = previous["popularity"]  # 근거 보강은 로또와 함께 계산된다
+        document = {**document, **carried}
     return store.save_document_if_changed(data_dir, "backtest.json", document)

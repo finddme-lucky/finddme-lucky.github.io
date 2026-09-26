@@ -112,3 +112,26 @@ def test_cli_backtest_reports_failure(tmp_path, capsys, monkeypatch):
     code = main(["backtest", "--data-dir", str(tmp_path)], now=NOW)
     assert code == 1
     assert "backtest: 실패" in capsys.readouterr().err
+
+
+def test_save_document_keeps_the_other_games_section(tmp_path):
+    seed_data(tmp_path)
+    full = backtest.build_document(
+        tmp_path, now=NOW, rules=CONFIG, strategies=("hot", "random"), rounds=4
+    )
+    backtest.save_document(tmp_path, full)
+
+    pension_only = backtest.build_document(
+        tmp_path,
+        now=NOW,
+        rules=CONFIG,
+        games=("pension720",),
+        strategies=("hot", "random"),
+        rounds=4,
+    )
+    backtest.save_document(tmp_path, pension_only)
+
+    saved = json.loads((tmp_path / "backtest.json").read_text(encoding="utf-8"))
+    assert saved["pension720"]["evalRounds"] == 4
+    assert saved["lotto645"]["evalRounds"] == 4  # 이전 실행 결과가 남아 있어야 한다
+    assert "popularity" in saved  # 로또와 함께 계산된 근거도 남는다
