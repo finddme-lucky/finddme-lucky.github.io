@@ -16,7 +16,7 @@ from lucky.rules import unpopular_reasons
 
 FIFTH_PRIZE_RATE = comb(6, 3) * comb(39, 3) / comb(45, 6)
 WINDOW = 51
-ERAS = ((1, 400), (401, 800), (801, None))
+ERAS = ((1, 100), (101, 400), (401, None))
 RULE_IDS = (
     "allLow",
     "consecutive",
@@ -68,8 +68,21 @@ def _group(rows):
     }
 
 
-def _rule_rate(rows, rule):
-    return sum(1 for row in rows if rule in row[3]) / len(rows) if rows else 0.0
+def _rule_counts(rows, rule):
+    flagged = sum(1 for row in rows if rule in row[3])
+    return flagged, flagged / len(rows) if rows else 0.0
+
+
+def _rule_entry(high, low, rule):
+    high_flagged, high_rate = _rule_counts(high, rule)
+    low_flagged, low_rate = _rule_counts(low, rule)
+    return {
+        "high": high_rate,
+        "low": low_rate,
+        "difference": high_rate - low_rate,
+        "highFlagged": high_flagged,
+        "lowFlagged": low_flagged,
+    }
 
 
 def evidence(draws, rules, *, window=WINDOW):
@@ -115,14 +128,7 @@ def evidence(draws, rules, *, window=WINDOW):
         "low": _group(low),
         "topDecile": _group(ordered[-decile:]),
         "bottomDecile": _group(ordered[:decile]),
-        "byRule": {
-            rule: {
-                "high": _rule_rate(high, rule),
-                "low": _rule_rate(low, rule),
-                "difference": _rule_rate(high, rule) - _rule_rate(low, rule),
-            }
-            for rule in RULE_IDS
-        },
+        "byRule": {rule: _rule_entry(high, low, rule) for rule in RULE_IDS},
         "byEra": eras,
         "caveat": CAVEAT,
     }

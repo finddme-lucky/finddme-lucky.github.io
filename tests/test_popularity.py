@@ -65,6 +65,11 @@ def test_evidence_finds_a_planted_association():
     assert report["byRule"]["allLow"]["difference"] == pytest.approx(1.0)
     assert report["byRule"]["consecutive"]["difference"] == pytest.approx(0.0)
     assert report["caveat"] == popularity.CAVEAT
+    # "관계 없음"과 "한 번도 안 걸림"을 구분할 수 있어야 한다
+    assert report["byRule"]["allLow"]["highFlagged"] == 30
+    assert report["byRule"]["allLow"]["lowFlagged"] == 0
+    assert report["byRule"]["consecutive"]["highFlagged"] == 0
+    assert report["byRule"]["consecutive"]["lowFlagged"] == 0
 
 
 def test_evidence_reports_no_difference_when_patterns_are_unrelated_to_winners():
@@ -92,3 +97,8 @@ def test_evidence_shape_covers_deciles_rules_and_eras():
         assert 0.0 <= report[group]["flaggedRate"] <= 1.0
         assert report[group]["rounds"] > 0
     assert report["byEra"] and all(era["rounds"] > 0 for era in report["byEra"])
+    assert [(era["from"], era["to"]) for era in report["byEra"]] == [(1, 100), (101, 400)]
+
+
+def test_winner_ratios_skip_rounds_without_sales():
+    assert popularity.winner_ratios([draw(1, SPREAD, 20000, sales=0)]) == [None]
