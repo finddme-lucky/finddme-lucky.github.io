@@ -1,0 +1,426 @@
+{
+ "schema": 1,
+ "generatedAt": "2026-09-26T21:17:08+09:00",
+ "disclaimer": "전략이 무작위보다 낫다는 근거는 없다. 이 기록은 그것을 확인하기 위한 것이다.",
+ "lotto645": {
+  "evalRounds": 300,
+  "theory": {
+   "matchRates": {
+    "0": 0.40056463672459136,
+    "1": 0.4241272624142732,
+    "2": 0.15147402229081186,
+    "3": 0.02244059589493509,
+    "4": 0.0013646308314487555,
+    "5": 2.872907013576327e-05,
+    "6": 1.2277380399898834e-07
+   },
+   "hitRate": 0.023834078570323606,
+   "meanMatches": 0.8
+  },
+  "strategies": {
+   "hot": {
+    "games": 1500,
+    "matchCounts": {
+     "0": 607,
+     "1": 625,
+     "2": 226,
+     "3": 40,
+     "4": 2,
+     "5": 0,
+     "6": 0
+    },
+    "ranks": {
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 2,
+     "5": 40
+    },
+    "meanMatches": 0.8033333333333333,
+    "hits": 42,
+    "hitRate": 0.028,
+    "hitRateCI": [
+     0.020780907128029952,
+     0.037630563867319555
+    ],
+    "pVsRandom": 0.19243536441981102,
+    "pAdj": 0.7697414576792441,
+    "distinguishable": false
+   },
+   "cold": {
+    "games": 1500,
+    "matchCounts": {
+     "0": 586,
+     "1": 639,
+     "2": 248,
+     "3": 26,
+     "4": 1,
+     "5": 0,
+     "6": 0
+    },
+    "ranks": {
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 1,
+     "5": 26
+    },
+    "meanMatches": 0.8113333333333334,
+    "hits": 27,
+    "hitRate": 0.018,
+    "hitRateCI": [
+     0.012399749079775405,
+     0.026062812402763716
+    ],
+    "pVsRandom": 0.5958500570659246,
+    "pAdj": 0.8391292653553676,
+    "distinguishable": false
+   },
+   "recent": {
+    "games": 1500,
+    "matchCounts": {
+     "0": 592,
+     "1": 654,
+     "2": 214,
+     "3": 36,
+     "4": 4,
+     "5": 0,
+     "6": 0
+    },
+    "ranks": {
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 4,
+     "5": 36
+    },
+    "meanMatches": 0.804,
+    "hits": 40,
+    "hitRate": 0.02666666666666667,
+    "hitRateCI": [
+     0.019643790086390146,
+     0.03610782630725132
+    ],
+    "pVsRandom": 0.27970975511845586,
+    "pAdj": 0.8391292653553676,
+    "distinguishable": false
+   },
+   "ml": {
+    "games": 1500,
+    "matchCounts": {
+     "0": 599,
+     "1": 652,
+     "2": 224,
+     "3": 23,
+     "4": 1,
+     "5": 1,
+     "6": 0
+    },
+    "ranks": {
+     "1": 0,
+     "2": 0,
+     "3": 1,
+     "4": 1,
+     "5": 23
+    },
+    "meanMatches": 0.7853333333333333,
+    "hits": 25,
+    "hitRate": 0.016666666666666666,
+    "hitRateCI": [
+     0.011314224527091084,
+     0.02448848235373998
+    ],
+    "inSampleSeparation": 0.00119694623252149,
+    "outOfSampleSeparation": -8.79303924576134e-05,
+    "pVsRandom": 0.41830036120421565,
+    "pAdj": 0.8391292653553676,
+    "distinguishable": false
+   },
+   "random": {
+    "games": 1500,
+    "matchCounts": {
+     "0": 606,
+     "1": 632,
+     "2": 231,
+     "3": 28,
+     "4": 3,
+     "5": 0,
+     "6": 0
+    },
+    "ranks": {
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 3,
+     "5": 28
+    },
+    "meanMatches": 0.7933333333333333,
+    "hits": 31,
+    "hitRate": 0.020666666666666667,
+    "hitRateCI": [
+     0.01459718159819759,
+     0.029185089087757632
+    ],
+    "pVsRandom": null,
+    "pAdj": null,
+    "distinguishable": false
+   }
+  }
+ },
+ "popularity": {
+  "window": 51,
+  "rounds": 1242,
+  "high": {
+   "rounds": 608,
+   "flagged": 91,
+   "flaggedRate": 0.14967105263157895
+  },
+  "low": {
+   "rounds": 634,
+   "flagged": 34,
+   "flaggedRate": 0.05362776025236593
+  },
+  "topDecile": {
+   "rounds": 124,
+   "flagged": 32,
+   "flaggedRate": 0.25806451612903225
+  },
+  "bottomDecile": {
+   "rounds": 124,
+   "flagged": 7,
+   "flaggedRate": 0.056451612903225805
+  },
+  "byRule": {
+   "allLow": {
+    "high": 0.13651315789473684,
+    "low": 0.03943217665615142,
+    "difference": 0.09708098123858541,
+    "highFlagged": 83,
+    "lowFlagged": 25
+   },
+   "consecutive": {
+    "high": 0.003289473684210526,
+    "low": 0.006309148264984227,
+    "difference": -0.003019674580773701,
+    "highFlagged": 2,
+    "lowFlagged": 4
+   },
+   "sameLastDigit": {
+    "high": 0.006578947368421052,
+    "low": 0.0015772870662460567,
+    "difference": 0.005001660302174996,
+    "highFlagged": 4,
+    "lowFlagged": 1
+   },
+   "gridRow": {
+    "high": 0.0,
+    "low": 0.0,
+    "difference": 0.0,
+    "highFlagged": 0,
+    "lowFlagged": 0
+   },
+   "gridColumn": {
+    "high": 0.001644736842105263,
+    "low": 0.0,
+    "difference": 0.001644736842105263,
+    "highFlagged": 1,
+    "lowFlagged": 0
+   },
+   "gridDiagonal": {
+    "high": 0.0,
+    "low": 0.0,
+    "difference": 0.0,
+    "highFlagged": 0,
+    "lowFlagged": 0
+   },
+   "multiplesOfSeven": {
+    "high": 0.0,
+    "low": 0.0015772870662460567,
+    "difference": -0.0015772870662460567,
+    "highFlagged": 0,
+    "lowFlagged": 1
+   },
+   "arithmetic": {
+    "high": 0.0,
+    "low": 0.0,
+    "difference": 0.0,
+    "highFlagged": 0,
+    "lowFlagged": 0
+   },
+   "sameDecade": {
+    "high": 0.004934210526315789,
+    "low": 0.007886435331230283,
+    "difference": -0.0029522248049144943,
+    "highFlagged": 3,
+    "lowFlagged": 5
+   }
+  },
+  "byEra": [
+   {
+    "from": 1,
+    "to": 100,
+    "rounds": 100,
+    "high": 0.08333333333333333,
+    "low": 0.09615384615384616
+   },
+   {
+    "from": 101,
+    "to": 400,
+    "rounds": 300,
+    "high": 0.18,
+    "low": 0.02666666666666667
+   },
+   {
+    "from": 401,
+    "to": null,
+    "rounds": 842,
+    "high": 0.1466992665036675,
+    "low": 0.057736720554272515
+   }
+  ],
+  "caveat": "판매액 필드의 의미가 회차 구간마다 달라 절대 기대값과는 비교할 수 없다. 주변 회차 중앙값으로 정규화한 상대 비교만 유효하다."
+ },
+ "pension720": {
+  "evalRounds": 200,
+  "theory": {
+   "lengthRates": {
+    "0": 0.9,
+    "1": 0.09,
+    "2": 0.009,
+    "3": 0.0009,
+    "4": 9e-05,
+    "5": 9e-06,
+    "6": 1e-06
+   },
+   "expectedPrize": 3750.0,
+   "returnRate": 0.75
+  },
+  "strategies": {
+   "hot": {
+    "rounds": 200,
+    "lengths": {
+     "0": 176,
+     "1": 22,
+     "2": 2,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0
+    },
+    "hits": 24,
+    "games": 200,
+    "hitRate": 0.12,
+    "hitRateCI": [
+     0.08197935023887545,
+     0.17234361425904846
+    ],
+    "spent": 1000000,
+    "won": 160000,
+    "returnRate": 0.16,
+    "pVsRandom": 0.8766067288386479,
+    "pAdj": 1.0,
+    "distinguishable": false
+   },
+   "cold": {
+    "rounds": 200,
+    "lengths": {
+     "0": 183,
+     "1": 15,
+     "2": 2,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0
+    },
+    "hits": 17,
+    "games": 200,
+    "hitRate": 0.085,
+    "hitRateCI": [
+     0.05374529946985246,
+     0.13189688544235392
+    ],
+    "spent": 1000000,
+    "won": 125000,
+    "returnRate": 0.125,
+    "pVsRandom": 0.31731050786291415,
+    "pAdj": 1.0,
+    "distinguishable": false
+   },
+   "recent": {
+    "rounds": 200,
+    "lengths": {
+     "0": 176,
+     "1": 24,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0
+    },
+    "hits": 24,
+    "games": 200,
+    "hitRate": 0.12,
+    "hitRateCI": [
+     0.08197935023887545,
+     0.17234361425904846
+    ],
+    "spent": 1000000,
+    "won": 120000,
+    "returnRate": 0.12,
+    "pVsRandom": 0.8766067288386479,
+    "pAdj": 1.0,
+    "distinguishable": false
+   },
+   "ml": {
+    "rounds": 200,
+    "lengths": {
+     "0": 183,
+     "1": 17,
+     "2": 0,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0
+    },
+    "hits": 17,
+    "games": 200,
+    "hitRate": 0.085,
+    "hitRateCI": [
+     0.05374529946985246,
+     0.13189688544235392
+    ],
+    "spent": 1000000,
+    "won": 85000,
+    "returnRate": 0.085,
+    "pVsRandom": 0.31731050786291415,
+    "pAdj": 1.0,
+    "distinguishable": false
+   },
+   "random": {
+    "rounds": 200,
+    "lengths": {
+     "0": 177,
+     "1": 20,
+     "2": 3,
+     "3": 0,
+     "4": 0,
+     "5": 0,
+     "6": 0
+    },
+    "hits": 23,
+    "games": 200,
+    "hitRate": 0.115,
+    "hitRateCI": [
+     0.07786317221824318,
+     0.16664825233886393
+    ],
+    "spent": 1000000,
+    "won": 175000,
+    "returnRate": 0.175,
+    "pVsRandom": null,
+    "pAdj": null,
+    "distinguishable": false
+   }
+  }
+ }
+}

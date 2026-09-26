@@ -53,6 +53,21 @@ docker exec finddme-lucky python -m lucky sets --round 1200          # 점검용
 - 같은 회차에는 언제 실행해도 같은 번호가 나온다. 다시 뽑기는 없다.
 - **어떤 전략도 당첨 확률을 바꾸지 않는다.** 비인기 조합은 1등이 됐을 때 나눠 갖는 인원을, 겹침 조절은 당첨 분포를 바꿀 뿐이다.
 
+## 백테스트 · 인기 규칙 근거
+
+```bash
+docker exec finddme-lucky python -m lucky backtest                    # 전략별 과거 성적 → data/backtest.json (2~3분)
+docker exec finddme-lucky python -m lucky backtest --rounds 50        # 점검용: 짧게 계산만 (저장 안 함)
+docker exec finddme-lucky python -m lucky backtest --strategy hot     # 점검용: 한 전략만
+```
+
+- 산출물: `data/backtest.json`
+- t회차 성적은 t회차 **이전** 자료로만 만든 세트로 매긴다 (미래 누출 없음).
+- 로또는 5등 이상 적중률을 정확한 초기하 이론값과 무작위 기준선에 맞대어 보고, 연금복권은 1~5조 전부 구매 기준 수익률을 이론값(75%)과 비교한다.
+- **어떤 전략도 무작위와 구분되지 않는 것이 정상이다.** 이 표는 그것을 확인하기 위한 기록이다.
+- `ml`은 학습 구간 분리도와 평가 구간 분리도를 나란히 싣는다 — 과거에는 갈리고 미래에는 갈리지 않는다는 것을 보여준다.
+- 인기 규칙 근거는 5등 당첨자 수가 주변 회차보다 많았던 회차의 당첨번호가 인기 패턴에 더 많이 걸리는지 비교한 것이다. 판매액 필드의 의미가 구간마다 달라 절대 기대값 비교는 하지 않는다.
+
 ## 테스트
 
 ```bash
