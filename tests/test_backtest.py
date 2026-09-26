@@ -135,3 +135,69 @@ def test_ml_entry_carries_fit_versus_evaluation_separation():
     entry = report["strategies"]["ml"]
     assert "inSampleSeparation" in entry and "outOfSampleSeparation" in entry
     assert "inSampleSeparation" not in report["strategies"]["random"]
+
+
+def pension_draws(count):
+    return [
+        {
+            "round": round_no,
+            "date": "2020-05-07",
+            "group": round_no % 5 + 1,
+            "first": f"{round_no * 123457 % 1_000_000:06d}",
+            "bonus": f"{round_no * 654321 % 1_000_000:06d}",
+        }
+        for round_no in range(1, count + 1)
+    ]
+
+
+def test_trailing_match_counts_from_the_right():
+    assert backtest.trailing_match("123456", "123456") == 6
+    assert backtest.trailing_match("923456", "123456") == 5
+    assert backtest.trailing_match("111456", "123456") == 3
+    assert backtest.trailing_match("123455", "123456") == 0
+
+
+def test_pension_prize_follows_the_rank_table():
+    draw = {"first": "123456", "bonus": "999999"}
+    assert backtest.pension_prize("123456", draw) == (
+        6,
+        backtest.PENSION_PRIZES[1] + 4 * backtest.PENSION_PRIZES[2],
+    )
+    assert backtest.pension_prize("923456", draw) == (5, 5 * backtest.PENSION_PRIZES[3])
+    assert backtest.pension_prize("999996", draw) == (1, 5 * backtest.PENSION_PRIZES[7])
+    assert backtest.pension_prize("123450", draw) == (0, 0)
+    # 보너스 번호와 끝 6자리가 같으면 조와 무관하게 5장 모두 보너스 등위
+    assert backtest.pension_prize("999999", draw) == (0, 5 * backtest.PENSION_PRIZES["bonus"])
+
+
+def test_pension_theory_matches_the_hand_computed_return():
+    theory = backtest.pension_theory()
+    assert sum(theory["lengthRates"].values()) == pytest.approx(1.0)
+    assert theory["lengthRates"][0] == pytest.approx(0.9)
+    assert theory["lengthRates"][6] == pytest.approx(1e-6)
+    # 1등 2,160원 + 3~7등 990원 + 보너스 600원 = 3,750원 (5,000원 지출 기준 75%)
+    assert theory["expectedPrize"] == pytest.approx(3750.0)
+    assert theory["returnRate"] == pytest.approx(0.75)
+
+
+def test_run_pension_reports_return_rate_against_theory():
+    report = backtest.run_pension(pension_draws(80), strategies=("hot", "random"), rounds=10)
+
+    assert report["evalRounds"] == 10
+    assert report["theory"]["returnRate"] == pytest.approx(0.75)
+    entry = report["strategies"]["hot"]
+    assert entry["rounds"] == 10
+    assert sum(entry["lengths"].values()) == 10
+    assert set(entry["lengths"]) == set(range(7))
+    assert entry["spent"] == 10 * 5 * backtest.TICKET_PRICE
+    assert entry["returnRate"] == pytest.approx(entry["won"] / entry["spent"])
+    assert report["strategies"]["random"]["pVsRandom"] is None
+
+
+def test_run_pension_is_deterministic_and_uses_only_past_draws():
+    draws = pension_draws(80)
+    first = backtest.run_pension(draws, strategies=("cold",), rounds=5)
+    assert first == backtest.run_pension(draws, strategies=("cold",), rounds=5)
+    # 평가 구간 뒤에 회차를 더해도 같은 회차의 판정은 바뀌지 않는다
+    longer = backtest.run_pension(draws + pension_draws(85)[80:], strategies=("cold",), rounds=10)
+    assert longer["strategies"]["cold"]["rounds"] == 10

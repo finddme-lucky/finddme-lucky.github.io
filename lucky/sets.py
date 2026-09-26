@@ -53,8 +53,8 @@ def build_lotto_set(draws, strategy, round_no, *, rules, past_combinations=(), m
     )
 
 
-def build_pension_set(draws, strategy, round_no):
-    position_scores = pension_scores(draws, strategy)
+def build_pension_set(draws, strategy, round_no, *, scores=None):
+    position_scores = pension_scores(draws, strategy) if scores is None else scores
     rng = random.Random(sampling.seed_for("pension720", strategy, round_no))
     digits = [sampling.weighted_sample(rng, scores, 1)[0] for scores in position_scores]
     return "".join(str(digit) for digit in digits)

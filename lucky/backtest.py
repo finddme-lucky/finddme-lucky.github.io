@@ -170,3 +170,90 @@ def run_lotto(draws, *, rules, strategies=None, rounds=LOTTO_EVAL_ROUNDS, keep_s
 
     compare_with_random(report["strategies"])
     return report
+
+
+PENSION_PRIZES = {
+    1: 1_680_000_000,
+    2: 120_000_000,
+    3: 1_000_000,
+    4: 100_000,
+    5: 50_000,
+    6: 5_000,
+    7: 1_000,
+    "bonus": 120_000_000,
+}
+TICKET_PRICE = 1_000
+TICKETS_PER_ROUND = 5  # 1~5조를 전부 산다 (spec §5.3 P2)
+
+
+def trailing_match(number, winning):
+    """오른쪽 끝부터 연속으로 같은 자리의 개수 (0~6)."""
+    length = 0
+    for mine, theirs in zip(reversed(number), reversed(winning)):
+        if mine != theirs:
+            break
+        length += 1
+    return length
+
+
+def pension_prize(number, draw):
+    """(끝자리 일치 길이, 1~5조를 전부 산 경우의 수령액)."""
+    length = trailing_match(number, draw["first"])
+    prize = 0
+    if length == 6:
+        prize += PENSION_PRIZES[1] + 4 * PENSION_PRIZES[2]
+    elif length:
+        prize += TICKETS_PER_ROUND * PENSION_PRIZES[8 - length]
+    if trailing_match(number, draw["bonus"]) == 6:
+        prize += TICKETS_PER_ROUND * PENSION_PRIZES["bonus"]
+    return length, prize
+
+
+def pension_theory():
+    """끝자리 일치 길이의 이론 확률과 1~5조 구매 기준 기대 수익률."""
+    rates = {length: 9 / 10 ** (length + 1) for length in range(6)}
+    rates[6] = 1 / 10**6
+    expected = rates[6] * (PENSION_PRIZES[1] + 4 * PENSION_PRIZES[2])
+    expected += sum(
+        rates[length] * TICKETS_PER_ROUND * PENSION_PRIZES[8 - length] for length in range(1, 6)
+    )
+    expected += (1 / 10**6) * TICKETS_PER_ROUND * PENSION_PRIZES["bonus"]
+    cost = TICKETS_PER_ROUND * TICKET_PRICE
+    return {"lengthRates": rates, "expectedPrize": expected, "returnRate": expected / cost}
+
+
+def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS):
+    """최근 rounds 회차를 워크포워드로 평가한다 (1~5조 전부 구매 가정)."""
+    names = tuple(strategies) if strategies else sets.PENSION_STRATEGIES
+    evaluated = draws[-rounds:] if rounds else draws
+    start = len(draws) - len(evaluated)
+    report = {"evalRounds": len(evaluated), "theory": pension_theory(), "strategies": {}}
+
+    for strategy in names:
+        lengths, won = Counter(), 0
+        for index in range(start, len(draws)):
+            target, history = draws[index], draws[:index]
+            number = sets.build_pension_set(
+                history, strategy, target["round"], scores=sets.pension_scores(history, strategy)
+            )
+            length, prize = pension_prize(number, target)
+            lengths[length] += 1
+            won += prize
+
+        played = sum(lengths.values())
+        hits = sum(count for length, count in lengths.items() if length >= 1)
+        spent = played * TICKETS_PER_ROUND * TICKET_PRICE
+        report["strategies"][strategy] = {
+            "rounds": played,
+            "lengths": {length: lengths.get(length, 0) for length in range(7)},
+            "hits": hits,
+            "games": played,  # compare_with_random이 쓰는 시행 횟수
+            "hitRate": hits / played if played else 0.0,
+            "hitRateCI": wilson_interval(hits, played),
+            "spent": spent,
+            "won": won,
+            "returnRate": won / spent if spent else 0.0,
+        }
+
+    compare_with_random(report["strategies"])
+    return report
