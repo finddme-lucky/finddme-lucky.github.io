@@ -1,9 +1,11 @@
 import { loadJson } from "./data.mjs";
 import { el } from "./dom.mjs";
 import { renderHome } from "./home.mjs";
+import { renderSets } from "./sets.mjs";
 
 const TABS = {
   home: { sources: ["data/latest.json"], render: renderHome },
+  sets: { sources: ["data/predictions.json", "data/backtest.json"], render: renderSets },
 };
 const DEFAULT_TAB = "home";
 const drawn = new Set();

@@ -1,0 +1,103 @@
+import { balls } from "./balls.mjs";
+import { el } from "./dom.mjs";
+import { formatPercent, formatRound, formatWon } from "./format.mjs";
+import { GAMES, gameLabel, strategyLabel } from "./labels.mjs";
+
+const HONESTY = "어떤 전략도 당첨 확률을 바꾸지 않는다. 비인기 조합(L1)은 1등이 됐을 때 나눠 갖는 인원을, 겹침 조절(L2)과 1~5조 몰아 사기(P2)는 당첨 분포를 바꿀 뿐이다.";
+const P2_NOTE = "1~5조를 전부 사는 것(5장)을 전제한 번호다. 6자리가 모두 맞으면 1등 1장과 2등 4장을 함께 받는다. 기대값은 5장을 따로 사는 것과 같지만, 끝자리가 모두 같아 \"한 장이라도 당첨\"될 확률은 오히려 낮다 — 7등 이상 10%, 끝자리를 전부 다르게 사면 50%.";
+const PENSION_RETURN_NOTE = "수익률이 이론값보다 낮은 것은 200회차 안에서 1등·2등이 거의 나오지 않기 때문이며, 전략의 차이가 아니다.";
+const ML_NOTE = "학습 구간에서는 갈라내지만 평가 구간에서는 갈라내지 못한다 — 과거에만 맞는다는 뜻이다.";
+
+const verdict = (entry) => entry.distinguishable ? "무작위와 구분됨" : "무작위와 구분되지 않음 (정상)";
+
+// 값 막대 + 이론값 표시선. 차트 라이브러리 없이 비교만 보여준다.
+function bar(value, reference, max) {
+  return el("div", { class: "bar", title: `이론값 ${formatPercent(reference)}` },
+    el("i", { style: `width:${Math.min(100, (value / max) * 100)}%` }),
+    el("u", { style: `left:${Math.min(100, (reference / max) * 100)}%` }));
+}
+
+function lottoPerformance(entry, theory) {
+  const max = Math.max(entry.hitRateCI[1], theory.hitRate) * 1.2;
+  return el("div", { class: "perf" },
+    el("p", {}, `5등 이상 적중률 `, el("b", {}, formatPercent(entry.hitRate)),
+      el("span", { class: "muted" },
+        ` · 95% 구간 ${formatPercent(entry.hitRateCI[0])}~${formatPercent(entry.hitRateCI[1])}`,
+        ` · 이론 ${formatPercent(theory.hitRate)}`)),
+    bar(entry.hitRate, theory.hitRate, max),
+    el("p", { class: "verdict" }, verdict(entry)),
+    entry.inSampleSeparation === undefined ? null : el("p", { class: "muted" },
+      `학습 구간 분리도 ${entry.inSampleSeparation.toFixed(5)} vs 평가 구간 ${entry.outOfSampleSeparation.toFixed(5)} — ${ML_NOTE}`));
+}
+
+function pensionPerformance(entry, theory) {
+  const max = Math.max(entry.returnRate, theory.returnRate) * 1.2;
+  return el("div", { class: "perf" },
+    el("p", {}, `수익률 `, el("b", {}, formatPercent(entry.returnRate)),
+      el("span", { class: "muted" },
+        ` · 이론 ${formatPercent(theory.returnRate)}`,
+        ` · ${formatWon(entry.spent)} 써서 ${formatWon(entry.won)} 받음`)),
+    bar(entry.returnRate, theory.returnRate, max),
+    el("p", { class: "verdict" }, verdict(entry)));
+}
+
+function lottoCard(entry, report) {
+  const label = strategyLabel(entry.strategy);
+  return el("section", { class: "card" },
+    el("h3", {}, label.name, el("span", { class: "tag" }, entry.strategy)),
+    el("p", { class: "sub" }, label.score),
+    el("div", { class: "games" }, entry.games.map((numbers) => balls(numbers))),
+    el("p", { class: "muted" }, "5게임끼리 번호가 겹치지 않는다 (L2)."),
+    lottoPerformance(report.strategies[entry.strategy], report.theory));
+}
+
+function pensionCard(entry, report) {
+  const label = strategyLabel(entry.strategy);
+  return el("section", { class: "card" },
+    el("h3", {}, label.name, el("span", { class: "tag" }, entry.strategy)),
+    el("p", { class: "sub" }, label.score),
+    el("div", { class: "digits" },
+      el("span", { class: "group" }, "1~5조 전부"),
+      [...entry.number].map((digit) => el("span", { class: "digit" }, digit))),
+    pensionPerformance(report.strategies[entry.strategy], report.theory));
+}
+
+function sections(game, predictions, backtest) {
+  const section = predictions[game];
+  const report = backtest[game];
+  const head = el("div", { class: "card head" },
+    el("h2", {}, `${gameLabel(game).name} ${formatRound(section.round)}`),
+    el("p", { class: "sub" }, `다음 추첨 회차 · 같은 회차에는 언제 봐도 같은 번호가 나온다 (다시 뽑기 없음)`),
+    el("p", { class: "note" }, HONESTY),
+    game === "pension720" ? el("p", { class: "banner" }, P2_NOTE) : null);
+  const cards = section.sets.map((entry) =>
+    game === "lotto645" ? lottoCard(entry, report) : pensionCard(entry, report));
+  const tail = [
+    el("p", { class: "note" }, `과거 성적은 최근 ${report.evalRounds}회차를 대상으로, 각 회차 이전 자료만 써서 매긴 것이다.`),
+    game === "pension720" ? el("p", { class: "note" }, PENSION_RETURN_NOTE) : null,
+    el("p", { class: "note" }, predictions.disclaimer),
+    el("p", { class: "note" }, backtest.disclaimer),
+  ];
+  return [head, ...cards, ...tail.filter(Boolean)];
+}
+
+export function renderSets(target, predictions, backtest) {
+  let game = "lotto645";
+  const body = el("div", { class: "body" });
+  const switcher = el("div", { class: "switch" });
+
+  const paint = () => {
+    for (const button of switcher.querySelectorAll("button")) {
+      button.classList.toggle("on", button.dataset.game === game);
+    }
+    body.replaceChildren(...sections(game, predictions, backtest));
+  };
+
+  for (const id of Object.keys(GAMES)) {
+    const button = el("button", { type: "button", "data-game": id }, gameLabel(id).short);
+    button.addEventListener("click", () => { game = id; paint(); });
+    switcher.append(button);
+  }
+  target.append(switcher, body);
+  paint();
+}
