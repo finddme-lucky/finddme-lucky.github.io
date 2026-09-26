@@ -34,8 +34,8 @@ def pension_scores(draws, strategy):
     return strategies.pension_scores(draws, strategy)
 
 
-def build_lotto_set(draws, strategy, round_no, *, rules, past_combinations=(), max_attempts=MAX_ATTEMPTS):
-    scores = lotto_scores(draws, strategy)
+def build_lotto_set(draws, strategy, round_no, *, rules, past_combinations=(), max_attempts=MAX_ATTEMPTS, scores=None):
+    scores = lotto_scores(draws, strategy) if scores is None else scores
     for attempt in range(max_attempts):
         rng = random.Random(sampling.seed_for("lotto645", strategy, round_no, attempt))
         picked = sampling.weighted_sample(rng, scores, GAMES_PER_TICKET * NUMBERS_PER_GAME)

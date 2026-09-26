@@ -84,3 +84,11 @@ def test_pension_random_strategy_differs_from_a_score_strategy():
 def test_strategy_lists_match_the_spec():
     assert sets.LOTTO_STRATEGIES == ("hot", "cold", "recent", "ml")
     assert sets.PENSION_STRATEGIES == ("hot", "cold", "recent", "ml", "random")
+
+
+def test_build_lotto_set_accepts_precomputed_scores():
+    draws = lotto_draws(120)
+    scores = sets.lotto_scores(draws, "hot")
+    assert sets.build_lotto_set(draws, "hot", 121, rules=CONFIG, scores=scores) == sets.build_lotto_set(
+        draws, "hot", 121, rules=CONFIG
+    )

@@ -4,11 +4,13 @@
 것이 아니라, 무작위 기준선·이론값과 구분되지 않는다는 사실을 수치로 남기는 것이다.
 """
 
+from collections import Counter
 from math import comb, sqrt
 
 from scipy.stats import norm
 
 from lucky import reference
+from lucky import sets
 
 LOTTO_EVAL_ROUNDS = 300
 PENSION_EVAL_ROUNDS = 200
@@ -75,3 +77,96 @@ def holm(pvalues):
         running = max(running, min(1.0, (len(pvalues) - rank) * pvalues[index]))
         adjusted[index] = running
     return adjusted
+
+
+def separation(scores, drawn):
+    """뽑힌 번호와 안 뽑힌 번호의 평균 점수 차이. 비교 대상이 없으면 0."""
+    drawn = set(drawn)
+    inside = [score for number, score in scores.items() if number in drawn]
+    outside = [score for number, score in scores.items() if number not in drawn]
+    if not inside or not outside:
+        return 0.0
+    return sum(inside) / len(inside) - sum(outside) / len(outside)
+
+
+def compare_with_random(entries, baseline="random", alpha=ALPHA):
+    """각 전략의 5등 이상 적중률을 무작위 기준선과 맞대어 본다."""
+    base = entries.get(baseline)
+    others = [name for name in entries if name != baseline]
+    pvalues = []
+    for name in others:
+        entry = entries[name]
+        entry["pVsRandom"] = (
+            None
+            if base is None
+            else two_proportion_p(entry["hits"], entry["games"], base["hits"], base["games"])
+        )
+        pvalues.append(1.0 if entry["pVsRandom"] is None else entry["pVsRandom"])
+    for name, adjusted in zip(others, holm(pvalues) if pvalues else []):
+        entries[name]["pAdj"] = adjusted
+        entries[name]["distinguishable"] = (
+            entries[name]["pVsRandom"] is not None and adjusted < alpha
+        )
+    if base is not None:
+        base["pVsRandom"] = None
+        base["pAdj"] = None
+        base["distinguishable"] = False
+    return entries
+
+
+def run_lotto(draws, *, rules, strategies=None, rounds=LOTTO_EVAL_ROUNDS, keep_sets=False):
+    """최근 rounds 회차를 워크포워드로 평가한다 (t회차는 t 이전 자료만으로 만든 세트로)."""
+    names = tuple(strategies) if strategies else (*sets.LOTTO_STRATEGIES, "random")
+    evaluated = draws[-rounds:] if rounds else draws
+    start = len(draws) - len(evaluated)
+    report = {"evalRounds": len(evaluated), "theory": lotto_theory(), "strategies": {}}
+
+    for strategy in names:
+        matches, ranks, recorded = Counter(), Counter(), []
+        in_sample, out_of_sample = [], []
+        for index in range(start, len(draws)):
+            target, history = draws[index], draws[:index]
+            scores = sets.lotto_scores(history, strategy)
+            games = sets.build_lotto_set(
+                history,
+                strategy,
+                target["round"],
+                rules=rules,
+                past_combinations={tuple(draw["numbers"]) for draw in history},
+                scores=scores,
+            )
+            for game in games:
+                matches[match_count(game, target["numbers"])] += 1
+                rank = lotto_rank(game, target["numbers"], target["bonus"])
+                if rank:
+                    ranks[rank] += 1
+            if strategy == "ml":
+                in_sample.append(separation(scores, history[-1]["numbers"]))
+                out_of_sample.append(separation(scores, target["numbers"]))
+            if keep_sets:
+                recorded.append({"round": target["round"], "games": games})
+
+        played = sum(matches.values())
+        hits = sum(count for matched, count in matches.items() if matched >= 3)
+        entry = {
+            "games": played,
+            "matchCounts": {matched: matches.get(matched, 0) for matched in range(7)},
+            "ranks": {rank: ranks.get(rank, 0) for rank in (1, 2, 3, 4, 5)},
+            "meanMatches": (
+                sum(matched * count for matched, count in matches.items()) / played if played else 0.0
+            ),
+            "hits": hits,
+            "hitRate": hits / played if played else 0.0,
+            "hitRateCI": wilson_interval(hits, played),
+        }
+        if strategy == "ml":
+            entry["inSampleSeparation"] = sum(in_sample) / len(in_sample) if in_sample else 0.0
+            entry["outOfSampleSeparation"] = (
+                sum(out_of_sample) / len(out_of_sample) if out_of_sample else 0.0
+            )
+        if keep_sets:
+            entry["sets"] = recorded
+        report["strategies"][strategy] = entry
+
+    compare_with_random(report["strategies"])
+    return report
