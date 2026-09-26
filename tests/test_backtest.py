@@ -56,8 +56,10 @@ def test_holm_adjusts_and_keeps_order():
     assert backtest.holm([0.5, 0.9]) == [1.0, 1.0]
 
 
+from pathlib import Path
+
 from lucky import rules as rules_module
-from lucky import sets
+from lucky import sets, store
 from lucky.sources import lotto645
 from tests.fakes import lotto_raw
 
@@ -137,6 +139,23 @@ def test_ml_entry_carries_fit_versus_evaluation_separation():
     assert "inSampleSeparation" not in report["strategies"]["random"]
 
 
+def test_run_lotto_random_hit_rate_brackets_the_theory_value_on_real_data():
+    """spec §10: 백테스트 코드 자체(등수 판정·집계·CI)가 맞는지는, random 전략의
+    실제 집계 결과가 정확한 초기하 이론값을 담고 있는지로 검사한다.
+
+    관측치(점추정)는 300회의 표본 오차로 이론값과 정확히 같을 수 없으므로, 여기서는
+    Wilson 95% 구간이 이론값을 포함하는지를 확인한다 — 이것이 파이프라인(등수 판정
+    → matches 집계 → hitRate/CI 계산)이 이론과 정합함을 보여주는 올바른 단언이다.
+    ml 전략은 느리므로(~0.31초/회) strategies=("random",)로만 돌려 15초 안에 끝낸다.
+    """
+    draws = store.load_draws(Path("data"), "lotto645")
+    report = backtest.run_lotto(draws, rules=CONFIG, strategies=("random",), rounds=300)
+    entry = report["strategies"]["random"]
+    theory_hit_rate = backtest.lotto_theory()["hitRate"]
+    assert theory_hit_rate == pytest.approx(0.023834, abs=1e-6)
+    assert entry["hitRateCI"][0] <= theory_hit_rate <= entry["hitRateCI"][1]
+
+
 def pension_draws(count):
     return [
         {
@@ -194,10 +213,19 @@ def test_run_pension_reports_return_rate_against_theory():
     assert report["strategies"]["random"]["pVsRandom"] is None
 
 
-def test_run_pension_is_deterministic_and_uses_only_past_draws():
+def test_run_pension_uses_only_past_draws_for_each_round():
+    draws = pension_draws(80)
+    report = backtest.run_pension(draws, strategies=("cold",), rounds=5, keep_sets=True)
+
+    for record in report["strategies"]["cold"]["sets"]:
+        index = next(i for i, draw in enumerate(draws) if draw["round"] == record["round"])
+        history = draws[:index]
+        expected = sets.build_pension_set(history, "cold", record["round"])
+        assert record["number"] == expected
+
+
+def test_run_pension_is_deterministic():
     draws = pension_draws(80)
     first = backtest.run_pension(draws, strategies=("cold",), rounds=5)
-    assert first == backtest.run_pension(draws, strategies=("cold",), rounds=5)
-    # 평가 구간 뒤에 회차를 더해도 같은 회차의 판정은 바뀌지 않는다
-    longer = backtest.run_pension(draws + pension_draws(85)[80:], strategies=("cold",), rounds=10)
-    assert longer["strategies"]["cold"]["rounds"] == 10
+    second = backtest.run_pension(draws, strategies=("cold",), rounds=5)
+    assert first == second

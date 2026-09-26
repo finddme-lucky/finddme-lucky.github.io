@@ -1,4 +1,4 @@
-"""python -m lucky <collect|analyze|fairness|sets> — 수집·분석·번호 세트 CLI."""
+"""python -m lucky <collect|analyze|fairness|sets|backtest> — 수집·분석·번호 세트 CLI."""
 
 import argparse
 import sys
@@ -38,7 +38,7 @@ def main(argv=None, *, get=None, now=None):
     sets_cmd.add_argument("--game", choices=[*store.GAMES, "all"], default="all")
     sets_cmd.add_argument("--data-dir", type=Path, default=Path("data"))
     sets_cmd.add_argument("--round", type=int, help="점검용: 이 회차 기준으로 계산하고 저장하지 않는다")
-    sets_cmd.add_argument("--strategy", help="한 전략만 (생략하면 전부)")
+    sets_cmd.add_argument("--strategy", help="점검용: 한 전략만 계산하고 저장하지 않는다")
 
     backtest_cmd = commands.add_parser("backtest", help="전략별 과거 성적을 계산해 data/backtest.json에 저장")
     backtest_cmd.add_argument("--game", choices=[*store.GAMES, "all"], default="all")
@@ -104,6 +104,7 @@ def _fairness(args, games, now):
 
 
 def _sets(args, games, now):
+    inspecting = args.round is not None or args.strategy is not None
     try:
         document = predictions.build_predictions(
             args.data_dir,
@@ -127,7 +128,7 @@ def _sets(args, games, now):
             else:
                 print(f"  {entry['strategy']:7} {entry['number']} (1~5조 전부)")
 
-    if args.round is None:
+    if not inspecting:
         try:
             written = predictions.save_predictions(args.data_dir, document)
         except (ValueError, OSError) as e:

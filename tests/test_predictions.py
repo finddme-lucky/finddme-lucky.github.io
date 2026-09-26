@@ -90,7 +90,7 @@ def test_save_predictions_skips_when_only_the_timestamp_changes(tmp_path):
 
 def test_cli_sets_writes_predictions(tmp_path, capsys):
     seed_data(tmp_path)
-    code = main(["sets", "--data-dir", str(tmp_path), "--strategy", "hot"], now=NOW)
+    code = main(["sets", "--data-dir", str(tmp_path)], now=NOW)
 
     assert code == 0
     out = capsys.readouterr().out
@@ -98,6 +98,22 @@ def test_cli_sets_writes_predictions(tmp_path, capsys):
     assert "1~5조 전부" in out
     saved = json.loads((tmp_path / "predictions.json").read_text(encoding="utf-8"))
     assert saved["lotto645"]["round"] == 121
+
+
+def test_cli_sets_with_a_strategy_filter_does_not_touch_predictions_json(tmp_path, capsys):
+    seed_data(tmp_path)
+    code = main(["sets", "--data-dir", str(tmp_path)], now=NOW)
+    assert code == 0
+    capsys.readouterr()
+    before = (tmp_path / "predictions.json").read_bytes()
+
+    code = main(["sets", "--data-dir", str(tmp_path), "--strategy", "hot"], now=NOW)
+
+    assert code == 0
+    out = capsys.readouterr().out
+    assert "lotto645 121회" in out
+    after = (tmp_path / "predictions.json").read_bytes()
+    assert after == before  # 점검용 실행은 파일을 건드리지 않는다 (byte-identical)
 
 
 def test_cli_sets_with_an_explicit_round_does_not_write(tmp_path, capsys):
@@ -121,14 +137,12 @@ def test_cli_sets_reports_failure(tmp_path, capsys):
 
 def test_save_predictions_keeps_the_other_games_section(tmp_path):
     seed_data(tmp_path)
-    full = predictions.build_predictions(tmp_path, now=NOW, rules=CONFIG, strategy="hot")
+    full = predictions.build_predictions(tmp_path, now=NOW, rules=CONFIG)
     predictions.save_predictions(tmp_path, full)
 
-    only_lotto = predictions.build_predictions(
-        tmp_path, now=NOW, rules=CONFIG, games=("lotto645",), strategy="cold"
-    )
+    only_lotto = predictions.build_predictions(tmp_path, now=NOW, rules=CONFIG, games=("lotto645",))
     predictions.save_predictions(tmp_path, only_lotto)
 
     saved = json.loads((tmp_path / "predictions.json").read_text(encoding="utf-8"))
-    assert saved["lotto645"]["sets"][0]["strategy"] == "cold"
-    assert saved["pension720"]["sets"][0]["strategy"] == "hot"
+    assert saved["lotto645"] == only_lotto["lotto645"]
+    assert saved["pension720"] == full["pension720"]

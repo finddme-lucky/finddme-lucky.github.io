@@ -6,12 +6,11 @@
 
 import json
 from collections import Counter
-from math import comb, sqrt
+from math import sqrt
 
 from scipy.stats import norm
 
-from lucky import reference
-from lucky import sets
+from lucky import popularity, reference, sets, store
 
 LOTTO_EVAL_ROUNDS = 300
 PENSION_EVAL_ROUNDS = 200
@@ -223,7 +222,7 @@ def pension_theory():
     return {"lengthRates": rates, "expectedPrize": expected, "returnRate": expected / cost}
 
 
-def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS):
+def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS, keep_sets=False):
     """최근 rounds 회차를 워크포워드로 평가한다 (1~5조 전부 구매 가정)."""
     names = tuple(strategies) if strategies else sets.PENSION_STRATEGIES
     evaluated = draws[-rounds:] if rounds else draws
@@ -231,7 +230,7 @@ def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS):
     report = {"evalRounds": len(evaluated), "theory": pension_theory(), "strategies": {}}
 
     for strategy in names:
-        lengths, won = Counter(), 0
+        lengths, won, recorded = Counter(), 0, []
         for index in range(start, len(draws)):
             target, history = draws[index], draws[:index]
             number = sets.build_pension_set(
@@ -240,11 +239,13 @@ def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS):
             length, prize = pension_prize(number, target)
             lengths[length] += 1
             won += prize
+            if keep_sets:
+                recorded.append({"round": target["round"], "number": number})
 
         played = sum(lengths.values())
         hits = sum(count for length, count in lengths.items() if length >= 1)
         spent = played * TICKETS_PER_ROUND * TICKET_PRICE
-        report["strategies"][strategy] = {
+        entry = {
             "rounds": played,
             "lengths": {length: lengths.get(length, 0) for length in range(7)},
             "hits": hits,
@@ -255,12 +256,13 @@ def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS):
             "won": won,
             "returnRate": won / spent if spent else 0.0,
         }
+        if keep_sets:
+            entry["sets"] = recorded
+        report["strategies"][strategy] = entry
 
     compare_with_random(report["strategies"])
     return report
 
-
-from lucky import popularity, store
 
 DISCLAIMER = (
     "전략이 무작위보다 낫다는 근거는 없다. 이 기록은 그것을 확인하기 위한 것이다."

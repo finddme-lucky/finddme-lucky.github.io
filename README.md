@@ -43,7 +43,7 @@ docker exec finddme-lucky python -m lucky fairness     # 검정 결과만 출력
 
 ```bash
 docker exec finddme-lucky python -m lucky sets                       # 다음 회차 세트 → data/predictions.json
-docker exec finddme-lucky python -m lucky sets --strategy hot        # 한 전략만
+docker exec finddme-lucky python -m lucky sets --strategy hot        # 점검용: 한 전략만 계산 (저장 안 함)
 docker exec finddme-lucky python -m lucky sets --round 1200          # 점검용: 그 회차 기준으로 계산만 (저장 안 함)
 ```
 
