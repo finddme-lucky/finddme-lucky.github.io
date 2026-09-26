@@ -257,3 +257,40 @@ def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS):
 
     compare_with_random(report["strategies"])
     return report
+
+
+from lucky import popularity, store
+
+DISCLAIMER = (
+    "전략이 무작위보다 낫다는 근거는 없다. 이 기록은 그것을 확인하기 위한 것이다."
+)
+
+
+def build_document(data_dir, *, now, rules, games=store.GAMES, strategies=None, rounds=None):
+    """게임별 백테스트와 인기 규칙 근거를 한 문서로 묶는다."""
+    document = {
+        "schema": 1,
+        "generatedAt": now.isoformat(timespec="seconds"),
+        "disclaimer": DISCLAIMER,
+    }
+    for game in games:
+        draws = store.load_draws(data_dir, game)
+        if not draws:
+            raise ValueError(f"{game}: 수집된 회차가 없다 — 먼저 collect를 실행할 것")
+        if game == "lotto645":
+            document[game] = run_lotto(
+                draws,
+                rules=rules,
+                strategies=strategies,
+                rounds=rounds or LOTTO_EVAL_ROUNDS,
+            )
+            document["popularity"] = popularity.evidence(draws, rules)
+        else:
+            document[game] = run_pension(
+                draws, strategies=strategies, rounds=rounds or PENSION_EVAL_ROUNDS
+            )
+    return document
+
+
+def save_document(data_dir, document):
+    return store.save_document_if_changed(data_dir, "backtest.json", document)
