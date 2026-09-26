@@ -9,6 +9,7 @@ KST = timezone(timedelta(hours=9))
 
 SCHEMA = 1
 GAMES = ("lotto645", "pension720")
+LATEST_DRAWS = 5
 
 
 def _path(data_dir, game):
@@ -67,6 +68,23 @@ def save_meta(data_dir, now):
     doc = {"schema": SCHEMA, "updatedAt": now.isoformat(timespec="seconds"), "games": games}
     _write_atomic(path, json.dumps(doc, ensure_ascii=False, indent=2) + "\n")
     return True
+
+
+def save_latest(data_dir, now):
+    """앱 홈 화면용 요약 — 전체 회차 파일(수백 KB)을 폰이 받지 않도록 최근 회차만 담는다."""
+    games = {}
+    for game in GAMES:
+        draws = load_draws(data_dir, game)
+        if draws:
+            games[game] = {
+                "latestRound": draws[-1]["round"],
+                "latestDate": draws[-1]["date"],
+                "draws": draws[-LATEST_DRAWS:],
+            }
+    if not games:
+        return False
+    doc = {"schema": SCHEMA, "updatedAt": now.isoformat(timespec="seconds"), "games": games}
+    return save_document_if_changed(data_dir, "latest.json", doc, ignore=("updatedAt",))
 
 
 def save_document(data_dir, relative_path, doc):

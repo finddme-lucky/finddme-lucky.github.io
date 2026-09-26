@@ -70,12 +70,14 @@ def _collect(args, games, get, now):
             failed.append(game)
             print(f"{game}: 실패 — {e}", file=sys.stderr)
 
-    try:
-        if store.save_meta(args.data_dir, now or datetime.now(KST)):
-            print("meta.json 갱신")
-    except (ValueError, OSError) as e:
-        failed.append("meta")
-        print(f"meta.json 갱신 실패 — {e}", file=sys.stderr)
+    stamp = now or datetime.now(KST)
+    for name, writer in (("meta.json", store.save_meta), ("latest.json", store.save_latest)):
+        try:
+            if writer(args.data_dir, stamp):
+                print(f"{name} 갱신")
+        except (ValueError, OSError) as e:
+            failed.append(name)
+            print(f"{name} 갱신 실패 — {e}", file=sys.stderr)
     return 1 if failed else 0
 
 

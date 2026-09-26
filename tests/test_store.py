@@ -90,3 +90,45 @@ def test_save_meta_only_when_latest_changes(tmp_path):
     meta = json.loads((tmp_path / "meta.json").read_text(encoding="utf-8"))
     assert meta["games"]["lotto645"]["latestRound"] == 4
     assert meta["updatedAt"] == "2026-09-13T23:00:00+09:00"
+
+
+def test_save_latest_keeps_only_recent_draws(tmp_path):
+    now = datetime(2026, 9, 27, 9, 0, tzinfo=KST)
+    assert store.save_latest(tmp_path, now) is False
+    assert not (tmp_path / "latest.json").exists()
+
+    store.save_draws(tmp_path, "lotto645", lotto_records(1, 8))
+    assert store.save_latest(tmp_path, now) is True
+
+    doc = json.loads((tmp_path / "latest.json").read_text(encoding="utf-8"))
+    assert doc["schema"] == 1
+    assert doc["updatedAt"] == "2026-09-27T09:00:00+09:00"
+    assert set(doc["games"]) == {"lotto645"}
+    section = doc["games"]["lotto645"]
+    assert section["latestRound"] == 8
+    assert section["latestDate"] == lotto_records(8, 8)[0]["date"]
+    assert [draw["round"] for draw in section["draws"]] == [4, 5, 6, 7, 8]
+    assert section["draws"][-1] == lotto_records(8, 8)[0]
+
+
+def test_save_latest_is_write_if_changed(tmp_path):
+    now = datetime(2026, 9, 27, 9, 0, tzinfo=KST)
+    store.save_draws(tmp_path, "lotto645", lotto_records(1, 8))
+    assert store.save_latest(tmp_path, now) is True
+    assert store.save_latest(tmp_path, now + timedelta(hours=5)) is False
+
+    store.save_draws(tmp_path, "lotto645", lotto_records(1, 9))
+    assert store.save_latest(tmp_path, now + timedelta(hours=6)) is True
+    doc = json.loads((tmp_path / "latest.json").read_text(encoding="utf-8"))
+    assert doc["updatedAt"] == "2026-09-27T15:00:00+09:00"
+    assert [draw["round"] for draw in doc["games"]["lotto645"]["draws"]] == [5, 6, 7, 8, 9]
+
+
+def test_save_latest_holds_fewer_than_five_when_that_is_all(tmp_path):
+    store.save_draws(tmp_path, "pension720", [])
+    store.save_draws(tmp_path, "lotto645", lotto_records(1, 2))
+    assert store.save_latest(tmp_path, datetime(2026, 9, 27, 9, 0, tzinfo=KST)) is True
+
+    doc = json.loads((tmp_path / "latest.json").read_text(encoding="utf-8"))
+    assert set(doc["games"]) == {"lotto645"}
+    assert [draw["round"] for draw in doc["games"]["lotto645"]["draws"]] == [1, 2]

@@ -53,6 +53,18 @@ def test_single_game_option(tmp_path):
     assert not (tmp_path / "lotto645.json").exists()
 
 
+def test_collect_writes_latest_json(tmp_path, capsys):
+    get = dispatch(FakeLottoApi(latest=12), FakePensionApi(latest=13))
+    code = main(["collect", "--data-dir", str(tmp_path)], get=get, now=NOW)
+
+    assert code == 0
+    assert "latest.json 갱신" in capsys.readouterr().out
+    latest = json.loads((tmp_path / "latest.json").read_text(encoding="utf-8"))
+    assert latest["updatedAt"] == "2026-09-13T22:00:00+09:00"
+    assert [draw["round"] for draw in latest["games"]["lotto645"]["draws"]] == [8, 9, 10, 11, 12]
+    assert latest["games"]["pension720"]["latestRound"] == 13
+
+
 def test_corrupt_data_file_fails_that_game_only(tmp_path, capsys):
     (tmp_path / "lotto645.json").write_text(
         '{"schema": 1, "game": "pension720", "draws": []}\n', encoding="utf-8"

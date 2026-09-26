@@ -1,0 +1,548 @@
+{
+ "schema": 1,
+ "updatedAt": "2026-09-27T08:46:39+09:00",
+ "games": {
+  "lotto645": {
+   "latestRound": 1242,
+   "latestDate": "2026-09-19",
+   "draws": [
+    {
+     "round": 1238,
+     "date": "2026-08-22",
+     "numbers": [
+      2,
+      13,
+      18,
+      32,
+      38,
+      42
+     ],
+     "bonus": 22,
+     "sales": 57268901802,
+     "ranks": [
+      {
+       "rank": 1,
+       "winners": 23,
+       "prize": 1197258718
+      },
+      {
+       "rank": 2,
+       "winners": 84,
+       "prize": 54636807
+      },
+      {
+       "rank": 3,
+       "winners": 3235,
+       "prize": 1418700
+      },
+      {
+       "rank": 4,
+       "winners": 156141,
+       "prize": 50000
+      },
+      {
+       "rank": 5,
+       "winners": 2549183,
+       "prize": 5000
+      }
+     ]
+    },
+    {
+     "round": 1239,
+     "date": "2026-08-29",
+     "numbers": [
+      11,
+      13,
+      22,
+      32,
+      33,
+      36
+     ],
+     "bonus": 8,
+     "sales": 58883645203,
+     "ranks": [
+      {
+       "rank": 1,
+       "winners": 13,
+       "prize": 2214789375
+      },
+      {
+       "rank": 2,
+       "winners": 71,
+       "prize": 67587470
+      },
+      {
+       "rank": 3,
+       "winners": 3081,
+       "prize": 1557518
+      },
+      {
+       "rank": 4,
+       "winners": 152825,
+       "prize": 50000
+      },
+      {
+       "rank": 5,
+       "winners": 2570542,
+       "prize": 5000
+      }
+     ]
+    },
+    {
+     "round": 1240,
+     "date": "2026-09-05",
+     "numbers": [
+      11,
+      13,
+      19,
+      20,
+      31,
+      44
+     ],
+     "bonus": 27,
+     "sales": 59082661914,
+     "ranks": [
+      {
+       "rank": 1,
+       "winners": 16,
+       "prize": 1791817758
+      },
+      {
+       "rank": 2,
+       "winners": 78,
+       "prize": 61258727
+      },
+      {
+       "rank": 3,
+       "winners": 3087,
+       "prize": 1547840
+      },
+      {
+       "rank": 4,
+       "winners": 155202,
+       "prize": 50000
+      },
+      {
+       "rank": 5,
+       "winners": 2619423,
+       "prize": 5000
+      }
+     ]
+    },
+    {
+     "round": 1241,
+     "date": "2026-09-12",
+     "numbers": [
+      7,
+      13,
+      16,
+      23,
+      24,
+      43
+     ],
+     "bonus": 9,
+     "sales": 60959044746,
+     "ranks": [
+      {
+       "rank": 1,
+       "winners": 18,
+       "prize": 1628391980
+      },
+      {
+       "rank": 2,
+       "winners": 90,
+       "prize": 54279733
+      },
+      {
+       "rank": 3,
+       "winners": 3254,
+       "prize": 1501284
+      },
+      {
+       "rank": 4,
+       "winners": 165086,
+       "prize": 50000
+      },
+      {
+       "rank": 5,
+       "winners": 2724667,
+       "prize": 5000
+      }
+     ]
+    },
+    {
+     "round": 1242,
+     "date": "2026-09-19",
+     "numbers": [
+      2,
+      4,
+      10,
+      16,
+      31,
+      41
+     ],
+     "bonus": 9,
+     "sales": 61286928832,
+     "ranks": [
+      {
+       "rank": 1,
+       "winners": 9,
+       "prize": 3281029250
+      },
+      {
+       "rank": 2,
+       "winners": 104,
+       "prize": 47322538
+      },
+      {
+       "rank": 3,
+       "winners": 3206,
+       "prize": 1535105
+      },
+      {
+       "rank": 4,
+       "winners": 165377,
+       "prize": 50000
+      },
+      {
+       "rank": 5,
+       "winners": 2729145,
+       "prize": 5000
+      }
+     ]
+    }
+   ]
+  },
+  "pension720": {
+   "latestRound": 333,
+   "latestDate": "2026-09-17",
+   "draws": [
+    {
+     "round": 329,
+     "date": "2026-08-20",
+     "group": 3,
+     "first": "642752",
+     "bonus": "214026",
+     "ranks": [
+      {
+       "rank": 1,
+       "prize": 1680000000,
+       "store": 0,
+       "online": 1,
+       "total": 1
+      },
+      {
+       "rank": 2,
+       "prize": 120000000,
+       "store": 0,
+       "online": 4,
+       "total": 4
+      },
+      {
+       "rank": 3,
+       "prize": 1000000,
+       "store": 37,
+       "online": 40,
+       "total": 77
+      },
+      {
+       "rank": 4,
+       "prize": 100000,
+       "store": 353,
+       "online": 328,
+       "total": 681
+      },
+      {
+       "rank": 5,
+       "prize": 50000,
+       "store": 3104,
+       "online": 3528,
+       "total": 6632
+      },
+      {
+       "rank": 6,
+       "prize": 5000,
+       "store": 30287,
+       "online": 33277,
+       "total": 63564
+      },
+      {
+       "rank": 7,
+       "prize": 1000,
+       "store": 301943,
+       "online": 325661,
+       "total": 627604
+      },
+      {
+       "rank": "bonus",
+       "prize": 120000000,
+       "store": 1,
+       "online": 5,
+       "total": 6
+      }
+     ]
+    },
+    {
+     "round": 330,
+     "date": "2026-08-27",
+     "group": 4,
+     "first": "125905",
+     "bonus": "493800",
+     "ranks": [
+      {
+       "rank": 1,
+       "prize": 1680000000,
+       "store": 1,
+       "online": 1,
+       "total": 2
+      },
+      {
+       "rank": 2,
+       "prize": 120000000,
+       "store": 2,
+       "online": 4,
+       "total": 6
+      },
+      {
+       "rank": 3,
+       "prize": 1000000,
+       "store": 41,
+       "online": 45,
+       "total": 86
+      },
+      {
+       "rank": 4,
+       "prize": 100000,
+       "store": 293,
+       "online": 315,
+       "total": 608
+      },
+      {
+       "rank": 5,
+       "prize": 50000,
+       "store": 3079,
+       "online": 3105,
+       "total": 6184
+      },
+      {
+       "rank": 6,
+       "prize": 5000,
+       "store": 31314,
+       "online": 29567,
+       "total": 60881
+      },
+      {
+       "rank": 7,
+       "prize": 1000,
+       "store": 311572,
+       "online": 338021,
+       "total": 649593
+      },
+      {
+       "rank": "bonus",
+       "prize": 120000000,
+       "store": 5,
+       "online": 5,
+       "total": 10
+      }
+     ]
+    },
+    {
+     "round": 331,
+     "date": "2026-09-03",
+     "group": 3,
+     "first": "439582",
+     "bonus": "043537",
+     "ranks": [
+      {
+       "rank": 1,
+       "prize": 1680000000,
+       "store": 1,
+       "online": 1,
+       "total": 2
+      },
+      {
+       "rank": 2,
+       "prize": 120000000,
+       "store": 0,
+       "online": 4,
+       "total": 4
+      },
+      {
+       "rank": 3,
+       "prize": 1000000,
+       "store": 28,
+       "online": 27,
+       "total": 55
+      },
+      {
+       "rank": 4,
+       "prize": 100000,
+       "store": 320,
+       "online": 370,
+       "total": 690
+      },
+      {
+       "rank": 5,
+       "prize": 50000,
+       "store": 3177,
+       "online": 3443,
+       "total": 6620
+      },
+      {
+       "rank": 6,
+       "prize": 5000,
+       "store": 30520,
+       "online": 33131,
+       "total": 63651
+      },
+      {
+       "rank": 7,
+       "prize": 1000,
+       "store": 308365,
+       "online": 328141,
+       "total": 636506
+      },
+      {
+       "rank": "bonus",
+       "prize": 120000000,
+       "store": 5,
+       "online": 5,
+       "total": 10
+      }
+     ]
+    },
+    {
+     "round": 332,
+     "date": "2026-09-10",
+     "group": 4,
+     "first": "698740",
+     "bonus": "833539",
+     "ranks": [
+      {
+       "rank": 1,
+       "prize": 1680000000,
+       "store": 1,
+       "online": 1,
+       "total": 2
+      },
+      {
+       "rank": 2,
+       "prize": 120000000,
+       "store": 4,
+       "online": 4,
+       "total": 8
+      },
+      {
+       "rank": 3,
+       "prize": 1000000,
+       "store": 37,
+       "online": 40,
+       "total": 77
+      },
+      {
+       "rank": 4,
+       "prize": 100000,
+       "store": 302,
+       "online": 301,
+       "total": 603
+      },
+      {
+       "rank": 5,
+       "prize": 50000,
+       "store": 3005,
+       "online": 3581,
+       "total": 6586
+      },
+      {
+       "rank": 6,
+       "prize": 5000,
+       "store": 30081,
+       "online": 33824,
+       "total": 63905
+      },
+      {
+       "rank": 7,
+       "prize": 1000,
+       "store": 298832,
+       "online": 333176,
+       "total": 632008
+      },
+      {
+       "rank": "bonus",
+       "prize": 120000000,
+       "store": 1,
+       "online": 5,
+       "total": 6
+      }
+     ]
+    },
+    {
+     "round": 333,
+     "date": "2026-09-17",
+     "group": 4,
+     "first": "008973",
+     "bonus": "050305",
+     "ranks": [
+      {
+       "rank": 1,
+       "prize": 1680000000,
+       "store": 0,
+       "online": 1,
+       "total": 1
+      },
+      {
+       "rank": 2,
+       "prize": 120000000,
+       "store": 1,
+       "online": 4,
+       "total": 5
+      },
+      {
+       "rank": 3,
+       "prize": 1000000,
+       "store": 34,
+       "online": 45,
+       "total": 79
+      },
+      {
+       "rank": 4,
+       "prize": 100000,
+       "store": 348,
+       "online": 408,
+       "total": 756
+      },
+      {
+       "rank": 5,
+       "prize": 50000,
+       "store": 3106,
+       "online": 3481,
+       "total": 6587
+      },
+      {
+       "rank": 6,
+       "prize": 5000,
+       "store": 31768,
+       "online": 34756,
+       "total": 66524
+      },
+      {
+       "rank": 7,
+       "prize": 1000,
+       "store": 314443,
+       "online": 341974,
+       "total": 656417
+      },
+      {
+       "rank": "bonus",
+       "prize": 120000000,
+       "store": 5,
+       "online": 5,
+       "total": 10
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
