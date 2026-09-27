@@ -30,3 +30,20 @@ test("기대값을 겹쳐 그리는 검정에는 buckets·observed·expected가 
     assert.equal(entry.expected.length, entry.buckets.length, id);
   }
 });
+
+test("연금복권 통계 JSON에 화면이 쓰는 항목이 모두 있다", () => {
+  const report = read("data/stats/pension720.json");
+  const stats = report.stats;
+  for (const key of ["draws", "recentCountsWindow", "groups", "recentGroups",
+                     "firstDigits", "bonusDigits", "series"]) {
+    assert.ok(key in stats, `없는 항목: ${key}`);
+  }
+  assert.equal(Object.keys(stats.groups).length, 5);
+  assert.equal(stats.firstDigits.length, 6);
+  assert.equal(stats.bonusDigits.length, 6);
+  for (const position of stats.firstDigits) {
+    assert.equal(Object.keys(position).length, 10);
+  }
+  const last = stats.series.at(-1);
+  assert.ok(last.rankTotals && "1" in last.rankTotals && "bonus" in last.rankTotals);
+});

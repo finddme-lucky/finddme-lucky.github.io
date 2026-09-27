@@ -3,9 +3,11 @@ import { destroyCharts } from "./chart.mjs";
 import { el } from "./dom.mjs";
 import { GAMES, gameLabel } from "./labels.mjs";
 import { lottoSections } from "./stats-lotto.mjs";
+import { pensionSections } from "./stats-pension.mjs";
 
 const SECTIONS = {
   lotto645: lottoSections,
+  pension720: pensionSections,
 };
 
 export function renderStats(target, backtest) {
