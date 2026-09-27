@@ -39,6 +39,10 @@ function pastRounds(game, draws) {
 }
 
 export function renderHome(target, latest, now = new Date()) {
+  if (navigator.onLine === false) {
+    target.append(el("p", { class: "banner" },
+      "오프라인입니다 — 마지막으로 받은 데이터를 보여줍니다."));
+  }
   target.append(el("p", { class: "note" }, `데이터 갱신 ${formatDateTime(latest.updatedAt)}`));
   for (const game of Object.keys(GAMES)) {
     const section = latest.games[game];

@@ -39,3 +39,11 @@ async function show(name) {
 
 addEventListener("hashchange", () => show(currentTab()));
 show(currentTab());
+
+if ("serviceWorker" in navigator) {
+  addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch((error) => {
+      console.warn("서비스워커 등록 실패", error);
+    });
+  });
+}
