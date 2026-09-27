@@ -19,6 +19,9 @@ PORT = 8765
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
+    protocol_version = "HTTP/1.1"  # Content-Length를 항상 보내므로 연결 재사용이 안전하다
+    timeout = 10  # 요청을 보내지 않는 연결을 붙잡고 있지 않는다
+
     def translate_path(self, path):
         clean = path.split("?", 1)[0].split("#", 1)[0].lstrip("/")
         base = ROOT if clean.startswith("data/") else WEB
@@ -36,8 +39,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         sys.stderr.write(f"{self.address_string()} {fmt % args}\n")
 
 
-class Server(socketserver.TCPServer):
+class Server(socketserver.ThreadingTCPServer):
+    # 단일 스레드면 브라우저가 미리 열어 두는 빈 연결(preconnect) 하나가 서버 전체를 붙잡아
+    # 이후 요청이 전부 멈춘다. 연결마다 스레드를 쓰고, 말이 없는 연결은 제한 시간으로 끊는다.
     allow_reuse_address = True
+    daemon_threads = True
 
 
 if __name__ == "__main__":
