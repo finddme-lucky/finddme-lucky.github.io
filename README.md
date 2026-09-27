@@ -76,6 +76,8 @@ docker exec -d finddme-lucky python scripts/serve.py     # http://localhost:8765
 docker exec finddme-lucky pkill -f scripts/serve.py      # 끄기
 ```
 
+- 화면은 로또 마킹 용지에서 온 시각 언어를 쓴다 — 생성된 번호는 45칸 격자 위의 자국으로, 당첨번호는 추첨 공 색으로 보여준다. 격자 폭 7은 `rules/lotto645-unpopular.json`의 `gridWidth`와 같아야 하며 테스트가 이를 묶고 있다.
+- 숫자·제목 서체는 `web/vendor/`의 Archivo(OFL-1.1), 한글 본문은 시스템 서체를 쓴다.
 - 소스는 `web/`, 데이터는 `data/`. 빌드 도구가 없어 파일을 고치고 새로고침하면 끝이다.
 - dev 서버는 배포 레이아웃을 재현한다 — `/`는 `web/`, `/data/`는 저장소의 `data/`에서 읽는다.
 - 탭: **홈**(두 복권 최신 결과·갱신 시각·갱신 지연 배너), **이번 주 번호**(전략별 세트와 과거 성적), **통계**(분포 차트 + 공정성 검정 + 인기 규칙 근거).
