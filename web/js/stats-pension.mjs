@@ -1,4 +1,4 @@
-import { barConfig, chartCard, drawChart, guardCard, lineConfig, palette, releaseChart } from "./chart.mjs";
+import { barConfig, chartBlock, drawChart, guardCard, lineConfig, palette, releaseChart } from "./chart.mjs";
 import { el } from "./dom.mjs";
 import { fairnessSection } from "./fairness.mjs";
 
@@ -14,7 +14,7 @@ export function statsHeaderNote(report) {
 
 // 카드 안에 전환 버튼을 달고, 고를 때마다 차트를 다시 그린다.
 async function switchingCard(title, note, options, build) {
-  const { card, canvas } = chartCard(title, note);
+  const { card, canvas } = chartBlock(title, note);
   const switcher = el("div", { class: "switch small" });
   let chart = null;
   let current = options[0].value;
@@ -68,10 +68,10 @@ export async function pensionSections(report, backtest) {
         data: {
           labels: DIGITS,
           datasets: [
-            { label: "1등", data: DIGITS.map((d) => first[d]), backgroundColor: colors.accent },
-            { label: "보너스", data: DIGITS.map((d) => bonus[d]), backgroundColor: colors.muted },
+            { label: "1등", data: DIGITS.map((d) => first[d]), backgroundColor: colors.mark },
+            { label: "보너스", data: DIGITS.map((d) => bonus[d]), backgroundColor: colors.quiet },
             { type: "line", label: "기대", data: DIGITS.map(() => total / 10),
-              borderColor: colors.warn, borderWidth: 2, pointRadius: 0 },
+              borderColor: colors.ink, borderWidth: 2, pointRadius: 0 },
           ],
         },
         options: {

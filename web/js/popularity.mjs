@@ -84,6 +84,6 @@ export function popularitySection(backtest) {
           el("th", { scope: "col" }, "차이"))),
         el("tbody", {}, rules))),
     eraTable,
-    el("p", { class: "banner" }, evidence.caveat),
+    el("p", { class: "notice" }, evidence.caveat),
     el("p", { class: "note" }, limitsText(evidence)));
 }

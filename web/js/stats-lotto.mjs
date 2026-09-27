@@ -1,4 +1,4 @@
-import { barConfig, bucketLabel, chartCard, drawChart, guardCard, lineConfig, releaseChart } from "./chart.mjs";
+import { barConfig, bucketLabel, chartBlock, drawChart, guardCard, lineConfig, releaseChart } from "./chart.mjs";
 import { el } from "./dom.mjs";
 import { fairnessSection } from "./fairness.mjs";
 import { popularitySection } from "./popularity.mjs";
@@ -17,7 +17,7 @@ export function statsHeaderNote(report) {
 async function observedVsExpected(report, id, title, note) {
   const entry = test(report, id);
   if (!entry || !entry.observed) return null;
-  const { card, canvas } = chartCard(title, note);
+  const { card, canvas } = chartBlock(title, note);
   await drawChart(canvas, barConfig(entry.buckets.map(bucketLabel), entry.observed, {
     expected: entry.expected,
   }));
@@ -31,7 +31,7 @@ async function numberCounts(stats) {
     recent: { label: `최근 ${stats.recentCountsWindow}회`, data: stats.recentCounts },
     bonus: { label: "보너스 포함", data: stats.countsWithBonus },
   };
-  const { card, canvas } = chartCard("번호별 출현", null);
+  const { card, canvas } = chartBlock("번호별 출현", null);
   const switcher = el("div", { class: "switch small" });
   let chart = null;
   let current = "all";
@@ -55,7 +55,7 @@ async function numberCounts(stats) {
 }
 
 async function seriesChart(series, key, title, note, { tickFormat = null, value = (row) => row[key] } = {}) {
-  const { card, canvas } = chartCard(title, note);
+  const { card, canvas } = chartBlock(title, note);
   await drawChart(canvas, lineConfig(series.map((row) => row.round), series.map(value), {
     tickFormat: tickFormat ? (value) => tickFormat(value) : null,
   }));
@@ -71,7 +71,7 @@ export async function lottoSections(report, backtest) {
 
   sections.push(await guardCard("번호별 미출현 간격", async () => {
     const gaps = Object.keys(stats.gaps);
-    const gapCard = chartCard("번호별 미출현 간격", "마지막으로 나온 뒤 지난 회차 수");
+    const gapCard = chartBlock("번호별 미출현 간격", "마지막으로 나온 뒤 지난 회차 수");
     await drawChart(gapCard.canvas, barConfig(gaps, gaps.map((n) => stats.gaps[n])));
     return gapCard.card;
   }));
@@ -83,14 +83,14 @@ export async function lottoSections(report, backtest) {
 
   sections.push(await guardCard("번호 합 분포", async () => {
     const sums = Object.keys(stats.sums).map(Number).sort((a, b) => a - b);
-    const sumCard = chartCard("번호 합 분포", "6개 번호를 더한 값");
+    const sumCard = chartBlock("번호 합 분포", "6개 번호를 더한 값");
     await drawChart(sumCard.canvas, lineConfig(sums, sums.map((value) => stats.sums[String(value)])));
     return sumCard.card;
   }));
 
   sections.push(await guardCard("번호대 분포", async () => {
     const decades = Object.keys(stats.decades);
-    const decadeCard = chartCard("번호대 분포", "구간마다 번호 개수가 달라 높이 차이는 당연하다 (41~45는 5개뿐)");
+    const decadeCard = chartBlock("번호대 분포", "구간마다 번호 개수가 달라 높이 차이는 당연하다 (41~45는 5개뿐)");
     await drawChart(decadeCard.canvas, barConfig(decades, decades.map((k) => stats.decades[k])));
     return decadeCard.card;
   }));

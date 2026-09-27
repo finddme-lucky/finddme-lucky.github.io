@@ -27,16 +27,16 @@ function table(entries, title, note) {
     const verdict = verdictOf(entry);
     return el("tr", { class: verdict === SUSPECT ? "suspect" : "" },
       el("th", { scope: "row" }, entry.label,
-        entry.note ? el("span", { class: "muted" }, ` (${entry.note})`) : null),
+        entry.note ? el("span", { class: "quiet" }, ` (${entry.note})`) : null),
       el("td", {}, entry.n?.toLocaleString("ko-KR") ?? "—"),
       el("td", {}, format(entry.p)),
       el("td", {}, format(entry.pAdj)),
       el("td", { class: "verdict" }, verdict));
   });
 
-  return el("section", { class: "card" },
+  return el("section", { class: "panel" },
     el("h3", {}, title),
-    note ? el("p", { class: "sub" }, note) : null,
+    note ? el("p", { class: "quiet" }, note) : null,
     el("p", { class: "note" }, HOLM_SCOPE_NOTE),
     el("div", { class: "scroller" },
       el("table", { class: "grid" },
@@ -61,7 +61,7 @@ export function fairnessSection(report) {
     table(fairness.all, "전체 회차", null),
     table(fairness.recent, `최근 ${fairness.recentWindow.toLocaleString("ko-KR")}회`, null),
     skipped > 0
-      ? el("p", { class: "banner" },
+      ? el("p", { class: "notice" },
           `건너뛴 검정이 ${skipped}건 있다 — 자료가 모자라 계산하지 못한 것이며, 치우침이 없다는 뜻이 아니다.`)
       : null,
     // 합 검정이 없는 게임(연금복권)에는 이 각주를 띄우지 않는다.

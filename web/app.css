@@ -79,6 +79,9 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
 
 .quiet { color: var(--quiet); font-size: 14px; margin: 0 0 var(--s4); }
 .fine { color: var(--quiet); font-size: 13px; margin: var(--s2) 0 0; max-width: 62ch; }
+/* fairness.mjs/popularity.mjs 문장(각주, 유의수준, disclaimer 등)이 쓰는 이름 — 문구는 그대로 두고
+   색만 --quiet로 맞춘다. */
+.note { color: var(--quiet); font-size: 13px; margin: 0 0 var(--s4); }
 
 /* 정직성 문구 — 작지만 확실한 자리 */
 .honest {
@@ -92,11 +95,6 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
 
 .notice { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 13px; margin: 0 0 var(--s4); }
 .error { border-left: 3px solid var(--danger); padding: var(--s2) var(--s3); color: var(--danger); font-size: 14px; }
-
-/* TEMP BRIDGE (Task 1, still needed after Tasks 2-3): home.mjs and sets.mjs no longer emit
-   "banner" (renamed to .notice), but popularity.mjs and fairness.mjs still do — keep this until
-   Task 4 renames their call sites too, then remove. */
-.banner { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 13px; margin: 0 0 var(--s4); }
 
 .panel, .card { background: var(--field); padding: var(--s4); margin: 0 0 var(--s4); }
 
@@ -155,6 +153,9 @@ table.grid tbody th { font-weight: 700; white-space: normal; }
 table.grid td { font-weight: 600; }
 table.grid tr.suspect { background: var(--mark); color: #17202b; }
 .scroller { overflow-x: auto; }
+
+.chart-block { margin: 0 0 var(--s6); }
+.chart-block h3 { margin: 0 0 var(--s1); }
 
 .chart { position: relative; }
 .chart canvas { width: 100% !important; }
