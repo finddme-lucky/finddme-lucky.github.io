@@ -1,6 +1,7 @@
 import { barConfig, bucketLabel, chartCard, drawChart, lineConfig } from "./chart.mjs";
 import { el } from "./dom.mjs";
 import { fairnessSection } from "./fairness.mjs";
+import { popularitySection } from "./popularity.mjs";
 
 const test = (report, id) => report.fairness.all.find((entry) => entry.id === id);
 
@@ -87,7 +88,7 @@ export async function lottoSections(report, backtest) {
     await seriesChart(stats.series, "firstPrize", "1등 1인당 당첨금", "원"),
   );
   sections.push(fairnessSection(report));
-  // 인기 규칙 근거(Task 5)는 뒤에서 여기에 붙인다.
+  sections.push(popularitySection(backtest));
 
   return sections.filter(Boolean);
 }

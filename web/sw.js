@@ -18,6 +18,7 @@ const ASSETS = [
   "js/format.mjs",
   "js/home.mjs",
   "js/labels.mjs",
+  "js/popularity.mjs",
   "js/sets.mjs",
   "js/staleness.mjs",
   "js/stats.mjs",
