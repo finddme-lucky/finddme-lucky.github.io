@@ -8,6 +8,7 @@ data/ 로 시작하면 저장소의 data/, 나머지는 web/ 에서 읽어 같�
 """
 
 import http.server
+import os
 import socketserver
 import sys
 from pathlib import Path
@@ -15,7 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
 DATA = ROOT / "data"
-PORT = 8765
+PORT = int(os.environ.get("LUCKY_PORT", "8765"))  # 테스트는 빈 포트를 지정해 쓴다
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
