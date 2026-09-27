@@ -45,6 +45,7 @@ function table(entries, title, note) {
 export function fairnessSection(report) {
   const fairness = report.fairness;
   const skipped = [...fairness.all, ...fairness.recent].filter((entry) => verdictOf(entry) === SKIPPED);
+  const hasSumTest = [...fairness.all, ...fairness.recent].some((entry) => entry.id === "sum");
 
   return el("div", { class: "fairness" },
     el("h2", {}, "추첨 공정성 검정"),
@@ -57,6 +58,7 @@ export function fairnessSection(report) {
       ? el("p", { class: "banner" },
           `건너뛴 검정이 ${skipped.length}건 있다 — 자료가 모자라 계산하지 못한 것이며, 치우침이 없다는 뜻이 아니다.`)
       : null,
-    el("p", { class: "note" }, SUM_FOOTNOTE),
+    // 합 검정이 없는 게임(연금복권)에는 이 각주를 띄우지 않는다.
+    hasSumTest ? el("p", { class: "note" }, SUM_FOOTNOTE) : null,
     el("p", { class: "note" }, `유의수준 ${fairness.alpha}. 여러 검정을 한꺼번에 하므로 Holm 보정을 적용했다.`));
 }
