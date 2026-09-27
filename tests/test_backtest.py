@@ -78,6 +78,14 @@ def test_separation_is_the_gap_between_drawn_and_undrawn_scores():
     assert backtest.separation(scores, [1, 2, 3, 4]) == 0.0  # 전부 뽑히면 비교 대상이 없다
 
 
+def test_pension_separation_averages_per_position_separation():
+    top_score = {digit: 0.0 for digit in range(10)}
+    top_score[0] = 2.0  # 뽑힌 자리(0)가 가장 높은 점수 → separation > 0
+    tied = {digit: 1.0 for digit in range(10)}  # 전부 동점 → separation 0
+    scores = [top_score, tied]
+    assert backtest.pension_separation(scores, "05") == pytest.approx(1.0)
+
+
 def test_run_lotto_reports_every_strategy_with_theory_alongside():
     report = backtest.run_lotto(lotto_draws(120), rules=CONFIG, strategies=("hot", "random"), rounds=5)
 
@@ -222,6 +230,13 @@ def test_run_pension_uses_only_past_draws_for_each_round():
         history = draws[:index]
         expected = sets.build_pension_set(history, "cold", record["round"])
         assert record["number"] == expected
+
+
+def test_pension_ml_entry_carries_fit_versus_evaluation_separation():
+    report = backtest.run_pension(pension_draws(60), strategies=("ml", "random"), rounds=3)
+    entry = report["strategies"]["ml"]
+    assert "inSampleSeparation" in entry and "outOfSampleSeparation" in entry
+    assert "inSampleSeparation" not in report["strategies"]["random"]
 
 
 def test_run_pension_is_deterministic():

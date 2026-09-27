@@ -89,6 +89,14 @@ def separation(scores, drawn):
     return sum(inside) / len(inside) - sum(outside) / len(outside)
 
 
+def pension_separation(scores, first):
+    """자리별 separation의 평균 — 연금복권 점수는 자리마다 따로 매겨지므로."""
+    return sum(
+        separation(position_scores, {int(digit)})
+        for position_scores, digit in zip(scores, first)
+    ) / len(scores)
+
+
 def compare_with_random(entries, baseline="random", alpha=ALPHA):
     """각 전략의 5등 이상 적중률을 무작위 기준선과 맞대어 본다."""
     base = entries.get(baseline)
@@ -231,14 +239,17 @@ def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS, keep_sets
 
     for strategy in names:
         lengths, won, recorded = Counter(), 0, []
+        in_sample, out_of_sample = [], []
         for index in range(start, len(draws)):
             target, history = draws[index], draws[:index]
-            number = sets.build_pension_set(
-                history, strategy, target["round"], scores=sets.pension_scores(history, strategy)
-            )
+            scores = sets.pension_scores(history, strategy)
+            number = sets.build_pension_set(history, strategy, target["round"], scores=scores)
             length, prize = pension_prize(number, target)
             lengths[length] += 1
             won += prize
+            if strategy == "ml":
+                in_sample.append(pension_separation(scores, history[-1]["first"]))
+                out_of_sample.append(pension_separation(scores, target["first"]))
             if keep_sets:
                 recorded.append({"round": target["round"], "number": number})
 
@@ -256,6 +267,11 @@ def run_pension(draws, *, strategies=None, rounds=PENSION_EVAL_ROUNDS, keep_sets
             "won": won,
             "returnRate": won / spent if spent else 0.0,
         }
+        if strategy == "ml":
+            entry["inSampleSeparation"] = sum(in_sample) / len(in_sample) if in_sample else 0.0
+            entry["outOfSampleSeparation"] = (
+                sum(out_of_sample) / len(out_of_sample) if out_of_sample else 0.0
+            )
         if keep_sets:
             entry["sets"] = recorded
         report["strategies"][strategy] = entry

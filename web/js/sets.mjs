@@ -38,7 +38,9 @@ function pensionPerformance(entry, theory) {
         ` · 이론 ${formatPercent(theory.returnRate)}`,
         ` · ${formatWon(entry.spent)} 써서 ${formatWon(entry.won)} 받음`)),
     bar(entry.returnRate, theory.returnRate, max),
-    el("p", { class: "verdict" }, verdict(entry)));
+    el("p", { class: "verdict" }, verdict(entry)),
+    entry.inSampleSeparation === undefined ? null : el("p", { class: "muted" },
+      `학습 구간 분리도 ${entry.inSampleSeparation.toFixed(5)} vs 평가 구간 ${entry.outOfSampleSeparation.toFixed(5)} — ${ML_NOTE}`));
 }
 
 function lottoCard(entry, report) {
