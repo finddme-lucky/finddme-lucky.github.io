@@ -21,9 +21,22 @@ const ASSETS = [
   "js/staleness.mjs",
 ];
 
+// 첫 방문은 이 서비스워커가 제어하기 전에 데이터를 받아 가므로, 그 요청은 캐시를 거치지 않는다.
+// 설치할 때 한 번 받아 둬야 "설치하자마자 오프라인"에서도 마지막 데이터가 보인다.
+const DATA_ASSETS = [
+  "data/latest.json",
+  "data/predictions.json",
+  "data/backtest.json",
+];
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(SHELL).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting()),
+    caches.open(SHELL)
+      .then((cache) => cache.addAll(ASSETS))
+      // 데이터는 받아두면 좋지만 없다고 설치를 실패시키지는 않는다 (셸은 이미 캐시됐다).
+      .then(() => caches.open(DATA))
+      .then((cache) => Promise.all(DATA_ASSETS.map((path) => cache.add(path).catch(() => {}))))
+      .then(() => self.skipWaiting()),
   );
 });
 

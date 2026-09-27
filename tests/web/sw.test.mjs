@@ -25,6 +25,26 @@ function listFiles(dir, base = dir) {
   return out;
 }
 
+function parseList(source, name) {
+  const match = source.match(new RegExp(`const ${name} = \\[([\\s\\S]*?)\\];`));
+  if (!match) throw new Error(`sw.js에서 ${name} 배열을 찾을 수 없다`);
+  return new Function(`return [${match[1].replace(/\/\/.*$/gm, "")}]`)();
+}
+
+// 설치할 때 미리 받아 두는 데이터 파일 — 하나라도 이름이 틀리면 "설치 직후 오프라인"에서 데이터가 빈다.
+test("DATA_ASSETS의 모든 항목이 data/에 실재한다", () => {
+  const dataDir = fileURLToPath(new URL("../../data/", import.meta.url));
+  const assets = parseList(swSource, "DATA_ASSETS");
+  assert.ok(assets.length >= 3, "미리 받아 둘 데이터 파일이 비어 있다");
+  for (const asset of assets) {
+    assert.ok(asset.startsWith("data/"), `data/ 밖의 항목: ${asset}`);
+    assert.ok(
+      statSync(path.join(dataDir, asset.slice("data/".length)), { throwIfNoEntry: false }),
+      `실재하지 않는 DATA_ASSETS 항목: ${asset}`,
+    );
+  }
+});
+
 test("web/ 아래 모든 파일(sw.js 제외)이 ASSETS에 있고, ASSETS의 모든 항목이 실재한다", () => {
   const assets = parseAssets(swSource);
   const files = listFiles(webDir).filter((file) => file !== "sw.js");
