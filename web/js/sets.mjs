@@ -81,7 +81,7 @@ function sections(game, predictions, backtest, latest, now) {
   const section = predictions[game];
   const report = backtest[game];
   if (!section || !report) {
-    return [el("p", { class: "error" }, `${gameLabel(game).name} 데이터가 아직 없다.`)];
+    return [el("p", { class: "error" }, `${gameLabel(game).name} 데이터가 아직 없습니다.`)];
   }
   const latestSection = latest?.games?.[game];
   const alreadyDrawn = latestSection !== undefined && section.round <= latestSection.latestRound;
@@ -123,7 +123,7 @@ export function renderSets(target, predictions, backtest, latest, now = new Date
     try {
       content = sections(game, predictions, backtest, latest, now);
     } catch (error) {
-      content = [el("p", { class: "error" }, `데이터를 불러오지 못했습니다 — ${error.message}`)];
+      content = [el("p", { class: "error" }, `데이터를 불러오지 못했습니다 — ${error.message}. 새로고침해 보세요.`)];
     }
     for (const button of switcher.querySelectorAll("button")) {
       button.classList.toggle("on", button.dataset.game === game);

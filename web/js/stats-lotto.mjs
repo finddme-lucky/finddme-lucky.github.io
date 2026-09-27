@@ -6,11 +6,17 @@ import { formatWonShort } from "./format.mjs";
 
 const test = (report, id) => report.fairness.all.find((entry) => entry.id === id);
 
+// 회차 범위(메타 정보)와 disclaimer(정직성 문구)는 서로 다른 종류의 정보이므로 가운뎃점으로
+// 묶지 않고 별도 줄로 나눈다. disclaimer 문장 자체는 그대로다.
+export function statsRoundNote(report) {
+  const stats = report.stats;
+  return `${stats.draws.toLocaleString("ko-KR")}회 기준 (${report.latestRound.toLocaleString("ko-KR")}회까지)`;
+}
+
 // "과거 분포이며 다음 회차 확률과 무관하다"는 매 게임 화면 첫 줄에 반드시 나와야 한다 (§1.2) —
 // 순수 함수로 빼 두면 disclaimer가 조용히 빠지는 변경을 DOM 없이도 테스트로 잡을 수 있다.
 export function statsHeaderNote(report) {
-  const stats = report.stats;
-  return `${stats.draws.toLocaleString("ko-KR")}회 기준 (${report.latestRound.toLocaleString("ko-KR")}회까지) · ${report.disclaimer}`;
+  return report.disclaimer;
 }
 
 // 관측과 기대를 같은 그림에 놓는다 — 검정이 하는 말과 같은 내용이다.
@@ -65,6 +71,7 @@ async function seriesChart(series, key, title, note, { tickFormat = null, value 
 export async function lottoSections(report, backtest) {
   const stats = report.stats;
   const sections = [
+    el("p", { class: "fine" }, statsRoundNote(report)),
     el("p", { class: "note" }, statsHeaderNote(report)),
     await guardCard("번호별 출현", () => numberCounts(stats)),
   ];
@@ -101,7 +108,7 @@ export async function lottoSections(report, backtest) {
     await guardCard("회차별 판매액", () => seriesChart(stats.series, "sales", "회차별 판매액", "원", { tickFormat: formatWonShort })),
     await guardCard("1등 당첨자 수", () => seriesChart(stats.series, "firstWinners", "1등 당첨자 수", "명")),
     await guardCard("1등 1인당 당첨금", () => seriesChart(stats.series, "firstPrize", "1등 1인당 당첨금",
-      "원 · 1등 당첨자가 없던 회차는 0원이 아니라 끊어서 표시한다", {
+      "단위는 원이다. 1등 당첨자가 없던 회차는 0원이 아니라 끊어서 표시한다", {
         tickFormat: formatWonShort,
         value: (row) => (row.firstWinners ? row.firstPrize : null),
       })),

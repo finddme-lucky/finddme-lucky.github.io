@@ -46,7 +46,7 @@ async function show(name) {
     drawn.add(name);
   } catch (error) {
     target.replaceChildren(el("p", { class: "error" },
-      `데이터를 불러오지 못했습니다 — ${error.message}`));
+      `데이터를 불러오지 못했습니다 — ${error.message}. 새로고침해 보세요.`));
   }
 }
 

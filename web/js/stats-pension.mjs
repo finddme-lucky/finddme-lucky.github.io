@@ -6,10 +6,16 @@ const DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const RANKS = ["1", "2", "3", "4", "5", "6", "7", "bonus"];
 const rankLabel = (rank) => (rank === "bonus" ? "보너스" : `${rank}등`);
 
+// stats-lotto.mjs의 statsRoundNote와 같은 규약 — 회차 범위(메타 정보)와 disclaimer는
+// 서로 다른 종류의 정보이므로 가운뎃점으로 묶지 않고 별도 줄로 나눈다.
+export function statsRoundNote(report) {
+  const stats = report.stats;
+  return `${stats.draws.toLocaleString("ko-KR")}회 기준 (${report.latestRound.toLocaleString("ko-KR")}회까지)`;
+}
+
 // stats-lotto.mjs의 statsHeaderNote와 같은 규약 — disclaimer가 화면 첫 줄에서 빠지면 테스트가 죽어야 한다.
 export function statsHeaderNote(report) {
-  const stats = report.stats;
-  return `${stats.draws.toLocaleString("ko-KR")}회 기준 (${report.latestRound.toLocaleString("ko-KR")}회까지) · ${report.disclaimer}`;
+  return report.disclaimer;
 }
 
 // 카드 안에 전환 버튼을 달고, 고를 때마다 차트를 다시 그린다.
@@ -40,6 +46,7 @@ async function switchingCard(title, note, options, build) {
 export async function pensionSections(report, backtest) {
   const stats = report.stats;
   const sections = [
+    el("p", { class: "fine" }, statsRoundNote(report)),
     el("p", { class: "note" }, statsHeaderNote(report)),
   ];
 

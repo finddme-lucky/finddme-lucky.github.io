@@ -96,7 +96,7 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
 .notice { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 13px; margin: 0 0 var(--s4); }
 .error { border-left: 3px solid var(--danger); padding: var(--s2) var(--s3); color: var(--danger); font-size: 14px; }
 
-.panel, .card { background: var(--field); padding: var(--s4); margin: 0 0 var(--s4); }
+.panel { background: var(--field); padding: var(--s4); margin: 0 0 var(--s4); }
 
 /* 공(당첨번호)과 생성된 번호는 같은 색 언어를 쓴다 */
 .y { background: #fbc400; }
@@ -145,6 +145,10 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
   cursor: pointer;
 }
 .switch button.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+/* 차트 블록 안에 얹는 전환 버튼 — 탭 위쪽 게임 전환보다 한 단 조용하다 */
+.switch.small { gap: 0 var(--s1); margin: 0 0 var(--s2); }
+.switch.small button { padding: var(--s1) var(--s2); font-size: 12px; }
 
 table.grid { border-collapse: collapse; width: 100%; font-size: 13px; }
 table.grid th, table.grid td { padding: var(--s2) var(--s3); text-align: left; border-bottom: 1px solid var(--rule-soft); white-space: nowrap; }

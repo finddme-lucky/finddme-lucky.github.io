@@ -123,7 +123,7 @@ export async function guardCard(title, build) {
   } catch (error) {
     return el("section", { class: "panel" },
       el("h3", {}, title),
-      el("p", { class: "error" }, `이 항목을 불러오지 못했습니다 — ${error.message}`));
+      el("p", { class: "error" }, `이 항목을 불러오지 못했습니다 — ${error.message}. 새로고침해 보세요.`));
   }
 }
 

@@ -35,7 +35,7 @@ export function renderStats(target, backtest) {
     } catch (error) {
       if (picked !== game) return;
       body.replaceChildren(el("p", { class: "error" },
-        `통계를 불러오지 못했습니다 — ${error.message}`));
+        `통계를 불러오지 못했습니다 — ${error.message}. 새로고침해 보세요.`));
     }
   }
 
