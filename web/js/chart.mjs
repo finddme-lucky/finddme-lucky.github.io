@@ -78,7 +78,7 @@ export function barConfig(labels, values, { expected = null, label = "관측", e
   };
 }
 
-export function lineConfig(labels, values, { label = "값", fill = false } = {}) {
+export function lineConfig(labels, values, { label = "값", fill = false, tickFormat = null } = {}) {
   const colors = palette();
   return {
     type: "line",
@@ -96,7 +96,11 @@ export function lineConfig(labels, values, { label = "값", fill = false } = {})
       plugins: { legend: { display: false } },
       scales: {
         x: { grid: { display: false }, ticks: { autoSkip: true, maxTicksLimit: 8, maxRotation: 0 } },
-        y: { beginAtZero: true, grid: { color: colors.line } },
+        y: {
+          beginAtZero: true,
+          grid: { color: colors.line },
+          ticks: tickFormat ? { callback: tickFormat } : {},
+        },
       },
     },
   };

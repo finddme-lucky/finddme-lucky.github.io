@@ -144,6 +144,7 @@ main { max-width: 960px; margin: 0 auto; }
   color: var(--muted);
   font: inherit; font-weight: 600; font-size: 14px;
   cursor: pointer;
+  white-space: nowrap;
 }
 .switch button.on { border-color: var(--accent); color: var(--accent); }
 

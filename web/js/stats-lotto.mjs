@@ -2,6 +2,7 @@ import { barConfig, bucketLabel, chartCard, drawChart, lineConfig } from "./char
 import { el } from "./dom.mjs";
 import { fairnessSection } from "./fairness.mjs";
 import { popularitySection } from "./popularity.mjs";
+import { formatWonShort } from "./format.mjs";
 
 const test = (report, id) => report.fairness.all.find((entry) => entry.id === id);
 
@@ -46,9 +47,11 @@ async function numberCounts(stats) {
   return card;
 }
 
-async function seriesChart(series, key, title, note) {
+async function seriesChart(series, key, title, note, { tickFormat = null } = {}) {
   const { card, canvas } = chartCard(title, note);
-  await drawChart(canvas, lineConfig(series.map((row) => row.round), series.map((row) => row[key])));
+  await drawChart(canvas, lineConfig(series.map((row) => row.round), series.map((row) => row[key]), {
+    tickFormat: tickFormat ? (value) => tickFormat(value) : null,
+  }));
   return card;
 }
 
@@ -83,9 +86,9 @@ export async function lottoSections(report, backtest) {
   sections.push(
     await observedVsExpected(report, "adjacent", "연속번호 쌍 개수", "막대는 관측, 선은 이론 기대값"),
     await observedVsExpected(report, "overlap", "직전 회차와 겹치는 번호 개수", "막대는 관측, 선은 이론 기대값"),
-    await seriesChart(stats.series, "sales", "회차별 판매액", "원"),
+    await seriesChart(stats.series, "sales", "회차별 판매액", "원", { tickFormat: formatWonShort }),
     await seriesChart(stats.series, "firstWinners", "1등 당첨자 수", "명"),
-    await seriesChart(stats.series, "firstPrize", "1등 1인당 당첨금", "원"),
+    await seriesChart(stats.series, "firstPrize", "1등 1인당 당첨금", "원", { tickFormat: formatWonShort }),
   );
   sections.push(fairnessSection(report));
   sections.push(popularitySection(backtest));
