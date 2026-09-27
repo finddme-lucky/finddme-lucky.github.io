@@ -14,7 +14,8 @@ const TABS = {
     sources: ["data/predictions.json", "data/backtest.json", { path: "data/latest.json", optional: true }],
     render: renderSets,
   },
-  stats: { sources: ["data/backtest.json"], render: renderStats },
+  // backtest.json은 인기규칙 근거 카드 하나에만 쓰인다 — 없어도 분포 차트와 공정성 표는 보여야 한다.
+  stats: { sources: [{ path: "data/backtest.json", optional: true }], render: renderStats },
 };
 const DEFAULT_TAB = "home";
 const drawn = new Set();

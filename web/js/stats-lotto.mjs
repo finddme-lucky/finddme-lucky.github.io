@@ -1,10 +1,17 @@
-import { barConfig, bucketLabel, chartCard, drawChart, lineConfig } from "./chart.mjs";
+import { barConfig, bucketLabel, chartCard, drawChart, guardCard, lineConfig, releaseChart } from "./chart.mjs";
 import { el } from "./dom.mjs";
 import { fairnessSection } from "./fairness.mjs";
 import { popularitySection } from "./popularity.mjs";
 import { formatWonShort } from "./format.mjs";
 
 const test = (report, id) => report.fairness.all.find((entry) => entry.id === id);
+
+// "과거 분포이며 다음 회차 확률과 무관하다"는 매 게임 화면 첫 줄에 반드시 나와야 한다 (§1.2) —
+// 순수 함수로 빼 두면 disclaimer가 조용히 빠지는 변경을 DOM 없이도 테스트로 잡을 수 있다.
+export function statsHeaderNote(report) {
+  const stats = report.stats;
+  return `${stats.draws.toLocaleString("ko-KR")}회 기준 (${report.latestRound.toLocaleString("ko-KR")}회까지) · ${report.disclaimer}`;
+}
 
 // 관측과 기대를 같은 그림에 놓는다 — 검정이 하는 말과 같은 내용이다.
 async function observedVsExpected(report, id, title, note) {
@@ -33,7 +40,7 @@ async function numberCounts(stats) {
     for (const button of switcher.querySelectorAll("button")) {
       button.classList.toggle("on", button.dataset.view === current);
     }
-    chart?.destroy();
+    releaseChart(chart);
     chart = await drawChart(canvas, barConfig(numbers, numbers.map((n) => views[current].data[n])));
   };
 
@@ -47,9 +54,9 @@ async function numberCounts(stats) {
   return card;
 }
 
-async function seriesChart(series, key, title, note, { tickFormat = null } = {}) {
+async function seriesChart(series, key, title, note, { tickFormat = null, value = (row) => row[key] } = {}) {
   const { card, canvas } = chartCard(title, note);
-  await drawChart(canvas, lineConfig(series.map((row) => row.round), series.map((row) => row[key]), {
+  await drawChart(canvas, lineConfig(series.map((row) => row.round), series.map(value), {
     tickFormat: tickFormat ? (value) => tickFormat(value) : null,
   }));
   return card;
@@ -58,40 +65,49 @@ async function seriesChart(series, key, title, note, { tickFormat = null } = {})
 export async function lottoSections(report, backtest) {
   const stats = report.stats;
   const sections = [
-    el("p", { class: "note" },
-      `${stats.draws.toLocaleString("ko-KR")}회 기준 (${report.latestRound.toLocaleString("ko-KR")}회까지) · ${report.disclaimer}`),
-    await numberCounts(stats),
+    el("p", { class: "note" }, statsHeaderNote(report)),
+    await guardCard("번호별 출현", () => numberCounts(stats)),
   ];
 
-  const gaps = Object.keys(stats.gaps);
-  const gapCard = chartCard("번호별 미출현 간격", "마지막으로 나온 뒤 지난 회차 수");
-  await drawChart(gapCard.canvas, barConfig(gaps, gaps.map((n) => stats.gaps[n])));
-  sections.push(gapCard.card);
+  sections.push(await guardCard("번호별 미출현 간격", async () => {
+    const gaps = Object.keys(stats.gaps);
+    const gapCard = chartCard("번호별 미출현 간격", "마지막으로 나온 뒤 지난 회차 수");
+    await drawChart(gapCard.canvas, barConfig(gaps, gaps.map((n) => stats.gaps[n])));
+    return gapCard.card;
+  }));
 
   sections.push(
-    await observedVsExpected(report, "oddEven", "홀수 개수 분포", "막대는 관측, 선은 이론 기대값"),
-    await observedVsExpected(report, "lowHigh", "저번호(1~22) 개수 분포", "막대는 관측, 선은 이론 기대값"),
+    await guardCard("홀수 개수 분포", () => observedVsExpected(report, "oddEven", "홀수 개수 분포", "막대는 관측, 선은 이론 기대값")),
+    await guardCard("저번호(1~22) 개수 분포", () => observedVsExpected(report, "lowHigh", "저번호(1~22) 개수 분포", "막대는 관측, 선은 이론 기대값")),
   );
 
-  const sums = Object.keys(stats.sums).map(Number).sort((a, b) => a - b);
-  const sumCard = chartCard("번호 합 분포", "6개 번호를 더한 값");
-  await drawChart(sumCard.canvas, lineConfig(sums, sums.map((value) => stats.sums[String(value)])));
-  sections.push(sumCard.card);
+  sections.push(await guardCard("번호 합 분포", async () => {
+    const sums = Object.keys(stats.sums).map(Number).sort((a, b) => a - b);
+    const sumCard = chartCard("번호 합 분포", "6개 번호를 더한 값");
+    await drawChart(sumCard.canvas, lineConfig(sums, sums.map((value) => stats.sums[String(value)])));
+    return sumCard.card;
+  }));
 
-  const decades = Object.keys(stats.decades);
-  const decadeCard = chartCard("번호대 분포", "구간마다 번호 개수가 달라 높이 차이는 당연하다 (41~45는 5개뿐)");
-  await drawChart(decadeCard.canvas, barConfig(decades, decades.map((k) => stats.decades[k])));
-  sections.push(decadeCard.card);
+  sections.push(await guardCard("번호대 분포", async () => {
+    const decades = Object.keys(stats.decades);
+    const decadeCard = chartCard("번호대 분포", "구간마다 번호 개수가 달라 높이 차이는 당연하다 (41~45는 5개뿐)");
+    await drawChart(decadeCard.canvas, barConfig(decades, decades.map((k) => stats.decades[k])));
+    return decadeCard.card;
+  }));
 
   sections.push(
-    await observedVsExpected(report, "adjacent", "연속번호 쌍 개수", "막대는 관측, 선은 이론 기대값"),
-    await observedVsExpected(report, "overlap", "직전 회차와 겹치는 번호 개수", "막대는 관측, 선은 이론 기대값"),
-    await seriesChart(stats.series, "sales", "회차별 판매액", "원", { tickFormat: formatWonShort }),
-    await seriesChart(stats.series, "firstWinners", "1등 당첨자 수", "명"),
-    await seriesChart(stats.series, "firstPrize", "1등 1인당 당첨금", "원", { tickFormat: formatWonShort }),
+    await guardCard("연속번호 쌍 개수", () => observedVsExpected(report, "adjacent", "연속번호 쌍 개수", "막대는 관측, 선은 이론 기대값")),
+    await guardCard("직전 회차와 겹치는 번호 개수", () => observedVsExpected(report, "overlap", "직전 회차와 겹치는 번호 개수", "막대는 관측, 선은 이론 기대값")),
+    await guardCard("회차별 판매액", () => seriesChart(stats.series, "sales", "회차별 판매액", "원", { tickFormat: formatWonShort })),
+    await guardCard("1등 당첨자 수", () => seriesChart(stats.series, "firstWinners", "1등 당첨자 수", "명")),
+    await guardCard("1등 1인당 당첨금", () => seriesChart(stats.series, "firstPrize", "1등 1인당 당첨금",
+      "원 · 1등 당첨자가 없던 회차는 0원이 아니라 끊어서 표시한다", {
+        tickFormat: formatWonShort,
+        value: (row) => (row.firstWinners ? row.firstPrize : null),
+      })),
   );
-  sections.push(fairnessSection(report));
-  sections.push(popularitySection(backtest));
+  sections.push(await guardCard("추첨 공정성 검정", () => fairnessSection(report)));
+  sections.push(await guardCard("인기 패턴 규칙의 근거", () => popularitySection(backtest)));
 
   return sections.filter(Boolean);
 }

@@ -27,7 +27,11 @@ export function renderStats(target, backtest) {
       if (!cache.has(picked)) cache.set(picked, await loadJson(`data/stats/${picked}.json`));
       if (picked !== game) return;  // 기다리는 사이에 다른 게임으로 바꿨으면 버린다
       const report = cache.get(picked);
-      body.replaceChildren(...(await SECTIONS[picked](report, backtest)));
+      const sections = await SECTIONS[picked](report, backtest);
+      // SECTIONS[picked]는 차트를 여러 개 그리며 그때마다 await 한다 (첫 진입이면 208KB Chart.js
+      // 번들 로드까지 기다린다) — 그 사이에 사용자가 다른 게임을 골랐으면 이 렌더는 버린다.
+      if (picked !== game) return;
+      body.replaceChildren(...sections);
     } catch (error) {
       if (picked !== game) return;
       body.replaceChildren(el("p", { class: "error" },

@@ -39,6 +39,14 @@ export function destroyCharts() {
   drawn.clear();
 }
 
+// 카드 안 스위처처럼 차트 하나만 버릴 때 쓴다 — drawn에서도 지워야
+// destroyCharts()가 이미 죽은 차트를 다시 destroy()하지 않는다.
+export function releaseChart(chart) {
+  if (!chart) return;
+  chart.destroy();
+  drawn.delete(chart);
+}
+
 export async function drawChart(canvas, config) {
   const Chart = await loadChart();
   const colors = palette();
@@ -104,6 +112,17 @@ export function lineConfig(labels, values, { label = "값", fill = false, tickFo
       },
     },
   };
+}
+
+// 통계 JSON에 필드 하나가 없어도 카드 하나만 짧은 오류 문구로 바뀌고 나머지는 그대로 그려지게 한다.
+export async function guardCard(title, build) {
+  try {
+    return await build();
+  } catch (error) {
+    return el("section", { class: "card" },
+      el("h3", {}, title),
+      el("p", { class: "error" }, `이 항목을 불러오지 못했습니다 — ${error.message}`));
+  }
 }
 
 // 제목 + 설명 + 캔버스를 담은 카드. 캔버스를 함께 돌려준다.

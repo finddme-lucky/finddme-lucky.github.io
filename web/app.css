@@ -171,6 +171,9 @@ main { max-width: 960px; margin: 0 auto; }
   #tab-sets > .switch, #tab-sets > .body { grid-column: 1 / -1; }
   #tab-sets .body { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
   #tab-sets .body > .head, #tab-sets .body > .note { grid-column: 1 / -1; }
+
+  #tab-stats .body { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+  #tab-stats .body > .note, #tab-stats .body > .fairness { grid-column: 1 / -1; }
 }
 
 .chart { position: relative; }

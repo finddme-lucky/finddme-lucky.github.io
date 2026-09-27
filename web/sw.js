@@ -15,16 +15,16 @@ const ASSETS = [
   "js/chart.mjs",
   "js/data.mjs",
   "js/dom.mjs",
+  "js/fairness.mjs",
   "js/format.mjs",
   "js/home.mjs",
   "js/labels.mjs",
   "js/popularity.mjs",
   "js/sets.mjs",
   "js/staleness.mjs",
-  "js/stats.mjs",
   "js/stats-lotto.mjs",
   "js/stats-pension.mjs",
-  "js/fairness.mjs",
+  "js/stats.mjs",
   "vendor/chart.umd.js",
 ];
 

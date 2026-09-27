@@ -1,10 +1,16 @@
-import { barConfig, chartCard, drawChart, lineConfig, palette } from "./chart.mjs";
+import { barConfig, chartCard, drawChart, guardCard, lineConfig, palette, releaseChart } from "./chart.mjs";
 import { el } from "./dom.mjs";
 import { fairnessSection } from "./fairness.mjs";
 
 const DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const RANKS = ["1", "2", "3", "4", "5", "6", "7", "bonus"];
 const rankLabel = (rank) => (rank === "bonus" ? "보너스" : `${rank}등`);
+
+// stats-lotto.mjs의 statsHeaderNote와 같은 규약 — disclaimer가 화면 첫 줄에서 빠지면 테스트가 죽어야 한다.
+export function statsHeaderNote(report) {
+  const stats = report.stats;
+  return `${stats.draws.toLocaleString("ko-KR")}회 기준 (${report.latestRound.toLocaleString("ko-KR")}회까지) · ${report.disclaimer}`;
+}
 
 // 카드 안에 전환 버튼을 달고, 고를 때마다 차트를 다시 그린다.
 async function switchingCard(title, note, options, build) {
@@ -17,7 +23,7 @@ async function switchingCard(title, note, options, build) {
     for (const button of switcher.querySelectorAll("button")) {
       button.classList.toggle("on", button.dataset.value === current);
     }
-    chart?.destroy();
+    releaseChart(chart);
     chart = await drawChart(canvas, build(current));
   };
 
@@ -34,12 +40,11 @@ async function switchingCard(title, note, options, build) {
 export async function pensionSections(report, backtest) {
   const stats = report.stats;
   const sections = [
-    el("p", { class: "note" },
-      `${stats.draws.toLocaleString("ko-KR")}회 기준 (${report.latestRound.toLocaleString("ko-KR")}회까지) · ${report.disclaimer}`),
+    el("p", { class: "note" }, statsHeaderNote(report)),
   ];
 
   const groups = Object.keys(stats.groups);
-  sections.push(await switchingCard("1등 조 분포", "막대는 관측, 선은 고르게 나왔을 때의 기대값", [
+  sections.push(await guardCard("1등 조 분포", () => switchingCard("1등 조 분포", "막대는 관측, 선은 고르게 나왔을 때의 기대값", [
     { value: "all", label: "전체" },
     { value: "recent", label: `최근 ${stats.recentCountsWindow}회` },
   ], (view) => {
@@ -48,9 +53,9 @@ export async function pensionSections(report, backtest) {
     return barConfig(groups.map((g) => `${g}조`), groups.map((g) => source[g]), {
       expected: groups.map(() => total / groups.length),
     });
-  }));
+  })));
 
-  sections.push(await switchingCard("자리별 숫자 분포", "1등 번호와 보너스 번호를 나란히",
+  sections.push(await guardCard("자리별 숫자 분포", () => switchingCard("자리별 숫자 분포", "1등 번호와 보너스 번호를 나란히",
     [1, 2, 3, 4, 5, 6].map((position) => ({ value: String(position), label: `${position}번째` })),
     (value) => {
       const index = Number(value) - 1;
@@ -74,16 +79,16 @@ export async function pensionSections(report, backtest) {
           scales: { x: { grid: { display: false } }, y: { beginAtZero: true } },
         },
       };
-    }));
+    })));
 
-  sections.push(await switchingCard("등수별 당첨 매수 추이", "회차별 당첨 매수",
+  sections.push(await guardCard("등수별 당첨 매수 추이", () => switchingCard("등수별 당첨 매수 추이", "회차별 당첨 매수",
     RANKS.map((rank) => ({ value: rank, label: rankLabel(rank) })),
     (rank) => lineConfig(
       stats.series.map((row) => row.round),
       stats.series.map((row) => row.rankTotals?.[rank] ?? null),
       { label: rankLabel(rank) },
-    )));
+    ))));
 
-  sections.push(fairnessSection(report));
+  sections.push(await guardCard("추첨 공정성 검정", () => fairnessSection(report)));
   return sections.filter(Boolean);
 }
