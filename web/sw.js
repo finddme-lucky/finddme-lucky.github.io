@@ -1,6 +1,6 @@
 const VERSION = "v1";
 const SHELL = `shell-${VERSION}`;
-const DATA = `data-${VERSION}`;
+const DATA = "data"; // 버전과 분리한다 — 셸 버전을 올려도 마지막으로 받은 데이터는 지우지 않는다.
 
 // 셸 파일이 늘어나면 여기에 추가한다 (내용만 바뀔 때는 손댈 필요 없다).
 const ASSETS = [
@@ -52,8 +52,11 @@ async function dataFirst(event, request) {
   const cache = await caches.open(DATA);
   try {
     const response = await fetch(request);
-    if (response.ok) event.waitUntil(cache.put(request, response.clone()));
-    return response;
+    if (response.ok) {
+      event.waitUntil(cache.put(request, response.clone()));
+      return response;
+    }
+    return (await cache.match(request)) ?? response;
   } catch (error) {
     const cached = await cache.match(request);
     if (cached) return cached;

@@ -3,9 +3,12 @@ import { el } from "./dom.mjs";
 import { renderHome } from "./home.mjs";
 import { renderSets } from "./sets.mjs";
 
+// 이 줄까지 왔다는 것은 모듈 그래프가 정상적으로 로드됐다는 뜻이다 — 정적 대체 문구를 지운다.
+document.getElementById("boot")?.remove();
+
 const TABS = {
   home: { sources: ["data/latest.json"], render: renderHome },
-  sets: { sources: ["data/predictions.json", "data/backtest.json"], render: renderSets },
+  sets: { sources: ["data/predictions.json", "data/backtest.json", "data/latest.json"], render: renderSets },
 };
 const DEFAULT_TAB = "home";
 const drawn = new Set();

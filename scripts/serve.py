@@ -24,7 +24,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         base = ROOT if clean.startswith("data/") else WEB
         target = (base / clean).resolve()
         if not any(target == root or target.is_relative_to(root) for root in (WEB, DATA)):
-            return str(WEB / "index.html")
+            return str(WEB / "__forbidden__")  # 존재하지 않아 404가 나게 한다 (200 + index.html로 속이지 않는다)
         return str(target / "index.html") if target.is_dir() else str(target)
 
     def end_headers(self):

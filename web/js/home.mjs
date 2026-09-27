@@ -39,11 +39,13 @@ function pastRounds(game, draws) {
 }
 
 export function renderHome(target, latest, now = new Date()) {
-  if (navigator.onLine === false) {
-    target.append(el("p", { class: "banner" },
-      "오프라인입니다 — 마지막으로 받은 데이터를 보여줍니다."));
-  }
-  target.append(el("p", { class: "note" }, `데이터 갱신 ${formatDateTime(latest.updatedAt)}`));
+  const offlineBanner = el("p", { class: "banner" },
+    "오프라인입니다 — 마지막으로 받은 데이터를 보여줍니다.");
+  offlineBanner.hidden = navigator.onLine !== false;
+  addEventListener("online", () => { offlineBanner.hidden = true; });
+  addEventListener("offline", () => { offlineBanner.hidden = false; });
+  target.append(offlineBanner);
+  target.append(el("p", { class: "note" }, `데이터 변경 ${formatDateTime(latest.updatedAt)}`));
   for (const game of Object.keys(GAMES)) {
     const section = latest.games[game];
     if (!section) continue;

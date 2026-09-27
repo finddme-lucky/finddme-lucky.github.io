@@ -17,7 +17,8 @@ test("9일까지는 정상, 넘으면 갱신 지연", () => {
 });
 
 test("기기 시간대가 달라도 같은 판정", () => {
+  const tz = process.env.TZ;
   process.env.TZ = "America/Los_Angeles";
   assert.equal(staleness("2026-09-19", at("2026-09-29T09:00:00+09:00")).stale, true);
-  process.env.TZ = "Asia/Seoul";
+  process.env.TZ = tz;
 });

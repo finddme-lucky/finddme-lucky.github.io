@@ -1,6 +1,6 @@
 import { balls } from "./balls.mjs";
 import { el } from "./dom.mjs";
-import { formatPercent, formatRound, formatWon } from "./format.mjs";
+import { formatDateTime, formatPercent, formatRound, formatWon } from "./format.mjs";
 import { GAMES, gameLabel, strategyLabel } from "./labels.mjs";
 
 const HONESTY = "어떤 전략도 당첨 확률을 바꾸지 않는다. 비인기 조합(L1)은 1등이 됐을 때 나눠 갖는 인원을, 겹침 조절(L2)과 1~5조 몰아 사기(P2)는 당첨 분포를 바꿀 뿐이다.";
@@ -43,31 +43,47 @@ function pensionPerformance(entry, theory) {
 
 function lottoCard(entry, report) {
   const label = strategyLabel(entry.strategy);
+  const perf = report.strategies?.[entry.strategy];
   return el("section", { class: "card" },
     el("h3", {}, label.name, el("span", { class: "tag" }, entry.strategy)),
     el("p", { class: "sub" }, label.score),
     el("div", { class: "games" }, entry.games.map((numbers) => balls(numbers))),
-    el("p", { class: "muted" }, "5게임끼리 번호가 겹치지 않는다 (L2)."),
-    lottoPerformance(report.strategies[entry.strategy], report.theory));
+    el("p", { class: "muted" }, "5게임끼리 번호가 겹치지 않는다 (L2). 인기 패턴(L1)에 걸리는 게임은 제외했다."),
+    perf && report.theory
+      ? lottoPerformance(perf, report.theory)
+      : el("p", { class: "muted" }, "과거 성적 기록이 아직 없다."));
 }
 
 function pensionCard(entry, report) {
   const label = strategyLabel(entry.strategy);
+  const perf = report.strategies?.[entry.strategy];
   return el("section", { class: "card" },
     el("h3", {}, label.name, el("span", { class: "tag" }, entry.strategy)),
     el("p", { class: "sub" }, label.score),
     el("div", { class: "digits" },
       el("span", { class: "group" }, "1~5조 전부"),
       [...entry.number].map((digit) => el("span", { class: "digit" }, digit))),
-    pensionPerformance(report.strategies[entry.strategy], report.theory));
+    perf && report.theory
+      ? pensionPerformance(perf, report.theory)
+      : el("p", { class: "muted" }, "과거 성적 기록이 아직 없다."));
 }
 
-function sections(game, predictions, backtest) {
+function sections(game, predictions, backtest, latest) {
   const section = predictions[game];
   const report = backtest[game];
+  if (!section || !report) {
+    return [el("p", { class: "error" }, `${gameLabel(game).name} 데이터가 아직 없다.`)];
+  }
+  const latestSection = latest?.games?.[game];
+  const alreadyDrawn = latestSection !== undefined && section.round <= latestSection.latestRound;
   const head = el("div", { class: "card head" },
     el("h2", {}, `${gameLabel(game).name} ${formatRound(section.round)}`),
-    el("p", { class: "sub" }, `다음 추첨 회차 · 같은 회차에는 언제 봐도 같은 번호가 나온다 (다시 뽑기 없음)`),
+    el("p", { class: "sub" },
+      `${alreadyDrawn ? "" : "다음 추첨 회차 · "}같은 회차에는 언제 봐도 같은 번호가 나온다 (다시 뽑기 없음)`),
+    alreadyDrawn
+      ? el("p", { class: "banner" }, "이 회차는 이미 추첨됐습니다 — 데이터 갱신이 멈췄을 수 있습니다.")
+      : null,
+    el("p", { class: "note" }, `번호 생성 ${formatDateTime(predictions.generatedAt)}`),
     el("p", { class: "note" }, HONESTY),
     game === "pension720" ? el("p", { class: "banner" }, P2_NOTE) : null);
   const cards = section.sets.map((entry) =>
@@ -81,16 +97,22 @@ function sections(game, predictions, backtest) {
   return [head, ...cards, ...tail.filter(Boolean)];
 }
 
-export function renderSets(target, predictions, backtest) {
+export function renderSets(target, predictions, backtest, latest) {
   let game = "lotto645";
   const body = el("div", { class: "body" });
   const switcher = el("div", { class: "switch" });
 
   const paint = () => {
+    let content;
+    try {
+      content = sections(game, predictions, backtest, latest);
+    } catch (error) {
+      content = [el("p", { class: "error" }, `데이터를 불러오지 못했습니다 — ${error.message}`)];
+    }
     for (const button of switcher.querySelectorAll("button")) {
       button.classList.toggle("on", button.dataset.game === game);
     }
-    body.replaceChildren(...sections(game, predictions, backtest));
+    body.replaceChildren(...content);
   };
 
   for (const id of Object.keys(GAMES)) {

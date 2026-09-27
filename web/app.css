@@ -87,6 +87,7 @@ main { max-width: 960px; margin: 0 auto; }
 .ball.g { background: #b0d840; }
 .plus { color: var(--muted); padding: 0 2px; }
 
+.draw { margin: 10px 0; }
 .digits { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
 .digits .group {
   border: 1px solid var(--accent); color: var(--accent);
@@ -129,7 +130,7 @@ main { max-width: 960px; margin: 0 auto; }
 
 @media (min-width: 600px) {
   #tab-home { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
-  #tab-home > .note { grid-column: 1 / -1; }
+  #tab-home > .note, #tab-home > .banner { grid-column: 1 / -1; }
   #tab-home[hidden] { display: none; }
 }
 

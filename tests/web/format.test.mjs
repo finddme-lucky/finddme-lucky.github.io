@@ -10,9 +10,10 @@ test("날짜는 한국어 요일까지 붙인다", () => {
 });
 
 test("날짜 계산은 기기 시간대에 흔들리지 않는다", () => {
+  const tz = process.env.TZ;
   process.env.TZ = "America/Los_Angeles";
   assert.equal(formatDate("2026-09-19"), "2026년 9월 19일 (토)");
-  process.env.TZ = "Asia/Seoul";
+  process.env.TZ = tz;
 });
 
 test("갱신 시각은 KST로 고정해 보여준다", () => {
