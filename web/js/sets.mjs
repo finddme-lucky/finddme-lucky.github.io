@@ -2,6 +2,7 @@ import { balls } from "./balls.mjs";
 import { el } from "./dom.mjs";
 import { formatDateTime, formatPercent, formatRound, formatWon } from "./format.mjs";
 import { GAMES, gameLabel, strategyLabel } from "./labels.mjs";
+import { staleness } from "./staleness.mjs";
 
 const HONESTY = "어떤 전략도 당첨 확률을 바꾸지 않는다. 비인기 조합(L1)은 1등이 됐을 때 나눠 갖는 인원을, 겹침 조절(L2)과 1~5조 몰아 사기(P2)는 당첨 분포를 바꿀 뿐이다.";
 const P2_NOTE = "1~5조를 전부 사는 것(5장)을 전제한 번호다. 6자리가 모두 맞으면 1등 1장과 2등 4장을 함께 받는다. 기대값은 5장을 따로 사는 것과 같지만, 끝자리가 모두 같아 \"한 장이라도 당첨\"될 확률은 오히려 낮다 — 7등 이상 10%, 끝자리를 전부 다르게 사면 50%.";
@@ -70,7 +71,7 @@ function pensionCard(entry, report) {
       : el("p", { class: "muted" }, "과거 성적 기록이 아직 없다."));
 }
 
-function sections(game, predictions, backtest, latest) {
+function sections(game, predictions, backtest, latest, now) {
   const section = predictions[game];
   const report = backtest[game];
   if (!section || !report) {
@@ -78,12 +79,20 @@ function sections(game, predictions, backtest, latest) {
   }
   const latestSection = latest?.games?.[game];
   const alreadyDrawn = latestSection !== undefined && section.round <= latestSection.latestRound;
+  // 수집이 멈춰 있으면 이 회차도 이미 추첨됐을 수 있다 — 회차 번호만으로는 알 수 없다 (§8.3).
+  const behind = !alreadyDrawn && latestSection !== undefined
+    ? staleness(latestSection.latestDate, now)
+    : { stale: false };
+  const settled = alreadyDrawn || behind.stale;
   const head = el("div", { class: "card head" },
     el("h2", {}, `${gameLabel(game).name} ${formatRound(section.round)}`),
     el("p", { class: "sub" },
-      `${alreadyDrawn ? "" : "다음 추첨 회차 · "}같은 회차에는 언제 봐도 같은 번호가 나온다 (다시 뽑기 없음)`),
+      `${settled ? "" : "다음 추첨 회차 · "}같은 회차에는 언제 봐도 같은 번호가 나온다 (다시 뽑기 없음)`),
     alreadyDrawn
       ? el("p", { class: "banner" }, "이 회차는 이미 추첨됐습니다 — 데이터 갱신이 멈췄을 수 있습니다.")
+      : behind.stale
+      ? el("p", { class: "banner" },
+          `마지막으로 받은 추첨 결과가 ${behind.days}일 지났습니다 — 이 회차도 이미 추첨됐을 수 있습니다.`)
       : null,
     el("p", { class: "note" }, `번호 생성 ${formatDateTime(predictions.generatedAt)}`),
     el("p", { class: "note" }, HONESTY),
@@ -99,7 +108,7 @@ function sections(game, predictions, backtest, latest) {
   return [head, ...cards, ...tail.filter(Boolean)];
 }
 
-export function renderSets(target, predictions, backtest, latest) {
+export function renderSets(target, predictions, backtest, latest, now = new Date()) {
   let game = "lotto645";
   const body = el("div", { class: "body" });
   const switcher = el("div", { class: "switch" });
@@ -107,7 +116,7 @@ export function renderSets(target, predictions, backtest, latest) {
   const paint = () => {
     let content;
     try {
-      content = sections(game, predictions, backtest, latest);
+      content = sections(game, predictions, backtest, latest, now);
     } catch (error) {
       content = [el("p", { class: "error" }, `데이터를 불러오지 못했습니다 — ${error.message}`)];
     }

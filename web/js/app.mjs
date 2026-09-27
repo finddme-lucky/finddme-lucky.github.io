@@ -8,10 +8,17 @@ document.getElementById("boot")?.remove();
 
 const TABS = {
   home: { sources: ["data/latest.json"], render: renderHome },
-  sets: { sources: ["data/predictions.json", "data/backtest.json", "data/latest.json"], render: renderSets },
+  // latest.json은 "이미 추첨된 회차인가"를 알려줄 뿐이라, 없어도 번호는 보여준다.
+  sets: {
+    sources: ["data/predictions.json", "data/backtest.json", { path: "data/latest.json", optional: true }],
+    render: renderSets,
+  },
 };
 const DEFAULT_TAB = "home";
 const drawn = new Set();
+
+const load = (source) =>
+  typeof source === "string" ? loadJson(source) : loadJson(source.path).catch(() => undefined);
 
 const currentTab = () => {
   const name = location.hash.replace(/^#/, "");
@@ -30,7 +37,7 @@ async function show(name) {
   const target = document.getElementById(`tab-${name}`);
   target.replaceChildren(el("p", { class: "note" }, "불러오는 중…"));
   try {
-    const documents = await Promise.all(TABS[name].sources.map(loadJson));
+    const documents = await Promise.all(TABS[name].sources.map(load));
     target.replaceChildren();
     TABS[name].render(target, ...documents);
     drawn.add(name);

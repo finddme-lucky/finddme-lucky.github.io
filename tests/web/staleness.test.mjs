@@ -20,5 +20,5 @@ test("기기 시간대가 달라도 같은 판정", () => {
   const tz = process.env.TZ;
   process.env.TZ = "America/Los_Angeles";
   assert.equal(staleness("2026-09-19", at("2026-09-29T09:00:00+09:00")).stale, true);
-  process.env.TZ = tz;
+  if (tz === undefined) delete process.env.TZ; else process.env.TZ = tz;  // 원래 없던 값을 "undefined" 문자열로 남기지 않는다
 });
