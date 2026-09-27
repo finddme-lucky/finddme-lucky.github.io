@@ -2,6 +2,7 @@ import { loadJson } from "./data.mjs";
 import { el } from "./dom.mjs";
 import { renderHome } from "./home.mjs";
 import { renderSets } from "./sets.mjs";
+import { renderStats } from "./stats.mjs";
 
 // 이 줄까지 왔다는 것은 모듈 그래프가 정상적으로 로드됐다는 뜻이다 — 정적 대체 문구를 지운다.
 document.getElementById("boot")?.remove();
@@ -13,6 +14,7 @@ const TABS = {
     sources: ["data/predictions.json", "data/backtest.json", { path: "data/latest.json", optional: true }],
     render: renderSets,
   },
+  stats: { sources: ["data/backtest.json"], render: renderStats },
 };
 const DEFAULT_TAB = "home";
 const drawn = new Set();

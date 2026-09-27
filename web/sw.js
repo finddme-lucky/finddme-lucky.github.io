@@ -1,4 +1,4 @@
-const VERSION = "v3";  // 올리면 낡은 셸 캐시가 activate에서 지워진다 (데이터 캐시는 유지)
+const VERSION = "v4";  // 올리면 낡은 셸 캐시가 activate에서 지워진다 (데이터 캐시는 유지)
 const SHELL = `shell-${VERSION}`;
 const DATA = "data"; // 버전과 분리한다 — 셸 버전을 올려도 마지막으로 받은 데이터는 지우지 않는다.
 
@@ -12,6 +12,7 @@ const ASSETS = [
   "icons/icon-512.png",
   "js/app.mjs",
   "js/balls.mjs",
+  "js/chart.mjs",
   "js/data.mjs",
   "js/dom.mjs",
   "js/format.mjs",
@@ -19,6 +20,9 @@ const ASSETS = [
   "js/labels.mjs",
   "js/sets.mjs",
   "js/staleness.mjs",
+  "js/stats.mjs",
+  "js/stats-lotto.mjs",
+  "vendor/chart.umd.js",
 ];
 
 // 첫 방문은 이 서비스워커가 제어하기 전에 데이터를 받아 가므로, 그 요청은 캐시를 거치지 않는다.
@@ -27,6 +31,8 @@ const DATA_ASSETS = [
   "data/latest.json",
   "data/predictions.json",
   "data/backtest.json",
+  "data/stats/lotto645.json",
+  "data/stats/pension720.json",
 ];
 
 self.addEventListener("install", (event) => {

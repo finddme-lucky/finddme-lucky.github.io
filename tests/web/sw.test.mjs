@@ -47,7 +47,9 @@ test("DATA_ASSETS의 모든 항목이 data/에 실재한다", () => {
 
 test("web/ 아래 모든 파일(sw.js 제외)이 ASSETS에 있고, ASSETS의 모든 항목이 실재한다", () => {
   const assets = parseAssets(swSource);
-  const files = listFiles(webDir).filter((file) => file !== "sw.js");
+  // sw.js 자신과 마찬가지로 vendor/README.md도 페이지가 fetch하는 자원이 아니므로 제외한다
+  // (사람이 라이선스·출처를 확인할 때만 읽는 문서다).
+  const files = listFiles(webDir).filter((file) => file !== "sw.js" && file !== "vendor/README.md");
   const assetSet = new Set(assets.filter((asset) => asset !== "./"));
 
   for (const file of files) {
