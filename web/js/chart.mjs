@@ -21,7 +21,6 @@ export function palette() {
   const read = (name, fallback) => style.getPropertyValue(name).trim() || fallback;
   return {
     ink: read("--ink", "#000000"),
-    paper: read("--paper", "#ffffff"),
     mark: read("--mark", "#fbc400"),
     quiet: read("--quiet", "#6b6b66"),
     line: read("--rule-soft", "#d9d9d6"),

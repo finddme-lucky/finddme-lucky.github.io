@@ -48,7 +48,7 @@ function pensionPerformance(entry, theory) {
       `학습 구간 분리도 ${entry.inSampleSeparation.toFixed(5)} vs 평가 구간 ${entry.outOfSampleSeparation.toFixed(5)} — ${ML_NOTE}`));
 }
 
-function lottoStrategy(entry, report) {
+function lottoStrategy(entry, report, animate) {
   const label = strategyLabel(entry.strategy);
   const perf = report.strategies?.[entry.strategy];
   return el("section", { class: "block" },
@@ -57,7 +57,7 @@ function lottoStrategy(entry, report) {
       el("code", { class: "quiet" }, entry.strategy)),
     el("p", { class: "quiet" }, `${label.score}로 점수를 매겨 뽑았다.`),
     ...entry.games.map((numbers) => el("div", { class: "game-line" },
-      slipGrid(numbers, { animate: true }),
+      slipGrid(numbers, { animate }),
       el("div", { class: "picks" }, numbers.map((n) => el("span", { class: `pick ${tierClass(n)}` }, n))))),
     el("p", { class: "fine" }, "5게임끼리 번호가 겹치지 않는다 (L2). 인기 패턴(L1)에 걸리는 게임은 제외했다."),
     lottoPerformance(perf, report.theory));
@@ -77,7 +77,7 @@ function pensionStrategy(entry, report) {
     pensionPerformance(perf, report.theory));
 }
 
-function sections(game, predictions, backtest, latest, now) {
+function sections(game, predictions, backtest, latest, now, animate) {
   const section = predictions[game];
   const report = backtest[game];
   if (!section || !report) {
@@ -104,7 +104,7 @@ function sections(game, predictions, backtest, latest, now) {
     el("p", { class: "honest" }, HONESTY),
     game === "pension720" ? el("p", { class: "notice" }, P2_NOTE) : null);
   const strategies = section.sets.map((entry) =>
-    game === "lotto645" ? lottoStrategy(entry, report) : pensionStrategy(entry, report));
+    game === "lotto645" ? lottoStrategy(entry, report, animate) : pensionStrategy(entry, report));
   const tail = el("section", { class: "block" },
     el("p", { class: "fine" }, `과거 성적은 최근 ${report.evalRounds}회차를 대상으로, 각 회차 이전 자료만 써서 매긴 것이다.`),
     game === "pension720" ? el("p", { class: "fine" }, PENSION_RETURN_NOTE) : null,
@@ -115,16 +115,19 @@ function sections(game, predictions, backtest, latest, now) {
 
 export function renderSets(target, predictions, backtest, latest, now = new Date()) {
   let game = "lotto645";
-  const body = el("div", { class: "body" });
+  // 브리프 §4: 마킹 연출은 "이번 주 번호"를 처음 열 때 단 한 번이다 — 게임을 오가도 다시 재생하지 않는다.
+  let animate = true;
+  const body = el("div", { class: "tab-body" });
   const switcher = el("div", { class: "switch" });
 
   const paint = () => {
     let content;
     try {
-      content = sections(game, predictions, backtest, latest, now);
+      content = sections(game, predictions, backtest, latest, now, animate);
     } catch (error) {
       content = [el("p", { class: "error" }, `데이터를 불러오지 못했습니다 — ${error.message}. 새로고침해 보세요.`)];
     }
+    animate = false;
     for (const button of switcher.querySelectorAll("button")) {
       button.classList.toggle("on", button.dataset.game === game);
     }

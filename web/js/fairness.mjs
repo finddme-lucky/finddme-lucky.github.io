@@ -31,7 +31,7 @@ function table(entries, title, note) {
       el("td", {}, entry.n?.toLocaleString("ko-KR") ?? "—"),
       el("td", {}, format(entry.p)),
       el("td", {}, format(entry.pAdj)),
-      el("td", { class: "verdict" }, verdict));
+      el("td", {}, verdict));
   });
 
   return el("section", { class: "panel" },
@@ -53,7 +53,7 @@ export function fairnessSection(report) {
   const fairness = report.fairness;
   const skipped = skippedCount(fairness);
 
-  return el("div", { class: "fairness" },
+  return el("div", {},
     el("h2", {}, "추첨 공정성 검정"),
     el("p", { class: "note" },
       "추첨기에 치우침이 있는지 모아 둔 회차로 직접 검사한 결과다. " +

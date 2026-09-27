@@ -17,6 +17,8 @@
   --danger: #a3201b;
   --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px;
   --tab-h: 56px;
+  /* --mark(공·마킹면) 위 글자색. 진짜 검정 — §3의 "가짜 검정" 금지가 이 자리에도 적용된다. */
+  --on-color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +31,11 @@
     --warn: #f0b458;
     --danger: #f08e8a;
   }
+
+  /* §5의 약속: 다크에서 노랑 면적을 라이트보다 줄인다. 칠한 면 대신 --mark 테두리/괘선으로만
+     표시한다 — 의미(칠해진 칸, 편향 의심 행)는 그대로 남고 차지하는 면적만 줄어든다. */
+  .cell.on { background: var(--paper); border-color: var(--mark); border-width: 2px; }
+  table.grid tr.suspect { background: transparent; color: var(--ink); border-left: 3px solid var(--mark); }
 }
 
 * { box-sizing: border-box; }
@@ -38,7 +45,7 @@ body {
   padding: 0 var(--s4) calc(var(--tab-h) + var(--s6));
   background: var(--paper);
   color: var(--ink);
-  font: 15px/1.55 "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  font: 16px/1.55 "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
   font-variant-numeric: tabular-nums;
   -webkit-text-size-adjust: 100%;
 }
@@ -46,14 +53,14 @@ body {
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 /* 숫자와 제목은 Archivo가 맡는다 — 이 앱의 개성은 숫자가 진다 */
-.num, .round, .game, .stat, .ball, .pick, .switch button, .grid td { font-family: Archivo, sans-serif; }
+.round, .game, .stat, .ball, .pick, .switch button, .grid td { font-family: Archivo, sans-serif; }
 
 .top { max-width: 960px; margin: 0 auto; padding: var(--s5) 0 var(--s3); }
 .top h1 {
   margin: 0;
   font-family: Archivo, sans-serif;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: -0.02em;
 }
 
@@ -74,26 +81,29 @@ main { max-width: 960px; margin: 0 auto; }
 }
 .round span { font-size: 26px; font-weight: 700; letter-spacing: 0; margin-left: 0.12em; }
 
-h2, h3 { font-weight: 700; }
-h3 { font-size: 17px; margin: 0 0 var(--s1); }
+h2, h3 { font-weight: 700; font-family: Archivo, sans-serif; }
+/* class 없는 h2(fairness.mjs, popularity.mjs)도 .game과 같은 축척 안에 있게 한다.
+   .game이 지정된 h2는 특이도로 이 값을 그대로 이어받는다. */
+h2 { font-size: 20px; margin: 0 0 var(--s3); }
+h3 { font-size: 16px; margin: 0 0 var(--s1); }
 
 .quiet { color: var(--quiet); font-size: 14px; margin: 0 0 var(--s4); }
-.fine { color: var(--quiet); font-size: 13px; margin: var(--s2) 0 0; max-width: 62ch; }
+.fine { color: var(--quiet); font-size: 12px; margin: var(--s2) 0 0; max-width: 62ch; }
 /* fairness.mjs/popularity.mjs 문장(각주, 유의수준, disclaimer 등)이 쓰는 이름 — 문구는 그대로 두고
    색만 --quiet로 맞춘다. */
-.note { color: var(--quiet); font-size: 13px; margin: 0 0 var(--s4); }
+.note { color: var(--quiet); font-size: 12px; margin: 0 0 var(--s4); }
 
 /* 정직성 문구 — 작지만 확실한 자리 */
 .honest {
   border-top: 1px solid var(--rule-soft);
   margin-top: var(--s5);
   padding-top: var(--s3);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--quiet);
   max-width: 62ch;
 }
 
-.notice { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 13px; margin: 0 0 var(--s4); }
+.notice { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 12px; margin: 0 0 var(--s4); }
 .error { border-left: 3px solid var(--danger); padding: var(--s2) var(--s3); color: var(--danger); font-size: 14px; }
 
 .panel { background: var(--field); padding: var(--s4); margin: 0 0 var(--s4); }
@@ -110,8 +120,8 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
   width: 46px; height: 46px;
   display: grid; place-items: center;
   border-radius: 50%;
-  font-weight: 800; font-size: 19px;
-  color: #17202b;
+  font-weight: 800; font-size: 20px;
+  color: var(--on-color);
 }
 .plus { color: var(--quiet); font-weight: 700; }
 .picks { display: flex; gap: var(--s1); }
@@ -119,19 +129,19 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
   width: 30px; height: 30px;
   display: grid; place-items: center;
   border-radius: 50%;
-  font-weight: 800; font-size: 13px;
-  color: #17202b;
+  font-weight: 800; font-size: 12px;
+  color: var(--on-color);
 }
 
 .facts { margin: var(--s5) 0 0; display: grid; grid-template-columns: max-content 1fr; gap: var(--s2) var(--s5); }
 .facts dt { color: var(--quiet); font-size: 14px; }
-.facts dd { margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 17px; }
+.facts dd { margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 16px; }
 
 .digits { display: flex; gap: var(--s2); align-items: baseline; }
 .digits b { font-family: Archivo, sans-serif; font-weight: 900; font-size: 44px; letter-spacing: 0.02em; }
 .digits em {
-  font-style: normal; font-family: Archivo, sans-serif; font-weight: 800; font-size: 15px;
-  background: var(--mark); color: #17202b; padding: 3px 7px;
+  font-style: normal; font-family: Archivo, sans-serif; font-weight: 800; font-size: 14px;
+  background: var(--mark); color: var(--on-color); padding: 3px 7px;
 }
 
 .switch { display: flex; flex-wrap: wrap; gap: var(--s1); margin: 0 0 var(--s4); }
@@ -140,7 +150,7 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
   border: 1px solid var(--rule-soft);
   background: var(--paper);
   color: var(--quiet);
-  font-weight: 700; font-size: 13px;
+  font-weight: 700; font-size: 12px;
   white-space: nowrap;
   cursor: pointer;
 }
@@ -153,16 +163,15 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
 .switch.small { gap: 0 var(--s1); margin: 0 0 var(--s2); }
 .switch.small button { padding: var(--s1) var(--s2); font-size: 12px; }
 
-table.grid { border-collapse: collapse; width: 100%; font-size: 13px; }
+table.grid { border-collapse: collapse; width: 100%; font-size: 12px; }
 table.grid th, table.grid td { padding: var(--s2) var(--s3); text-align: left; border-bottom: 1px solid var(--rule-soft); white-space: nowrap; }
 table.grid thead th { color: var(--quiet); font-weight: 700; border-bottom: 2px solid var(--ink); }
 table.grid tbody th { font-weight: 700; white-space: normal; }
 table.grid td { font-weight: 600; }
-table.grid tr.suspect { background: var(--mark); color: #17202b; }
+table.grid tr.suspect { background: var(--mark); color: var(--on-color); }
 .scroller { overflow-x: auto; }
 
 .chart-block { margin: 0 0 var(--s6); }
-.chart-block h3 { margin: 0 0 var(--s1); }
 
 .chart { position: relative; }
 .chart canvas { width: 100% !important; }
@@ -180,7 +189,7 @@ table.grid tr.suspect { background: var(--mark); color: #17202b; }
   display: grid; place-items: center;
   color: var(--quiet);
   text-decoration: none;
-  font-size: 13px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
 }
 .tabbar a.on { color: var(--ink); box-shadow: inset 0 3px 0 var(--mark); }
 
@@ -196,7 +205,7 @@ table.grid tr.suspect { background: var(--mark); color: #17202b; }
    gridWidth(7)와 같은 격자를 그린다 — 어긋나면 화면이 규칙과 다른 패턴을 보여주게 된다. */
 .slip { display: grid; grid-template-columns: repeat(7, 15px); gap: 3px; background: var(--field); padding: 6px; }
 .cell { width: 15px; height: 15px; border: 1px solid var(--rule-soft); }
-.cell.on { background: var(--mark); border-color: var(--mark); }
+.cell.on { background: var(--mark); border-color: var(--ink); }
 .cell.blank { border: 0; }
 
 /* 이 앱의 유일한 연출: 용지에 자국이 순서대로 찍힌다 */
@@ -206,17 +215,17 @@ table.grid tr.suspect { background: var(--mark); color: #17202b; }
 @keyframes mark { from { background: transparent; border-color: var(--rule-soft); } }
 
 .strategy { display: flex; align-items: baseline; gap: var(--s3); }
-.strategy code { font-size: 13px; }
+.strategy code { font-family: inherit; }
 
 .game-line { display: flex; align-items: center; gap: var(--s4); margin-bottom: var(--s3); }
 .game-line .picks { margin-left: auto; }
 
 .perf { margin-top: var(--s5); }
-.stat { font-size: 15px; margin: 0 0 var(--s2); }
-.stat b { font-family: Archivo, sans-serif; font-weight: 900; font-size: 22px; }
+.stat { font-size: 14px; margin: 0 0 var(--s2); }
+.stat b { font-family: Archivo, sans-serif; font-weight: 900; font-size: 26px; }
 .meter { position: relative; height: 10px; background: var(--field); max-width: 360px; margin: 0 0 var(--s3); }
 .meter i { position: absolute; inset: 0 auto 0 0; background: var(--ink); }
-.meter u { position: absolute; top: -4px; width: 2px; height: 18px; background: var(--mark); }
+.meter u { position: absolute; top: -4px; width: 2px; height: 18px; background: var(--mark); box-shadow: 0 0 0 1px var(--ink); }
 
 @media (max-width: 420px) {
   .game-line { flex-wrap: wrap; gap: var(--s2); }

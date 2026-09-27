@@ -1,7 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { GRID_CELLS, GRID_WIDTH, NUMBERS } from "../../web/js/slip.mjs";
+import { installFakeDom } from "./helpers/fake-dom.mjs";
+import { GRID_CELLS, GRID_WIDTH, NUMBERS, slipGrid } from "../../web/js/slip.mjs";
+
+installFakeDom();
 
 const rules = JSON.parse(
   readFileSync(new URL("../../rules/lotto645-unpopular.json", import.meta.url), "utf-8"));
@@ -15,4 +18,15 @@ test("45개 번호가 모두 들어가고 남는 칸만 비어 있다", () => {
   assert.equal(NUMBERS, 45);
   assert.ok(GRID_CELLS >= NUMBERS);
   assert.equal(GRID_CELLS, GRID_WIDTH * Math.ceil(NUMBERS / GRID_WIDTH));
+});
+
+// I6: 위 두 테스트는 상수만 본다 — slipGrid()를 한 번도 호출하지 않아 셀 인덱스 계산이 맞는지는
+// 아무것도 고정하지 못한다. 번호 n이 칸 인덱스 n-1에 칠해지는지 직접 단언한다.
+test("칸 인덱스가 번호 − 1이다", () => {
+  const cells = slipGrid([1, 7, 8, 45]).children;
+  const on = cells
+    .map((cell, index) => [cell.className, index])
+    .filter(([className]) => className.includes("on"))
+    .map(([, index]) => index);
+  assert.deepEqual(on, [0, 6, 7, 44]);
 });

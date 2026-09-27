@@ -64,17 +64,17 @@ export function popularitySection(backtest) {
             el("tbody", {}, eraRows))))
     : null;
 
-  return el("div", { class: "fairness" },
+  return el("div", {},
     el("h2", {}, "인기 패턴 규칙의 근거"),
     el("p", { class: "note" },
       `5등 당첨자 수를 주변 ${evidence.window}회차 중앙값으로 정규화해, 당첨자가 많았던 회차의 당첨번호가 ` +
       "사람들이 많이 고르는 패턴에 더 자주 걸리는지 비교한 것이다. " +
       "번호 세트는 이 패턴을 피해서 만든다 — 당첨 확률이 아니라, 당첨됐을 때 나눠 갖는 인원을 줄이기 위해서다."),
     el("dl", { class: "facts" },
-      el("div", {}, el("dt", {}, "당첨자 많은 회차"), el("dd", {}, share(evidence.high))),
-      el("div", {}, el("dt", {}, "당첨자 적은 회차"), el("dd", {}, share(evidence.low))),
-      el("div", {}, el("dt", {}, "상위 10%"), el("dd", {}, share(evidence.topDecile))),
-      el("div", {}, el("dt", {}, "하위 10%"), el("dd", {}, share(evidence.bottomDecile)))),
+      el("dt", {}, "당첨자 많은 회차"), el("dd", {}, share(evidence.high)),
+      el("dt", {}, "당첨자 적은 회차"), el("dd", {}, share(evidence.low)),
+      el("dt", {}, "상위 10%"), el("dd", {}, share(evidence.topDecile)),
+      el("dt", {}, "하위 10%"), el("dd", {}, share(evidence.bottomDecile))),
     el("div", { class: "scroller" },
       el("table", { class: "grid" },
         el("thead", {}, el("tr", {},

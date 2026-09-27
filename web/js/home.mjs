@@ -30,7 +30,7 @@ function pastRounds(game, draws) {
   const line = (draw) => game === "lotto645"
     ? `${formatRound(draw.round)} ${draw.numbers.join(", ")} + ${draw.bonus}`
     : `${formatRound(draw.round)} ${draw.group}조 ${draw.first}`;
-  return el("details", { class: "past fine" },
+  return el("details", { class: "fine" },
     el("summary", {}, `지난 ${draws.length}회차`),
     el("ul", {}, [...draws].reverse().map((draw) => el("li", {}, line(draw)))));
 }

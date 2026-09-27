@@ -13,7 +13,7 @@ const SECTIONS = {
 export function renderStats(target, backtest) {
   let game = "lotto645";
   const cache = new Map();
-  const body = el("div", { class: "body" });
+  const body = el("div", { class: "tab-body" });
   const switcher = el("div", { class: "switch" });
 
   async function paint() {
