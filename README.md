@@ -68,6 +68,27 @@ docker exec finddme-lucky python -m lucky backtest --strategy hot     # 점검�
 - `ml`은 학습 구간 분리도와 평가 구간 분리도를 나란히 싣는다 — 과거에는 갈리고 미래에는 갈리지 않는다는 것을 보여준다.
 - 인기 규칙 근거는 5등 당첨자 수가 주변 회차보다 많았던 회차의 당첨번호가 인기 패턴에 더 많이 걸리는지 비교한 것이다. 판매액 필드의 의미가 구간마다 달라 절대 기대값 비교는 하지 않는다.
 
+## 앱 (PWA)
+
+```bash
+docker exec finddme-lucky python scripts/make_icons.py   # 아이콘 다시 만들기 (거의 쓸 일 없음)
+docker exec -d finddme-lucky python scripts/serve.py     # http://localhost:8765
+docker exec finddme-lucky pkill -f scripts/serve.py      # 끄기
+```
+
+- 소스는 `web/`, 데이터는 `data/`. 빌드 도구가 없어 파일을 고치고 새로고침하면 끝이다.
+- dev 서버는 배포 레이아웃을 재현한다 — `/`는 `web/`, `/data/`는 저장소의 `data/`에서 읽는다.
+- 탭: **홈**(두 복권 최신 결과·갱신 시각·갱신 지연 배너), **이번 주 번호**(전략별 세트와 과거 성적).
+- 폰에 설치: 같은 네트워크에서 `http://<PC IP>:8765` 로 열거나, 배포 후 `https://finddme-lucky.github.io` 에서 "홈 화면에 추가".
+- 오프라인에서는 마지막으로 받은 데이터와 그 갱신 시각이 그대로 보인다.
+- `web/`에 **파일을 새로 추가**하면 `web/sw.js`의 `ASSETS` 목록에도 넣어야 오프라인에서 열린다. 내용만 고칠 때는 손댈 필요 없다.
+
+JS 순수 함수 테스트:
+
+```bash
+docker exec finddme-lucky node --test tests/web/
+```
+
 ## 테스트
 
 ```bash
