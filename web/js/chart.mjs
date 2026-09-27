@@ -78,6 +78,30 @@ export function barConfig(labels, values, { expected = null, label = "관측", e
   };
 }
 
+export function lineConfig(labels, values, { label = "값", fill = false } = {}) {
+  const colors = palette();
+  return {
+    type: "line",
+    data: {
+      labels,
+      datasets: [{
+        label, data: values, borderColor: colors.accent, backgroundColor: colors.accent,
+        borderWidth: 1.5, pointRadius: 0, fill, tension: 0.1,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { autoSkip: true, maxTicksLimit: 8, maxRotation: 0 } },
+        y: { beginAtZero: true, grid: { color: colors.line } },
+      },
+    },
+  };
+}
+
 // 제목 + 설명 + 캔버스를 담은 카드. 캔버스를 함께 돌려준다.
 export function chartCard(title, note, { height = 220 } = {}) {
   const canvas = el("canvas", { height: String(height) });
