@@ -1,7 +1,8 @@
-import { balls } from "./balls.mjs";
+import { tierClass } from "./balls.mjs";
 import { el } from "./dom.mjs";
 import { formatDateTime, formatPercent, formatRound, formatWon } from "./format.mjs";
 import { GAMES, gameLabel, strategyLabel } from "./labels.mjs";
+import { slipGrid } from "./slip.mjs";
 import { staleness } from "./staleness.mjs";
 
 const HONESTY = "어떤 전략도 당첨 확률을 바꾸지 않는다. 비인기 조합(L1)은 1등이 됐을 때 나눠 갖는 인원을, 겹침 조절(L2)과 1~5조 몰아 사기(P2)는 당첨 분포를 바꿀 뿐이다.";
@@ -12,63 +13,68 @@ const ML_NOTE = "학습 구간에서는 갈라내지만 평가 구간에서는 �
 const verdict = (entry) => entry.distinguishable ? "무작위와 구분됨" : "무작위와 구분되지 않음 (정상)";
 
 // 값 막대 + 이론값 표시선. 차트 라이브러리 없이 비교만 보여준다.
-function bar(value, reference, max) {
-  return el("div", { class: "bar", title: `이론값 ${formatPercent(reference)}` },
+function meter(value, reference, max) {
+  return el("div", { class: "meter", title: `이론값 ${formatPercent(reference)}` },
     el("i", { style: `width:${Math.min(100, (value / max) * 100)}%` }),
     el("u", { style: `left:${Math.min(100, (reference / max) * 100)}%` }));
 }
 
 function lottoPerformance(entry, theory) {
+  if (!entry || !theory) return el("p", { class: "fine" }, "과거 성적 기록이 아직 없습니다.");
   const max = Math.max(entry.hitRateCI[1], theory.hitRate) * 1.2;
   return el("div", { class: "perf" },
-    el("p", {}, `5등 이상 적중률 `, el("b", {}, formatPercent(entry.hitRate)),
-      el("span", { class: "muted" },
-        ` · 95% 구간 ${formatPercent(entry.hitRateCI[0])}~${formatPercent(entry.hitRateCI[1])}`,
-        ` · 이론 ${formatPercent(theory.hitRate)}`)),
-    bar(entry.hitRate, theory.hitRate, max),
-    el("p", { class: "verdict" }, verdict(entry)),
-    entry.inSampleSeparation === undefined ? null : el("p", { class: "muted" },
+    el("p", { class: "stat" }, "5등 이상 적중률 ", el("b", {}, formatPercent(entry.hitRate))),
+    meter(entry.hitRate, theory.hitRate, max),
+    el("dl", { class: "facts" },
+      el("dt", {}, "이론값"), el("dd", {}, formatPercent(theory.hitRate)),
+      el("dt", {}, "95% 구간"), el("dd", {}, `${formatPercent(entry.hitRateCI[0])} ~ ${formatPercent(entry.hitRateCI[1])}`),
+      el("dt", {}, "판정"), el("dd", {}, verdict(entry))),
+    entry.inSampleSeparation === undefined ? null : el("p", { class: "fine" },
       `학습 구간 분리도 ${entry.inSampleSeparation.toFixed(5)} vs 평가 구간 ${entry.outOfSampleSeparation.toFixed(5)} — ${ML_NOTE}`));
 }
 
 function pensionPerformance(entry, theory) {
+  if (!entry || !theory) return el("p", { class: "fine" }, "과거 성적 기록이 아직 없습니다.");
   const max = Math.max(entry.returnRate, theory.returnRate) * 1.2;
   return el("div", { class: "perf" },
-    el("p", {}, `수익률 `, el("b", {}, formatPercent(entry.returnRate)),
-      el("span", { class: "muted" },
-        ` · 이론 ${formatPercent(theory.returnRate)}`,
-        ` · ${formatWon(entry.spent)} 써서 ${formatWon(entry.won)} 받음`)),
-    bar(entry.returnRate, theory.returnRate, max),
-    el("p", { class: "verdict" }, verdict(entry)),
-    entry.inSampleSeparation === undefined ? null : el("p", { class: "muted" },
+    el("p", { class: "stat" }, "수익률 ", el("b", {}, formatPercent(entry.returnRate))),
+    meter(entry.returnRate, theory.returnRate, max),
+    el("dl", { class: "facts" },
+      el("dt", {}, "이론값"), el("dd", {}, formatPercent(theory.returnRate)),
+      el("dt", {}, "쓴 금액"), el("dd", {}, formatWon(entry.spent)),
+      el("dt", {}, "받은 금액"), el("dd", {}, formatWon(entry.won)),
+      el("dt", {}, "판정"), el("dd", {}, verdict(entry))),
+    entry.inSampleSeparation === undefined ? null : el("p", { class: "fine" },
       `학습 구간 분리도 ${entry.inSampleSeparation.toFixed(5)} vs 평가 구간 ${entry.outOfSampleSeparation.toFixed(5)} — ${ML_NOTE}`));
 }
 
-function lottoCard(entry, report) {
+function lottoStrategy(entry, report) {
   const label = strategyLabel(entry.strategy);
   const perf = report.strategies?.[entry.strategy];
-  return el("section", { class: "card" },
-    el("h3", {}, label.name, el("span", { class: "tag" }, entry.strategy)),
-    el("p", { class: "sub" }, label.score),
-    el("div", { class: "games" }, entry.games.map((numbers) => balls(numbers))),
-    el("p", { class: "muted" }, "5게임끼리 번호가 겹치지 않는다 (L2). 인기 패턴(L1)에 걸리는 게임은 제외했다."),
-    perf && report.theory
-      ? lottoPerformance(perf, report.theory)
-      : el("p", { class: "muted" }, "과거 성적 기록이 아직 없다."));
+  return el("section", { class: "block" },
+    el("div", { class: "strategy" },
+      el("h3", {}, label.name),
+      el("code", { class: "quiet" }, entry.strategy)),
+    el("p", { class: "quiet" }, `${label.score}로 점수를 매겨 뽑았다.`),
+    ...entry.games.map((numbers) => el("div", { class: "game-line" },
+      slipGrid(numbers, { animate: true }),
+      el("div", { class: "picks" }, numbers.map((n) => el("span", { class: `pick ${tierClass(n)}` }, n))))),
+    el("p", { class: "fine" }, "5게임끼리 번호가 겹치지 않는다 (L2). 인기 패턴(L1)에 걸리는 게임은 제외했다."),
+    lottoPerformance(perf, report.theory));
 }
 
-function pensionCard(entry, report) {
+function pensionStrategy(entry, report) {
   const label = strategyLabel(entry.strategy);
   const perf = report.strategies?.[entry.strategy];
-  return el("section", { class: "card" },
-    el("h3", {}, label.name, el("span", { class: "tag" }, entry.strategy)),
-    el("p", { class: "sub" }, label.score),
+  return el("section", { class: "block" },
+    el("div", { class: "strategy" },
+      el("h3", {}, label.name),
+      el("code", { class: "quiet" }, entry.strategy)),
+    el("p", { class: "quiet" }, `${label.score}로 점수를 매겨 뽑았다.`),
     el("div", { class: "digits" },
-      el("span", { class: "group" }, "1~5조 전부"),
-      [...entry.number].map((digit) => el("span", { class: "digit" }, digit))),
-    perf && report.theory
-      ? pensionPerformance(perf, report.theory)
-      : el("p", { class: "muted" }, "과거 성적 기록이 아직 없다."));
+      el("em", {}, "1~5조"),
+      el("b", {}, [...entry.number].join(" "))),
+    pensionPerformance(perf, report.theory));
 }
 
 function sections(game, predictions, backtest, latest, now) {
@@ -84,28 +90,27 @@ function sections(game, predictions, backtest, latest, now) {
     ? staleness(latestSection.latestDate, now)
     : { stale: false };
   const settled = alreadyDrawn || behind.stale;
-  const head = el("div", { class: "card head" },
-    el("h2", {}, `${gameLabel(game).name} ${formatRound(section.round)}`),
-    el("p", { class: "sub" },
-      `${settled ? "" : "다음 추첨 회차 · "}같은 회차에는 언제 봐도 같은 번호가 나온다 (다시 뽑기 없음)`),
+  const head = el("section", { class: "block" },
+    el("h2", { class: "game" }, `${gameLabel(game).name} ${formatRound(section.round)}`),
+    el("p", { class: "quiet" },
+      `${settled ? "" : "다음 추첨 회차. "}같은 회차에는 언제 봐도 같은 번호가 나온다 (다시 뽑기 없음).`),
     alreadyDrawn
-      ? el("p", { class: "banner" }, "이 회차는 이미 추첨됐습니다 — 데이터 갱신이 멈췄을 수 있습니다.")
+      ? el("p", { class: "notice" }, "이 회차는 이미 추첨됐습니다 — 데이터 갱신이 멈췄을 수 있습니다.")
       : behind.stale
-      ? el("p", { class: "banner" },
+      ? el("p", { class: "notice" },
           `마지막으로 받은 추첨 결과가 ${behind.days}일 지났습니다 — 이 회차도 이미 추첨됐을 수 있습니다.`)
       : null,
-    el("p", { class: "note" }, `번호 생성 ${formatDateTime(predictions.generatedAt)}`),
-    el("p", { class: "note" }, HONESTY),
-    game === "pension720" ? el("p", { class: "banner" }, P2_NOTE) : null);
-  const cards = section.sets.map((entry) =>
-    game === "lotto645" ? lottoCard(entry, report) : pensionCard(entry, report));
-  const tail = [
-    el("p", { class: "note" }, `과거 성적은 최근 ${report.evalRounds}회차를 대상으로, 각 회차 이전 자료만 써서 매긴 것이다.`),
-    game === "pension720" ? el("p", { class: "note" }, PENSION_RETURN_NOTE) : null,
-    el("p", { class: "note" }, predictions.disclaimer),
-    el("p", { class: "note" }, backtest.disclaimer),
-  ];
-  return [head, ...cards, ...tail.filter(Boolean)];
+    el("p", { class: "fine" }, `번호 생성 ${formatDateTime(predictions.generatedAt)}`),
+    el("p", { class: "honest" }, HONESTY),
+    game === "pension720" ? el("p", { class: "notice" }, P2_NOTE) : null);
+  const strategies = section.sets.map((entry) =>
+    game === "lotto645" ? lottoStrategy(entry, report) : pensionStrategy(entry, report));
+  const tail = el("section", { class: "block" },
+    el("p", { class: "fine" }, `과거 성적은 최근 ${report.evalRounds}회차를 대상으로, 각 회차 이전 자료만 써서 매긴 것이다.`),
+    game === "pension720" ? el("p", { class: "fine" }, PENSION_RETURN_NOTE) : null,
+    el("p", { class: "honest" }, predictions.disclaimer),
+    el("p", { class: "honest" }, backtest.disclaimer));
+  return [head, ...strategies, tail];
 }
 
 export function renderSets(target, predictions, backtest, latest, now = new Date()) {

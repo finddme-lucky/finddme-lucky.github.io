@@ -93,9 +93,9 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
 .notice { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 13px; margin: 0 0 var(--s4); }
 .error { border-left: 3px solid var(--danger); padding: var(--s2) var(--s3); color: var(--danger); font-size: 14px; }
 
-/* TEMP BRIDGE (Task 1, still needed after Task 2): home.mjs no longer emits "banner" (renamed to
-   .notice), but sets.mjs, popularity.mjs and fairness.mjs still do — keep this until Tasks 3-4
-   rename their call sites too, then remove. */
+/* TEMP BRIDGE (Task 1, still needed after Tasks 2-3): home.mjs and sets.mjs no longer emit
+   "banner" (renamed to .notice), but popularity.mjs and fairness.mjs still do — keep this until
+   Task 4 renames their call sites too, then remove. */
 .banner { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 13px; margin: 0 0 var(--s4); }
 
 .panel, .card { background: var(--field); padding: var(--s4); margin: 0 0 var(--s4); }
@@ -178,4 +178,36 @@ table.grid tr.suspect { background: var(--mark); color: #17202b; }
 
 @media (min-width: 720px) {
   .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--s6); align-items: start; }
+}
+
+/* 마킹 용지 — 이 화면의 유일한 대담함. 칸에는 숫자를 쓰지 않는다: 모양이 내용이고,
+   번호는 옆의 .pick 공이 읽는다. 칸 크기(7 x 15px + gap)는 rules/lotto645-unpopular.json의
+   gridWidth(7)와 같은 격자를 그린다 — 어긋나면 화면이 규칙과 다른 패턴을 보여주게 된다. */
+.slip { display: grid; grid-template-columns: repeat(7, 15px); gap: 3px; background: var(--field); padding: 6px; }
+.cell { width: 15px; height: 15px; border: 1px solid var(--rule-soft); }
+.cell.on { background: var(--mark); border-color: var(--mark); }
+.cell.blank { border: 0; }
+
+/* 이 앱의 유일한 연출: 용지에 자국이 순서대로 찍힌다 */
+@media (prefers-reduced-motion: no-preference) {
+  .slip.marking .cell.on { animation: mark 160ms steps(2, end) backwards; animation-delay: calc(var(--step, 0) * 55ms); }
+}
+@keyframes mark { from { background: transparent; border-color: var(--rule-soft); } }
+
+.strategy { display: flex; align-items: baseline; gap: var(--s3); }
+.strategy code { font-size: 13px; }
+
+.game-line { display: flex; align-items: center; gap: var(--s4); margin-bottom: var(--s3); }
+.game-line .picks { margin-left: auto; }
+
+.perf { margin-top: var(--s5); }
+.stat { font-size: 15px; margin: 0 0 var(--s2); }
+.stat b { font-family: Archivo, sans-serif; font-weight: 900; font-size: 22px; }
+.meter { position: relative; height: 10px; background: var(--field); max-width: 360px; margin: 0 0 var(--s3); }
+.meter i { position: absolute; inset: 0 auto 0 0; background: var(--ink); }
+.meter u { position: absolute; top: -4px; width: 2px; height: 18px; background: var(--mark); }
+
+@media (max-width: 420px) {
+  .game-line { flex-wrap: wrap; gap: var(--s2); }
+  .game-line .picks { margin-left: 0; }
 }

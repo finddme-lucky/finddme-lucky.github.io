@@ -21,6 +21,7 @@ const ASSETS = [
   "js/labels.mjs",
   "js/popularity.mjs",
   "js/sets.mjs",
+  "js/slip.mjs",
   "js/staleness.mjs",
   "js/stats-lotto.mjs",
   "js/stats-pension.mjs",
