@@ -1,4 +1,4 @@
-const VERSION = "v1";
+const VERSION = "v2";  // 올리면 낡은 셸 캐시가 activate에서 지워진다 (데이터 캐시는 유지)
 const SHELL = `shell-${VERSION}`;
 const DATA = "data"; // 버전과 분리한다 — 셸 버전을 올려도 마지막으로 받은 데이터는 지우지 않는다.
 
