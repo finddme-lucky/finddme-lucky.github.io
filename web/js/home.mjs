@@ -39,10 +39,13 @@ function pastRounds(game, draws) {
 }
 
 export function renderHome(target, latest, now = new Date()) {
+  // 캐시에서 나온 데이터인지가 가장 확실한 신호다. navigator.onLine은 DevTools 오프라인이나
+  // 서버만 죽은 경우 true로 남으므로 보조로만 쓴다.
+  const servedFromCache = latest?.fromCache === true;
   const offlineBanner = el("p", { class: "banner" },
-    "오프라인입니다 — 마지막으로 받은 데이터를 보여줍니다.");
-  offlineBanner.hidden = navigator.onLine !== false;
-  addEventListener("online", () => { offlineBanner.hidden = true; });
+    "네트워크에 연결되지 않아 마지막으로 받은 데이터를 보여줍니다.");
+  offlineBanner.hidden = !servedFromCache && navigator.onLine !== false;
+  addEventListener("online", () => { offlineBanner.hidden = !servedFromCache; });
   addEventListener("offline", () => { offlineBanner.hidden = false; });
   target.append(offlineBanner);
   target.append(el("p", { class: "note" }, `데이터 변경 ${formatDateTime(latest.updatedAt)}`));

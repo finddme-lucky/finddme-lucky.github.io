@@ -1,4 +1,4 @@
-const VERSION = "v2";  // 올리면 낡은 셸 캐시가 activate에서 지워진다 (데이터 캐시는 유지)
+const VERSION = "v3";  // 올리면 낡은 셸 캐시가 activate에서 지워진다 (데이터 캐시는 유지)
 const SHELL = `shell-${VERSION}`;
 const DATA = "data"; // 버전과 분리한다 — 셸 버전을 올려도 마지막으로 받은 데이터는 지우지 않는다.
 
@@ -69,12 +69,25 @@ async function dataFirst(event, request) {
       event.waitUntil(cache.put(request, response.clone()));
       return response;
     }
-    return (await cache.match(request)) ?? response;
+    const stale = await cache.match(request);
+    return stale ? markFromCache(stale) : response;
   } catch (error) {
     const cached = await cache.match(request);
-    if (cached) return cached;
+    if (cached) return markFromCache(cached);
     throw error;
   }
+}
+
+// 화면이 "지금 보는 건 마지막으로 받은 값"이라고 말할 수 있게 표시를 남긴다.
+// navigator.onLine은 DevTools 오프라인이나 서버만 죽은 경우 true로 남아 믿을 수 없다.
+async function markFromCache(cached) {
+  const headers = new Headers(cached.headers);
+  headers.set("X-From-Cache", "1");
+  return new Response(await cached.blob(), {
+    status: cached.status,
+    statusText: cached.statusText,
+    headers,
+  });
 }
 
 // 셸은 캐시로 즉시 띄우고 뒤에서 새 버전을 받아 둔다 (다음에 열 때 반영).
