@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-09-27T09:29:24+09:00",
+ "generatedAt": "2026-09-27T13:28:24+09:00",
  "disclaimer": "전략이 무작위보다 낫다는 근거는 없다. 이 기록은 그것을 확인하기 위한 것이다.",
  "lotto645": {
   "evalRounds": 300,
@@ -22,8 +22,8 @@
     "games": 1500,
     "matchCounts": {
      "0": 607,
-     "1": 625,
-     "2": 226,
+     "1": 624,
+     "2": 227,
      "3": 40,
      "4": 2,
      "5": 0,
@@ -36,7 +36,7 @@
      "4": 2,
      "5": 40
     },
-    "meanMatches": 0.8033333333333333,
+    "meanMatches": 0.804,
     "hits": 42,
     "hitRate": 0.028,
     "hitRateCI": [
@@ -73,16 +73,16 @@
      0.026062812402763716
     ],
     "pVsRandom": 0.5958500570659246,
-    "pAdj": 0.8391292653553676,
+    "pAdj": 1.0,
     "distinguishable": false
    },
    "recent": {
     "games": 1500,
     "matchCounts": {
      "0": 592,
-     "1": 654,
-     "2": 214,
-     "3": 36,
+     "1": 653,
+     "2": 216,
+     "3": 35,
      "4": 4,
      "5": 0,
      "6": 0
@@ -92,17 +92,17 @@
      "2": 0,
      "3": 0,
      "4": 4,
-     "5": 36
+     "5": 35
     },
     "meanMatches": 0.804,
-    "hits": 40,
-    "hitRate": 0.02666666666666667,
+    "hits": 39,
+    "hitRate": 0.026,
     "hitRateCI": [
-     0.019643790086390146,
-     0.03610782630725132
+     0.019077154154264607,
+     0.035344534938522826
     ],
-    "pVsRandom": 0.27970975511845586,
-    "pAdj": 0.8391292653553676,
+    "pVsRandom": 0.3332754290362894,
+    "pAdj": 0.9998262871088681,
     "distinguishable": false
    },
    "ml": {
@@ -110,8 +110,8 @@
     "matchCounts": {
      "0": 599,
      "1": 652,
-     "2": 224,
-     "3": 23,
+     "2": 223,
+     "3": 24,
      "4": 1,
      "5": 1,
      "6": 0
@@ -121,19 +121,19 @@
      "2": 0,
      "3": 1,
      "4": 1,
-     "5": 23
+     "5": 24
     },
-    "meanMatches": 0.7853333333333333,
-    "hits": 25,
-    "hitRate": 0.016666666666666666,
+    "meanMatches": 0.786,
+    "hits": 26,
+    "hitRate": 0.017333333333333333,
     "hitRateCI": [
-     0.011314224527091084,
-     0.02448848235373998
+     0.011855789650672771,
+     0.025276844531012317
     ],
-    "inSampleSeparation": 0.00119694623252149,
-    "outOfSampleSeparation": -8.79303924576134e-05,
-    "pVsRandom": 0.41830036120421565,
-    "pAdj": 0.8391292653553676,
+    "inSampleSeparation": 0.00119479100661289,
+    "outOfSampleSeparation": -8.481114066855237e-05,
+    "pVsRandom": 0.5037195319616987,
+    "pAdj": 1.0,
     "distinguishable": false
    },
    "random": {
@@ -169,16 +169,16 @@
  },
  "popularity": {
   "window": 51,
-  "rounds": 1242,
+  "rounds": 1243,
   "high": {
    "rounds": 608,
    "flagged": 91,
    "flaggedRate": 0.14967105263157895
   },
   "low": {
-   "rounds": 634,
+   "rounds": 635,
    "flagged": 34,
-   "flaggedRate": 0.05362776025236593
+   "flaggedRate": 0.05354330708661417
   },
   "topDecile": {
    "rounds": 124,
@@ -193,22 +193,22 @@
   "byRule": {
    "allLow": {
     "high": 0.13651315789473684,
-    "low": 0.03943217665615142,
-    "difference": 0.09708098123858541,
+    "low": 0.03937007874015748,
+    "difference": 0.09714307915457936,
     "highFlagged": 83,
     "lowFlagged": 25
    },
    "consecutive": {
     "high": 0.003289473684210526,
-    "low": 0.006309148264984227,
-    "difference": -0.003019674580773701,
+    "low": 0.006299212598425197,
+    "difference": -0.0030097389142146706,
     "highFlagged": 2,
     "lowFlagged": 4
    },
    "sameLastDigit": {
     "high": 0.006578947368421052,
-    "low": 0.0015772870662460567,
-    "difference": 0.005001660302174996,
+    "low": 0.0015748031496062992,
+    "difference": 0.005004144218814753,
     "highFlagged": 4,
     "lowFlagged": 1
    },
@@ -235,8 +235,8 @@
    },
    "multiplesOfSeven": {
     "high": 0.0,
-    "low": 0.0015772870662460567,
-    "difference": -0.0015772870662460567,
+    "low": 0.0015748031496062992,
+    "difference": -0.0015748031496062992,
     "highFlagged": 0,
     "lowFlagged": 1
    },
@@ -249,8 +249,8 @@
    },
    "sameDecade": {
     "high": 0.004934210526315789,
-    "low": 0.007886435331230283,
-    "difference": -0.0029522248049144943,
+    "low": 0.007874015748031496,
+    "difference": -0.0029398052217157068,
     "highFlagged": 3,
     "lowFlagged": 5
    }
@@ -273,9 +273,9 @@
    {
     "from": 401,
     "to": null,
-    "rounds": 842,
+    "rounds": 843,
     "high": 0.1466992665036675,
-    "low": 0.057736720554272515
+    "low": 0.0576036866359447
    }
   ],
   "caveat": "판매액 필드의 의미가 회차 구간마다 달라 절대 기대값과는 비교할 수 없다. 주변 회차 중앙값으로 정규화한 상대 비교만 유효하다."
@@ -317,7 +317,7 @@
     "spent": 1000000,
     "won": 160000,
     "returnRate": 0.16,
-    "pVsRandom": 0.8766067288386479,
+    "pVsRandom": 0.753932677822886,
     "pAdj": 1.0,
     "distinguishable": false
    },
@@ -342,7 +342,7 @@
     "spent": 1000000,
     "won": 125000,
     "returnRate": 0.125,
-    "pVsRandom": 0.31731050786291415,
+    "pVsRandom": 0.39935163147480046,
     "pAdj": 1.0,
     "distinguishable": false
    },
@@ -367,7 +367,7 @@
     "spent": 1000000,
     "won": 120000,
     "returnRate": 0.12,
-    "pVsRandom": 0.8766067288386479,
+    "pVsRandom": 0.753932677822886,
     "pAdj": 1.0,
     "distinguishable": false
    },
@@ -392,33 +392,33 @@
     "spent": 1000000,
     "won": 85000,
     "returnRate": 0.085,
-    "inSampleSeparation": -0.0018949535445325764,
-    "outOfSampleSeparation": -0.0001700455605175454,
-    "pVsRandom": 0.31731050786291415,
+    "inSampleSeparation": -0.001886426663055399,
+    "outOfSampleSeparation": -0.00015472675215958496,
+    "pVsRandom": 0.39935163147480046,
     "pAdj": 1.0,
     "distinguishable": false
    },
    "random": {
     "rounds": 200,
     "lengths": {
-     "0": 177,
-     "1": 20,
+     "0": 178,
+     "1": 19,
      "2": 3,
      "3": 0,
      "4": 0,
      "5": 0,
      "6": 0
     },
-    "hits": 23,
+    "hits": 22,
     "games": 200,
-    "hitRate": 0.115,
+    "hitRate": 0.11,
     "hitRateCI": [
-     0.07786317221824318,
-     0.16664825233886393
+     0.07377190160716048,
+     0.16092798300912986
     ],
     "spent": 1000000,
-    "won": 175000,
-    "returnRate": 0.175,
+    "won": 170000,
+    "returnRate": 0.17,
     "pVsRandom": null,
     "pAdj": null,
     "distinguishable": false
