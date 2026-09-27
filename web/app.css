@@ -93,9 +93,9 @@ h3 { font-size: 17px; margin: 0 0 var(--s1); }
 .notice { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 13px; margin: 0 0 var(--s4); }
 .error { border-left: 3px solid var(--danger); padding: var(--s2) var(--s3); color: var(--danger); font-size: 14px; }
 
-/* TEMP BRIDGE (Task 1, remove in Task 2): old renderers still emit "banner" for offline/stale/honesty
-   warnings. Task 2 renames these call sites to .notice per the plan; until then this keeps the
-   warnings visually prominent instead of falling back to unstyled paragraph text. */
+/* TEMP BRIDGE (Task 1, still needed after Task 2): home.mjs no longer emits "banner" (renamed to
+   .notice), but sets.mjs, popularity.mjs and fairness.mjs still do — keep this until Tasks 3-4
+   rename their call sites too, then remove. */
 .banner { border-left: 3px solid var(--warn); padding: var(--s2) var(--s3); color: var(--warn); font-size: 13px; margin: 0 0 var(--s4); }
 
 .panel, .card { background: var(--field); padding: var(--s4); margin: 0 0 var(--s4); }
