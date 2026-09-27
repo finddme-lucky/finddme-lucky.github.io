@@ -174,3 +174,13 @@ main { max-width: 960px; margin: 0 auto; }
 
 .chart { position: relative; }
 .chart canvas { width: 100% !important; }
+
+.fairness h2 { font-size: 17px; margin: 24px 0 4px; }
+.scroller { overflow-x: auto; }
+table.grid { border-collapse: collapse; width: 100%; font-size: 13px; }
+table.grid th, table.grid td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.grid thead th { color: var(--muted); font-weight: 600; }
+table.grid tbody th { font-weight: 600; white-space: normal; }
+table.grid td { font-variant-numeric: tabular-nums; }
+table.grid tr.suspect { background: var(--warn-bg); color: var(--warn-ink); }
+.switch.small button { padding: 6px 8px; font-size: 12px; }

@@ -1,5 +1,6 @@
 import { barConfig, chartCard, drawChart, lineConfig, palette } from "./chart.mjs";
 import { el } from "./dom.mjs";
+import { fairnessSection } from "./fairness.mjs";
 
 const DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const RANKS = ["1", "2", "3", "4", "5", "6", "7", "bonus"];
@@ -83,6 +84,6 @@ export async function pensionSections(report, backtest) {
       { label: rankLabel(rank) },
     )));
 
-  // 공정성 검정 표는 Task 4에서 여기에 붙인다.
+  sections.push(fairnessSection(report));
   return sections.filter(Boolean);
 }

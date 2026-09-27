@@ -23,6 +23,7 @@ const ASSETS = [
   "js/stats.mjs",
   "js/stats-lotto.mjs",
   "js/stats-pension.mjs",
+  "js/fairness.mjs",
   "vendor/chart.umd.js",
 ];
 
